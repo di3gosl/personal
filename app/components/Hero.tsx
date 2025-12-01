@@ -1,4 +1,6 @@
-import { Mail, Mouse } from "lucide-react";
+"use client";
+
+import { Mouse } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -41,20 +43,13 @@ export default function Hero() {
                             src="/images/hero-image-v3.png"
                             alt="Diego Salazar - Full-Stack Developer"
                             fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-cover"
                             priority
                         />
                         <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent via-80% to-background pointer-events-none" />
                     </div>
                 </div>
-            </div>
-
-            {/* Floating Email Button */}
-            <div
-                className="fixed bottom-8 left-8 w-11 h-11 bg-accent rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-secondary group"
-                aria-label="Contact via email"
-            >
-                <Mail className="w-4.5 h-4.5 text-white transition-all duration-300 group-hover:text-light group-hover:w-5.5 group-hover:h-5.5" />
             </div>
 
             {/* Scroll Indicator */}

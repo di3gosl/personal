@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Portfolio() {
     const projects = [
@@ -92,6 +93,7 @@ export default function Portfolio() {
                                             src={project.image}
                                             alt={project.title}
                                             fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             className="object-contain"
                                         />
                                     </div>
@@ -140,9 +142,9 @@ export default function Portfolio() {
                         and agencies across e-commerce, SaaS, fintech, and
                         automation domains.
                     </p>
-                    <button className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer">
+                    <Link href="/portfolio" className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer">
                         View All Projects →
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>
