@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Mail } from "lucide-react";
-import { motion } from "motion/react";
+import { Mail, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { naturalEase } from "../lib/animations";
+import { useState } from "react";
 
 const headerVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -43,6 +44,30 @@ const menuVariants = {
 };
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuButtonPosition, setMenuButtonPosition] = useState({
+        x: 0,
+        y: 0,
+    });
+
+    const menuItems = [
+        { label: "Home", link: "/" },
+        { label: "Portfolio", link: "/portfolio" },
+        { label: "About Me", link: "/about" },
+        { label: "Contact", link: "/contact" },
+    ];
+
+    const handleMenuClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setMenuButtonPosition({
+            x: rect.left + rect.width / 2,
+            y: rect.top + rect.height / 2,
+        });
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    console.log(menuButtonPosition);
+
     return (
         <>
             <motion.header
@@ -78,6 +103,7 @@ export default function Header() {
                         variants={menuVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={handleMenuClick}
                     >
                         <span>Menu</span>
                         <div className="w-7 h-7 flex flex-col justify-center gap-1.5">
@@ -88,6 +114,101 @@ export default function Header() {
                     </motion.button>
                 </div>
             </motion.header>
+
+            {/* Full Screen Menu Overlay */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <>
+                        {/* Expanding Circle Background */}
+                        <motion.div
+                            className="fixed bg-primary z-60"
+                            style={{
+                                borderRadius: "50%",
+                                left: menuButtonPosition.x,
+                                top: menuButtonPosition.y,
+                            }}
+                            initial={{
+                                width: 0,
+                                height: 0,
+                                x: 0,
+                                y: 0,
+                            }}
+                            animate={{
+                                width: "300vmax",
+                                height: "300vmax",
+                                x: "-150vmax",
+                                y: "-150vmax",
+                            }}
+                            exit={{
+                                width: 0,
+                                height: 0,
+                                x: 0,
+                                y: 0,
+                                transition: {
+                                    duration: 0.5,
+                                    ease: naturalEase,
+                                },
+                            }}
+                            transition={{
+                                duration: 0.8,
+                                ease: naturalEase,
+                            }}
+                        />
+
+                        {/* Menu Content */}
+                        <motion.div
+                            className="fixed inset-0 z-70 flex flex-col items-center justify-center"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{
+                                duration: 0.3,
+                                delay: 0.4,
+                            }}
+                        >
+                            {/* Close Button */}
+                            <motion.button
+                                className={`absolute w-12 h-12 flex items-center justify-center text-white hover:text-accent transition-colors cursor-pointer`}
+                                style={{
+                                    left: menuButtonPosition.x - 24,
+                                    top: menuButtonPosition.y - 24,
+                                }}
+                                onClick={() => setIsMenuOpen(false)}
+                                aria-label="Close menu"
+                                whileHover={{ scale: 1.1, rotate: 90 }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <X className="w-8 h-8" />
+                            </motion.button>
+
+                            {/* Menu Items */}
+                            <nav className="flex flex-col items-center gap-8">
+                                {menuItems.map((item, index) => (
+                                    <motion.div
+                                        key={item.link}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: 0.5 + index * 0.1,
+                                            ease: naturalEase,
+                                        }}
+                                    >
+                                        <Link
+                                            href={item.link}
+                                            className="text-5xl md:text-7xl font-bold text-white hover:text-accent transition-colors font-jakarta"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </nav>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+
             {/* Floating Email Button */}
             <motion.button
                 className="fixed bottom-8 left-8 w-11 h-11 bg-accent rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-secondary"
