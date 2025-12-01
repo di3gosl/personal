@@ -51,10 +51,10 @@ export default function Hero() {
 
             {/* Floating Email Button */}
             <div
-                className="fixed bottom-8 left-8 w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-secondary"
+                className="fixed bottom-8 left-8 w-11 h-11 bg-primary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-secondary"
                 aria-label="Contact via email"
             >
-                <Mail className="w-5 h-5 text-white" />
+                <Mail className="w-4 h-4 text-white" />
             </div>
 
             {/* Scroll Indicator */}

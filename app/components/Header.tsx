@@ -6,8 +6,8 @@ export default function Header() {
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
-                    <div className="w-12 h-12 rounded-full border-3 border-primary flex items-center justify-center mr-2">
-                        <span className="text-base font-bold text-primary">DS</span>
+                    <div className="w-12 h-12 rounded-xl border-3 border-primary flex items-center justify-center mr-2">
+                        <span className="text-xl font-bold text-primary">D_</span>
                     </div>
                     <div className="flex flex-col">
                         <span className="text-lg font-bold leading-tight text-primary">
@@ -25,7 +25,7 @@ export default function Header() {
                     aria-label="Open menu"
                 >
                     <span>Menu</span>
-                    <Menu className="w-6 h-6" />
+                    <Menu className="w-7 h-7" />
                 </button>
             </div>
         </header>

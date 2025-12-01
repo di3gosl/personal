@@ -6,6 +6,8 @@
   --primary: #353839;
   --secondary: #2E3133;
   --accent: #80838A;
+  --light: #D1D0D4;
+  --white: #F4F4F5;
 }
 
 @theme inline {
@@ -14,6 +16,8 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-light: var(--light);
+  --color-white: var(--white);
   --font-sans: var(--font-inter);
   --font-display: var(--font-plus-jakarta-sans);
 }
