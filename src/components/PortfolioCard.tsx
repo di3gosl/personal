@@ -28,6 +28,7 @@ interface Props {
         technologies: string[];
         year: string;
         image: string;
+        label: string;
     };
 }
 
@@ -61,11 +62,21 @@ export default function PortfolioCard({ project }: Props) {
                     </motion.div>
                 )}
 
-                {/* Year Badge */}
-                <div className="flex justify-between items-start">
+                {/* Year Badge and Label */}
+                <div className="flex justify-between items-start gap-2">
                     <span className="text-xs font-semibold text-accent tracking-wider uppercase">
                         {project.year}
                     </span>
+                    {project.label && (
+                        <motion.span
+                            className="px-2.5 py-1 bg-primary text-white text-xs font-semibold rounded-full uppercase tracking-wide"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.3, duration: 0.3 }}
+                        >
+                            {project.label}
+                        </motion.span>
+                    )}
                 </div>
 
                 {/* Project Title */}

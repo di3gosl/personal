@@ -32,7 +32,7 @@ const imageVariants = {
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center">
+        <section className="min-h-screen flex items-center justify-center px-6 md:px-12">
             <div className="container mx-auto min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
                 {/* Left Content */}
                 <motion.div
@@ -105,7 +105,7 @@ export default function Hero() {
                     delay: 1,
                     repeat: Infinity,
                     repeatType: "reverse",
-                    repeatDelay: 0.3,
+                    repeatDelay: 0.2,
                 }}
             >
                 <Mouse className="w-8 h-8 text-primary" />

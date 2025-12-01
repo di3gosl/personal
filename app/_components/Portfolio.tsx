@@ -11,26 +11,37 @@ export default function Portfolio() {
     const isInView = useInView(ref, { once: true, amount: 0.2 });
     const projects = [
         {
-            title: "E-commerce SaaS Platform",
-            description:
-                "Built a scalable multi-tenant e-commerce platform with custom integrations for Shopify, Printify, and Stripe. Handles 10K+ daily transactions.",
-            technologies: ["Next.js", "Node.js", "PostgreSQL", "AWS", "Stripe"],
-            year: "2024",
-            image: "/images/portfolio/biofractal-preview.png",
-        },
-        {
             title: "AI-Powered Chatbot System",
             description:
-                "Developed an intelligent customer service automation platform using OpenAI and Claude APIs with RAG for context-aware responses.",
+                "I built my personal portfolio website using Next.js, TypeScript, TailwindCSS, and Framer Motion, with Supabase for backend services and data management. The site showcases my work with a clean, minimal design and subtle animations for a smooth user experience.",
             technologies: [
+                "Next.js",
                 "React",
-                "Python",
-                "OpenAI",
-                "MongoDB",
-                "AWS Lambda",
+                "Supabase",
+                "TypeScript",
+                "TailwindCSS",
+                "Framer Motion",
             ],
-            year: "2023",
-            image: "",
+            year: "2025",
+            image: "/images/portfolio/personal-preview.png",
+            label: "Public",
+        },
+        {
+            title: "BioFractal Website",
+            description:
+                "I developed an informational website for BioFractal using a modern full-stack architecture with React, Redux, Node.js, MySQL, and PHP. The frontend was built with React and Bootstrap, complemented by custom HTML and CSS for layout and styling.",
+            technologies: [
+                "Node.js",
+                "Yii Framework",
+                "Bootstrap",
+                "React",
+                "Redux",
+                "MySQL",
+                "PHP",
+            ],
+            year: "2019",
+            image: "/images/portfolio/biofractal-preview.png",
+            label: "",
         },
         {
             title: "WordPress Plugin Suite",
@@ -39,6 +50,7 @@ export default function Portfolio() {
             technologies: ["PHP", "WordPress", "WooCommerce", "REST APIs"],
             year: "2023",
             image: "",
+            label: "",
         },
         {
             title: "Real-time Analytics Dashboard",
@@ -47,6 +59,7 @@ export default function Portfolio() {
             technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
             year: "2022",
             image: "",
+            label: "",
         },
         {
             title: "Inventory Management System",
@@ -55,6 +68,7 @@ export default function Portfolio() {
             technologies: ["Next.js", "TypeScript", "MySQL", "Node.js"],
             year: "2022",
             image: "",
+            label: "",
         },
         {
             title: "Mobile IoT Application",
@@ -63,13 +77,14 @@ export default function Portfolio() {
             technologies: ["Android", "C++", "ESP32", "MQTT", "Firebase"],
             year: "2021",
             image: "",
+            label: "",
         },
     ];
 
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center pt-36 pb-18"
+            className="min-h-screen flex items-center justify-center pt-36 pb-18 px-6 md:px-12"
         >
             <div className="container mx-auto">
                 {/* Section Header */}

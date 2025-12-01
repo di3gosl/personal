@@ -134,7 +134,7 @@ export default function Skills() {
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center pt-18 pb-36"
+            className="min-h-screen flex items-center justify-center pt-18 pb-36 px-6 md:px-12"
         >
             <div className="container mx-auto">
                 {/* Section Header */}

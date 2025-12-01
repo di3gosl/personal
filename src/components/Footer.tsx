@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import { naturalEase } from "../lib/animations";
+import { Heart } from "lucide-react";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,7 +47,7 @@ export default function Footer() {
     return (
         <motion.footer
             ref={ref}
-            className="bg-background pb-6"
+            className="bg-background pb-6 px-6 md:px-12"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6 }}
@@ -127,7 +128,11 @@ export default function Footer() {
                     className="col-span-12 text-accent text-sm text-center mt-6"
                     variants={itemVariants}
                 >
-                    Copyright © 2025 Diego Salazar
+                    <div className="mb-1">Copyright © 2025 Diego Salazar</div>
+                    <div className="flex justify-center items-center">
+                        Made with <Heart className="w-4.5 h-4.5 text-accent mx-1 fill-current" />
+                        in Merida, Mexico.
+                    </div>
                 </motion.div>
             </motion.div>
         </motion.footer>

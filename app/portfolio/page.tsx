@@ -21,26 +21,29 @@ const containerVariants = {
 export default function Portfolio() {
     const projects = [
         {
-            title: "E-commerce SaaS Platform",
+            title: "AI-Powered Chatbot System",
             description:
-                "Built a scalable multi-tenant e-commerce platform with custom integrations for Shopify, Printify, and Stripe. Handles 10K+ daily transactions.",
+                "I built my personal portfolio website using Next.js, TypeScript, TailwindCSS, and Framer Motion, with Supabase for backend services and data management. The site showcases my work with a clean, minimal design and subtle animations for a smooth user experience.",
+            technologies: [
+                "Next.js",
+                "React",
+                "Supabase",
+                "TypeScript",
+                "TailwindCSS",
+                "Framer Motion",
+            ],
+            year: "2025",
+            image: "/images/portfolio/personal-preview.png",
+            label: "Public",
+        },
+        {
+            title: "BioFractal",
+            description:
+                "I developed an informational website for BioFractal using a modern full-stack architecture with React, Redux, Node.js, MySQL, and PHP. The frontend was built with React and Bootstrap, complemented by custom HTML and CSS for layout and styling.",
             technologies: ["Next.js", "Node.js", "PostgreSQL", "AWS", "Stripe"],
             year: "2024",
             image: "/images/portfolio/biofractal-preview.png",
-        },
-        {
-            title: "AI-Powered Chatbot System",
-            description:
-                "Developed an intelligent customer service automation platform using OpenAI and Claude APIs with RAG for context-aware responses.",
-            technologies: [
-                "React",
-                "Python",
-                "OpenAI",
-                "MongoDB",
-                "AWS Lambda",
-            ],
-            year: "2023",
-            image: "",
+            label: "",
         },
         {
             title: "WordPress Plugin Suite",
@@ -49,6 +52,7 @@ export default function Portfolio() {
             technologies: ["PHP", "WordPress", "WooCommerce", "REST APIs"],
             year: "2023",
             image: "",
+            label: "",
         },
         {
             title: "Real-time Analytics Dashboard",
@@ -57,6 +61,7 @@ export default function Portfolio() {
             technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
             year: "2022",
             image: "",
+            label: "",
         },
         {
             title: "Inventory Management System",
@@ -65,6 +70,7 @@ export default function Portfolio() {
             technologies: ["Next.js", "TypeScript", "MySQL", "Node.js"],
             year: "2022",
             image: "",
+            label: "",
         },
         {
             title: "Mobile IoT Application",
@@ -73,6 +79,7 @@ export default function Portfolio() {
             technologies: ["Android", "C++", "ESP32", "MQTT", "Firebase"],
             year: "2021",
             image: "",
+            label: "",
         },
     ];
 
@@ -84,7 +91,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <section className="min-h-screen pt-32 pb-24">
+                <section className="min-h-screen pt-32 pb-24 px-6 md:px-12">
                     <div className="container mx-auto px-4">
                         {/* Header with animation */}
                         <motion.div
