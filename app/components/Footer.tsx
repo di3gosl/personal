@@ -40,6 +40,16 @@ export default function Footer() {
                         </div>
                         <div>
                             <a
+                                href="https://github.com/di3gosl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:underline underline-offset-4"
+                            >
+                                GitHub
+                            </a>
+                        </div>
+                        <div>
+                            <a
                                 href="https://www.behance.net/di3gosl"
                                 target="_blank"
                                 rel="noopener noreferrer"

@@ -1,5 +1,3 @@
-import { Menu } from "lucide-react";
-
 export default function Header() {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12">
@@ -23,11 +21,15 @@ export default function Header() {
 
                 {/* Menu Button */}
                 <button
-                    className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase cursor-pointer hover:text-accent transition-colors"
+                    className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase cursor-pointer hover:text-accent transition-colors group"
                     aria-label="Open menu"
                 >
                     <span>Menu</span>
-                    <Menu className="w-7 h-7" />
+                    <div className="w-7 h-7 flex flex-col justify-center gap-1.5">
+                        <span className="w-full h-0.5 bg-current transition-all duration-300 group-hover:-translate-y-0.5"></span>
+                        <span className="w-full h-0.5 bg-current transition-all duration-300"></span>
+                        <span className="w-full h-0.5 bg-current transition-all duration-300 group-hover:translate-y-0.5"></span>
+                    </div>
                 </button>
             </div>
         </header>
