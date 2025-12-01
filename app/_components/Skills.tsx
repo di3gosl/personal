@@ -1,4 +1,36 @@
+"use client";
+
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+import { containerVariants, naturalEase } from "@/src/lib/animations";
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: naturalEase,
+        },
+    },
+};
+
+const skillBadgeVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.3,
+        },
+    },
+};
+
 export default function Skills() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
+
     const skillCategories = [
         {
             title: "Frontend",
@@ -100,10 +132,23 @@ export default function Skills() {
     ];
 
     return (
-        <section className="min-h-screen flex items-center justify-center pt-18 pb-36">
+        <section
+            ref={ref}
+            className="min-h-screen flex items-center justify-center pt-18 pb-36"
+        >
             <div className="container mx-auto">
                 {/* Section Header */}
-                <div className="mb-16 space-y-4">
+                <motion.div
+                    className="mb-16 space-y-4"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={
+                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
+                    }
+                    transition={{
+                        duration: 0.6,
+                        ease: naturalEase,
+                    }}
+                >
                     <p className="text-sm tracking-[0.4em] uppercase text-accent">
                         My Expertise
                     </p>
@@ -114,34 +159,56 @@ export default function Skills() {
                         A comprehensive toolkit built over 10+ years of hands-on
                         development
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-16">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-16"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     {skillCategories.map((category, idx) => (
-                        <div
+                        <motion.div
                             key={idx}
                             className={`space-y-6 col-span-${category.cols}`}
+                            variants={itemVariants}
                         >
                             <h3 className="text-2xl font-bold text-primary border-b-2 border-primary pb-2">
                                 {category.title}
                             </h3>
                             <div className={`flex flex-wrap gap-2`}>
                                 {category.skills.map((skill, skillIdx) => (
-                                    <span
+                                    <motion.span
                                         key={skillIdx}
-                                        className="px-4 py-2 bg-white text-gray-800 text-sm font-medium rounded-lg border border-light hover:bg-light transition-colors"
+                                        className="px-4 py-2 bg-white text-gray-800 text-sm font-medium rounded-lg border border-light hover:bg-light transition-colors cursor-default"
+                                        variants={skillBadgeVariants}
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.2 },
+                                        }}
                                     >
                                         {skill.name}
-                                    </span>
+                                    </motion.span>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Additional Info */}
-                <div className="mt-16 pt-12">
+                <motion.div
+                    className="mt-8 pt-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={
+                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.8,
+                        ease: naturalEase,
+                    }}
+                >
                     <p className="text-lg text-accent text-center max-w-4xl mx-auto">
                         Beyond these core technologies, I have a solid
                         background in software architecture, scalable system
@@ -151,7 +218,7 @@ export default function Skills() {
                         distributed teams and working within modern agile
                         workflows.
                     </p>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

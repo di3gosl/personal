@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
+import { naturalEase } from "../lib/animations";
 
 const variants = {
     hidden: {
@@ -14,7 +15,7 @@ const variants = {
         y: 0,
         transition: {
             duration: 0.6,
-            ease: [0.6, 0.01, 0.05, 0.95] as [number, number, number, number],
+            ease: naturalEase,
             staggerChildren: 0.1,
         },
     },
@@ -23,7 +24,7 @@ const variants = {
         y: -20,
         transition: {
             duration: 0.4,
-            ease: [0.6, 0.01, 0.05, 0.95] as [number, number, number, number],
+            ease: naturalEase,
         },
     },
 };

@@ -2,30 +2,68 @@
 
 import { Mouse } from "lucide-react";
 import Image from "next/image";
+import { motion } from "motion/react";
+import { containerVariants, naturalEase } from "@/src/lib/animations";
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: naturalEase,
+        },
+    },
+};
+
+const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: naturalEase,
+        },
+    },
+};
 
 export default function Hero() {
     return (
         <section className="min-h-screen flex items-center justify-center">
             <div className="container mx-auto min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
                 {/* Left Content */}
-                <div className="space-y-10 mt-16">
-                    <div className="space-y-2">
+                <motion.div
+                    className="space-y-10 mt-16"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.div className="space-y-2" variants={itemVariants}>
                         <p className="text-sm tracking-[0.4em] uppercase text-accent">
                             Diego Salazar
                         </p>
                         <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-primary">
                             Full-Stack Developer
                         </h1>
-                    </div>
+                    </motion.div>
 
-                    <p className="text-lg md:text-xl leading-relaxed text-accent">
+                    <motion.p
+                        className="text-lg md:text-xl leading-relaxed text-accent"
+                        variants={itemVariants}
+                    >
                         Over the past 10+ years, I&apos;ve built scalable web
                         applications, SaaS platforms, and AI-driven automation
                         systems using Next.js, React, Node.js, PHP, AWS, and
                         modern API-based architectures.
-                    </p>
+                    </motion.p>
 
-                    <div className="flex flex-wrap items-center gap-6 text-base font-semibold">
+                    <motion.div
+                        className="flex flex-wrap items-center gap-6 text-base font-semibold"
+                        variants={itemVariants}
+                    >
                         <button className="hover:underline underline-offset-4 transition-all cursor-pointer">
                             View Projects
                         </button>
@@ -33,11 +71,16 @@ export default function Hero() {
                         <button className="hover:underline underline-offset-4 transition-all cursor-pointer">
                             Read About Me
                         </button>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Right Image */}
-                <div className="relative w-full h-[500px] lg:h-[800px] order-first lg:order-last self-end">
+                <motion.div
+                    className="relative w-full h-[500px] lg:h-[800px] order-first lg:order-last self-end"
+                    variants={imageVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
                     <div className="relative w-full h-full">
                         <Image
                             src="/images/hero-image-v3.png"
@@ -49,13 +92,24 @@ export default function Hero() {
                         />
                         <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent via-80% to-background pointer-events-none" />
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 flex flex-col items-center gap-2 animate-bounce">
+            <motion.div
+                className="absolute bottom-8 left-1/2 flex flex-col items-center gap-2"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 1,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: 0.3,
+                }}
+            >
                 <Mouse className="w-8 h-8 text-primary" />
-            </div>
+            </motion.div>
         </section>
     );
 }

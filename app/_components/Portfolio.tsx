@@ -1,7 +1,14 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+import PortfolioCard from "@/src/components/PortfolioCard";
+import { containerVariants, naturalEase } from "@/src/lib/animations";
 
 export default function Portfolio() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
     const projects = [
         {
             title: "E-commerce SaaS Platform",
@@ -60,10 +67,23 @@ export default function Portfolio() {
     ];
 
     return (
-        <section className="min-h-screen flex items-center justify-center pt-36 pb-18">
+        <section
+            ref={ref}
+            className="min-h-screen flex items-center justify-center pt-36 pb-18"
+        >
             <div className="container mx-auto">
                 {/* Section Header */}
-                <div className="mb-16 space-y-4">
+                <motion.div
+                    className="mb-16 space-y-4"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={
+                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
+                    }
+                    transition={{
+                        duration: 0.6,
+                        ease: naturalEase,
+                    }}
+                >
                     <p className="text-sm tracking-[0.4em] uppercase text-accent">
                         Featured Work
                     </p>
@@ -75,77 +95,46 @@ export default function Portfolio() {
                         development, AI integration, and scalable system
                         architecture
                     </p>
-                </div>
+                </motion.div>
 
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Projects Grid with stagger animation */}
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     {projects.map((project, idx) => (
-                        <div
-                            key={idx}
-                            className="bg-white border border-light rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-                        >
-                            {/* Content */}
-                            <div className="p-6 space-y-4">
-                                {/* Project Image */}
-                                {project.image && (
-                                    <div className="relative w-full h-64 bg-gray-100">
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            className="object-contain"
-                                        />
-                                    </div>
-                                )}
-                                
-                                {/* Year Badge */}
-                                <div className="flex justify-between items-start">
-                                    <span className="text-xs font-semibold text-accent tracking-wider uppercase">
-                                        {project.year}
-                                    </span>
-                                </div>
-
-                                {/* Project Title */}
-                                <h3 className="text-xl font-bold text-primary">
-                                    {project.title}
-                                </h3>
-
-                                {/* Description */}
-                                <p className="text-sm text-accent leading-relaxed">
-                                    {project.description}
-                                </p>
-
-                                {/* Technologies */}
-                                <div className="flex flex-wrap gap-2 pt-2">
-                                    {project.technologies.map(
-                                        (tech, techIdx) => (
-                                            <span
-                                                key={techIdx}
-                                                className="px-3 py-1 bg-background text-secondary text-xs font-medium rounded-full"
-                                            >
-                                                {tech}
-                                            </span>
-                                        )
-                                    )}
-                                </div>
-                            </div>
-                        </div>
+                        <PortfolioCard key={idx} project={project} />
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Additional Info */}
-                <div className="mt-16 pt-12 text-center">
+                <motion.div
+                    className="mt-8 pt-12 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={
+                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.8,
+                        ease: naturalEase,
+                    }}
+                >
                     <p className="text-lg text-accent max-w-3xl mx-auto mb-6">
                         These projects represent a fraction of my work.
                         I&apos;ve delivered solutions for startups, enterprises,
                         and agencies across e-commerce, SaaS, fintech, and
                         automation domains.
                     </p>
-                    <Link href="/portfolio" className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer">
+                    <Link
+                        href="/portfolio"
+                        className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer"
+                    >
                         View All Projects →
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
