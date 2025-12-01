@@ -3,8 +3,9 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@/src/components/Header";
+import Footer from "@/src/components/Footer";
+import { naturalEase } from "@/src/lib/utils";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -29,7 +30,7 @@ const itemVariants = {
         scale: 1,
         transition: {
             duration: 0.5,
-            ease: [0.6, 0.01, 0.05, 0.95] as [number, number, number, number],
+            ease: naturalEase,
         },
     },
 };
@@ -109,12 +110,7 @@ export default function Portfolio() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{
                                 duration: 0.6,
-                                ease: [0.6, 0.01, 0.05, 0.95] as [
-                                    number,
-                                    number,
-                                    number,
-                                    number
-                                ],
+                                ease: naturalEase,
                             }}
                         >
                             <Link
