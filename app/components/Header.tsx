@@ -7,7 +7,9 @@ export default function Header() {
                 {/* Logo */}
                 <div className="flex items-center gap-2">
                     <div className="w-12 h-12 rounded-xl border-3 border-primary flex items-center justify-center mr-2">
-                        <span className="text-xl font-bold text-primary">D_</span>
+                        <span className="text-xl font-bold text-primary">
+                            D<span className="cursor-blink">_</span>
+                        </span>
                     </div>
                     <div className="flex flex-col">
                         <span className="text-lg font-bold leading-tight text-primary">

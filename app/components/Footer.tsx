@@ -27,7 +27,7 @@ export default function Footer() {
                     <div className="text-primary mb-5 text-lg font-semibold">
                         Follow me on
                     </div>
-                    <div className="text-primary">
+                    <div className="text-primary space-y-1.5">
                         <div>
                             <a
                                 href="https://www.linkedin.com/in/di3gosl/"

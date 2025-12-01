@@ -2,11 +2,13 @@ export default function Skills() {
     const skillCategories = [
         {
             title: "Frontend",
+            cols: 1,
             skills: [
                 { name: "React" },
                 { name: "Next.js" },
                 { name: "TypeScript" },
                 { name: "Tailwind CSS" },
+                { name: "Shadcn/ui" },
                 { name: "Redux" },
                 { name: "Bootstrap" },
                 { name: "CSS3" },
@@ -14,6 +16,7 @@ export default function Skills() {
         },
         {
             title: "Backend",
+            cols: 1,
             skills: [
                 { name: "Node.js" },
                 { name: "PHP" },
@@ -25,6 +28,7 @@ export default function Skills() {
         },
         {
             title: "Cloud & DevOps",
+            cols: 1,
             skills: [
                 { name: "AWS EC2" },
                 { name: "AWS RDS" },
@@ -39,6 +43,7 @@ export default function Skills() {
         },
         {
             title: "Databases",
+            cols: 1,
             skills: [
                 { name: "MySQL" },
                 { name: "MariaDB" },
@@ -48,7 +53,8 @@ export default function Skills() {
             ],
         },
         {
-            title: "AI & Automation",
+            title: "AI",
+            cols: 1,
             skills: [
                 { name: "OpenAI" },
                 { name: "Anthropic Claude" },
@@ -61,10 +67,11 @@ export default function Skills() {
             ],
         },
         {
-            title: "E-commerce & Integrations",
+            title: "E-commerce",
+            cols: 1,
             skills: [
                 { name: "WordPress" },
-                { name: "WooCommerce (custom plugins & themes)" },
+                { name: "WordPress Plugins & Themes" },
                 { name: "Shopify" },
                 { name: "Shopware" },
                 { name: "Printify" },
@@ -75,26 +82,25 @@ export default function Skills() {
             ],
         },
         {
-            title: "Tools & Other Technologies",
+            title: "Other Technologies",
+            cols: 2,
             skills: [
-                { name: "WordPress" },
+                { name: "Unity Videogames" },
+                { name: "Android" },
                 { name: "Git" },
                 { name: "GitHub" },
-                { name: "GitLab" },
                 { name: "Bitbucket" },
-                { name: "SVN" },
-                { name: "Unity" },
                 { name: "C / C++" },
                 { name: "Assembly" },
                 { name: "Microcontrollers (Microchip, ARM, Espressif)" },
                 { name: "LabVIEW" },
-                { name: "Android" },
+                { name: "Electronics" },
             ],
         },
     ];
 
     return (
-        <section className="min-h-screen flex items-center justify-center py-36">
+        <section className="min-h-screen flex items-center justify-center pt-18 pb-36">
             <div className="container mx-auto">
                 {/* Section Header */}
                 <div className="mb-16 space-y-4">
@@ -113,11 +119,14 @@ export default function Skills() {
                 {/* Skills Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-16">
                     {skillCategories.map((category, idx) => (
-                        <div key={idx} className="space-y-6">
+                        <div
+                            key={idx}
+                            className={`space-y-6 col-span-${category.cols}`}
+                        >
                             <h3 className="text-2xl font-bold text-primary border-b-2 border-primary pb-2">
                                 {category.title}
                             </h3>
-                            <div className="flex flex-wrap gap-2">
+                            <div className={`flex flex-wrap gap-2`}>
                                 {category.skills.map((skill, skillIdx) => (
                                     <span
                                         key={skillIdx}
