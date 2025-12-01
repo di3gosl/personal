@@ -88,21 +88,20 @@ export default function Header() {
             </div>
 
             {/* Floating Email Button */}
-            <motion.div
+            <motion.button
                 className="fixed bottom-8 left-8 w-11 h-11 bg-accent rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-secondary"
                 aria-label="Contact via email"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
-                    duration: 0.5,
-                    delay: 0.8,
-                    ease: naturalEase,
+                    scale: { type: "tween", duration: 0.2, ease: naturalEase },
+                    opacity: { duration: 0.5, delay: 0.6, ease: naturalEase },
                 }}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.95 }}
             >
-                <Mail className="w-4.5 h-4.5 text-white transition-all duration-300" />
-            </motion.div>
+                <Mail className="w-4.5 h-4.5 text-white" />
+            </motion.button>
         </motion.header>
     );
 }
