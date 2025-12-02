@@ -5,6 +5,7 @@ import { useInView } from "motion/react";
 import { useRef } from "react";
 import { naturalEase } from "../lib/animations";
 import { Heart } from "lucide-react";
+import Link from "next/link";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,7 +76,12 @@ export default function Footer() {
                     <div className="text-accent">
                         E:
                         <span className="text-primary ml-1">
-                            diego.salazar.ic@gmail.com
+                            <a
+                                href="mailto:diego.salazar.ic@gmail.com"
+                                className="text-primary hover:underline underline-offset-4"
+                            >
+                                diego.salazar.ic@gmail.com
+                            </a>
                         </span>
                     </div>
                 </motion.div>
@@ -87,7 +93,7 @@ export default function Footer() {
                         Follow me on
                     </div>
                     <motion.div
-                        className="text-primary space-y-1.5"
+                        className="text-primary space-y-1"
                         variants={containerVariants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
@@ -122,6 +128,14 @@ export default function Footer() {
                                 Behance
                             </a>
                         </motion.div>
+                        <motion.div variants={linkVariants}>
+                            <Link
+                                href="/contact"
+                                className="text-primary hover:underline underline-offset-4"
+                            >
+                                Contact
+                            </Link>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
                 <motion.div
@@ -130,7 +144,8 @@ export default function Footer() {
                 >
                     <div className="mb-1">Copyright © 2025 Diego Salazar</div>
                     <div className="flex justify-center items-center">
-                        Made with <Heart className="w-4.5 h-4.5 text-accent mx-1 fill-current" />
+                        Made with{" "}
+                        <Heart className="w-4.5 h-4.5 text-accent mx-1 fill-current" />
                         in Merida, Mexico.
                     </div>
                 </motion.div>

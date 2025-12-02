@@ -21,6 +21,7 @@ export default function Portfolio() {
                 "TypeScript",
                 "TailwindCSS",
                 "Framer Motion",
+                "shadcn/ui",
             ],
             year: "2025",
             image: "/images/portfolio/personal-preview.png",

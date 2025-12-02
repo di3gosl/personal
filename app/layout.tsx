@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import PageTransition from "@/src/components/PageTransition";
+import Header from "@/src/components/Header";
+import Footer from "@/src/components/Footer";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -31,7 +33,11 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}
             >
-                <PageTransition>{children}</PageTransition>
+                <PageTransition>
+                    <Header />
+                    {children}
+                    <Footer />
+                </PageTransition>
             </body>
         </html>
     );

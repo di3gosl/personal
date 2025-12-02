@@ -1,9 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
-import Header from "@/src/components/Header";
-import Footer from "@/src/components/Footer";
 import { naturalEase } from "@/src/lib/animations";
 import PortfolioCard from "@/src/components/PortfolioCard";
 
@@ -31,6 +28,7 @@ export default function Portfolio() {
                 "TypeScript",
                 "TailwindCSS",
                 "Framer Motion",
+                "shadcn/ui",
             ],
             year: "2025",
             image: "/images/portfolio/personal-preview.png",
@@ -85,7 +83,6 @@ export default function Portfolio() {
 
     return (
         <>
-            <Header />
             <motion.main
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -103,12 +100,6 @@ export default function Portfolio() {
                                 ease: naturalEase,
                             }}
                         >
-                            <Link
-                                href="/"
-                                className="inline-flex items-center text-sm text-accent hover:text-primary transition-colors mb-4"
-                            >
-                                <span>← Back to Home</span>
-                            </Link>
                             <p className="text-sm tracking-[0.4em] uppercase text-accent">
                                 Featured Work
                             </p>
@@ -151,7 +142,6 @@ export default function Portfolio() {
                     </div>
                 </section>
             </motion.main>
-            <Footer />
         </>
     );
 }

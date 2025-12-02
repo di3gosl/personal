@@ -2,6 +2,7 @@
 
 import { Mouse } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { containerVariants, naturalEase } from "@/src/lib/animations";
 
@@ -64,13 +65,9 @@ export default function Hero() {
                         className="flex flex-wrap items-center gap-6 text-base font-semibold"
                         variants={itemVariants}
                     >
-                        <button className="hover:underline underline-offset-4 transition-all cursor-pointer">
-                            View Projects
-                        </button>
-                        <span className="text-gray-400">or</span>
-                        <button className="hover:underline underline-offset-4 transition-all cursor-pointer">
-                            Read About Me
-                        </button>
+                        <Link href="/about" className="hover:underline underline-offset-4 transition-all cursor-pointer">
+                            Read more about me →
+                        </Link>
                     </motion.div>
                 </motion.div>
 
