@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import PortfolioCard from "@/src/components/PortfolioCard";
-import { containerVariants, naturalEase } from "@/src/lib/animations";
+import PortfolioCard from "@/components/PortfolioCard";
+import { containerVariants, naturalEase } from "@/lib/animations";
 
 export default function Portfolio() {
     const ref = useRef(null);

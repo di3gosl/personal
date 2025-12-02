@@ -4,7 +4,7 @@ import { Mouse } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { containerVariants, naturalEase } from "@/src/lib/animations";
+import { containerVariants, naturalEase } from "@/lib/animations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },

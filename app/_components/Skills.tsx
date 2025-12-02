@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { containerVariants, naturalEase } from "@/src/lib/animations";
+import { containerVariants, naturalEase } from "@/lib/animations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -88,14 +88,16 @@ export default function Skills() {
             title: "AI",
             cols: 1,
             skills: [
+                { name: "Prompt Engineering" },
                 { name: "OpenAI" },
-                { name: "Anthropic Claude" },
-                { name: "Google Gemini" },
+                { name: "Claude" },
+                { name: "Gemini" },
                 { name: "Chatbots & Assistants" },
                 { name: "AI-driven automation" },
                 { name: "GitHub Copilot" },
                 { name: "Agentic Frameworks" },
                 { name: "RAG" },
+                { name: "Vector Databases" },
             ],
         },
         {

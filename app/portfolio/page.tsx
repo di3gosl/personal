@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { naturalEase } from "@/src/lib/animations";
-import PortfolioCard from "@/src/components/PortfolioCard";
+import { naturalEase } from "@/lib/animations";
+import PortfolioCard from "@/components/PortfolioCard";
 
 const containerVariants = {
     hidden: { opacity: 0 },

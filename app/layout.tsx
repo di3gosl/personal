@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import PageTransition from "@/src/components/PageTransition";
-import Header from "@/src/components/Header";
-import Footer from "@/src/components/Footer";
+import PageTransition from "@/components/PageTransition";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
     variable: "--font-inter",
