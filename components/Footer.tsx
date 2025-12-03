@@ -54,7 +54,7 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
         >
             <motion.div
-                className="container mx-auto text-primary grid grid-cols-12 border-t border-light pt-10 gap-4"
+                className={`container mx-auto text-primary grid grid-cols-12 border-t border-light pt-10 gap-4`}
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -144,7 +144,7 @@ export default function Footer() {
                 >
                     <div className="mb-1">Copyright © 2025 Diego Salazar</div>
                     <div className="flex justify-center items-center">
-                        Made with{" "}
+                        Built with{" "}
                         <Heart className="w-4.5 h-4.5 text-accent mx-1 fill-current" />
                         in Merida, Mexico.
                     </div>

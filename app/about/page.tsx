@@ -1,8 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+import Hero from "./_components/Hero";
+import Gallery from "./_components/Gallery";
+import Education from "./_components/Education";
+import Skills from "./_components/Skills";
+import Experience from "./_components/Experience";
 
-export default function Contact() {
+export default function About() {
     return (
         <>
             <motion.main
@@ -10,7 +15,11 @@ export default function Contact() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <section className="min-h-screen pt-32 pb-24 px-6 md:px-12"></section>
+                <Hero />
+                <Gallery />
+                <Education />
+                <Skills />
+                <Experience />
             </motion.main>
         </>
     );

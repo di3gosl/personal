@@ -66,8 +66,6 @@ export default function Header() {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    console.log(menuButtonPosition);
-
     return (
         <>
             <motion.header

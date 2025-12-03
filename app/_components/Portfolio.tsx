@@ -85,7 +85,7 @@ export default function Portfolio() {
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center pt-36 pb-18 px-6 md:px-12"
+            className="min-h-screen flex items-center justify-center pt-36 pb-18 px-6 md:px-12 bg-light/40"
         >
             <div className="container mx-auto">
                 {/* Section Header */}
