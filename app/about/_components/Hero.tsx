@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Code2, Heart } from "lucide-react";
+import { Code2, Heart, Mouse } from "lucide-react";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import { HIGHLIGHTS } from "@/data/highlights";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -17,31 +18,8 @@ const itemVariants = {
 };
 
 export default function Hero() {
-    const highlights = [
-        {
-            label: "Experience",
-            value: "10+ years",
-        },
-        {
-            label: "Specialization",
-            value: "Full-Stack Developer",
-        },
-        {
-            label: "Focus Areas",
-            value: "SaaS · Web Apps · Automation · AI",
-        },
-        {
-            label: "Tech Stack",
-            value: "Next.js · Node.js · AWS · Wordpress",
-        },
-        {
-            label: "Location",
-            value: "Merida, Mexico",
-        },
-    ];
-
     return (
-        <section className="min-h-screen flex items-center justify-center pt-16 pb-24 px-6 md:px-12">
+        <section className="relative min-h-screen flex items-center justify-center pt-16 pb-24 px-6 md:px-12">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     {/* Left Column - Main Content */}
@@ -63,9 +41,9 @@ export default function Hero() {
                                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary">
                                     Diego Salazar
                                 </h1>
-                                <h2 className="text-2xl md:text-3xl text-accent">
+                                <p className="text-2xl md:text-3xl text-accent">
                                     Full-Stack Developer
-                                </h2>
+                                </p>
                             </motion.div>
 
                             {/* Professional Summary */}
@@ -74,11 +52,14 @@ export default function Hero() {
                                 variants={itemVariants}
                             >
                                 <div className="flex items-start gap-4">
-                                    <Code2 className="w-8 h-8 text-primary shrink-0 mt-1" />
+                                    <Code2
+                                        className="w-8 h-8 text-primary shrink-0 mt-1"
+                                        aria-hidden="true"
+                                    />
                                     <div className="space-y-4">
-                                        <h3 className="text-2xl font-bold text-primary">
+                                        <h2 className="text-2xl font-bold text-primary">
                                             Professional Summary
-                                        </h3>
+                                        </h2>
                                         <p className="text-lg leading-relaxed text-accent">
                                             I&apos;m Diego Salazar, a full-stack
                                             developer with a Master&apos;s
@@ -108,11 +89,14 @@ export default function Hero() {
                                 variants={itemVariants}
                             >
                                 <div className="flex items-start gap-4">
-                                    <Heart className="w-8 h-8 text-primary shrink-0 mt-1" />
+                                    <Heart
+                                        className="w-8 h-8 text-primary shrink-0 mt-1"
+                                        aria-hidden="true"
+                                    />
                                     <div className="space-y-4">
-                                        <h3 className="text-2xl font-bold text-primary">
+                                        <h2 className="text-2xl font-bold text-primary">
                                             Beyond the Code
-                                        </h3>
+                                        </h2>
                                         <p className="text-lg leading-relaxed text-accent">
                                             When I&apos;m not coding,
                                             you&apos;ll find me lacing up my
@@ -143,13 +127,13 @@ export default function Hero() {
                                 animate="visible"
                             >
                                 <motion.div variants={itemVariants}>
-                                    <h3 className="text-sm tracking-[0.3em] uppercase text-accent/70 mb-6">
+                                    <h2 className="text-sm tracking-[0.3em] uppercase text-accent/70 mb-6">
                                         At a Glance
-                                    </h3>
+                                    </h2>
                                     <ul className="space-y-4">
-                                        {highlights.map((item, index) => (
+                                        {HIGHLIGHTS.map((item) => (
                                             <motion.li
-                                                key={index}
+                                                key={item.label}
                                                 className="border-l-2 border-accent/20 pl-4 py-2"
                                                 variants={itemVariants}
                                             >
@@ -170,6 +154,22 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                className="absolute bottom-8 left-1/2 flex flex-col items-center gap-2"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 1,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: 0.2,
+                }}
+            >
+                <Mouse className="w-8 h-8 text-primary" aria-hidden="true" />
+            </motion.div>
         </section>
     );
 }

@@ -67,8 +67,8 @@ export default function Portfolio() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {PROJECTS.map((project, idx) => (
-                        <PortfolioCard key={idx} project={project} />
+                    {PROJECTS.map((project) => (
+                        <PortfolioCard key={project.title} project={project} />
                     ))}
                 </motion.div>
 

@@ -5,6 +5,15 @@ import Image from "next/image";
 import { useRef } from "react";
 import { containerVariants, naturalEase } from "@/lib/animations";
 
+const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: naturalEase },
+    },
+};
+
 const imageVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
@@ -17,31 +26,28 @@ const imageVariants = {
     },
 };
 
+const PHOTOS = [
+    "/images/gallery/photo-1.jpg",
+    "/images/gallery/photo-2.jpg",
+    "/images/gallery/photo-3.jpg",
+    "/images/gallery/photo-4.jpg",
+    "/images/gallery/photo-5.jpg",
+    "/images/gallery/photo-6.jpg",
+];
+
 export default function Gallery() {
     const galleryRef = useRef(null);
     const isGalleryInView = useInView(galleryRef, { once: true, amount: 0.2 });
 
-    const photos = [
-        "/images/gallery/photo-1.jpg",
-        "/images/gallery/photo-2.jpg",
-        "/images/gallery/photo-3.jpg",
-        "/images/gallery/photo-4.jpg",
-        "/images/gallery/photo-5.jpg",
-        "/images/gallery/photo-6.jpg",
-    ];
-
     return (
         <section ref={galleryRef} className="py-24 px-6 md:px-12 bg-light/40">
             <div className="container mx-auto">
+                {/* Section Header */}
                 <motion.div
                     className="mb-12 space-y-4"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={
-                        isGalleryInView
-                            ? { opacity: 1, y: 0 }
-                            : { opacity: 0, y: -20 }
-                    }
-                    transition={{ duration: 0.6, ease: naturalEase }}
+                    variants={headerVariants}
+                    initial="hidden"
+                    animate={isGalleryInView ? "visible" : "hidden"}
                 >
                     <p className="text-sm tracking-[0.4em] uppercase text-accent">
                         Gallery
@@ -55,15 +61,16 @@ export default function Gallery() {
                     </p>
                 </motion.div>
 
+                {/* Image Grid */}
                 <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isGalleryInView ? "visible" : "hidden"}
                 >
-                    {photos.map((photo, idx) => (
+                    {PHOTOS.map((photo, idx) => (
                         <motion.div
-                            key={idx}
+                            key={photo}
                             className="relative aspect-square overflow-hidden rounded-lg bg-light"
                             variants={imageVariants}
                             whileHover={{

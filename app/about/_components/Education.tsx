@@ -33,7 +33,7 @@ export default function Education() {
                     <h2 className="text-4xl md:text-5xl font-bold text-primary">
                         Academic Background
                     </h2>
-                    <p className="text-lg md:text-xl text-accent max-w-2xl leading-relaxed">
+                    <p className="text-lg md:text-xl text-accent max-w-3xl leading-relaxed">
                         Academic foundations in computing, algorithms, and
                         Software Engineering.
                     </p>
@@ -47,10 +47,7 @@ export default function Education() {
                     viewport={{ once: true }}
                 >
                     {/* Master's Degree */}
-                    <motion.div
-                        className="group relative"
-                        variants={itemVariants}
-                    >
+                    <motion.div className="relative" variants={itemVariants}>
                         <div className="flex items-start gap-4">
                             <GraduationCap className="w-8 h-8 text-primary shrink-0 mt-1" />
                             <div className="space-y-2">
@@ -58,7 +55,7 @@ export default function Education() {
                                     Master&apos;s Degree in Computer Science
                                 </h3>
                                 <p className="text-lg leading-relaxed text-accent">
-                                    Universidad Autónoma de Yucatan (2012 -
+                                    Universidad Autonoma de Yucatan (2012 -
                                     2016)
                                 </p>
                             </div>
@@ -66,10 +63,7 @@ export default function Education() {
                     </motion.div>
 
                     {/* Bachelor's Degree */}
-                    <motion.div
-                        className="group relative"
-                        variants={itemVariants}
-                    >
+                    <motion.div className="relative" variants={itemVariants}>
                         <div className="flex items-start gap-4">
                             <School className="w-8 h-8 text-primary shrink-0 mt-1" />
                             <div className="space-y-2">
@@ -78,7 +72,7 @@ export default function Education() {
                                     Engineering
                                 </h3>
                                 <p className="text-lg leading-relaxed text-accent">
-                                    Universidad Autónoma de Yucatan (2005 -
+                                    Universidad Autonoma de Yucatan (2005 -
                                     2011)
                                 </p>
                             </div>

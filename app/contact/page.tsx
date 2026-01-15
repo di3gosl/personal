@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Send } from "lucide-react";
 
-export default function Contact() {
+export default function ContactPage() {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
