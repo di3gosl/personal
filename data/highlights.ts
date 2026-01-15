@@ -19,4 +19,8 @@ export const HIGHLIGHTS = [
         label: "Location",
         value: "Merida, Mexico",
     },
+    {
+        label: "Languages",
+        value: "English (Fluent) · Spanish (Native)",
+    },
 ];

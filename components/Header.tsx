@@ -90,7 +90,7 @@ export default function Header() {
     return (
         <>
             <motion.header
-                className="fixed top-0 left-0 right-0 z-30 px-6 md:px-12 py-6"
+                className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6"
                 variants={headerVariants}
                 initial="hidden"
                 animate="visible"

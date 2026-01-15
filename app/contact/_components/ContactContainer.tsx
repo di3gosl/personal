@@ -31,6 +31,12 @@ export default function ContactContainer({ submitContactForm }: Props) {
                     I help startups, businesses, and teams develop modern web
                     applications, SaaS products, and automation tools.
                 </p>
+                <p className="text-base md:text-lg text-accent/80 max-w-2xl">
+                    I speak Spanish — Feel free to contact me in Spanish if you prefer.
+                </p>
+                <p className="text-sm md:text-base text-accent/80 max-w-2xl -mt-3">
+                    (Hablo español — Puedes contactarme en español si lo prefieres.)
+                </p>
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-14">
