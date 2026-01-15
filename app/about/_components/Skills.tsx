@@ -51,8 +51,9 @@ export default function Skills() {
             cols: 1,
             skills: [
                 { name: "Node.js" },
-                { name: "PHP" },
+                { name: "Prisma" },
                 { name: "REST APIs" },
+                { name: "PHP" },
                 { name: "GraphQL" },
                 { name: "Python" },
             ],
@@ -147,7 +148,7 @@ export default function Skills() {
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center pt-18 pb-36 px-6 md:px-12 bg-light/40"
+            className="min-h-screen flex items-center justify-center pt-18 pb-24 px-6 md:px-12 bg-light/40"
         >
             <div className="container mx-auto">
                 {/* Section Header */}

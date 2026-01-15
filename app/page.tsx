@@ -5,11 +5,11 @@ import Portfolio from "./_components/Portfolio";
 export default function Home() {
     return (
         <>
-            <main>
+            <div>
                 <Hero />
                 <Portfolio />
                 <Skills />
-            </main>
+            </div>
         </>
     );
 }

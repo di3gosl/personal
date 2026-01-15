@@ -290,7 +290,7 @@ export default function Experience() {
                                 Cytron Soluciones Moviles
                             </p>
                             <p className="text-sm text-accent mb-2">
-                                October 2011 - January 2015 · 3 years 4 months
+                                August 2010 - February 2011 · 7 months
                             </p>
                             <p className="text-sm text-accent">
                                 At Cytron, I worked on web applications using

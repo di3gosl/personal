@@ -81,13 +81,15 @@ export default function Hero() {
                                         </h3>
                                         <p className="text-lg leading-relaxed text-accent">
                                             I&apos;m Diego Salazar, a full-stack
-                                            developer who focuses on building
-                                            clear, efficient, and meaningful
-                                            digital experiences. I specialize in
-                                            scalable web applications, SaaS
-                                            platforms, and AI-powered systems
-                                            that help businesses bring their
-                                            ideas to life.
+                                            developer with a Master&apos;s
+                                            degree in Computer Science. I focus
+                                            on building clear, efficient, and
+                                            meaningful digital experiences. I
+                                            specialize in scalable web
+                                            applications, SaaS platforms, and
+                                            AI-powered systems that help
+                                            businesses bring their ideas to
+                                            life.
                                         </p>
                                         <p className="text-lg leading-relaxed text-accent">
                                             With over a decade of experience

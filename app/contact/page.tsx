@@ -38,7 +38,7 @@ export default function Contact() {
 
     return (
         <>
-            <motion.main
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -354,7 +354,7 @@ export default function Contact() {
                         </motion.div>
                     </div>
                 </div>
-            </motion.main>
+            </motion.div>
         </>
     );
 }

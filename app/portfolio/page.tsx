@@ -83,7 +83,7 @@ export default function Portfolio() {
 
     return (
         <>
-            <motion.main
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -141,7 +141,7 @@ export default function Portfolio() {
                         </motion.div>
                     </div>
                 </section>
-            </motion.main>
+            </motion.div>
         </>
     );
 }

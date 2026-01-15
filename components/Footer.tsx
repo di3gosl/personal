@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { naturalEase } from "../lib/animations";
 import { Heart } from "lucide-react";
@@ -13,6 +12,17 @@ const containerVariants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.15,
+            delayChildren: 0.1,
+        },
+    },
+};
+
+const linksContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.08,
             delayChildren: 0.1,
         },
     },
@@ -31,10 +41,9 @@ const itemVariants = {
 };
 
 const linkVariants = {
-    hidden: { opacity: 0, x: -10 },
+    hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        x: 0,
         transition: {
             duration: 0.3,
         },
@@ -46,32 +55,30 @@ export default function Footer() {
     const isInView = useInView(ref, { once: true, amount: 0.3 });
 
     return (
-        <motion.footer
-            ref={ref}
-            className="bg-background pb-6 px-6 md:px-12"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6 }}
-        >
+        <footer className="bg-background pb-6 px-6 md:px-12">
             <motion.div
+                ref={ref}
                 className={`container mx-auto text-primary grid grid-cols-12 border-t border-light pt-10 gap-4`}
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
             >
-                <motion.div className="col-span-5" variants={itemVariants}>
+                <motion.div
+                    className="col-span-12 md:col-span-5"
+                    variants={itemVariants}
+                >
                     <div className="text-primary mb-5 text-lg font-semibold">
                         Contact Information
                     </div>
                     <div className="mb-4 text-accent">
                         Feel free to reach out by email, connect with me on
                         social media, or send a message through the{" "}
-                        <a
+                        <Link
                             href="/contact"
                             className="text-primary hover:underline"
                         >
                             contact form.
-                        </a>
+                        </Link>
                     </div>
                     <div className="text-accent">
                         E:
@@ -86,7 +93,7 @@ export default function Footer() {
                     </div>
                 </motion.div>
                 <motion.div
-                    className="col-span-3 col-start-10"
+                    className="col-span-12 md:col-span-3 md:col-start-10"
                     variants={itemVariants}
                 >
                     <div className="text-primary mb-5 text-lg font-semibold">
@@ -94,7 +101,7 @@ export default function Footer() {
                     </div>
                     <motion.div
                         className="text-primary space-y-1"
-                        variants={containerVariants}
+                        variants={linksContainerVariants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                     >
@@ -142,7 +149,9 @@ export default function Footer() {
                     className="col-span-12 text-accent text-sm text-center mt-6"
                     variants={itemVariants}
                 >
-                    <div className="mb-1">Copyright © 2025 Diego Salazar</div>
+                    <div className="mb-1">
+                        Copyright © {new Date().getFullYear()} Diego Salazar
+                    </div>
                     <div className="flex justify-center items-center">
                         Built with{" "}
                         <Heart className="w-4.5 h-4.5 text-accent mx-1 fill-current" />
@@ -150,6 +159,6 @@ export default function Footer() {
                     </div>
                 </motion.div>
             </motion.div>
-        </motion.footer>
+        </footer>
     );
 }

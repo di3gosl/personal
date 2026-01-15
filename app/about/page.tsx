@@ -10,7 +10,7 @@ import Experience from "./_components/Experience";
 export default function About() {
     return (
         <>
-            <motion.main
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -20,7 +20,7 @@ export default function About() {
                 <Education />
                 <Skills />
                 <Experience />
-            </motion.main>
+            </motion.div>
         </>
     );
 }
