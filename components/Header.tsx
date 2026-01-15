@@ -90,7 +90,7 @@ export default function Header() {
     return (
         <>
             <motion.header
-                className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6"
+                className="fixed top-0 left-0 right-0 z-30 px-6 md:px-12 py-6 bg-white/70 backdrop-blur-md border"
                 variants={headerVariants}
                 initial="hidden"
                 animate="visible"
@@ -104,7 +104,7 @@ export default function Header() {
                                     D<span className="cursor-blink">_</span>
                                 </span>
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex flex-col space-y-0.5">
                                 <span className="text-lg font-bold leading-tight text-primary">
                                     Diego Salazar
                                 </span>
