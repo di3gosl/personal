@@ -37,13 +37,13 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     const form = useForm<ContactFormData>({
         resolver: zodResolver(contactSchema),
         defaultValues: {
-            firstName: "Diego",
-            lastName: "Salazar",
-            email: "diego_1717@hotmail.com",
-            company: "Mypet",
+            firstName: "",
+            lastName: "",
+            email: "",
+            company: "",
             projectType: "",
             foundMe: "",
-            message: "This is a test message",
+            message: "",
             website: "",
         },
     });

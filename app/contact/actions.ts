@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { generateContactEmailTemplate } from "@/emails/ContactEmail";
 import { contactSchema, type ContactFormData } from "@/lib/validators/contact";
+import prisma from "@/lib/prisma";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -21,20 +22,18 @@ export async function submitContactAction(data: ContactFormData) {
             };
         }
 
-        // TODO: Add message to database
-        // Example:
-        // await db.contactSubmissions.create({
-        //     data: {
-        //         firstName: validatedData.firstName,
-        //         lastName: validatedData.lastName,
-        //         email: validatedData.email,
-        //         company: validatedData.company,
-        //         projectType: validatedData.projectType,
-        //         foundMe: validatedData.foundMe,
-        //         message: validatedData.message,
-        //         createdAt: new Date(),
-        //     }
-        // });
+        // Save message to database
+        await prisma.contactMessage.create({
+            data: {
+                firstName: validatedData.firstName,
+                lastName: validatedData.lastName,
+                email: validatedData.email,
+                company: validatedData.company,
+                projectType: validatedData.projectType,
+                foundMe: validatedData.foundMe,
+                message: validatedData.message,
+            },
+        });
 
         // Send email using Resend
         const emailResponse = await resend.emails.send({
