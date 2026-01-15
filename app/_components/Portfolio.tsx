@@ -5,100 +5,47 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import PortfolioCard from "@/components/PortfolioCard";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import { PROJECTS } from "@/data/projects";
+import { ArrowRight } from "lucide-react";
+
+const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: naturalEase },
+    },
+};
+
+const additionalInfoVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            delay: 0.8,
+            ease: naturalEase,
+        },
+    },
+};
 
 export default function Portfolio() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
-    const projects = [
-        {
-            title: "AI-Powered Chatbot System",
-            description:
-                "I built my personal portfolio website using Next.js, TypeScript, TailwindCSS, and Framer Motion, with Supabase for backend services and data management. The site showcases my work with a clean, minimal design and subtle animations for a smooth user experience.",
-            technologies: [
-                "Next.js",
-                "React",
-                "Supabase",
-                "TypeScript",
-                "TailwindCSS",
-                "Framer Motion",
-                "shadcn/ui",
-            ],
-            year: "2025",
-            image: "/images/portfolio/personal-preview.png",
-            label: "Public",
-        },
-        {
-            title: "BioFractal Website",
-            description:
-                "I developed an informational website for BioFractal using a modern full-stack architecture with React, Redux, Node.js, MySQL, and PHP. The frontend was built with React and Bootstrap, complemented by custom HTML and CSS for layout and styling.",
-            technologies: [
-                "Node.js",
-                "Yii Framework",
-                "Bootstrap",
-                "React",
-                "Redux",
-                "MySQL",
-                "PHP",
-            ],
-            year: "2019",
-            image: "/images/portfolio/biofractal-preview.png",
-            label: "",
-        },
-        {
-            title: "WordPress Plugin Suite",
-            description:
-                "Created custom WooCommerce plugins for print-on-demand automation, integrating multiple fulfillment providers and payment gateways.",
-            technologies: ["PHP", "WordPress", "WooCommerce", "REST APIs"],
-            year: "2023",
-            image: "",
-            label: "",
-        },
-        {
-            title: "Real-time Analytics Dashboard",
-            description:
-                "Built a high-performance analytics platform processing millions of events daily with real-time visualization and reporting capabilities.",
-            technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
-            year: "2022",
-            image: "",
-            label: "",
-        },
-        {
-            title: "Inventory Management System",
-            description:
-                "Developed a comprehensive inventory tracking solution with multi-warehouse support, barcode scanning, and QuickBooks integration.",
-            technologies: ["Next.js", "TypeScript", "MySQL", "Node.js"],
-            year: "2022",
-            image: "",
-            label: "",
-        },
-        {
-            title: "Mobile IoT Application",
-            description:
-                "Created Android application for real-time monitoring and control of IoT devices using custom firmware on ESP32 microcontrollers.",
-            technologies: ["Android", "C++", "ESP32", "MQTT", "Firebase"],
-            year: "2021",
-            image: "",
-            label: "",
-        },
-    ];
 
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center pt-36 pb-18 px-6 md:px-12 bg-light/40"
+            className="flex items-center justify-center pt-36 pb-20 px-6 md:px-12 bg-light/40"
         >
             <div className="container mx-auto">
                 {/* Section Header */}
                 <motion.div
                     className="mb-16 space-y-4"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={
-                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
-                    }
-                    transition={{
-                        duration: 0.6,
-                        ease: naturalEase,
-                    }}
+                    variants={headerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
                 >
                     <p className="text-sm tracking-[0.4em] uppercase text-accent">
                         Featured Work
@@ -120,7 +67,7 @@ export default function Portfolio() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {projects.map((project, idx) => (
+                    {PROJECTS.map((project, idx) => (
                         <PortfolioCard key={idx} project={project} />
                     ))}
                 </motion.div>
@@ -128,15 +75,9 @@ export default function Portfolio() {
                 {/* Additional Info */}
                 <motion.div
                     className="mt-8 pt-12 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                        isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                    }
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.8,
-                        ease: naturalEase,
-                    }}
+                    variants={additionalInfoVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
                 >
                     <p className="text-lg text-accent max-w-3xl mx-auto mb-6">
                         These projects represent a fraction of my work.
@@ -146,9 +87,10 @@ export default function Portfolio() {
                     </p>
                     <Link
                         href="/portfolio"
-                        className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer"
+                        className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer flex items-center justify-center"
                     >
-                        View All Projects →
+                        View All Projects
+                        <ArrowRight className="ml-1 w-4 h-4" />
                     </Link>
                 </motion.div>
             </div>

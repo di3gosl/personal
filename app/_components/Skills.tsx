@@ -4,6 +4,17 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import Link from "next/link";
+import { SKILLS } from "@/data/skills";
+import { ArrowRight } from "lucide-react";
+
+const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: naturalEase },
+    },
+};
 
 const skillBadgeVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -16,26 +27,14 @@ const skillBadgeVariants = {
     },
 };
 
-const skills = [
-    { name: "React" },
-    { name: "Next.js" },
-    { name: "TypeScript" },
-    { name: "Node.js" },
-    { name: "PHP" },
-    { name: "AWS" },
-    { name: "MySQL" },
-    { name: "MongoDB" },
-    { name: "AWS" },
-    { name: "REST APIs" },
-    { name: "GraphQL" },
-    { name: "Tailwind CSS" },
-    { name: "WordPress" },
-    { name: "WooCommerce" },
-    { name: "AI Integration" },
-    { name: "OpenAI" },
-    { name: "Prompt Engineering" },
-    { name: "Git" },
-];
+const footerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: naturalEase },
+    },
+};
 
 export default function Skills() {
     const skillsRef = useRef(null);
@@ -46,13 +45,9 @@ export default function Skills() {
             <div className="container mx-auto">
                 <motion.div
                     className="mb-12 space-y-4"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={
-                        isSkillsInView
-                            ? { opacity: 1, y: 0 }
-                            : { opacity: 0, y: -20 }
-                    }
-                    transition={{ duration: 0.6, ease: naturalEase }}
+                    variants={headerVariants}
+                    initial="hidden"
+                    animate={isSkillsInView ? "visible" : "hidden"}
                 >
                     <p className="text-sm tracking-[0.4em] uppercase text-accent">
                         Technical Skills
@@ -72,14 +67,17 @@ export default function Skills() {
                     initial="hidden"
                     animate={isSkillsInView ? "visible" : "hidden"}
                 >
-                    {skills.map((skill, idx) => (
+                    {SKILLS.map((skill, idx) => (
                         <motion.span
                             key={idx}
                             className="px-5 py-3 bg-white text-gray-800 text-base font-medium rounded-lg border border-light hover:bg-primary hover:text-white transition-colors cursor-default"
                             variants={skillBadgeVariants}
                             whileHover={{
                                 scale: 1.05,
-                                transition: { duration: 0.2 },
+                                transition: {
+                                    duration: 0.2,
+                                    ease: naturalEase,
+                                },
                             }}
                         >
                             {skill.name}
@@ -89,17 +87,9 @@ export default function Skills() {
 
                 <motion.div
                     className="mt-12 text-center space-y-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                        isSkillsInView
-                            ? { opacity: 1, y: 0 }
-                            : { opacity: 0, y: 20 }
-                    }
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.8,
-                        ease: naturalEase,
-                    }}
+                    variants={footerVariants}
+                    initial="hidden"
+                    animate={isSkillsInView ? "visible" : "hidden"}
                 >
                     <p className="text-lg text-accent text-center max-w-4xl mx-auto">
                         This is just a snapshot of my technical toolkit.
@@ -109,9 +99,10 @@ export default function Skills() {
                     </p>
                     <Link
                         href="/about"
-                        className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer"
+                        className="text-base font-semibold text-primary hover:underline underline-offset-4 transition-all cursor-pointer flex items-center justify-center mt-6"
                     >
-                        View All My Skills →
+                        View All My Skills
+                        <ArrowRight className="ml-1 w-4 h-4" />
                     </Link>
                 </motion.div>
             </div>

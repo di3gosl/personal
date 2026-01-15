@@ -1,6 +1,6 @@
 "use client";
 
-import { Mouse } from "lucide-react";
+import { ArrowRight, Mouse } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -33,8 +33,8 @@ const imageVariants = {
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center px-6 md:px-12">
-            <div className="container mx-auto min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+        <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
                 {/* Left Content */}
                 <motion.div
                     className="space-y-10 mt-16"
@@ -65,8 +65,12 @@ export default function Hero() {
                         className="flex flex-wrap items-center gap-6 text-base font-semibold"
                         variants={itemVariants}
                     >
-                        <Link href="/about" className="hover:underline underline-offset-4 transition-all cursor-pointer">
-                            Read more about me →
+                        <Link
+                            href="/about"
+                            className="hover:underline underline-offset-4 transition-all cursor-pointer flex items-center"
+                        >
+                            Read more about me
+                            <ArrowRight className="ml-1 w-4 h-4" />
                         </Link>
                     </motion.div>
                 </motion.div>
@@ -105,7 +109,7 @@ export default function Hero() {
                     repeatDelay: 0.2,
                 }}
             >
-                <Mouse className="w-8 h-8 text-primary" />
+                <Mouse className="w-8 h-8 text-primary" aria-hidden="true" />
             </motion.div>
         </section>
     );

@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { naturalEase } from "../lib/animations";
 import Image from "next/image";
+import type { Project } from "@/types/portfolio";
 
 const itemVariants = {
     hidden: {
@@ -22,14 +23,7 @@ const itemVariants = {
 };
 
 interface Props {
-    project: {
-        title: string;
-        description: string;
-        technologies: string[];
-        year: string;
-        image: string;
-        label: string;
-    };
+    project: Project;
 }
 
 export default function PortfolioCard({ project }: Props) {

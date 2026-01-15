@@ -12,6 +12,7 @@ export const containerVariants = {
         transition: {
             staggerChildren: 0.1,
             delayChildren: 0.2,
+            ease: naturalEase,
         },
     },
 };

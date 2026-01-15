@@ -55,9 +55,8 @@ export default function Footer() {
     const isInView = useInView(ref, { once: true, amount: 0.3 });
 
     return (
-        <footer className="bg-background pb-6 px-6 md:px-12">
+        <footer ref={ref} className="bg-background pb-6 px-6 md:px-12">
             <motion.div
-                ref={ref}
                 className={`container mx-auto text-primary grid grid-cols-12 border-t border-light pt-10 gap-4`}
                 variants={containerVariants}
                 initial="hidden"
