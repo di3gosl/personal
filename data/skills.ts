@@ -7,7 +7,6 @@ export const SKILLS = [
     { name: "AWS" },
     { name: "MySQL" },
     { name: "MongoDB" },
-    { name: "AWS" },
     { name: "REST APIs" },
     { name: "GraphQL" },
     { name: "Tailwind CSS" },

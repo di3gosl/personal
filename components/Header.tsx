@@ -46,9 +46,9 @@ const menuItemVariants = {
     visible: { opacity: 1, y: 0 },
     exit: {
         opacity: 0,
-        y: 20,
+        y: 0,
         transition: {
-            duration: 0.1,
+            duration: 0.08,
             ease: naturalEase,
         },
     },
