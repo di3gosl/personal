@@ -4,6 +4,7 @@ import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import { PHOTOS } from "@/data/gallery";
 
 const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -25,15 +26,6 @@ const imageVariants = {
         },
     },
 };
-
-const PHOTOS = [
-    "/images/gallery/photo-1.jpg",
-    "/images/gallery/photo-2.jpg",
-    "/images/gallery/photo-3.jpg",
-    "/images/gallery/photo-4.jpg",
-    "/images/gallery/photo-5.jpg",
-    "/images/gallery/photo-6.jpg",
-];
 
 export default function Gallery() {
     const galleryRef = useRef(null);
@@ -68,9 +60,9 @@ export default function Gallery() {
                     initial="hidden"
                     animate={isGalleryInView ? "visible" : "hidden"}
                 >
-                    {PHOTOS.map((photo, idx) => (
+                    {PHOTOS.map((photo) => (
                         <motion.div
-                            key={photo}
+                            key={photo.src}
                             className="relative aspect-square overflow-hidden rounded-lg bg-light"
                             variants={imageVariants}
                             whileHover={{
@@ -79,11 +71,11 @@ export default function Gallery() {
                             }}
                         >
                             <Image
-                                src={photo}
-                                alt={`Gallery photo ${idx + 1}`}
+                                src={photo.src}
+                                alt={photo.alt || "Gallery Image"}
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                className="object-cover"
+                                className={`cursor-pointer object-cover ${photo.align} grayscale-100 hover:grayscale-0 transition-all duration-500`}
                             />
                         </motion.div>
                     ))}
