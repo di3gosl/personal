@@ -2,10 +2,22 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { containerVariants, naturalEase } from "@/lib/animations";
+import { naturalEase } from "@/lib/animations";
 import Link from "next/link";
 import { SKILLS } from "@/data/skills";
 import { ArrowRight } from "lucide-react";
+
+export const skillsContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.05,
+            delayChildren: 0.2,
+            ease: naturalEase,
+        },
+    },
+};
 
 const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -63,7 +75,7 @@ export default function Skills() {
 
                 <motion.div
                     className="flex flex-wrap gap-3 max-w-6xl mx-auto items-center justify-center"
-                    variants={containerVariants}
+                    variants={skillsContainerVariants}
                     initial="hidden"
                     animate={isSkillsInView ? "visible" : "hidden"}
                 >

@@ -34,7 +34,7 @@ const imageVariants = {
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12">
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+            <div className="container min-h-screen mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
                 {/* Left Content */}
                 <motion.div
                     className="space-y-10 mt-16"
@@ -84,7 +84,7 @@ export default function Hero() {
                 >
                     <div className="relative w-full h-full">
                         <Image
-                            src="/images/hero-image-v3.png"
+                            src="/images/hero-image-v5.png"
                             alt="Diego Salazar - Full-Stack Developer"
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"

@@ -2,7 +2,9 @@
 
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { PHOTOS } from "@/data/gallery";
 
@@ -30,6 +32,13 @@ const imageVariants = {
 export default function Gallery() {
     const galleryRef = useRef(null);
     const isGalleryInView = useInView(galleryRef, { once: true, amount: 0.2 });
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const openLightbox = (index: number) => {
+        setCurrentIndex(index);
+        setLightboxOpen(true);
+    };
 
     return (
         <section ref={galleryRef} className="py-24 px-6 md:px-12 bg-light/40">
@@ -60,7 +69,7 @@ export default function Gallery() {
                     initial="hidden"
                     animate={isGalleryInView ? "visible" : "hidden"}
                 >
-                    {PHOTOS.map((photo) => (
+                    {PHOTOS.map((photo, index) => (
                         <motion.div
                             key={photo.src}
                             className="relative aspect-square overflow-hidden rounded-lg bg-light"
@@ -69,17 +78,29 @@ export default function Gallery() {
                                 scale: 1.05,
                                 transition: { duration: 0.3 },
                             }}
+                            onClick={() => openLightbox(index)}
                         >
                             <Image
                                 src={photo.src}
                                 alt={photo.alt || "Gallery Image"}
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                className={`cursor-pointer object-cover ${photo.align} grayscale-100 hover:grayscale-0 transition-all duration-500`}
+                                className={`cursor-pointer object-cover ${photo.align} md:grayscale-100 hover:grayscale-0 transition-all duration-500`}
                             />
                         </motion.div>
                     ))}
                 </motion.div>
+
+                {/* Lightbox */}
+                <Lightbox
+                    open={lightboxOpen}
+                    close={() => setLightboxOpen(false)}
+                    index={currentIndex}
+                    slides={PHOTOS.map((photo) => ({
+                        src: photo.src,
+                        alt: photo.alt,
+                    }))}
+                />
             </div>
         </section>
     );

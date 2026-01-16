@@ -229,7 +229,7 @@ export default function Header() {
                 <Link
                     href="/contact"
                     aria-label="Contact via email"
-                    className="w-11 h-11 bg-accent rounded-full flex items-center justify-center shadow-lg hover:bg-secondary"
+                    className="w-11 h-11 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors"
                 >
                     <Mail className="w-4.5 h-4.5 text-white" />
                 </Link>
