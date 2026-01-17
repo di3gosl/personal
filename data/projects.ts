@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
             "Solo Project",
         ],
         year: "2025",
-        image: "/images/portfolio/personal/preview.png",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/personal/preview.png",
         label: "Public Repo",
         slug: "personal-portfolio",
     },
@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
             "Responsive Design",
         ],
         year: "2019",
-        image: "/images/portfolio/biofractal/preview.png",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
         label: "",
         slug: "biofractal",
     },
@@ -143,6 +143,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Deployed and configured the site on Vercel with continuous integration",
             "Built within a public GitHub repository to allow anyone to explore the codebase",
             "Designed portfolio mockups in Canva",
+            "Uploaded portfolio images and assets to Supabase Storage for efficient delivery",
         ],
         techStack: [
             {
@@ -225,16 +226,14 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
         },
         screenshots: [
             {
-                src: "/images/portfolio/biofractal/screen1.png",
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen1.jpg",
                 alt: "BioFractal home page",
-                caption:
-                    "Homepage and primary landing experience",
+                caption: "Homepage and primary landing experience",
             },
             {
-                src: "/images/portfolio/biofractal/screen2.png",
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen2.jpg",
                 alt: "About section",
-                caption:
-                    "Additional sections and internal pages",
+                caption: "Additional sections and internal pages",
             },
         ],
         whatIBuilt: [

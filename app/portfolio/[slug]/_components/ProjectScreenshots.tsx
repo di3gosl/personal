@@ -67,7 +67,7 @@ export default function ProjectScreenshots({
 
                 {/* Screenshots Grid */}
                 <motion.div
-                    className="space-y-12"
+                    className="space-y-16"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
