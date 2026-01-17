@@ -57,7 +57,7 @@ export default function ProjectFacts({ project }: ProjectFactsProps) {
     return (
         <section
             ref={sectionRef}
-            className="py-16 px-6 md:px-12 bg-light/40 border-y border-primary/5"
+            className="py-16 md:py-24 px-6 md:px-12 bg-light/40 border-y border-primary/5"
         >
             <div className="container mx-auto max-w-6xl">
                 <motion.div

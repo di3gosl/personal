@@ -177,7 +177,7 @@ export default function Skills() {
 
                 {/* Skills Grid */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-16"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-16"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}

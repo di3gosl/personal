@@ -44,20 +44,19 @@ const additionalInfoVariants = {
 
 export default function Portfolio() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.1 });
-    const [isMobile, setIsMobile] = useState(false);
+    const [amount, setAmount] = useState(0.2);
 
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+        const updateAmount = () => {
+            setAmount(window.innerWidth < 768 ? 0.04 : 0.2);
         };
 
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
+        updateAmount();
+        window.addEventListener("resize", updateAmount);
+        return () => window.removeEventListener("resize", updateAmount);
     }, []);
 
-    const displayedProjects = isMobile ? PROJECTS.slice(0, 3) : PROJECTS;
+    const isInView = useInView(ref, { once: true, amount });
 
     return (
         <section
@@ -92,7 +91,7 @@ export default function Portfolio() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {displayedProjects.map((project) => (
+                    {PROJECTS.map((project) => (
                         <PortfolioCard key={project.title} project={project} />
                     ))}
                 </motion.div>
