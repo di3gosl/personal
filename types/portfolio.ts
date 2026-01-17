@@ -6,4 +6,5 @@ export type Project = {
     image: string;
     label: string;
     slug: string;
+    isFeatured?: boolean;
 };

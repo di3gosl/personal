@@ -20,6 +20,7 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/personal/preview.png",
         label: "Public Repo",
         slug: "personal-portfolio",
+        isFeatured: true,
     },
     {
         title: "BioFractal Website",
@@ -39,6 +40,7 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
         label: "",
         slug: "biofractal",
+        isFeatured: true,
     },
     {
         title: "WordPress Plugin Suite",

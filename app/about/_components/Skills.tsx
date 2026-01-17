@@ -3,6 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import { SKILL_CATEGORIES } from "@/data/skills";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -30,120 +31,6 @@ const skillBadgeVariants = {
 export default function Skills() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.1 });
-
-    const skillCategories = [
-        {
-            title: "Frontend",
-            cols: 1,
-            skills: [
-                { name: "React" },
-                { name: "Next.js" },
-                { name: "TypeScript" },
-                { name: "Tailwind CSS" },
-                { name: "Shadcn/ui" },
-                { name: "Redux" },
-                { name: "Bootstrap" },
-                { name: "CSS3" },
-            ],
-        },
-        {
-            title: "Backend",
-            cols: 1,
-            skills: [
-                { name: "Node.js" },
-                { name: "Prisma" },
-                { name: "REST APIs" },
-                { name: "PHP" },
-                { name: "GraphQL" },
-                { name: "Python" },
-            ],
-        },
-        {
-            title: "Cloud & DevOps",
-            cols: 1,
-            skills: [
-                { name: "AWS EC2" },
-                { name: "AWS RDS" },
-                { name: "AWS S3" },
-                { name: "AWS Amplify" },
-                { name: "AWS Route 53" },
-                { name: "AWS Lambda" },
-                { name: "Vercel" },
-                { name: "Linux" },
-                { name: "Nginx" },
-            ],
-        },
-        {
-            title: "Databases",
-            cols: 1,
-            skills: [
-                { name: "MySQL" },
-                { name: "MariaDB" },
-                { name: "MongoDB" },
-                { name: "SQLite" },
-                { name: "Supabase" },
-                { name: "Vector Databases" },
-            ],
-        },
-        {
-            title: "AI & Automation",
-            cols: 1,
-            skills: [
-                { name: "OpenAI" },
-                { name: "Claude" },
-                { name: "Gemini" },
-                { name: "Prompt Engineering" },
-                { name: "Chatbots & Assistants" },
-                { name: "AI-driven automation" },
-                { name: "RAG" },
-            ],
-        },
-        {
-            title: "E-commerce",
-            cols: 1,
-            skills: [
-                { name: "WordPress" },
-                { name: "WooCommerce" },
-                { name: "WordPress Plugins & Themes" },
-                { name: "Shopify" },
-                { name: "Shopware" },
-                { name: "Print on Demand (POD)" },
-                { name: "Printify" },
-                { name: "Printful" },
-                { name: "Gooten" },
-                { name: "Stripe" },
-                { name: "QuickBooks" },
-            ],
-        },
-        {
-            title: "Tools & Collaboration",
-            cols: 1,
-            skills: [
-                { name: "Git" },
-                { name: "GitHub" },
-                { name: "GitLab" },
-                { name: "Bitbucket" },
-                { name: "GitHub Copilot" },
-                { name: "VS Code" },
-                { name: "Jira / ClickUp" },
-                { name: "Postman" },
-            ],
-        },
-        {
-            title: "Additional Experience",
-            cols: 1,
-            skills: [
-                { name: "Unity Videogames" },
-                { name: "Android" },
-                { name: "C / C++" },
-                { name: "Assembly" },
-                { name: "Microcontrollers (Microchip, ARM, Espressif)" },
-                { name: "LabVIEW" },
-                { name: "Electronics" },
-                { name: "Yii Framework" },
-            ],
-        },
-    ];
 
     return (
         <section
@@ -182,7 +69,7 @@ export default function Skills() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {skillCategories.map((category, idx) => (
+                    {SKILL_CATEGORIES.map((category, idx) => (
                         <motion.div
                             key={idx}
                             className={`space-y-6 col-span-${category.cols}`}

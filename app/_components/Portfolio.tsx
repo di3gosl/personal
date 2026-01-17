@@ -58,6 +58,8 @@ export default function Portfolio() {
 
     const isInView = useInView(ref, { once: true, amount });
 
+    const featuredProjects = PROJECTS.filter((project) => project.isFeatured);
+
     return (
         <section
             ref={ref}
@@ -91,7 +93,7 @@ export default function Portfolio() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {PROJECTS.map((project) => (
+                    {featuredProjects.map((project) => (
                         <PortfolioCard key={project.title} project={project} />
                     ))}
                 </motion.div>

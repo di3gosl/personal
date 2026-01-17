@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { Calendar, MapPin, Square } from "lucide-react";
 import { EXPRERIENCE } from "@/data/experience";
@@ -29,9 +29,21 @@ const itemVariants = {
 
 export default function Experience() {
     const experienceRef = useRef(null);
+    const [amount, setAmount] = useState(0.1);
+
+    useEffect(() => {
+        const updateAmount = () => {
+            setAmount(window.innerWidth < 768 ? 0.03 : 0.2);
+        };
+
+        updateAmount();
+        window.addEventListener("resize", updateAmount);
+        return () => window.removeEventListener("resize", updateAmount);
+    }, []);
+
     const isExperienceInView = useInView(experienceRef, {
         once: true,
-        amount: 0.1,
+        amount,
     });
 
     return (
