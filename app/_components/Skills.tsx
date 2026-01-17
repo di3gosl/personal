@@ -53,7 +53,7 @@ export default function Skills() {
     const isSkillsInView = useInView(skillsRef, { once: true, amount: 0.2 });
 
     return (
-        <section ref={skillsRef} className="py-24 px-6 md:px-12">
+        <section ref={skillsRef} className="py-16 md:py-24 px-6 md:px-12">
             <div className="container mx-auto">
                 <motion.div
                     className="mb-12 space-y-4"

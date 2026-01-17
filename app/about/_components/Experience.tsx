@@ -35,7 +35,7 @@ export default function Experience() {
     });
 
     return (
-        <section ref={experienceRef} className="py-24 px-6 md:px-12">
+        <section ref={experienceRef} className="py-16 md:py-24 px-6 md:px-12">
             <div className="container mx-auto">
                 {/* Section Header */}
                 <motion.div
@@ -92,13 +92,16 @@ export default function Experience() {
                                                 </div>
                                             )}
                                         </div>
-                                        <div className="flex items-center gap-2 text-sm text-accent shrink-0">
-                                            <Calendar className="w-4 h-4" />
+                                        <div className="flex items-start md:items-center gap-2 text-sm text-accent shrink-0 flex-col md:flex-row">
+                                            <Calendar className="w-4 h-4 hidden md:block" />
                                             <span className="font-medium">
                                                 {job.startDate} - {job.endDate}
                                             </span>
                                             <span className="text-accent/60">
-                                                · {job.duration}
+                                                <span className="hidden md:inline">
+                                                    ·{" "}
+                                                </span>
+                                                {job.duration}
                                             </span>
                                         </div>
                                     </div>

@@ -40,11 +40,11 @@ const additionalInfoVariants = {
 
 export default function PortfolioPage() {
     return (
-        <section className="pt-32 pb-24">
+        <section className="px-6 md:px-12 pt-36 pb-12 md:pb-24">
             <div className="container mx-auto">
                 {/* Header with animation */}
                 <motion.div
-                    className="mb-16 space-y-4"
+                    className="mb-8 md:mb-16 space-y-4"
                     variants={headerVariants}
                     initial="hidden"
                     animate="visible"
@@ -76,7 +76,7 @@ export default function PortfolioPage() {
 
                 {/* Additional Info */}
                 <motion.div
-                    className="mt-16 pt-12 text-center"
+                    className="mt-16 md:mt-24 text-center"
                     variants={additionalInfoVariants}
                     initial="hidden"
                     animate="visible"

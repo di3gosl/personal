@@ -18,7 +18,7 @@ const itemVariants = {
 
 export default function Education() {
     return (
-        <section className="py-24 px-6 md:px-12">
+        <section className="py-16 md:py-24 px-6 md:px-12">
             <div className="container mx-auto">
                 <motion.div
                     className="mb-12 space-y-4"
