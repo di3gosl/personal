@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Code2, Heart, Mouse } from "lucide-react";
+import { Code2, Heart } from "lucide-react";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { HIGHLIGHTS } from "@/data/highlights";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -156,20 +157,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 flex flex-col items-center gap-2"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    duration: 0.6,
-                    delay: 1,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: 0.2,
-                }}
-            >
-                <Mouse className="w-8 h-8 text-primary" aria-hidden="true" />
-            </motion.div>
+            <ScrollIndicator />
         </section>
     );
 }

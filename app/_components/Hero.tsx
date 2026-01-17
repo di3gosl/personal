@@ -1,10 +1,11 @@
 "use client";
 
-import { ArrowRight, Mouse } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -84,7 +85,7 @@ export default function Hero() {
                 >
                     <div className="relative w-full h-full">
                         <Image
-                            src="/images/hero-image-v5.png"
+                            src="/images/hero-image.png"
                             alt="Diego Salazar - Full-Stack Developer"
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -97,20 +98,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 flex flex-col items-center gap-2"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    duration: 0.6,
-                    delay: 1,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: 0.2,
-                }}
-            >
-                <Mouse className="w-8 h-8 text-primary" aria-hidden="true" />
-            </motion.div>
+            <ScrollIndicator />
         </section>
     );
 }

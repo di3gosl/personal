@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { naturalEase } from "../lib/animations";
-import { Heart } from "lucide-react";
+import { Heart, Mail } from "lucide-react";
 import Link from "next/link";
 
 const containerVariants = {
@@ -80,7 +80,7 @@ export default function Footer() {
                         </Link>
                     </div>
                     <div className="text-accent">
-                        E:
+                        <Mail className="w-4.5 h-4.5 text-primary inline-block mr-1 mb-0.5" />
                         <span className="text-primary ml-1">
                             <a
                                 href="mailto:diego.salazar.ic@gmail.com"
