@@ -26,6 +26,7 @@ export type ProjectDetail = {
     };
     screenshots: {
         src: string;
+        previewSrc?: string;
         alt: string;
         caption?: string;
     }[];

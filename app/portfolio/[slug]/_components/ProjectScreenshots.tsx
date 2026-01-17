@@ -46,7 +46,10 @@ export default function ProjectScreenshots({
     };
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-background">
+        <section
+            ref={sectionRef}
+            className="py-16 md:py-24 px-6 md:px-12 bg-background"
+        >
             <div className="container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <motion.div
@@ -83,7 +86,11 @@ export default function ProjectScreenshots({
                                 onClick={() => openLightbox(index)}
                             >
                                 <Image
-                                    src={screenshot.src}
+                                    src={
+                                        screenshot.previewSrc
+                                            ? screenshot.previewSrc
+                                            : screenshot.src
+                                    }
                                     alt={screenshot.alt}
                                     fill
                                     className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110 group-hover:translate-y-[5%] brightness-95"
