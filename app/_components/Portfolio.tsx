@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import PortfolioCard from "@/components/PortfolioCard";
-import { containerVariants, naturalEase } from "@/lib/animations";
+import { naturalEase } from "@/lib/animations";
 import { PROJECTS } from "@/data/projects";
 import { ArrowRight } from "lucide-react";
 
@@ -13,7 +13,19 @@ const headerVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: naturalEase },
+        transition: { duration: 0.6, ease: naturalEase, delay: 0.2 },
+    },
+};
+
+export const gridVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.3,
+            ease: naturalEase,
+        },
     },
 };
 
@@ -32,12 +44,25 @@ const additionalInfoVariants = {
 
 export default function Portfolio() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.2 });
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    const displayedProjects = isMobile ? PROJECTS.slice(0, 3) : PROJECTS;
 
     return (
         <section
             ref={ref}
-            className="flex items-center justify-center pt-36 pb-20 px-6 md:px-12 bg-light/40"
+            className="flex items-center justify-center py-16 md:py-24 px-6 md:px-12 bg-light/40"
         >
             <div className="container mx-auto">
                 {/* Section Header */}
@@ -63,11 +88,11 @@ export default function Portfolio() {
                 {/* Projects Grid with stagger animation */}
                 <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    variants={containerVariants}
+                    variants={gridVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {PROJECTS.map((project) => (
+                    {displayedProjects.map((project) => (
                         <PortfolioCard key={project.title} project={project} />
                     ))}
                 </motion.div>

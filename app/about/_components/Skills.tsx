@@ -29,7 +29,7 @@ const skillBadgeVariants = {
 
 export default function Skills() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.2 });
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
 
     const skillCategories = [
         {
@@ -148,7 +148,7 @@ export default function Skills() {
     return (
         <section
             ref={ref}
-            className="min-h-screen flex items-center justify-center pt-18 pb-24 px-6 md:px-12 bg-light/40"
+            className="min-h-screen flex items-center justify-center py-16 md:py-24 px-6 md:px-12 bg-light/40"
         >
             <div className="container mx-auto">
                 {/* Section Header */}
