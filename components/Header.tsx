@@ -90,7 +90,7 @@ export default function Header() {
     return (
         <>
             <motion.header
-                className="fixed top-0 left-0 right-0 z-30 px-6 md:px-12 py-6 bg-white/70 backdrop-blur-md border"
+                className="fixed top-0 left-0 right-0 z-30 px-6 md:px-12 py-3 md:py-6 bg-white/70 backdrop-blur-md border"
                 variants={headerVariants}
                 initial="hidden"
                 animate="visible"
@@ -99,13 +99,13 @@ export default function Header() {
                     {/* Logo */}
                     <div>
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="w-12 h-12 rounded-xl border-3 border-primary flex items-center justify-center mr-2">
+                            <div className="w-10 md:w-12 h-10 md:h-12 rounded-xl border-3 border-primary flex items-center justify-center mr-0 md:mr-2">
                                 <span className="text-xl font-bold text-primary">
                                     D<span className="cursor-blink">_</span>
                                 </span>
                             </div>
                             <div className="flex flex-col space-y-0.5">
-                                <span className="text-lg font-bold leading-tight text-primary">
+                                <span className="text-base md:text-lg font-bold leading-tight text-primary">
                                     Diego Salazar
                                 </span>
                                 <span className="text-xs tracking-wider uppercase leading-tight text-secondary">
@@ -123,7 +123,7 @@ export default function Header() {
                         whileTap={{ scale: 0.95 }}
                         onClick={handleMenuClick}
                     >
-                        <span>Menu</span>
+                        <span className="hidden md:block">Menu</span>
                         <div className="w-7 h-7 flex flex-col justify-center gap-1.5">
                             <span className="w-full h-0.5 bg-current transition-all duration-300 group-hover:-translate-y-0.5"></span>
                             <span className="w-full h-0.5 bg-current transition-all duration-300"></span>
@@ -208,7 +208,7 @@ export default function Header() {
 
             {/* Floating Email Button */}
             <motion.div
-                className="fixed bottom-8 left-8 z-30"
+                className="fixed bottom-6 md:bottom-8 left-6 md:left-8 z-30"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{

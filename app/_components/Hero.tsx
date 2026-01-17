@@ -34,8 +34,8 @@ const imageVariants = {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 py-20 md:py-0">
-            <div className="container min-h-screen mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+        <section className="relative md:min-h-screen 2xl:min-h-0 flex items-center justify-center px-6 md:px-12 py-16 md:pb-16 lg:pb-0">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
                 {/* Left Content */}
                 <motion.div
                     className="space-y-10"
@@ -44,7 +44,7 @@ export default function Hero() {
                     animate="visible"
                 >
                     <motion.div className="space-y-2" variants={itemVariants}>
-                        <p className="text-sm tracking-[0.4em] uppercase text-accent">
+                        <p className="text-base md:text-sm tracking-[0.4em] uppercase text-accent">
                             Diego Salazar
                         </p>
                         <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-primary">
@@ -78,7 +78,7 @@ export default function Hero() {
 
                 {/* Right Image */}
                 <motion.div
-                    className="relative w-full h-[500px] lg:h-[800px] order-first lg:order-last self-end"
+                    className="relative w-full md:w-[500px] xl:w-full h-[380px] md:h-[500px] lg:h-[600px] xl:h-[800px] order-first lg:order-last self-end mx-auto"
                     variants={imageVariants}
                     initial="hidden"
                     animate="visible"

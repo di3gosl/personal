@@ -20,7 +20,7 @@ const itemVariants = {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-36 md:pt-24 pb-20 px-6 md:px-12">
+        <section className="relative md:min-h-screen 2xl:min-h-0 flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 md:px-12">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     {/* Left Column - Main Content */}
@@ -39,10 +39,10 @@ export default function Hero() {
                                 <p className="text-sm tracking-[0.4em] uppercase text-accent">
                                     About Me
                                 </p>
-                                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary">
+                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary">
                                     Diego Salazar
                                 </h1>
-                                <p className="text-2xl md:text-3xl text-accent">
+                                <p className="text-xl md:text-3xl text-accent">
                                     Full-Stack Developer
                                 </p>
                             </motion.div>
@@ -61,7 +61,7 @@ export default function Hero() {
                                         <h2 className="text-2xl font-bold text-primary">
                                             Professional Summary
                                         </h2>
-                                        <p className="text-lg leading-relaxed text-accent">
+                                        <p className="text-base md:text-lg leading-relaxed text-accent">
                                             I&apos;m Diego Salazar, a full-stack
                                             developer with a Master&apos;s
                                             degree in Computer Science. I focus
@@ -73,7 +73,7 @@ export default function Hero() {
                                             businesses bring their ideas to
                                             life.
                                         </p>
-                                        <p className="text-lg leading-relaxed text-accent">
+                                        <p className="text-base md:text-lg leading-relaxed text-accent">
                                             With over a decade of experience
                                             across frontend, backend, and cloud
                                             infrastructure, I enjoy creating
@@ -98,7 +98,7 @@ export default function Hero() {
                                         <h2 className="text-2xl font-bold text-primary">
                                             Beyond the Code
                                         </h2>
-                                        <p className="text-lg leading-relaxed text-accent">
+                                        <p className="text-base md:text-lg leading-relaxed text-accent">
                                             When I&apos;m not coding,
                                             you&apos;ll find me lacing up my
                                             running shoes or on the soccer

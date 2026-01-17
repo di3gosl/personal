@@ -25,7 +25,7 @@ interface ProjectHeroProps {
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 bg-linear-to-b from-background to-light/40">
+        <section className="relative md:min-h-screen 2xl:min-h-0 flex items-center justify-center pt-24 md:pt-0 2xl:pt-28 pb-16 2xl:pb-24 px-6 md:px-12 bg-linear-to-b from-background to-light/40">
             <div className="container mx-auto max-w-4xl text-center">
                 <motion.div
                     className="space-y-8"
@@ -35,15 +35,15 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 >
                     {/* Metadata */}
                     <motion.div
-                        className="flex flex-wrap items-center justify-center gap-3 text-sm text-accent"
+                        className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-3 text-sm text-accent"
                         variants={itemVariants}
                     >
                         <span className="tracking-[0.3em] uppercase">
                             {project.year}
                         </span>
-                        <span className="w-1 h-1 rounded-full bg-accent" />
+                        <span className="w-1 h-1 rounded-full bg-accent hidden md:block" />
                         <span>{project.type}</span>
-                        <span className="w-1 h-1 rounded-full bg-accent" />
+                        <span className="w-1 h-1 rounded-full bg-accent hidden md:block" />
                         <span className="px-3 py-1 border border-accent/30 rounded-full">
                             {project.status}
                         </span>
@@ -89,7 +89,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`
-                                        inline-flex items-center gap-2 px-6 py-3 rounded-lg
+                                        inline-flex items-center gap-2 px-6 py-2 rounded-lg
                                         font-medium transition-all duration-300 border-2 border-primary
                                         ${
                                             isOutline

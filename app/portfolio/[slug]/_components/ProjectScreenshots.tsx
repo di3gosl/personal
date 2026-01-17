@@ -46,7 +46,7 @@ export default function ProjectScreenshots({
     };
 
     return (
-        <section ref={sectionRef} className="py-24 px-6 md:px-12 bg-background">
+        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-background">
             <div className="container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <motion.div
