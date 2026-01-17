@@ -52,7 +52,7 @@ const linkVariants = {
 
 export default function Footer() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.3 });
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
 
     return (
         <footer ref={ref} className="bg-background pb-6 px-6 md:px-12">

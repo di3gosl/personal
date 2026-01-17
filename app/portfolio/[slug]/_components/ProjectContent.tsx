@@ -34,7 +34,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
     const isInView = useInView(sectionRef, { once: true, amount: 0.05 });
 
     return (
-        <section ref={sectionRef} className="py-24 px-6 md:px-12 bg-light/40">
+        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-light/40">
             <div className="container mx-auto max-w-4xl">
                 <motion.div
                     className="space-y-16"

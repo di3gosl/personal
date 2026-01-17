@@ -51,10 +51,10 @@ export default function Education() {
                         <div className="flex items-start gap-4">
                             <GraduationCap className="w-8 h-8 text-primary shrink-0 mt-1" />
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-primary">
+                                <h3 className="text-xl md:text-2xl font-bold text-primary">
                                     Master&apos;s Degree in Computer Science
                                 </h3>
-                                <p className="text-lg leading-relaxed text-accent">
+                                <p className="text-base md:text-lg leading-relaxed text-accent">
                                     Universidad Autonoma de Yucatan (2012 -
                                     2016)
                                 </p>
@@ -67,11 +67,11 @@ export default function Education() {
                         <div className="flex items-start gap-4">
                             <School className="w-8 h-8 text-primary shrink-0 mt-1" />
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-primary">
+                                <h3 className="text-xl md:text-2xl font-bold text-primary">
                                     Bachelor&apos;s Degree in Computing
                                     Engineering
                                 </h3>
-                                <p className="text-lg leading-relaxed text-accent">
+                                <p className="text-base md:text-lg leading-relaxed text-accent">
                                     Universidad Autonoma de Yucatan (2005 -
                                     2011)
                                 </p>
