@@ -25,7 +25,7 @@ interface ProjectHeroProps {
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
     return (
-        <section className="relative md:min-h-screen 2xl:min-h-0 flex items-center justify-center pt-24 md:pt-0 2xl:pt-28 pb-16 2xl:pb-24 px-6 md:px-12 bg-linear-to-b from-background to-light/40">
+        <section className="relative md:min-h-screen flex items-center justify-center pt-24 md:pt-0 pb-16 px-6 md:px-12 bg-linear-to-b from-background to-light/40">
             <div className="container mx-auto max-w-4xl text-center">
                 <motion.div
                     className="space-y-8"
