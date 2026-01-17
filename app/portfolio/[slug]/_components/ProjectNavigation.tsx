@@ -14,7 +14,7 @@ export default function ProjectNavigation({
     navigation,
 }: ProjectNavigationProps) {
     return (
-        <section className="py-16 px-6 md:px-12 bg-background border-t border-primary/10">
+        <section className="py-8 md:py-16 px-6 md:px-12 bg-background border-t border-primary/10">
             <div className="container mx-auto max-w-6xl">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Previous Project */}

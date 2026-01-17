@@ -20,7 +20,7 @@ const itemVariants = {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-16 pb-24 px-6 md:px-12">
+        <section className="relative min-h-screen flex items-center justify-center pt-36 md:pt-24 pb-20 px-6 md:px-12">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     {/* Left Column - Main Content */}
@@ -139,10 +139,10 @@ export default function Hero() {
                                                 variants={itemVariants}
                                             >
                                                 <div className="space-y-1">
-                                                    <p className="text-xs uppercase tracking-wider text-accent/60">
+                                                    <p className="text-sm md:text-xs uppercase tracking-wider text-accent/60">
                                                         {item.label}
                                                     </p>
-                                                    <p className="text-sm font-medium text-primary">
+                                                    <p className="text-base md:text-sm font-medium text-primary">
                                                         {item.value}
                                                     </p>
                                                 </div>

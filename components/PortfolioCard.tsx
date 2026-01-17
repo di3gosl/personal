@@ -60,7 +60,7 @@ export default function PortfolioCard({ project }: Props) {
 
                     {/* Year Badge and Label */}
                     <div className="flex justify-between items-start gap-2">
-                        <span className="text-xs font-semibold text-accent tracking-wider uppercase">
+                        <span className="text-sm md:text-xs font-semibold text-accent tracking-wider uppercase">
                             {project.year}
                         </span>
                         {project.label && (
@@ -73,9 +73,7 @@ export default function PortfolioCard({ project }: Props) {
                                 {project.label}
                             </motion.span>
                         )}
-                        {!project.label && (
-                            <div className="h-6"></div>
-                        )}
+                        {!project.label && <div className="h-6"></div>}
                     </div>
 
                     {/* Project Title */}
@@ -84,7 +82,7 @@ export default function PortfolioCard({ project }: Props) {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-accent leading-relaxed">
+                    <p className="text-base md:text-sm text-accent leading-relaxed">
                         {project.description}
                     </p>
 
@@ -93,7 +91,7 @@ export default function PortfolioCard({ project }: Props) {
                         {project.technologies.map((tech, techIdx) => (
                             <span
                                 key={techIdx}
-                                className="px-3 py-1 bg-background text-secondary text-xs font-medium rounded-full"
+                                className="px-3 py-1 bg-background text-secondary text-sm md:text-xs font-medium rounded-full"
                             >
                                 {tech}
                             </span>

@@ -34,11 +34,11 @@ const imageVariants = {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12">
+        <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 py-20 md:py-0">
             <div className="container min-h-screen mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
                 {/* Left Content */}
                 <motion.div
-                    className="space-y-10 mt-16"
+                    className="space-y-10"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
