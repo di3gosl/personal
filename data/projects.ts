@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
             "Motion",
             "Supabase",
             "Public Repo",
-            "Solo Project",
+            "Personal Project",
         ],
         year: "2025",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/personal/preview.png",
@@ -43,44 +43,27 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
-        title: "WordPress Plugin Suite",
+        title: "Absolute Color Printing Shop",
         description:
-            "Created custom WooCommerce plugins for print-on-demand automation, integrating multiple fulfillment providers and payment gateways.",
-        technologies: ["PHP", "WordPress", "WooCommerce", "REST APIs"],
-        year: "2023",
-        image: "",
+            "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
+        technologies: [
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "JavaScript",
+            "E-commerce",
+            "Instant Quote",
+            "Payment Integration",
+            "Loyalty System",
+            "Reporting & Analytics",
+            "Admin Dashboard",
+            "Team Leadership",
+        ],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/preview.png",
         label: "",
-        slug: "",
-    },
-    {
-        title: "Real-time Analytics Dashboard",
-        description:
-            "Built a high-performance analytics platform processing millions of events daily with real-time visualization and reporting capabilities.",
-        technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
-        year: "2022",
-        image: "",
-        label: "",
-        slug: "",
-    },
-    {
-        title: "Inventory Management System",
-        description:
-            "Developed a comprehensive inventory tracking solution with multi-warehouse support, barcode scanning, and QuickBooks integration.",
-        technologies: ["Next.js", "TypeScript", "MySQL", "Node.js"],
-        year: "2022",
-        image: "",
-        label: "",
-        slug: "",
-    },
-    {
-        title: "Mobile IoT Application",
-        description:
-            "Created Android application for real-time monitoring and control of IoT devices using custom firmware on ESP32 microcontrollers.",
-        technologies: ["Android", "C++", "ESP32", "MQTT", "Firebase"],
-        year: "2021",
-        image: "",
-        label: "",
-        slug: "",
+        slug: "absolute-color",
+        isFeatured: true,
     },
 ];
 
@@ -188,7 +171,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Motion",
             "Supabase",
             "Public Repo",
-            "Solo Project",
+            "Personal Project",
         ],
         navigation: {
             next: {
@@ -223,7 +206,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             role: "Full-Stack Developer",
             timeline: "2015",
             platform: "Web",
-            team: "Small multidisciplinary team",
+            team: "Multidisciplinary team",
             repository: "Private",
         },
         screenshots: [
@@ -289,6 +272,120 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
                 slug: "personal-portfolio",
                 title: "Personal Portfolio Website",
             },
+            next: {
+                slug: "next-project-slug",
+                title: "Next Project",
+            },
+        },
+    },
+    {
+        slug: "absolute-color",
+        title: "Absolute Color Printing Shop",
+        year: "2015",
+        type: "Client Project · E-commerce / Printing Platform",
+        status: "Delivered",
+        hero: {
+            shortDescription:
+                "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to build a complete web-based printing platform that enables customers to instantly quote printing jobs, place orders online, upload artwork, and track their orders throughout the full production lifecycle. From the business perspective, the platform aimed to unlock new digital revenue streams that previously did not exist for the company.",
+            challenge:
+                "Printing services involve complex configuration options, pricing rules, promotions, and production workflows. The main challenge was building an accurate instant quote estimator and a reliable order lifecycle system, while also supporting secure payments, loyalty rewards, discount coupons, and business reporting within a custom-built architecture.",
+            role: "I led the development team and worked as a full-stack developer, defining the technical direction of the platform and actively contributing to frontend development, backend logic, database design, pricing rules, payment integrations, reporting systems, and administrative tooling.",
+        },
+        facts: {
+            role: "Lead Full-Stack Developer",
+            timeline: "2015",
+            platform: "Web",
+            team: "Led a team of 3 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/screen1.png",
+                alt: "Printing product configuration",
+                caption:
+                    "Printing product configuration with instant price estimation",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/screen2.png",
+                alt: "Shopping cart and checkout",
+                caption: "Shopping cart with detailed order summary",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/screen3.jpg",
+                alt: "Admin dashboard and reports",
+                caption: "Additional sections of the platform",
+            },
+        ],
+        whatIBuilt: [
+            "Led the development of a custom online printing shop for a wholesale printing company",
+            "Implemented an instant quote estimator based on configurable printing options",
+            "Developed a complete purchasing flow including cart, checkout, and artwork upload",
+            "Integrated payment processing using Authorize.Net, later upgraded to CardConnect",
+            "Implemented a loyalty points system rewarding customers for each purchase",
+            "Built a coupon and discount system to support promotional campaigns",
+            "Designed and implemented a MySQL database for products, customers, orders, pricing, and rewards",
+            "Developed a comprehensive administrative dashboard for managing products, customers, pricing, and orders",
+            "Implemented production workflow tracking with status updates across the full printing lifecycle",
+            "Built a custom reporting system to track sales performance, orders, and revenue metrics",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: [
+                    "JavaScript",
+                    "jQuery",
+                    "HTML",
+                    "CSS",
+                    "Bootstrap",
+                ],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Payments",
+                technologies: ["Authorize.Net", "CardConnect"],
+            },
+        ],
+        designDecisions: {
+            title: "Architecture & UX Decisions",
+            items: [
+                "Custom-built pricing engine to support complex printing configurations",
+                "Instant quote estimator optimized for speed and accuracy",
+                "Step-by-step checkout flow to reduce friction during purchase",
+                "Loyalty and coupon systems designed to drive repeat business",
+                "Production workflow tracking integrated directly into the admin dashboard",
+                "Custom reporting tools to provide visibility into revenue and operational performance",
+                "Administrative interface optimized for daily operational efficiency",
+            ],
+        },
+        results:
+            "The platform became a significant new digital sales channel for the client, generating hundreds of thousands of dollars in additional revenue that previously did not exist. This impact was measured through a custom-built reporting system designed specifically for the platform, providing visibility into sales performance, order volume, and revenue growth. The project strengthened my experience leading development teams and delivering business-critical systems with measurable commercial impact.",
+        badges: [
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "JavaScript",
+            "jQuery",
+            "E-commerce",
+            "Instant Quote",
+            "Payment Integration",
+            "Loyalty System",
+            "Reporting & Analytics",
+            "Admin Dashboard",
+            "Team Leadership",
+            "Client Project",
+        ],
+        navigation: {
             next: {
                 slug: "next-project-slug",
                 title: "Next Project",
