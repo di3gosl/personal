@@ -30,7 +30,7 @@ export default function ProjectScreenshots({
     project,
 }: ProjectScreenshotsProps) {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+    const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
 

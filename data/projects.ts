@@ -15,6 +15,7 @@ export const PROJECTS: Project[] = [
             "Supabase",
             "Public Repo",
             "Personal Project",
+            "Vercel",
         ],
         year: "2025",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/personal/preview.png",
@@ -23,24 +24,24 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
-        title: "BioFractal Website",
+        title: "BioFractal Network",
         description:
-            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
+            "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
         technologies: [
             "React.js",
             "Redux",
             "Node.js",
             "PHP",
+            "Yii Framework",
             "MySQL",
             "REST API",
-            "Bootstrap",
-            "Responsive Design",
+            "IoT",
+            "Raspberry Pi",
         ],
         year: "2019",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/preview.png",
         label: "",
-        slug: "biofractal",
-        isFeatured: true,
+        slug: "biofractal-network",
     },
     {
         title: "Sprink Ads",
@@ -56,12 +57,31 @@ export const PROJECTS: Project[] = [
             "REST API",
             "IoT",
             "Raspberry Pi",
-            "Distributed Systems",
         ],
         year: "2019",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/preview.png",
         label: "",
         slug: "sprink-ads",
+    },
+    {
+        title: "BioFractal Website",
+        description:
+            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
+        technologies: [
+            "React.js",
+            "Redux",
+            "Node.js",
+            "PHP",
+            "MySQL",
+            "REST API",
+            "Bootstrap",
+            "Responsive Design",
+        ],
+        year: "2017",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
+        label: "",
+        slug: "biofractal",
+        isFeatured: true,
     },
     {
         title: "Absolute Color Printing Shop",
@@ -171,6 +191,10 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
                 category: "Tooling",
                 technologies: ["Git & GitHub", "VS Code"],
             },
+            {
+                category: "Cloud Infrastructure",
+                technologies: ["Vercel"],
+            },
         ],
         designDecisions: {
             title: "Design & UX Decisions",
@@ -204,7 +228,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
     {
         slug: "biofractal",
         title: "BioFractal Website",
-        year: "2015",
+        year: "2017",
         type: "Client Website · Corporate / Informational",
         status: "Delivered",
         hero: {
@@ -225,7 +249,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
         },
         facts: {
             role: "Full-Stack Developer",
-            timeline: "2015",
+            timeline: "2017",
             platform: "Web",
             team: "Multidisciplinary team",
             repository: "Private",
@@ -513,6 +537,116 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "IoT",
             "Raspberry Pi",
             "Distributed Systems",
+        ],
+        navigation: {
+            next: {
+                slug: "next-project-slug",
+                title: "Next Project",
+            },
+        },
+    },
+    {
+        slug: "biofractal-network",
+        title: "BioFractal Network",
+        year: "2019",
+        type: "Prototype · Knowledge Network / Project Management Platform",
+        status: "Prototype (Validated)",
+        hero: {
+            shortDescription:
+                "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to build a web-based platform that enables professionals to create detailed profiles, showcase their experience, manage collaborative projects, and offer consulting services. The platform aimed to connect knowledge, talent, and real-world problems while providing tools for project tracking, expert recommendations, and payment handling.",
+            challenge:
+                "The main challenge was designing a flexible system that could support multiple user roles including developers, consultants, project owners, and organizations while maintaining a clear structure for profiles, expertise, project management, and transactions. Additionally, the platform needed to be scalable and production-ready despite being launched as a prototype.",
+            role: "I worked as a full-stack developer and cloud engineer, responsible for application development, system architecture, cloud infrastructure configuration, deployment, and operational setup on AWS.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2019",
+            platform: "Web",
+            team: "Small development team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen1.png",
+                alt: "Network landing and search",
+                caption:
+                    "Developer Profile Dashboard - Skills, Projects & Team Overview",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen2.png",
+                alt: "Landing page",
+                caption: "Landing page with search",
+            },
+        ],
+        whatIBuilt: [
+            "Developed a web application for professional networking and knowledge sharing",
+            "Implemented user profiles with experience, skills, and expertise management",
+            "Built project management functionality to track development progress",
+            "Implemented a recommendation system to suggest relevant developers and consultants",
+            "Developed consulting workflows allowing users to offer expertise and solve industry problems",
+            "Designed and implemented a MySQL database for users, projects, expertise, and transactions",
+            "Deployed and configured the platform on Amazon Web Services",
+            "Configured EC2 instances for application compute",
+            "Provisioned RDS MySQL for managed database services",
+            "Set up S3 for file storage",
+            "Configured Route 53 for domain management",
+            "Implemented Load Balancers for traffic distribution and scalability",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["React.js", "Redux"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework", "REST API"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud Infrastructure",
+                technologies: [
+                    "AWS EC2",
+                    "AWS RDS",
+                    "AWS S3",
+                    "AWS Route 53",
+                    "AWS Load Balancer",
+                ],
+            },
+        ],
+        designDecisions: {
+            title: "Architecture & Platform Design Decisions",
+            items: [
+                "Modular platform design to support multiple user roles and workflows",
+                "Profile-driven expertise representation to enable meaningful matching",
+                "Project-centric collaboration model to track real development work",
+                "Cloud-native deployment on AWS to support scalability and reliability",
+                "Separation of application logic and infrastructure for future growth",
+            ],
+        },
+        results:
+            "BioFractal Network was launched as a functional prototype and received promising early validation, including interest from multiple universities looking to integrate their research teams into the platform. While the long-term continuation of the project is unknown, the prototype demonstrated strong product-market interest and validated the core concept of a collaborative knowledge and project management network.",
+        badges: [
+            "React.js",
+            "Redux",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "REST API",
+            "AWS",
+            "EC2",
+            "RDS",
+            "S3",
+            "Route 53",
+            "Load Balancer",
+            "Prototype",
+            "Validated Concept",
         ],
         navigation: {
             next: {
