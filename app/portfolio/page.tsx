@@ -82,10 +82,11 @@ export default function PortfolioPage() {
                     animate="visible"
                 >
                     <p className="text-lg text-accent max-w-3xl mx-auto mb-6">
-                        These projects represent a fraction of my work.
-                        I&apos;ve delivered solutions for startups, enterprises,
-                        and agencies across e-commerce, SaaS, fintech, and
-                        automation domains.
+                        These projects represent only a few of my work. Many
+                        projects I&apos;ve worked on are under NDA and cannot be
+                        publicly shared. I&apos;ve delivered solutions for
+                        startups, enterprises, and agencies across e-commerce,
+                        SaaS, fintech, and automation domains.
                     </p>
                 </motion.div>
             </div>
