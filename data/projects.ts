@@ -24,6 +24,26 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
+        title: "PrintQuoteNow",
+        description:
+            "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
+        technologies: [
+            "SaaS",
+            "Gang Optimization",
+            "AWS",
+            "React",
+            "Redux",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "QuickBooks Integration",
+        ],
+        year: "2022",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/preview.png",
+        label: "",
+        slug: "print-quote-now",
+    },
+    {
         title: "RTLS System (Real-Time Locating System)",
         description:
             "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
@@ -72,7 +92,7 @@ export const PROJECTS: Project[] = [
             "PHP/Yii Framework",
             "MySQL",
             "REST API",
-            "AWS",
+            "AWS Architecture",
             "EC2",
             "RDS",
             "S3",
@@ -717,7 +737,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Yii Framework",
             "MySQL",
             "REST API",
-            "AWS",
+            "AWS Architecture",
             "EC2",
             "RDS",
             "S3",
@@ -1093,6 +1113,121 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "eiwa-water-level-sensor",
                 title: "Eiwa Water Level Sensor",
+            },
+        },
+    },
+    {
+        slug: "print-quote-now",
+        title: "PrintQuoteNow",
+        year: "2022",
+        type: "Enterprise Web Application",
+        status: "Active / Long-term Project",
+        hero: {
+            shortDescription:
+                "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
+            ctas: [
+                {
+                    label: "View Live",
+                    href: "https://printquotenow.com",
+                },
+            ],
+        },
+        overview: {
+            goal: "Build a scalable print management system capable of generating instant, highly optimized print quotes while managing the full production lifecycle, invoicing, and reporting.",
+            challenge:
+                "Designing and implementing a complex gang-run algorithm to optimally position multiple print jobs on a single sheet, minimizing paper waste and machine time, while keeping the system flexible for continuous feature expansion over multiple years.",
+            role: "Lead Full-Stack Developer responsible for system architecture, core algorithm development, API design, cloud infrastructure, and long-term platform evolution.",
+        },
+        facts: {
+            role: "Lead Full-Stack Developer",
+            timeline: "2022",
+            platform: "Enterprise web application for printing companies",
+            team: "4 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/screen1.jpg",
+                alt: "Instant quote builder interface",
+                caption:
+                    "Advanced quote builder powered by the gang-run optimization algorithm.",
+            },
+        ],
+        whatIBuilt: [
+            "Gang-run optimization algorithm to efficiently position multiple print jobs on a single sheet.",
+            "Instant quote engine calculating costs based on paper usage, machine time, ink, and finishing processes.",
+            "REST API to support quoting, production workflows, and integrations.",
+            "Invoice management module with QuickBooks API integration to push invoices and synchronize accounting data.",
+            "Reporting system capable of exporting synchronized financial and production data.",
+            "AWS cloud infrastructure setup and deployment for scalability and reliability.",
+            "Reporting system capable of exporting synchronized financial and production data.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["React", "Redux", "HTML", "CSS"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Node.js", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud & Infrastructure",
+                technologies: [
+                    "AWS EC2",
+                    "AWS Lambda",
+                    "AWS RDS",
+                    "AWS S3",
+                    "Route 53",
+                ],
+            },
+            {
+                category: "Integrations",
+                technologies: ["QuickBooks API", "REST APIs"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Architectural and Technical Decisions",
+            items: [
+                "Custom gang-run algorithm developed from scratch using mathematical and geometric optimization techniques.",
+                "Modular system design to allow continuous feature expansion without disrupting existing workflows.",
+                "Separation of pricing logic, production logic, and accounting integrations for maintainability.",
+                "Use of AWS managed services to ensure scalability, fault tolerance, and long-term reliability.",
+            ],
+        },
+        results:
+            "The platform enabled printing companies to generate instant, highly optimized quotes, significantly reducing paper waste and manual estimation time. Its accounting integration streamlined invoicing workflows and improved financial reporting accuracy.",
+        badges: [
+            "Enterprise Application",
+            "Custom Algorithm",
+            "Gang Optimization",
+            "AWS Architecture",
+            "EC2",
+            "RDS",
+            "S3",
+            "Route 53",
+            "Load Balancer",
+            "React",
+            "Redux",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "QuickBooks API",
+            "REST APIs",
+            "Private / Restricted",
+        ],
+        navigation: {
+            previous: {
+                slug: "eco-hyt",
+                title: "EcoHyT",
+            },
+            next: {
+                slug: "printing-shop-platform",
+                title: "Printing Shop Platform",
             },
         },
     },
