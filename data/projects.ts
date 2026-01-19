@@ -122,6 +122,26 @@ export const PROJECTS: Project[] = [
         slug: "b-circuits",
     },
     {
+        title: "EcoHyT Temperature & Humidity Monitor",
+        description:
+            "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
+        technologies: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "MySQL",
+            "LCD",
+        ],
+        year: "2018",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/preview.png",
+        label: "",
+        slug: "ecohyt",
+        isFeatured: true,
+    },
+    {
         title: "BioFractal Website",
         description:
             "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
@@ -981,6 +1001,98 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "rtls-system",
                 title: "RTLS System",
+            },
+        },
+    },
+    {
+        slug: "ecohyt",
+        title: "EcoHyT Temperature & Humidity Monitor",
+        year: "2018",
+        type: "IoT Prototype · Firmware & API Integration",
+        status: "Private",
+        hero: {
+            shortDescription:
+                "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to implement the firmware and connectivity layer for an embedded monitoring device that captures temperature and humidity readings, shows them locally on an LCD, and reliably uploads the measurements to the client's backend for historical tracking and visualization.",
+            challenge:
+                "The core challenge was ensuring consistent measurements and dependable delivery over WiFi to the backend API, while keeping the firmware stable and lightweight. Additionally, integration required aligning the device payloads with an existing web platform and database schema so the client could visualize the data without changing their dashboard workflow.",
+            role: "I handled the firmware implementation end-to-end: sensor measurement logic, LCD rendering, and the networking flow to send readings to a REST API. I also implemented the required API endpoints within the client's existing web application to persist data into MySQL. I did not design or build the electronics hardware, and the dashboard UI was already provided by the client.",
+        },
+        facts: {
+            role: "Firmware & Backend Integration",
+            timeline: "2018",
+            platform: "IoT · Firmware + API",
+            team: "Collaborative (client owned dashboard)",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen2.jpg",
+                alt: "EcoHyT dashboard",
+                caption:
+                    "Monitoring dashboard displaying historical temperature and humidity readings",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen3.jpg",
+                alt: "EcoHyT device close-up",
+                caption: "Hardware prototype used for testing",
+            },
+        ],
+        whatIBuilt: [
+            "Implemented firmware logic to measure temperature and humidity from the embedded sensors",
+            "Displayed real-time readings on the device LCD for local monitoring and quick validation",
+            "Implemented WiFi connectivity (ESP8266) to send measurements to a backend REST API",
+            "Aligned payload structure with the client's backend requirements for seamless ingestion",
+            "Implemented the necessary API endpoints inside the client's existing web application",
+            "Stored measurements in MySQL to enable historical tracking and visualization in the client dashboard",
+            "Ensured stable, repeatable data delivery suitable for continuous monitoring scenarios",
+        ],
+        techStack: [
+            {
+                category: "Firmware",
+                technologies: ["C++", "ESP8266", "WiFi", "LCD Display"],
+            },
+            {
+                category: "Backend Integration",
+                technologies: ["REST API", "MySQL"],
+            },
+            {
+                category: "Domain",
+                technologies: [
+                    "Temperature Monitoring",
+                    "Humidity Monitoring",
+                    "IoT Prototyping",
+                ],
+            },
+        ],
+        designDecisions: {
+            title: "Technical Decisions",
+            items: [
+                "Local LCD output to provide immediate validation and troubleshooting during field testing",
+                "Lightweight, consistent API payloads to integrate smoothly with an existing web platform",
+                "Time-series storage in MySQL to support charts and historical analysis in the client's dashboard",
+                "Separation of concerns: firmware focused on measurement + delivery; dashboard focused on visualization",
+            ],
+        },
+        results:
+            "This project delivered a working monitoring prototype where device readings were displayed locally and reliably ingested into the client's backend. By integrating the firmware data flow with the client's REST API and MySQL storage, the existing dashboard could immediately visualize historical measurements without requiring changes to the frontend reporting experience.",
+        badges: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "MySQL",
+            "LCD",
+        ],
+        navigation: {
+            next: {
+                slug: "eiwa-water-level-sensor",
+                title: "Eiwa Water Level Sensor",
             },
         },
     },
