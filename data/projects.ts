@@ -38,10 +38,29 @@ export const PROJECTS: Project[] = [
             "MySQL",
             "REST API",
         ],
-        year: "2020",
+        year: "2021",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/preview.png",
         label: "",
         slug: "rtls-system",
+    },
+    {
+        title: "Eiwa Water Level Sensor",
+        description:
+            "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
+        technologies: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "Android",
+            "Prototype",
+        ],
+        year: "2020",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/preview.png",
+        label: "",
+        slug: "eiwa",
     },
     {
         title: "BioFractal Network",
@@ -781,7 +800,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
     {
         slug: "rtls-system",
         title: "RTLS System (Real-Time Locating System)",
-        year: "2020",
+        year: "2021",
         type: "IoT · Embedded Systems · Web Platform",
         status: "Prototype",
         hero: {
@@ -797,22 +816,22 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
         },
         facts: {
             role: "Full-Stack & Embedded Systems Developer",
-            timeline: "2020",
+            timeline: "2021",
             platform: "Web · Embedded · IoT",
             team: "Hardware & software collaboration",
             repository: "Private",
         },
         screenshots: [
             {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen1.jpg",
-                alt: "RTLS electronic board prototype",
-                caption: "RTLS hardware prototype (firmware developed by me)",
-            },
-            {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen2.jpg",
                 alt: "RTLS web dashboard",
                 caption:
                     "Web-based visualization of real-time device positions",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen1.jpg",
+                alt: "RTLS electronic board prototype",
+                caption: "RTLS hardware prototype (firmware developed by me)",
             },
         ],
         whatIBuilt: [
@@ -864,6 +883,104 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "next-project-slug",
                 title: "Next Project",
+            },
+        },
+    },
+    {
+        slug: "eiwa",
+        title: "Eiwa Water Level Sensor",
+        year: "2020",
+        type: "IoT Prototype · Firmware & API Integration",
+        status: "Private · Prototype",
+        hero: {
+            shortDescription:
+                "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to build a reliable prototype capable of estimating the liquid level in water containers using capacitive sensing, and to deliver those readings to a backend service that could be consumed by a mobile application.",
+            challenge:
+                "The main technical challenge was translating raw sensor readings into a stable and meaningful “water level” value under real-world conditions. This required careful handling of noise, calibration behavior, and ensuring consistent measurements over time, while keeping the firmware lightweight and reliable.",
+            role: "I was responsible for developing the measurement algorithm in firmware and implementing the data delivery flow to a backend REST API. I also provided technical guidance to the Android team on the API contract and database structure to store device metadata and measurement history. I did not design or build the electronics, and I did not develop the Android application.",
+        },
+        facts: {
+            role: "Firmware & Backend Integration",
+            timeline: "2020",
+            platform: "IoT · Firmware + API",
+            team: "Cross-functional (mobile handled by a third party)",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen1.jpg",
+                alt: "Android app showing the water level percentage",
+                caption:
+                    "Mobile view consuming measurements from the backend API",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen2.jpg",
+                alt: "Capacitive sensor board close-up",
+                caption:
+                    "Hardware prototype used for validation (electronics not developed by me)",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen3.jpg",
+                alt: "Device installed on a water container for testing",
+                caption:
+                    "Prototype installation used during real-world measurement tests",
+            },
+        ],
+        whatIBuilt: [
+            "Designed and implemented the firmware algorithm to estimate liquid level from capacitive sensor readings",
+            "Implemented the firmware networking flow to send measurements to a backend REST API over WiFi (ESP8266)",
+            "Defined the API contract required to register devices and store measurement history",
+            "Advised on database modeling to persist device metadata, measurement logs, and last-known status",
+            "Supported integration with a third-party Android application by aligning payload formats and endpoint behavior",
+            "Validated the prototype through measurement tests with satisfactory results under real usage conditions",
+        ],
+        techStack: [
+            {
+                category: "Firmware",
+                technologies: ["C++", "ESP8266", "WiFi"],
+            },
+            {
+                category: "Backend Integration",
+                technologies: ["REST API", "Database Modeling"],
+            },
+            {
+                category: "Domain",
+                technologies: ["Capacitive Sensing", "IoT Prototyping"],
+            },
+            {
+                category: "Mobile",
+                technologies: ["Android"],
+            },
+        ],
+        designDecisions: {
+            title: "Technical Decisions",
+            items: [
+                "Firmware-first approach to keep the measurement logic close to the sensor and reduce backend complexity",
+                "Stable payload structure for long-term device compatibility and straightforward mobile consumption",
+                "Database design focused on traceability: device metadata + time-series measurement history",
+                "Clear separation of responsibilities between firmware delivery and mobile presentation layer",
+            ],
+        },
+        results:
+            "The prototype achieved satisfactory measurement results and proved the feasibility of using capacitive sensing for water-level estimation in real-world conditions. The project also established a clean integration path between embedded firmware and a mobile-facing backend API, enabling reliable ingestion and storage of device readings.",
+        badges: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "Android",
+            "Prototype",
+        ],
+        navigation: {
+            next: {
+                slug: "rtls-system",
+                title: "RTLS System",
             },
         },
     },
