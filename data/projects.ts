@@ -66,6 +66,23 @@ export const PROJECTS: Project[] = [
         slug: "sprink-ads",
     },
     {
+        title: "B-Circuits Website",
+        description:
+            "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
+        technologies: [
+            "PHP",
+            "Yii Framework",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "Corporate Website",
+        ],
+        year: "2019",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/preview.png",
+        label: "",
+        slug: "b-circuits",
+    },
+    {
         title: "BioFractal Website",
         description:
             "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
@@ -649,6 +666,90 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Load Balancer",
             "Prototype",
             "Validated Concept",
+        ],
+        navigation: {
+            next: {
+                slug: "next-project-slug",
+                title: "Next Project",
+            },
+        },
+    },
+    {
+        slug: "b-circuits",
+        title: "B-Circuits Website",
+        year: "2019",
+        type: "Client Project · Corporate / Informational Website",
+        status: "Delivered",
+        hero: {
+            shortDescription:
+                "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to design and develop an informational website for B-Circuits that clearly presents the company's engineering services, development process, and value proposition. The site needed to communicate technical credibility while remaining accessible to potential clients from non-technical backgrounds.",
+            challenge:
+                "The main challenge was translating complex engineering and hardware development services into clear, well-structured content that could be easily understood by prospective clients, without oversimplifying the technical depth of the company's work.",
+            role: "I worked as a full-stack developer, responsible for the frontend implementation, backend structure, and overall technical execution of the website.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2019",
+            platform: "Web",
+            team: "Small team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen1.png",
+                alt: "Homepage hero section",
+                caption:
+                    "Hero section introducing B-Circuits' engineering services",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen2.jpg",
+                alt: "Services overview",
+                caption:
+                    "Additional sections detailing services and development process",
+            },
+        ],
+        whatIBuilt: [
+            "Developed a corporate informational website for an engineering and hardware company",
+            "Implemented a responsive frontend layout using Bootstrap and custom HTML/CSS",
+            "Built structured service pages to clearly explain development workflows and offerings",
+            "Implemented backend logic using PHP and Yii Framework",
+            "Ensured consistent behavior and layout across desktop and mobile devices",
+            "Focused on clarity, hierarchy, and professional presentation over dynamic functionality",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework"],
+            },
+        ],
+        designDecisions: {
+            title: "Design & Content Decisions",
+            items: [
+                "Strong visual emphasis on engineering and hardware-related imagery",
+                "Clear sectioning to separate services, plans, and value proposition",
+                "Content-first layout focused on explaining complex services clearly",
+                "Responsive design to ensure accessibility across devices",
+                "Professional visual language aligned with an engineering audience",
+            ],
+        },
+        results:
+            "The project delivered a clean and professional corporate website that effectively communicated B-Circuits' engineering services and development capabilities. It served as a digital presence aligned with the company's technical focus, reinforcing credibility and providing a clear entry point for potential clients.",
+        badges: [
+            "PHP",
+            "Yii Framework",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "Corporate Website",
+            "Client Project",
         ],
         navigation: {
             next: {
