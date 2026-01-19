@@ -24,6 +24,26 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
+        title: "RTLS System (Real-Time Locating System)",
+        description:
+            "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
+        technologies: [
+            "IoT",
+            "Embedded Systems",
+            "RTLS",
+            "Firmware",
+            "Prototype",
+            "React",
+            "PHP",
+            "MySQL",
+            "REST API",
+        ],
+        year: "2020",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/preview.png",
+        label: "",
+        slug: "rtls-system",
+    },
+    {
         title: "BioFractal Network",
         description:
             "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
@@ -750,6 +770,95 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Bootstrap",
             "Corporate Website",
             "Client Project",
+        ],
+        navigation: {
+            next: {
+                slug: "next-project-slug",
+                title: "Next Project",
+            },
+        },
+    },
+    {
+        slug: "rtls-system",
+        title: "RTLS System (Real-Time Locating System)",
+        year: "2020",
+        type: "IoT · Embedded Systems · Web Platform",
+        status: "Prototype",
+        hero: {
+            shortDescription:
+                "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to design and validate a real-time positioning system capable of tracking mobile devices inside an indoor environment, combining embedded electronics, positioning algorithms, and a web-based visualization interface.",
+            challenge:
+                "The main challenge was achieving reliable positioning accuracy in an indoor environment while integrating firmware, data transmission, and real-time visualization into a cohesive system suitable for future commercial development.",
+            role: "I worked across the full technical stack: developing the firmware for the microcontroller, implementing the positioning algorithm, building the backend API to receive device data, and creating the web interface to visualize device positions in real time.",
+        },
+        facts: {
+            role: "Full-Stack & Embedded Systems Developer",
+            timeline: "2020",
+            platform: "Web · Embedded · IoT",
+            team: "Hardware & software collaboration",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen1.jpg",
+                alt: "RTLS electronic board prototype",
+                caption: "RTLS hardware prototype (firmware developed by me)",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen2.jpg",
+                alt: "RTLS web dashboard",
+                caption:
+                    "Web-based visualization of real-time device positions",
+            },
+        ],
+        whatIBuilt: [
+            "Developed firmware for the microcontroller handling positioning logic and data transmission",
+            "Implemented a trilateration-based positioning algorithm",
+            "Built a backend API to receive positioning data from embedded devices",
+            "Designed and developed a web interface to visualize device positions in real time",
+            "Integrated wireless communication between anchors, tags, and the server",
+            "Collaborated with the hardware team responsible for PCB design",
+        ],
+        techStack: [
+            {
+                category: "Embedded Systems",
+                technologies: ["STM32 Microcontroller", "WiFi Communication"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["React", "Redux"],
+            },
+            {
+                category: "Backend",
+                technologies: ["Node.js", "PHP", "MySQL"],
+            },
+        ],
+        designDecisions: {
+            title: "Technical & System Design Decisions",
+            items: [
+                "Separated firmware logic from web visualization for modularity",
+                "Real-time data flow optimized for low-latency position updates",
+                "Web interface designed to clearly represent spatial positioning",
+                "System structured to allow future commercial scalability",
+            ],
+        },
+        results:
+            "This prototype successfully demonstrated an indoor RTLS system with approximately 30 cm accuracy, validating both the positioning algorithm and the end-to-end integration between embedded hardware and a web-based visualization platform.",
+        badges: [
+            "IoT",
+            "Embedded Systems",
+            "RTLS",
+            "Firmware",
+            "Web Platform",
+            "Prototype",
+            "React",
+            "PHP",
+            "MySQL",
+            "REST API",
         ],
         navigation: {
             next: {
