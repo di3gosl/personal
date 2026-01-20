@@ -227,6 +227,17 @@ export const PROJECTS: Project[] = [
         slug: "absolute-color",
         isFeatured: true,
     },
+    {
+        title: "Controlec",
+        description:
+            "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
+        technologies: ["Android", "Java", "Mobile App", "Team Project"],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
+        label: "",
+        slug: "controlec",
+        isFeatured: true,
+    },
 ];
 
 export const PROJECTS_DETAILS: ProjectDetail[] = [
@@ -282,15 +293,15 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Designed and implemented a modern frontend architecture using Next.js App Router",
-            "Built reusable UI components with TailwindCSS and shadcn/ui",
-            "Implemented smooth, subtle animations using Motion",
-            "Integrated backend services and data persistence with Supabase",
-            "Optimized performance, loading behavior, and responsiveness across devices",
-            "Deployed and configured the site on Vercel with continuous integration",
-            "Built within a public GitHub repository to allow anyone to explore the codebase",
-            "Designed portfolio mockups in Canva",
-            "Uploaded portfolio images and assets to Supabase Storage for efficient delivery",
+            "Designed and implemented a modern frontend architecture using Next.js App Router.",
+            "Built reusable UI components with TailwindCSS and shadcn/ui.",
+            "Implemented smooth, subtle animations using Motion.",
+            "Integrated backend services and data persistence with Supabase.",
+            "Optimized performance, loading behavior, and responsiveness across devices.",
+            "Deployed and configured the site on Vercel with continuous integration.",
+            "Built within a public GitHub repository to allow anyone to explore the codebase.",
+            "Designed portfolio mockups in Canva.",
+            "Uploaded portfolio images and assets to Supabase Storage for efficient delivery.",
         ],
         techStack: [
             {
@@ -388,13 +399,13 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Developed a responsive, informative website using React.js for the frontend",
-            "Implemented state management using Redux to handle application data flow",
-            "Built backend services with Node.js and PHP to support data persistence",
-            "Designed and integrated a MySQL database for structured content storage",
-            "Implemented REST-style data communication between frontend and backend",
-            "Structured the layout using Bootstrap combined with custom HTML and CSS",
-            "Ensured cross-device compatibility and consistent behavior across screen sizes",
+            "Developed a responsive, informative website using React.js for the frontend.",
+            "Implemented state management using Redux to handle application data flow.",
+            "Built backend services with Node.js and PHP to support data persistence.",
+            "Designed and integrated a MySQL database for structured content storage.",
+            "Implemented REST-style data communication between frontend and backend.",
+            "Structured the layout using Bootstrap combined with custom HTML and CSS.",
+            "Ensured cross-device compatibility and consistent behavior across screen sizes.",
         ],
         techStack: [
             {
@@ -487,16 +498,16 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Led the development of a custom online printing shop for a wholesale printing company",
-            "Implemented an instant quote estimator based on configurable printing options",
-            "Developed a complete purchasing flow including cart, checkout, and artwork upload",
-            "Integrated payment processing using Authorize.Net, later upgraded to CardConnect",
-            "Implemented a loyalty points system rewarding customers for each purchase",
-            "Built a coupon and discount system to support promotional campaigns",
-            "Designed and implemented a MySQL database for products, customers, orders, pricing, and rewards",
-            "Developed a comprehensive administrative dashboard for managing products, customers, pricing, and orders",
-            "Implemented production workflow tracking with status updates across the full printing lifecycle",
-            "Built a custom reporting system to track sales performance, orders, and revenue metrics",
+            "Led the development of a custom online printing shop for a wholesale printing company.",
+            "Implemented an instant quote estimator based on configurable printing options.",
+            "Developed a complete purchasing flow including cart, checkout, and artwork upload.",
+            "Integrated payment processing using Authorize.Net, later upgraded to CardConnect.",
+            "Implemented a loyalty points system rewarding customers for each purchase.",
+            "Built a coupon and discount system to support promotional campaigns.",
+            "Designed and implemented a MySQL database for products, customers, orders, pricing, and rewards.",
+            "Developed a comprehensive administrative dashboard for managing products, customers, pricing, and orders.",
+            "Implemented production workflow tracking with status updates across the full printing lifecycle.",
+            "Built a custom reporting system to track sales performance, orders, and revenue metrics.",
         ],
         techStack: [
             {
@@ -597,16 +608,16 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Developed a web platform to upload and manage video advertisements",
-            "Implemented a server-side upload workflow that stores videos in the filesystem (server folders)",
-            "Stored only video metadata in MySQL (URL and filename) to reference files efficiently",
-            "Built management tools for publishers, agencies, clients, and vending machines",
-            "Designed and implemented a REST API used by devices to sync and retrieve video content",
-            "Implemented device communication to download videos over WiFi and keep local content updated",
-            "Built interaction tracking triggered by physical button presses on vending machines",
-            "Implemented counting per video on each machine to generate statistics per video and publisher",
-            "Designed the MySQL data model to support machines, videos, publishers, and interaction events",
-            "Implemented authentication and controlled access for platform users",
+            "Developed a web platform to upload and manage video advertisements.",
+            "Implemented a server-side upload workflow that stores videos in the filesystem (server folders).",
+            "Stored only video metadata in MySQL (URL and filename) to reference files efficiently.",
+            "Built management tools for publishers, agencies, clients, and vending machines.",
+            "Designed and implemented a REST API used by devices to sync and retrieve video content.",
+            "Implemented device communication to download videos over WiFi and keep local content updated.",
+            "Built interaction tracking triggered by physical button presses on vending machines.",
+            "Implemented counting per video on each machine to generate statistics per video and publisher.",
+            "Designed the MySQL data model to support machines, videos, publishers, and interaction events.",
+            "Implemented authentication and controlled access for platform users.",
         ],
         techStack: [
             {
@@ -704,18 +715,18 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Developed a web application for professional networking and knowledge sharing",
-            "Implemented user profiles with experience, skills, and expertise management",
-            "Built project management functionality to track development progress",
-            "Implemented a recommendation system to suggest relevant developers and consultants",
-            "Developed consulting workflows allowing users to offer expertise and solve industry problems",
-            "Designed and implemented a MySQL database for users, projects, expertise, and transactions",
-            "Deployed and configured the platform on Amazon Web Services",
-            "Configured EC2 instances for application compute",
-            "Provisioned RDS MySQL for managed database services",
-            "Set up S3 for file storage",
-            "Configured Route 53 for domain management",
-            "Implemented Load Balancers for traffic distribution and scalability",
+            "Developed a web application for professional networking and knowledge sharing.",
+            "Implemented user profiles with experience, skills, and expertise management.",
+            "Built project management functionality to track development progress.",
+            "Implemented a recommendation system to suggest relevant developers and consultants.",
+            "Developed consulting workflows allowing users to offer expertise and solve industry problems.",
+            "Designed and implemented a MySQL database for users, projects, expertise, and transactions.",
+            "Deployed and configured the platform on Amazon Web Services.",
+            "Configured EC2 instances for application compute.",
+            "Provisioned RDS MySQL for managed database services.",
+            "Set up S3 for file storage.",
+            "Configured Route 53 for domain management.",
+            "Implemented Load Balancers for traffic distribution and scalability.",
         ],
         techStack: [
             {
@@ -815,12 +826,12 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Developed a corporate informational website for an engineering and hardware company",
-            "Implemented a responsive frontend layout using Bootstrap and custom HTML/CSS",
-            "Built structured service pages to clearly explain development workflows and offerings",
-            "Implemented backend logic using PHP and Yii Framework",
-            "Ensured consistent behavior and layout across desktop and mobile devices",
-            "Focused on clarity, hierarchy, and professional presentation over dynamic functionality",
+            "Developed a corporate informational website for an engineering and hardware company.",
+            "Implemented a responsive frontend layout using Bootstrap and custom HTML/CSS.",
+            "Built structured service pages to clearly explain development workflows and offerings.",
+            "Implemented backend logic using PHP and Yii Framework.",
+            "Ensured consistent behavior and layout across desktop and mobile devices.",
+            "Focused on clarity, hierarchy, and professional presentation over dynamic functionality.",
         ],
         techStack: [
             {
@@ -898,12 +909,12 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Developed firmware for the microcontroller handling positioning logic and data transmission",
-            "Implemented a trilateration-based positioning algorithm",
-            "Built a backend API to receive positioning data from embedded devices",
-            "Designed and developed a web interface to visualize device positions in real time",
-            "Integrated wireless communication between anchors, tags, and the server",
-            "Collaborated with the hardware team responsible for PCB design",
+            "Developed firmware for the microcontroller handling positioning logic and data transmission.",
+            "Implemented a trilateration-based positioning algorithm.",
+            "Built a backend API to receive positioning data from embedded devices.",
+            "Designed and developed a web interface to visualize device positions in real time.",
+            "Integrated wireless communication between anchors, tags, and the server.",
+            "Collaborated with the hardware team responsible for PCB design.",
         ],
         techStack: [
             {
@@ -994,12 +1005,12 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Designed and implemented the firmware algorithm to estimate liquid level from capacitive sensor readings",
-            "Implemented the firmware networking flow to send measurements to a backend REST API over WiFi (ESP8266)",
-            "Defined the API contract required to register devices and store measurement history",
-            "Advised on database modeling to persist device metadata, measurement logs, and last-known status",
-            "Supported integration with a third-party Android application by aligning payload formats and endpoint behavior",
-            "Validated the prototype through measurement tests with satisfactory results under real usage conditions",
+            "Designed and implemented the firmware algorithm to estimate liquid level from capacitive sensor readings.",
+            "Implemented the firmware networking flow to send measurements to a backend REST API over WiFi (ESP8266).",
+            "Defined the API contract required to register devices and store measurement history.",
+            "Advised on database modeling to persist device metadata, measurement logs, and last-known status.",
+            "Supported integration with a third-party Android application by aligning payload formats and endpoint behavior.",
+            "Validated the prototype through measurement tests with satisfactory results under real usage conditions.",
         ],
         techStack: [
             {
@@ -1085,13 +1096,13 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
         ],
         whatIBuilt: [
-            "Implemented firmware logic to measure temperature and humidity from the embedded sensors",
-            "Displayed real-time readings on the device LCD for local monitoring and quick validation",
-            "Implemented WiFi connectivity (ESP8266) to send measurements to a backend REST API",
-            "Aligned payload structure with the client's backend requirements for seamless ingestion",
-            "Implemented the necessary API endpoints inside the client's existing web application",
-            "Stored measurements in MySQL to enable historical tracking and visualization in the client dashboard",
-            "Ensured stable, repeatable data delivery suitable for continuous monitoring scenarios",
+            "Implemented firmware logic to measure temperature and humidity from the embedded sensors.",
+            "Displayed real-time readings on the device LCD for local monitoring and quick validation.",
+            "Implemented WiFi connectivity (ESP8266) to send measurements to a backend REST API.",
+            "Aligned payload structure with the client's backend requirements for seamless ingestion.",
+            "Implemented the necessary API endpoints inside the client's existing web application.",
+            "Stored measurements in MySQL to enable historical tracking and visualization in the client dashboard.",
+            "Ensured stable, repeatable data delivery suitable for continuous monitoring scenarios.",
         ],
         techStack: [
             {
@@ -1345,6 +1356,82 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "sprink-ads",
                 title: "Sprink Ads",
+            },
+        },
+    },
+    {
+        slug: "controlec",
+        title: "Controlec",
+        year: "2015",
+        type: "Mobile App + Web Platform",
+        status: "Completed",
+        hero: {
+            shortDescription:
+                "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Support the coordination, tracking, and supervision of election-related activities through a mobile application connected to a web-based backend.",
+            challenge:
+                "Contributing to a time-sensitive, multi-module platform where reliability, clear workflows, and coordination between mobile and backend components were critical.",
+            role: "Android Developer (team contributor). Supported the development of multiple modules within the mobile application as part of a larger engineering team.",
+        },
+        facts: {
+            role: "Android Developer (Contributor)",
+            timeline: "2015",
+            platform: "Android + Web",
+            team: "Multiple developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
+                alt: "Controlec mobile application home screen",
+                caption:
+                    "Main navigation screen of the Controlec Android application.",
+            },
+        ],
+        whatIBuilt: [
+            "Contributed to the development and maintenance of several Android application modules.",
+            "Implemented features and UI logic using Java for Android.",
+            "Worked closely with the team to integrate mobile features with existing backend services.",
+            "Provided development support within a collaborative, multi-developer environment.",
+        ],
+        techStack: [
+            {
+                category: "Mobile",
+                technologies: ["Android", "Java"],
+            },
+            {
+                category: "Backend & Platform",
+                technologies: ["REST API", "Web Platform"],
+            },
+        ],
+        designDecisions: {
+            title: "Development Approach",
+            items: [
+                "Modular Android architecture to allow parallel development by multiple developers.",
+                "Clear separation between mobile UI logic and backend services.",
+                "Incremental feature delivery aligned with project timelines.",
+            ],
+        },
+        results:
+            "The project was successfully delivered as a collaborative effort, providing a functional platform to support the coordination and monitoring of electoral operations in Yucatan.",
+        badges: [
+            "Android",
+            "Java",
+            "Mobile App",
+            "Team Project",
+            "Private / Restricted",
+        ],
+        navigation: {
+            previous: {
+                slug: "b-made-inventory-system",
+                title: "B-Made - Inventory System",
+            },
+            next: {
+                slug: "print-quote-now",
+                title: "PrintQuoteNow",
             },
         },
     },
