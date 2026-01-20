@@ -194,7 +194,7 @@ export const PROJECTS: Project[] = [
             "jQuery",
         ],
         year: "2018",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview.png",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview2.png",
         label: "",
         slug: "absolute-eddm",
     },
