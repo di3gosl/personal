@@ -281,6 +281,16 @@ export const PROJECTS: Project[] = [
         label: "",
         slug: "grupo-lamol",
     },
+    {
+        title: "Astrea Realty",
+        description:
+            "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
+        technologies: ["WordPress", "PHP", "MySQL", "SEO", "Real Estate"],
+        year: "2014",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
+        label: "",
+        slug: "astrea-realty",
+    },
 ];
 
 export const PROJECTS_DETAILS: ProjectDetail[] = [
@@ -1761,6 +1771,101 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "controlec",
                 title: "Controlec",
+            },
+        },
+    },
+    {
+        slug: "astrea-realty",
+        title: "Astrea Realty",
+        year: "2014",
+        type: "WordPress Website · Real Estate",
+        status: "Client Project (Public Website)",
+        hero: {
+            shortDescription:
+                "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Deliver an informative and easy-to-manage WordPress website that allows the client to publish and organize real estate listings, promote services, and capture leads through a clear contact flow.",
+            challenge:
+                "Balancing strong visual presentation (large image sections and property galleries) with usability and performance, while ensuring the site remained simple to update by non-technical users.",
+            role: "Collaborated as a web developer in a two-person team, contributing to implementation, WordPress configuration, layout building, and front-end styling.",
+        },
+        facts: {
+            role: "Web Developer (WordPress)",
+            timeline: "2014",
+            platform: "Web",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/screen1.png",
+                alt: "Astrea Realty homepage with featured listings",
+                caption:
+                    "Homepage focused on discovery and featured properties.",
+            },
+        ],
+        whatIBuilt: [
+            "Configured WordPress structure and content types to support property listings and informational pages.",
+            "Implemented responsive layouts for key sections (home, listings, property detail, contact).",
+            "Built navigation and page hierarchy to improve discoverability across listings and services.",
+            "Applied SEO-friendly practices (clean structure, metadata basics, and content organization).",
+            "Collaborated closely with a second developer to deliver the project efficiently and consistently.",
+        ],
+        techStack: [
+            {
+                category: "Platform",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS", "JavaScript"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Other",
+                technologies: ["SEO"],
+            },
+        ],
+        designDecisions: {
+            title: "Design & UX Decisions",
+            items: [
+                "Listing-first structure to help users find properties quickly.",
+                "Large imagery and clean spacing to support visual decision-making.",
+                "Bilingual-ready navigation to support a broader audience.",
+                "Simple, familiar WordPress editing flow to enable non-technical updates.",
+                "Mobile-responsive layouts to support browsing on-the-go.",
+            ],
+        },
+        results:
+            "The website provided the client with a professional online presence and a structured way to publish and manage property listings, improving discoverability and lead capture through a clear browsing and contact experience.",
+        badges: [
+            "WordPress",
+            "PHP",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "SEO",
+            "Real Estate",
+            "Client Project",
+            "Team Project",
+        ],
+        navigation: {
+            previous: {
+                slug: "ipc-inmobiliaria",
+                title: "IPC Inmobiliaria",
+            },
+            next: {
+                slug: "grupo-lamol",
+                title: "Grupo Lamol",
             },
         },
     },
