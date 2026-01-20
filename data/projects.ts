@@ -162,6 +162,27 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
+        title: "Absolute EDDM",
+        description:
+            "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
+        technologies: [
+            "EDDM",
+            "USPS Integration",
+            "CardPointe",
+            "AWS Architecture",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "Bootstrap",
+            "jQuery",
+        ],
+        year: "2018",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview.png",
+        label: "",
+        slug: "absolute-eddm",
+        isFeatured: true,
+    },
+    {
         title: "BioFractal Website",
         description:
             "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
@@ -501,7 +522,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Led the development of a custom online printing shop for a wholesale printing company.",
             "Implemented an instant quote estimator based on configurable printing options.",
             "Developed a complete purchasing flow including cart, checkout, and artwork upload.",
-            "Integrated payment processing using Authorize.Net, later upgraded to CardConnect.",
+            "Integrated payment processing using Authorize.Net, later upgraded to CardPointe.",
             "Implemented a loyalty points system rewarding customers for each purchase.",
             "Built a coupon and discount system to support promotional campaigns.",
             "Designed and implemented a MySQL database for products, customers, orders, pricing, and rewards.",
@@ -530,7 +551,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             },
             {
                 category: "Payments",
-                technologies: ["Authorize.Net", "CardConnect"],
+                technologies: ["Authorize.Net", "CardPointe"],
             },
         ],
         designDecisions: {
@@ -1428,6 +1449,115 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             previous: {
                 slug: "b-made-inventory-system",
                 title: "B-Made - Inventory System",
+            },
+            next: {
+                slug: "print-quote-now",
+                title: "PrintQuoteNow",
+            },
+        },
+    },
+    {
+        slug: "absolute-eddm",
+        title: "Absolute EDDM",
+        year: "2018",
+        type: "Web Application · Direct Mail / EDDM Ordering Platform",
+        status: "Private / Restricted",
+        hero: {
+            shortDescription:
+                "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Create a self-service ordering experience for EDDM campaigns where users can select mailing routes, estimate total costs (printing + postage), upload artwork, complete checkout, and generate the necessary data to execute fulfillment through USPS.",
+            challenge:
+                "Building a workflow that combines interactive route selection and pricing logic with a reliable order management backend, while keeping the UX straightforward for non-technical customers.",
+            role: "Full-Stack Developer responsible for implementing the end-to-end web application, including customer checkout flows, admin management features, pricing logic, and integrations.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2018",
+            platform: "Web",
+            team: "Small team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen1.png",
+                alt: "Absolute EDDM landing page",
+                caption: "Landing page introducing the Absolute EDDM platform.",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen2.png",
+                alt: "Route selection map tool",
+                caption:
+                    "Interactive map tool to select USPS routes and preview audience details and costs.",
+            },
+        ],
+        whatIBuilt: [
+            "Customer-facing EDDM ordering workflow: route selection, product configuration, artwork upload, and checkout.",
+            "Interactive mapping experience to browse and select USPS routes with detailed route statistics.",
+            "Pricing logic combining print options and EDDM postage costs for accurate campaign totals.",
+            "Checkout and payment flow integrated with CardPointe for secure transaction processing.",
+            "Admin dashboard to manage customers, orders, pricing rules, and operational settings.",
+            "AWS-based hosting and deployment setup for reliability and scalability.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: [
+                    "HTML",
+                    "CSS",
+                    "Bootstrap",
+                    "JavaScript",
+                    "jQuery",
+                ],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud & Infrastructure",
+                technologies: ["AWS"],
+            },
+            {
+                category: "Integrations",
+                technologies: ["USPS EDDM", "CardPointe Payment Gateway"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design & Technical Decisions",
+            items: [
+                "A guided, step-based customer flow to reduce friction for non-technical users purchasing mail campaigns.",
+                "Map-first interaction model to make route selection intuitive and visual.",
+                "Centralized pricing rules and admin-controlled configuration to support frequent business changes.",
+                "Payment processing abstracted into a dedicated integration layer to keep checkout logic maintainable.",
+            ],
+        },
+        results:
+            "The platform streamlined the process of launching EDDM campaigns by combining route discovery, pricing, artwork submission, and payment into a single workflow, reducing manual coordination and enabling faster fulfillment.",
+        badges: [
+            "EDDM",
+            "USPS Integration",
+            "Mapping Tool",
+            "Payment Processing",
+            "CardPointe",
+            "AWS",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "Bootstrap",
+            "jQuery",
+            "Private / Restricted",
+        ],
+        navigation: {
+            previous: {
+                slug: "controlec",
+                title: "Controlec",
             },
             next: {
                 slug: "print-quote-now",
