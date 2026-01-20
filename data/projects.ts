@@ -199,25 +199,6 @@ export const PROJECTS: Project[] = [
         slug: "absolute-eddm",
     },
     {
-        title: "BioFractal Website",
-        description:
-            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
-        technologies: [
-            "React.js",
-            "Redux",
-            "Node.js",
-            "PHP",
-            "MySQL",
-            "REST API",
-            "Bootstrap",
-            "Responsive Design",
-        ],
-        year: "2017",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
-        label: "",
-        slug: "biofractal",
-    },
-    {
         title: "B-Made Inventory System",
         description:
             "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
@@ -263,6 +244,25 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
+        title: "BioFractal Website",
+        description:
+            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
+        technologies: [
+            "React.js",
+            "Redux",
+            "Node.js",
+            "PHP",
+            "MySQL",
+            "REST API",
+            "Bootstrap",
+            "Responsive Design",
+        ],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
+        label: "",
+        slug: "biofractal",
+    },
+    {
         title: "Controlec",
         description:
             "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
@@ -299,6 +299,16 @@ export const PROJECTS: Project[] = [
         slug: "ipc-inmobiliaria",
     },
     {
+        title: "Astrea Realty",
+        description:
+            "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
+        technologies: ["WordPress", "PHP", "MySQL", "SEO", "Real Estate"],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
+        label: "",
+        slug: "astrea-realty",
+    },
+    {
         title: "Grupo Lamol",
         description:
             "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
@@ -309,16 +319,6 @@ export const PROJECTS: Project[] = [
         slug: "grupo-lamol",
     },
     {
-        title: "Astrea Realty",
-        description:
-            "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
-        technologies: ["WordPress", "PHP", "MySQL", "SEO", "Real Estate"],
-        year: "2014",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
-        label: "",
-        slug: "astrea-realty",
-    },
-    {
         title: "CEDU Noel",
         description:
             "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
@@ -327,6 +327,26 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/preview.png",
         label: "",
         slug: "cedu-noel",
+    },
+    {
+        title: "Canteras Creativas",
+        description:
+            "An e-commerce web application to showcase and sell handcrafted stone products, featuring a custom product catalog, shopping cart, and integrated online payments.",
+        technologies: [
+            "E-commerce",
+            "Web Application",
+            "React",
+            "Yii Framework",
+            "PHP",
+            "MySQL",
+            "PayPal",
+            "DineroMail",
+            "REST API",
+        ],
+        year: "2013",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/preview.png",
+        label: "",
+        slug: "canteras-creativas",
     },
 ];
 
@@ -450,7 +470,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
     {
         slug: "biofractal",
         title: "BioFractal Website",
-        year: "2017",
+        year: "2015",
         type: "Client Website · Corporate / Informational",
         status: "Delivered",
         hero: {
@@ -471,7 +491,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
         },
         facts: {
             role: "Full-Stack Developer",
-            timeline: "2017",
+            timeline: "2015",
             platform: "Web",
             team: "Multidisciplinary team",
             repository: "Private",
@@ -1814,7 +1834,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
     {
         slug: "astrea-realty",
         title: "Astrea Realty",
-        year: "2014",
+        year: "2015",
         type: "WordPress Website · Real Estate",
         status: "Client Project (Public Website)",
         hero: {
@@ -1830,7 +1850,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
         },
         facts: {
             role: "Web Developer",
-            timeline: "2014",
+            timeline: "2015",
             platform: "WordPress",
             team: "2 developers",
             repository: "Private",
@@ -2154,6 +2174,114 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "grupo-lamol",
                 title: "Grupo Lamol",
+            },
+        },
+    },
+    {
+        slug: "canteras-creativas",
+        title: "Canteras Creativas",
+        year: "2013",
+        type: "Web Application",
+        status: "Completed",
+        hero: {
+            shortDescription:
+                "An e-commerce web application to showcase and sell handcrafted stone products, featuring a custom product catalog, shopping cart, and integrated online payments.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Develop a web platform to manage and display a catalog of stone products, enabling customers to browse products, view detailed specifications, and complete online purchases.",
+            challenge:
+                "Building a flexible product management system with detailed product attributes while integrating multiple payment gateways and ensuring a smooth shopping experience.",
+            role: "Full-Stack Developer responsible for front-end development, backend implementation, payment gateway integration, and API communication.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2013",
+            platform: "Web Application",
+            team: "Solo Developer",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/screen1.jpg",
+                alt: "Canteras Creativas landing page",
+                caption: "Landing page showcasing handcrafted stone products.",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/screen1.png",
+                alt: "Canteras Creativas product detail page",
+                caption:
+                    "Detailed product view with specifications, pricing, and image gallery.",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/screen3.jpg",
+                alt: "Canteras Creativas additional pages",
+                caption:
+                    "Additional pages showcasing various product categories and user account management.",
+            },
+        ],
+        whatIBuilt: [
+            "Frontend implementation for product catalog, product detail pages, and shopping cart.",
+            "Backend development using Yii Framework to manage products, categories, and orders.",
+            "REST API to connect frontend interactions with backend services.",
+            "Integration of PayPal and DineroMail payment gateways.",
+            "Admin features to manage products, pricing, and customer orders.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: [
+                    "React",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Bootstrap",
+                ],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Payments",
+                technologies: ["PayPal API", "DineroMail API"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Architectural and Technical Decisions",
+            items: [
+                "Separation of frontend and backend responsibilities using a REST-based architecture.",
+                "Custom product data model to support detailed specifications such as dimensions, weight, and material type.",
+                "Payment gateway abstraction to support multiple providers.",
+                "SEO-friendly structure to improve product visibility in search engines.",
+            ],
+        },
+        results:
+            "The platform allowed the client to present their handcrafted products in a professional online catalog, streamline customer inquiries, and accept online payments, improving sales reach and operational efficiency.",
+        badges: [
+            "E-commerce",
+            "Web Application",
+            "React",
+            "Yii Framework",
+            "PHP",
+            "MySQL",
+            "PayPal",
+            "DineroMail",
+            "REST API",
+            "Private / Restricted",
+        ],
+        navigation: {
+            previous: {
+                slug: "cedu-noel",
+                title: "CEDU Noel",
+            },
+            next: {
+                slug: "inventory-system",
+                title: "Inventory System",
             },
         },
     },
