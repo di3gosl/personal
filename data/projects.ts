@@ -256,6 +256,22 @@ export const PROJECTS: Project[] = [
         slug: "controlec",
     },
     {
+        title: "IPC Inmobiliaria",
+        description:
+            "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
+        technologies: [
+            "WordPress",
+            "Corporate Website",
+            "Real Estate",
+            "SEO",
+            "PHP",
+        ],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ipc-inmobiliaria/preview.png",
+        label: "",
+        slug: "ipc-inmobiliaria",
+    },
+    {
         title: "Grupo Lamol",
         description:
             "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
@@ -1653,6 +1669,94 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             previous: {
                 slug: "absolute-eddm",
                 title: "Absolute EDDM",
+            },
+            next: {
+                slug: "controlec",
+                title: "Controlec",
+            },
+        },
+    },
+    {
+        slug: "ipc-inmobiliaria",
+        title: "IPC Inmobiliaria",
+        year: "2015",
+        type: "Informational Website",
+        status: "Completed",
+        hero: {
+            shortDescription:
+                "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Create a professional and informative website to present the real estate offerings, services, and developments of IPC Inmobiliaria in a clear and accessible way.",
+            challenge:
+                "Structuring large amounts of property and service information while maintaining a clean design, good performance, and SEO-friendly structure within WordPress.",
+            role: "Web Developer, collaborating with another programmer on implementation, customization, and content structure.",
+        },
+        facts: {
+            role: "Web Developer",
+            timeline: "2015",
+            platform: "WordPress",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ipc-inmobiliaria/screen1.png",
+                alt: "IPC Inmobiliaria homepage",
+                caption:
+                    "Main homepage showcasing services, developments, and featured properties.",
+            },
+        ],
+        whatIBuilt: [
+            "Implementation and customization of a WordPress-based informational website.",
+            "Collaboration on layout structure, content organization, and visual presentation.",
+            "Configuration of property listings, galleries, and contact sections.",
+            "SEO-friendly page structure using WordPress best practices.",
+        ],
+        techStack: [
+            {
+                category: "CMS",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "MySQL"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS"],
+            },
+            {
+                category: "Other",
+                technologies: ["SEO"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design and Implementation Decisions",
+            items: [
+                "Use of WordPress to allow easy content management by non-technical users.",
+                "Clear separation of services, developments, and property listings.",
+                "SEO-oriented structure to improve online visibility.",
+                "Responsive layout to ensure usability across desktop and mobile devices.",
+            ],
+        },
+        results:
+            "The website provided IPC Inmobiliaria with a professional online presence, enabling them to clearly present their properties, services, and developments while improving accessibility and search engine visibility.",
+        badges: [
+            "WordPress",
+            "Informational Website",
+            "Real Estate",
+            "SEO",
+            "PHP",
+            "MySQL",
+            "Collaborative Project",
+            "Private / Client Work",
+        ],
+        navigation: {
+            previous: {
+                slug: "grupo-lamol",
+                title: "Grupo Lamol",
             },
             next: {
                 slug: "controlec",
