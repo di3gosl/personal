@@ -84,6 +84,24 @@ export const PROJECTS: Project[] = [
         slug: "eiwa",
     },
     {
+        title: "Corporativo Vega Website",
+        description:
+            "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
+        technologies: [
+            "WordPress",
+            "Corporate Website",
+            "Elementor",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Responsive Design",
+        ],
+        year: "2019",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/preview.png",
+        label: "",
+        slug: "corporativo-vega",
+    },
+    {
         title: "BioFractal Network",
         description:
             "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
@@ -98,7 +116,6 @@ export const PROJECTS: Project[] = [
             "RDS",
             "S3",
             "Route 53",
-            "Load Balancer",
         ],
         year: "2019",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/preview.png",
@@ -1792,9 +1809,9 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             role: "Collaborated as a web developer in a two-person team, contributing to implementation, WordPress configuration, layout building, and front-end styling.",
         },
         facts: {
-            role: "Web Developer (WordPress)",
+            role: "Web Developer",
             timeline: "2014",
-            platform: "Web",
+            platform: "WordPress",
             team: "2 developers",
             repository: "Private",
         },
@@ -1866,6 +1883,86 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "grupo-lamol",
                 title: "Grupo Lamol",
+            },
+        },
+    },
+    {
+        slug: "corporativo-vega",
+        title: "Corporativo Vega Website",
+        year: "2019",
+        type: "Corporate Informational Website",
+        status: "Completed",
+        hero: {
+            shortDescription:
+                "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Develop a professional corporate website to clearly present the company's information, services, and brand identity in an accessible and well-structured format.",
+            challenge:
+                "Creating a clear and maintainable content structure in WordPress while ensuring visual consistency, responsive behavior, and easy content management for non-technical users.",
+            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
+        },
+        facts: {
+            role: "Web Developer",
+            timeline: "2019",
+            platform: "WordPress",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/screen1.jpg",
+                alt: "Corporativo Vega homepage",
+                caption:
+                    "Main homepage presenting the company overview and branding.",
+            },
+        ],
+        whatIBuilt: [
+            "WordPress installation and configuration.",
+            "Implementation of custom layouts using Elementor and custom HTML/CSS.",
+            "Content structure setup for corporate sections and informational pages.",
+            "Collaboration on visual adjustments and responsive behavior.",
+        ],
+        techStack: [
+            {
+                category: "CMS",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS", "Elementor"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design and Implementation Decisions",
+            items: [
+                "Use of WordPress to allow easy content management by the client.",
+                "Simple and clean visual structure focused on corporate clarity.",
+                "Responsive layout to ensure correct display across devices.",
+            ],
+        },
+        results:
+            "The website provided the company with a professional online presence, enabling them to clearly communicate their services and corporate information while allowing easy future content updates.",
+        badges: [
+            "WordPress",
+            "Corporate Website",
+            "Informational Site",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Elementor",
+            "Responsive Design",
+            "Team Collaboration",
+        ],
+        navigation: {
+            previous: {
+                slug: "astrea-realty",
+                title: "Astrea Realty",
             },
         },
     },
