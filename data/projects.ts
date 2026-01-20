@@ -273,6 +273,22 @@ export const PROJECTS: Project[] = [
         slug: "controlec",
     },
     {
+        title: "Hacienda San Diego Cutz",
+        description:
+            "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
+        technologies: [
+            "WordPress",
+            "Corporate Website",
+            "HTML",
+            "CSS",
+            "PHP",
+        ],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/preview.png",
+        label: "",
+        slug: "hacienda-san-diego-cutz",
+    },
+    {
         title: "IPC Inmobiliaria",
         description:
             "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
@@ -1963,6 +1979,92 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             previous: {
                 slug: "astrea-realty",
                 title: "Astrea Realty",
+            },
+        },
+    },
+    {
+        slug: "hacienda-san-diego-cutz",
+        title: "Hacienda San Diego Cutz",
+        year: "2015",
+        type: "Corporate Informational Website",
+        status: "Live",
+        hero: {
+            shortDescription:
+                "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
+            ctas: [
+                {
+                    label: "View Live",
+                    href: "https://haciendasandiegocutz.com/",
+                },
+            ],
+        },
+        overview: {
+            goal: "Create a professional online presence to present the venue, highlight its key features, and make it easy for visitors to explore galleries and get in touch.",
+            challenge:
+                "Implementing a visually attractive WordPress site with organized content (sections and galleries), while keeping it responsive and easy for the client to maintain.",
+            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
+        },
+        facts: {
+            role: "Web Developer",
+            timeline: "2015",
+            platform: "WordPress",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/screen1.jpg",
+                alt: "Hacienda San Diego Cutz homepage",
+                caption:
+                    "Homepage introducing the venue and its main sections.",
+            },
+        ],
+        whatIBuilt: [
+            "WordPress installation and base configuration.",
+            "Implementation of page layouts and content structure for the site sections.",
+            "Styling adjustments using HTML/CSS to match the intended look and improve readability.",
+            "Setup and customization of galleries and media content organization.",
+            "Collaboration with a second developer to deliver the full site.",
+        ],
+        techStack: [
+            {
+                category: "CMS",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design and Implementation Decisions",
+            items: [
+                "WordPress chosen to keep content updates simple for non-technical users.",
+                "Content organized into clear sections (venue details, galleries, contact) for easy navigation.",
+                "Responsive layout to ensure a consistent experience across desktop and mobile devices.",
+            ],
+        },
+        results:
+            "The website established a strong and accessible online presence for the venue, improving how visitors explore the location, view galleries, and contact the business. The platform remains live and maintainable through WordPress.",
+        badges: [
+            "WordPress",
+            "Corporate Website",
+            "Informational Site",
+            "Gallery",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Responsive Design",
+            "Team Collaboration",
+        ],
+        navigation: {
+            previous: {
+                slug: "corporativo-vega-website",
+                title: "Corporativo Vega Website",
             },
         },
     },
