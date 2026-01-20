@@ -276,13 +276,7 @@ export const PROJECTS: Project[] = [
         title: "Hacienda San Diego Cutz",
         description:
             "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
-        technologies: [
-            "WordPress",
-            "Corporate Website",
-            "HTML",
-            "CSS",
-            "PHP",
-        ],
+        technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
         year: "2015",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/preview.png",
         label: "",
@@ -323,6 +317,16 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
         label: "",
         slug: "astrea-realty",
+    },
+    {
+        title: "CEDU Noel",
+        description:
+            "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
+        technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
+        year: "2014",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/preview.png",
+        label: "",
+        slug: "cedu-noel",
     },
 ];
 
@@ -2065,6 +2069,91 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             previous: {
                 slug: "corporativo-vega-website",
                 title: "Corporativo Vega Website",
+            },
+        },
+    },
+    {
+        slug: "cedu-noel",
+        title: "CEDU Noel",
+        year: "2014",
+        type: "Corporate Informational Website",
+        status: "Live",
+        hero: {
+            shortDescription:
+                "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Develop a clear and maintainable informational website that communicates the organization's mission, services, and key information in an accessible and professional way.",
+            challenge:
+                "Structuring a content-heavy site in a way that remains easy to navigate and maintain, while ensuring responsive behavior across devices.",
+            role: "Web Developer collaborating with another programmer, responsible for WordPress implementation, page layout structure, and frontend customization.",
+        },
+        facts: {
+            role: "Web Developer",
+            timeline: "2014",
+            platform: "WordPress",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/screen1.png",
+                alt: "CEDU Noel website homepage",
+                caption:
+                    "Homepage with clear hierarchy and institutional presentation.",
+            },
+        ],
+        whatIBuilt: [
+            "WordPress installation and base configuration.",
+            "Implementation of the site structure and page layouts.",
+            "Frontend customization using HTML and CSS.",
+            "Organization of informational content for clarity and ease of navigation.",
+            "Collaboration with another developer to deliver the complete project.",
+        ],
+        techStack: [
+            {
+                category: "CMS",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP"],
+            },
+        ],
+        designDecisions: {
+            title: "Design & UX Decisions",
+            items: [
+                "Use of WordPress to allow easy content management by non-technical users.",
+                "Simple and intuitive navigation to prioritize information clarity.",
+                "Responsive layout to ensure compatibility across desktop and mobile devices.",
+            ],
+        },
+        results:
+            "The project provided CEDU Noel with a professional and maintainable online presence, enabling clear communication of its services and institutional information.",
+        badges: [
+            "WordPress",
+            "Corporate Website",
+            "Informational Site",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Responsive Design",
+            "Team Collaboration",
+            "Legacy Project",
+        ],
+        navigation: {
+            previous: {
+                slug: "hacienda-san-diego-cutz",
+                title: "Hacienda San Diego Cutz",
+            },
+            next: {
+                slug: "grupo-lamol",
+                title: "Grupo Lamol",
             },
         },
     },
