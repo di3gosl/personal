@@ -182,6 +182,29 @@ export const PROJECTS: Project[] = [
         isFeatured: true,
     },
     {
+        title: "B-Made Inventory System",
+        description:
+            "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
+        technologies: [
+            "Internal Tool",
+            "Inventory Management",
+            "React",
+            "Redux",
+            "Material UI",
+            "PHP",
+            "Node.js",
+            "Yii Framework",
+            "MySQL",
+            "AWS Architecture",
+            "REST API",
+        ],
+        year: "2017",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/preview.png",
+        label: "",
+        slug: "bmade-inventory",
+        isFeatured: true,
+    },
+    {
         title: "Absolute Color Printing Shop",
         description:
             "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
@@ -1228,6 +1251,100 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "printing-shop-platform",
                 title: "Printing Shop Platform",
+            },
+        },
+    },
+    {
+        slug: "bmade-inventory",
+        title: "B-Made Inventory System",
+        year: "2017",
+        type: "Internal Web Application · Inventory Management",
+        status: "Private / Internal Use",
+        hero: {
+            shortDescription:
+                "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Create a reliable internal web platform to manage electronic component inventory with clear traceability, fast search, and controlled access for staff.",
+            challenge:
+                "Keeping inventory data consistent across categories, manufacturers, and part numbers while maintaining a UI that stays fast and easy to use for day-to-day operations.",
+            role: "Full-Stack Developer responsible for implementing the web application, backend logic, database structure, and deployment on AWS.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2017",
+            platform: "Web",
+            team: "Solo project",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/screen1.jpg",
+                alt: "B-Made dashboard navigation",
+                caption:
+                    "Structured navigation for inventory and administration modules.",
+            },
+        ],
+        whatIBuilt: [
+            "Inventory module to manage electronic components with categories, manufacturers, and part number references.",
+            "Search and filtering experience to quickly locate parts across large inventories.",
+            "Admin section to manage internal users and configuration settings.",
+            "Core entities for client and company records to support internal operational workflows.",
+            "REST API endpoints to support CRUD operations and future integration needs.",
+            "Deployment and hosting on AWS for a stable internal environment.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["React", "Redux", "Material UI"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Node.js", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud & Infrastructure",
+                technologies: ["AWS"],
+            },
+        ],
+        designDecisions: {
+            title: "Design & UX Decisions",
+            items: [
+                "Material UI-based interface to keep internal screens consistent and easy to scan.",
+                "Table-first UX with search and filters to optimize for daily inventory operations.",
+                "Clear separation between inventory entities (components, categories, manufacturers) to reduce data duplication.",
+                "Role-based access patterns to keep internal administration controlled and auditable.",
+            ],
+        },
+        results:
+            "The system replaced fragmented manual tracking with a centralized inventory source of truth, improving operational visibility and reducing time spent locating parts and validating stock data.",
+        badges: [
+            "Internal Tool",
+            "Inventory Management",
+            "React",
+            "Redux",
+            "Material UI",
+            "PHP",
+            "Node.js",
+            "Yii Framework",
+            "MySQL",
+            "AWS Architecture",
+            "REST API",
+            "Private / Restricted",
+        ],
+        navigation: {
+            previous: {
+                slug: "print-quote-now",
+                title: "PrintQuoteNow",
+            },
+            next: {
+                slug: "sprink-ads",
+                title: "Sprink Ads",
             },
         },
     },
