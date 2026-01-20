@@ -42,6 +42,7 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/preview.png",
         label: "",
         slug: "print-quote-now",
+        isFeatured: true,
     },
     {
         title: "RTLS System (Real-Time Locating System)",
@@ -159,7 +160,6 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/preview.png",
         label: "",
         slug: "ecohyt",
-        isFeatured: true,
     },
     {
         title: "Absolute EDDM",
@@ -180,7 +180,6 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview.png",
         label: "",
         slug: "absolute-eddm",
-        isFeatured: true,
     },
     {
         title: "BioFractal Website",
@@ -200,7 +199,6 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
         label: "",
         slug: "biofractal",
-        isFeatured: true,
     },
     {
         title: "B-Made Inventory System",
@@ -223,7 +221,6 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/preview.png",
         label: "",
         slug: "bmade-inventory",
-        isFeatured: true,
     },
     {
         title: "Absolute Color Printing Shop",
@@ -242,7 +239,7 @@ export const PROJECTS: Project[] = [
             "Admin Dashboard",
             "Team Leadership",
         ],
-        year: "2015",
+        year: "2016",
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/preview.png",
         label: "",
         slug: "absolute-color",
@@ -257,7 +254,16 @@ export const PROJECTS: Project[] = [
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
         label: "",
         slug: "controlec",
-        isFeatured: true,
+    },
+    {
+        title: "Grupo Lamol",
+        description:
+            "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
+        technologies: ["Corporate Website", "WordPress", "PHP", "MySQL", "SEO"],
+        year: "2014",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/preview.png",
+        label: "",
+        slug: "grupo-lamol",
     },
 ];
 
@@ -479,7 +485,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
     {
         slug: "absolute-color",
         title: "Absolute Color Printing Shop",
-        year: "2015",
+        year: "2016",
         type: "Client Project · E-commerce / Printing Platform",
         status: "Delivered",
         hero: {
@@ -495,7 +501,7 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
         },
         facts: {
             role: "Lead Full-Stack Developer",
-            timeline: "2015",
+            timeline: "2016",
             platform: "Web",
             team: "Led a team of 3 developers",
             repository: "Private",
@@ -1562,6 +1568,95 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             next: {
                 slug: "print-quote-now",
                 title: "PrintQuoteNow",
+            },
+        },
+    },
+    {
+        slug: "grupo-lamol",
+        title: "Grupo Lamol",
+        year: "2014",
+        type: "Corporate Website",
+        status: "Completed",
+        hero: {
+            shortDescription:
+                "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Provide Grupo Lamol with a professional online presence to communicate information about their gas stations, services, fuel prices, and contact details in a clear and user-friendly way.",
+            challenge:
+                "Designing and implementing a visually engaging yet informative website that could be easily managed and updated, while ensuring good performance and search engine visibility.",
+            role: "Web Developer collaborating with another developer, responsible for WordPress customization, frontend implementation, and content structure.",
+        },
+        facts: {
+            role: "Web Developer",
+            timeline: "2014",
+            platform: "WordPress",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/screen1.png",
+                alt: "Grupo Lamol homepage",
+                caption:
+                    "Homepage showcasing Grupo Lamol gas stations and corporate identity.",
+            },
+        ],
+        whatIBuilt: [
+            "WordPress-based corporate website structure and customization.",
+            "Frontend implementation using HTML and CSS for a responsive layout.",
+            "Integration of dynamic content sections for gas stations and fuel prices.",
+            "SEO-friendly structure and content organization.",
+            "Collaboration with another developer to deliver the complete website.",
+        ],
+        techStack: [
+            {
+                category: "CMS",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "MySQL"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS"],
+            },
+            {
+                category: "SEO",
+                technologies: ["On-page SEO"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design and Technical Decisions",
+            items: [
+                "Use of WordPress to allow easy content updates by non-technical users.",
+                "Clear information hierarchy focused on stations, prices, and contact details.",
+                "Responsive layout to ensure accessibility across desktop and mobile devices.",
+                "SEO-oriented structure to improve online visibility.",
+            ],
+        },
+        results:
+            "Grupo Lamol obtained a professional and informative web presence that improved visibility of their gas stations and services, making key information easily accessible to customers.",
+        badges: [
+            "Corporate Website",
+            "WordPress",
+            "PHP",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "SEO",
+            "Private / Restricted",
+        ],
+        navigation: {
+            previous: {
+                slug: "absolute-eddm",
+                title: "Absolute EDDM",
+            },
+            next: {
+                slug: "controlec",
+                title: "Controlec",
             },
         },
     },
