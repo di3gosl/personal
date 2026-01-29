@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
@@ -20,7 +20,7 @@ const itemVariants = {
 };
 
 interface ProjectHeroProps {
-    project: ProjectDetail;
+    project: Project;
 }
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
@@ -62,7 +62,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="text-lg md:text-xl text-accent max-w-3xl mx-auto leading-relaxed"
                         variants={itemVariants}
                     >
-                        {project.hero.shortDescription}
+                        {project.shortDescription}
                     </motion.p>
 
                     {/* CTAs */}
@@ -70,40 +70,46 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="flex flex-wrap items-center justify-center gap-4 pt-4"
                         variants={itemVariants}
                     >
-                        {project.hero.ctas.map((cta, index) => {
-                            const isOutline = cta.variant === "outline";
-                            const Icon = cta.label
-                                .toLowerCase()
-                                .includes("repo")
-                                ? Github
-                                : ExternalLink;
-
-                            return (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <Link
-                                        href={cta.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`
+                        {project.liveUrl && (
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <Link
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`
                                         inline-flex items-center gap-2 px-6 py-2 rounded-lg
                                         font-medium transition-all duration-300 border-2 border-primary
-                                        ${
-                                            isOutline
-                                                ? "text-primary hover:bg-primary hover:text-white"
-                                                : "bg-primary text-white hover:bg-secondary"
-                                        }
+                                        bg-primary text-white hover:bg-secondary
                                     `}
-                                    >
-                                        {cta.label}
-                                        <Icon className="w-4 h-4" />
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
+                                >
+                                    Live Site
+                                    <ExternalLink className="w-4 h-4" />
+                                </Link>
+                            </motion.div>
+                        )}
+                        {project.repoUrl && (
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <Link
+                                    href={project.repoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`
+                                        inline-flex items-center gap-2 px-6 py-2 rounded-lg
+                                        font-medium transition-all duration-300 border-2 border-primary
+                                        text-primary hover:bg-primary hover:text-white
+                                    `}
+                                >
+                                    Public Repo
+                                    <Github className="w-4 h-4" />
+                                </Link>
+                            </motion.div>
+                        )}
                     </motion.div>
 
                     {/* Badges */}

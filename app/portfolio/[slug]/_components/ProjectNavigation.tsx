@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Grid3x3 } from "lucide-react";
-import type { Project } from "@/types/portfolio";
+import type { Project } from "@/types/project";
 import { naturalEase } from "@/lib/animations";
 
 interface ProjectNavigationProps {

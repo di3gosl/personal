@@ -9,7 +9,7 @@ import {
     TrendingUp,
     Sparkles,
 } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { Separator } from "@/components/ui/separator";
 
@@ -26,7 +26,7 @@ const itemVariants = {
 };
 
 interface ProjectContentProps {
-    project: ProjectDetail;
+    project: Project;
 }
 
 export default function ProjectContent({ project }: ProjectContentProps) {

@@ -1,7 +1,8 @@
-import type { Project } from "@/types/portfolio";
+import type { Project } from "@/types/project";
 
 export const PROJECTS: Project[] = [
     {
+        slug: "personal-portfolio",
         title: "Personal Portfolio Website",
         description:
             "A modern, minimal personal portfolio built to showcase my projects, experience, and technical expertise with a strong focus on clarity, performance, and user experience.",
@@ -16,41 +17,25 @@ export const PROJECTS: Project[] = [
             "Personal Project",
             "Vercel",
         ],
-        year: "2025",
+        year: 2025,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/personal/preview.png",
         label: "Public Repo",
-        slug: "personal-portfolio",
         isFeatured: true,
         type: "Personal Website · Portfolio",
         status: "Public Repository",
-        hero: {
-            shortDescription:
-                "A modern, minimal personal portfolio built to showcase my projects, experience, and technical expertise with a strong focus on clarity, performance, and user experience.",
-            ctas: [
-                {
-                    label: "View Live",
-                    href: "https://diegosalazar.dev",
-                },
-                {
-                    label: "View Public Repo",
-                    href: "https://github.com/di3gosl/personal",
-                    variant: "outline",
-                },
-            ],
-        },
-        overview: {
-            goal: "The goal of this project was to design and build a clean, professional personal portfolio that clearly communicates my experience as a full-stack developer, while remaining fast, maintainable, and visually minimal. Beyond showcasing projects, the site was designed to reflect my approach to software development: clarity, structure, and thoughtful details over visual noise.",
-            challenge:
-                "Most personal portfolios tend to be either overly flashy or overly generic. I wanted to avoid both extremes and instead create a site that feels calm, intentional, and technically solid, while still leaving room for personality.",
-            role: "This is a solo project where I handled everything end-to-end: product definition, UX/UI decisions, frontend and backend implementation, and deployment and optimization.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2025",
-            platform: "Web",
-            team: "Solo project",
-            repository: "Public",
-        },
+        shortDescription:
+            "A modern, minimal personal portfolio built to showcase my projects, experience, and technical expertise with a strong focus on clarity, performance, and user experience.",
+        liveUrl: "https://diegosalazar.dev",
+        repoUrl: "https://github.com/di3gosl/personal",
+        goal: "The goal of this project was to design and build a clean, professional personal portfolio that clearly communicates my experience as a full-stack developer, while remaining fast, maintainable, and visually minimal. Beyond showcasing projects, the site was designed to reflect my approach to software development: clarity, structure, and thoughtful details over visual noise.",
+        challenge:
+            "Most personal portfolios tend to be either overly flashy or overly generic. I wanted to avoid both extremes and instead create a site that feels calm, intentional, and technically solid, while still leaving room for personality.",
+        roleDescription:
+            "This is a solo project where I handled everything end-to-end: product definition, UX/UI decisions, frontend and backend implementation, and deployment and optimization.",
+        role: "Full-Stack Developer",
+        platform: "Web",
+        team: "Solo project",
+        repository: "Public",
         screenshots: [
             {
                 src: "/images/portfolio/screenshot-1.jpg",
@@ -142,36 +127,25 @@ export const PROJECTS: Project[] = [
             "MySQL",
             "QuickBooks Integration",
         ],
-        year: "2022",
+        year: 2022,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/preview.png",
         label: "",
         slug: "print-quote-now",
         isFeatured: true,
         type: "Enterprise Web Application",
         status: "Active / Long-term Project",
-        hero: {
-            shortDescription:
-                "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
-            ctas: [
-                {
-                    label: "View Live",
-                    href: "https://printquotenow.com",
-                },
-            ],
-        },
-        overview: {
-            goal: "Build a scalable print management system capable of generating instant, highly optimized print quotes while managing the full production lifecycle, invoicing, and reporting.",
-            challenge:
-                "Designing and implementing a complex gang-run algorithm to optimally position multiple print jobs on a single sheet, minimizing paper waste and machine time, while keeping the system flexible for continuous feature expansion over multiple years.",
-            role: "Lead Full-Stack Developer responsible for system architecture, core algorithm development, API design, cloud infrastructure, and long-term platform evolution.",
-        },
-        facts: {
-            role: "Lead Full-Stack Developer",
-            timeline: "2022",
-            platform: "Enterprise web application for printing companies",
-            team: "4 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
+        liveUrl: "https://printquotenow.com",
+        goal: "Build a scalable print management system capable of generating instant, highly optimized print quotes while managing the full production lifecycle, invoicing, and reporting.",
+        challenge:
+            "Designing and implementing a complex gang-run algorithm to optimally position multiple print jobs on a single sheet, minimizing paper waste and machine time, while keeping the system flexible for continuous feature expansion over multiple years.",
+        roleDescription:
+            "Lead Full-Stack Developer responsible for system architecture, core algorithm development, API design, cloud infrastructure, and long-term platform evolution.",
+        role: "Lead Full-Stack Developer",
+        platform: "Enterprise web application for printing companies",
+        team: "4 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/screen1.jpg",
@@ -263,30 +237,23 @@ export const PROJECTS: Project[] = [
             "MySQL",
             "REST API",
         ],
-        year: "2021",
+        year: 2021,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/preview.png",
         label: "",
         slug: "rtls-system",
         type: "IoT · Embedded Systems · Web Platform",
         status: "Prototype",
-        hero: {
-            shortDescription:
-                "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to design and validate a real-time positioning system capable of tracking mobile devices inside an indoor environment, combining embedded electronics, positioning algorithms, and a web-based visualization interface.",
-            challenge:
-                "The main challenge was achieving reliable positioning accuracy in an indoor environment while integrating firmware, data transmission, and real-time visualization into a cohesive system suitable for future commercial development.",
-            role: "I worked across the full technical stack: developing the firmware for the microcontroller, implementing the positioning algorithm, building the backend API to receive device data, and creating the web interface to visualize device positions in real time.",
-        },
-        facts: {
-            role: "Full-Stack & Embedded Systems Developer",
-            timeline: "2021",
-            platform: "Web · Embedded · IoT",
-            team: "Hardware & software collaboration",
-            repository: "Private",
-        },
+        shortDescription:
+            "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
+        goal: "The goal of this project was to design and validate a real-time positioning system capable of tracking mobile devices inside an indoor environment, combining embedded electronics, positioning algorithms, and a web-based visualization interface.",
+        challenge:
+            "The main challenge was achieving reliable positioning accuracy in an indoor environment while integrating firmware, data transmission, and real-time visualization into a cohesive system suitable for future commercial development.",
+        roleDescription:
+            "I worked across the full technical stack: developing the firmware for the microcontroller, implementing the positioning algorithm, building the backend API to receive device data, and creating the web interface to visualize device positions in real time.",
+        role: "Full-Stack & Embedded Systems Developer",
+        platform: "Web · Embedded · IoT",
+        team: "Hardware & software collaboration",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen2.jpg",
@@ -360,30 +327,23 @@ export const PROJECTS: Project[] = [
             "Android",
             "Prototype",
         ],
-        year: "2020",
+        year: 2020,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/preview.png",
         label: "",
         slug: "eiwa",
         type: "IoT Prototype · Firmware & API Integration",
         status: "Private · Prototype",
-        hero: {
-            shortDescription:
-                "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build a reliable prototype capable of estimating the liquid level in water containers using capacitive sensing, and to deliver those readings to a backend service that could be consumed by a mobile application.",
-            challenge:
-                "The main technical challenge was translating raw sensor readings into a stable and meaningful 'water level' value under real-world conditions. This required careful handling of noise, calibration behavior, and ensuring consistent measurements over time, while keeping the firmware lightweight and reliable.",
-            role: "I was responsible for developing the measurement algorithm in firmware and implementing the data delivery flow to a backend REST API. I also provided technical guidance to the Android team on the API contract and database structure to store device metadata and measurement history. I did not design or build the electronics, and I did not develop the Android application.",
-        },
-        facts: {
-            role: "Firmware & Backend Integration",
-            timeline: "2020",
-            platform: "IoT · Firmware + API",
-            team: "Cross-functional (mobile handled by a third party)",
-            repository: "Private",
-        },
+        shortDescription:
+            "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
+        goal: "The goal of this project was to build a reliable prototype capable of estimating the liquid level in water containers using capacitive sensing, and to deliver those readings to a backend service that could be consumed by a mobile application.",
+        challenge:
+            "The main technical challenge was translating raw sensor readings into a stable and meaningful 'water level' value under real-world conditions. This required careful handling of noise, calibration behavior, and ensuring consistent measurements over time, while keeping the firmware lightweight and reliable.",
+        roleDescription:
+            "I was responsible for developing the measurement algorithm in firmware and implementing the data delivery flow to a backend REST API. I also provided technical guidance to the Android team on the API contract and database structure to store device metadata and measurement history. I did not design or build the electronics, and I did not develop the Android application.",
+        role: "Firmware & Backend Integration",
+        platform: "IoT · Firmware + API",
+        team: "Cross-functional (mobile handled by a third party)",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen1.jpg",
@@ -465,30 +425,23 @@ export const PROJECTS: Project[] = [
             "PHP",
             "Responsive Design",
         ],
-        year: "2019",
+        year: 2019,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/preview.png",
         label: "",
         slug: "corporativo-vega",
         type: "Corporate Informational Website",
         status: "Completed",
-        hero: {
-            shortDescription:
-                "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Develop a professional corporate website to clearly present the company's information, services, and brand identity in an accessible and well-structured format.",
-            challenge:
-                "Creating a clear and maintainable content structure in WordPress while ensuring visual consistency, responsive behavior, and easy content management for non-technical users.",
-            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2019",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
+        goal: "Develop a professional corporate website to clearly present the company's information, services, and brand identity in an accessible and well-structured format.",
+        challenge:
+            "Creating a clear and maintainable content structure in WordPress while ensuring visual consistency, responsive behavior, and easy content management for non-technical users.",
+        roleDescription:
+            "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
+        role: "Web Developer",
+        platform: "WordPress",
+        team: "2 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/screen1.jpg",
@@ -555,30 +508,23 @@ export const PROJECTS: Project[] = [
             "S3",
             "Route 53",
         ],
-        year: "2019",
+        year: 2019,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/preview.png",
         label: "",
         slug: "biofractal-network",
         type: "Prototype · Knowledge Network / Project Management Platform",
         status: "Prototype (Validated)",
-        hero: {
-            shortDescription:
-                "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build a web-based platform that enables professionals to create detailed profiles, showcase their experience, manage collaborative projects, and offer consulting services. The platform aimed to connect knowledge, talent, and real-world problems while providing tools for project tracking, expert recommendations, and payment handling.",
-            challenge:
-                "The main challenge was designing a flexible system that could support multiple user roles including developers, consultants, project owners, and organizations while maintaining a clear structure for profiles, expertise, project management, and transactions. Additionally, the platform needed to be scalable and production-ready despite being launched as a prototype.",
-            role: "I worked as a full-stack developer and cloud engineer, responsible for application development, system architecture, cloud infrastructure configuration, deployment, and operational setup on AWS.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2019",
-            platform: "Web",
-            team: "Small development team",
-            repository: "Private",
-        },
+        shortDescription:
+            "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
+        goal: "The goal of this project was to build a web-based platform that enables professionals to create detailed profiles, showcase their experience, manage collaborative projects, and offer consulting services. The platform aimed to connect knowledge, talent, and real-world problems while providing tools for project tracking, expert recommendations, and payment handling.",
+        challenge:
+            "The main challenge was designing a flexible system that could support multiple user roles including developers, consultants, project owners, and organizations while maintaining a clear structure for profiles, expertise, project management, and transactions. Additionally, the platform needed to be scalable and production-ready despite being launched as a prototype.",
+        roleDescription:
+            "I worked as a full-stack developer and cloud engineer, responsible for application development, system architecture, cloud infrastructure configuration, deployment, and operational setup on AWS.",
+        role: "Full-Stack Developer",
+        platform: "Web",
+        team: "Small development team",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen1.png",
@@ -674,30 +620,23 @@ export const PROJECTS: Project[] = [
             "IoT",
             "Raspberry Pi",
         ],
-        year: "2019",
+        year: 2019,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/preview.png",
         label: "",
         slug: "sprink-ads",
         type: "Client Project · Advertising Platform / IoT",
         status: "Delivered (NDA)",
-        hero: {
-            shortDescription:
-                "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build an end-to-end advertising platform that allows agencies and publishers to upload and manage video advertisements, synchronize content with vending machines in the field, and track real-world interactions generated by users. The system needed to bridge a web application with embedded devices while keeping data accurate and operationally manageable.",
-            challenge:
-                "The main challenge was designing a reliable communication flow between the web platform and physical machines operating under real-world network constraints. This included synchronizing video files over WiFi, tracking user interactions through hardware events, and keeping consistent counts per video, machine, and publisher to generate trustworthy statistics; while also operating under NDA constraints.",
-            role: "I worked as a full-stack developer, contributing to the design and implementation of the web platform, the API layer used by devices, the video synchronization workflow, and the interaction tracking and statistics logic.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2019",
-            platform: "Web + Physical Devices",
-            team: "Small development team",
-            repository: "Private",
-        },
+        shortDescription:
+            "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
+        goal: "The goal of this project was to build an end-to-end advertising platform that allows agencies and publishers to upload and manage video advertisements, synchronize content with vending machines in the field, and track real-world interactions generated by users. The system needed to bridge a web application with embedded devices while keeping data accurate and operationally manageable.",
+        challenge:
+            "The main challenge was designing a reliable communication flow between the web platform and physical machines operating under real-world network constraints. This included synchronizing video files over WiFi, tracking user interactions through hardware events, and keeping consistent counts per video, machine, and publisher to generate trustworthy statistics; while also operating under NDA constraints.",
+        roleDescription:
+            "I worked as a full-stack developer, contributing to the design and implementation of the web platform, the API layer used by devices, the video synchronization workflow, and the interaction tracking and statistics logic.",
+        role: "Full-Stack Developer",
+        platform: "Web + Physical Devices",
+        team: "Small development team",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen1.png",
@@ -788,30 +727,23 @@ export const PROJECTS: Project[] = [
             "Bootstrap",
             "Corporate Website",
         ],
-        year: "2019",
+        year: 2019,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/preview.png",
         label: "",
         slug: "b-circuits",
         type: "Client Project · Corporate / Informational Website",
         status: "Delivered",
-        hero: {
-            shortDescription:
-                "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to design and develop an informational website for B-Circuits that clearly presents the company's engineering services, development process, and value proposition. The site needed to communicate technical credibility while remaining accessible to potential clients from non-technical backgrounds.",
-            challenge:
-                "The main challenge was translating complex engineering and hardware development services into clear, well-structured content that could be easily understood by prospective clients, without oversimplifying the technical depth of the company's work.",
-            role: "I worked as a full-stack developer, responsible for the frontend implementation, backend structure, and overall technical execution of the website.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2019",
-            platform: "Web",
-            team: "Small team",
-            repository: "Private",
-        },
+        shortDescription:
+            "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
+        goal: "The goal of this project was to design and develop an informational website for B-Circuits that clearly presents the company's engineering services, development process, and value proposition. The site needed to communicate technical credibility while remaining accessible to potential clients from non-technical backgrounds.",
+        challenge:
+            "The main challenge was translating complex engineering and hardware development services into clear, well-structured content that could be easily understood by prospective clients, without oversimplifying the technical depth of the company's work.",
+        roleDescription:
+            "I worked as a full-stack developer, responsible for the frontend implementation, backend structure, and overall technical execution of the website.",
+        role: "Full-Stack Developer",
+        platform: "Web",
+        team: "Small team",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen1.png",
@@ -880,30 +812,23 @@ export const PROJECTS: Project[] = [
             "MySQL",
             "LCD",
         ],
-        year: "2018",
+        year: 2018,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/preview.png",
         label: "",
         slug: "ecohyt",
         type: "IoT Prototype · Firmware & API Integration",
         status: "Private",
-        hero: {
-            shortDescription:
-                "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to implement the firmware and connectivity layer for an embedded monitoring device that captures temperature and humidity readings, shows them locally on an LCD, and reliably uploads the measurements to the client's backend for historical tracking and visualization.",
-            challenge:
-                "The core challenge was ensuring consistent measurements and dependable delivery over WiFi to the backend API, while keeping the firmware stable and lightweight. Additionally, integration required aligning the device payloads with an existing web platform and database schema so the client could visualize the data without changing their dashboard workflow.",
-            role: "I handled the firmware implementation end-to-end: sensor measurement logic, LCD rendering, and the networking flow to send readings to a REST API. I also implemented the required API endpoints within the client's existing web application to persist data into MySQL. I did not design or build the electronics hardware, and the dashboard UI was already provided by the client.",
-        },
-        facts: {
-            role: "Firmware & Backend Integration",
-            timeline: "2018",
-            platform: "IoT · Firmware + API",
-            team: "Collaborative (client owned dashboard)",
-            repository: "Private",
-        },
+        shortDescription:
+            "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
+        goal: "The goal of this project was to implement the firmware and connectivity layer for an embedded monitoring device that captures temperature and humidity readings, shows them locally on an LCD, and reliably uploads the measurements to the client's backend for historical tracking and visualization.",
+        challenge:
+            "The core challenge was ensuring consistent measurements and dependable delivery over WiFi to the backend API, while keeping the firmware stable and lightweight. Additionally, integration required aligning the device payloads with an existing web platform and database schema so the client could visualize the data without changing their dashboard workflow.",
+        roleDescription:
+            "I handled the firmware implementation end-to-end: sensor measurement logic, LCD rendering, and the networking flow to send readings to a REST API. I also implemented the required API endpoints within the client's existing web application to persist data into MySQL. I did not design or build the electronics hardware, and the dashboard UI was already provided by the client.",
+        role: "Firmware & Backend Integration",
+        platform: "IoT · Firmware + API",
+        team: "Collaborative (client owned dashboard)",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen2.jpg",
@@ -981,30 +906,23 @@ export const PROJECTS: Project[] = [
             "Bootstrap",
             "jQuery",
         ],
-        year: "2018",
+        year: 2018,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview2.png",
         label: "",
         slug: "absolute-eddm",
         type: "Web Application · Direct Mail / EDDM Ordering Platform",
         status: "Private / Restricted",
-        hero: {
-            shortDescription:
-                "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Create a self-service ordering experience for EDDM campaigns where users can select mailing routes, estimate total costs (printing + postage), upload artwork, complete checkout, and generate the necessary data to execute fulfillment through USPS.",
-            challenge:
-                "Building a workflow that combines interactive route selection and pricing logic with a reliable order management backend, while keeping the UX straightforward for non-technical customers.",
-            role: "Full-Stack Developer responsible for implementing the end-to-end web application, including customer checkout flows, admin management features, pricing logic, and integrations.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2018",
-            platform: "Web",
-            team: "Small team",
-            repository: "Private",
-        },
+        shortDescription:
+            "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
+        goal: "Create a self-service ordering experience for EDDM campaigns where users can select mailing routes, estimate total costs (printing + postage), upload artwork, complete checkout, and generate the necessary data to execute fulfillment through USPS.",
+        challenge:
+            "Building a workflow that combines interactive route selection and pricing logic with a reliable order management backend, while keeping the UX straightforward for non-technical customers.",
+        roleDescription:
+            "Full-Stack Developer responsible for implementing the end-to-end web application, including customer checkout flows, admin management features, pricing logic, and integrations.",
+        role: "Full-Stack Developer",
+        platform: "Web",
+        team: "Small team",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen1.png",
@@ -1097,30 +1015,23 @@ export const PROJECTS: Project[] = [
             "AWS Architecture",
             "REST API",
         ],
-        year: "2017",
+        year: 2017,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/preview.png",
         label: "",
         slug: "bmade-inventory",
         type: "Internal Web Application · Inventory Management",
         status: "Private / Internal Use",
-        hero: {
-            shortDescription:
-                "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Create a reliable internal web platform to manage electronic component inventory with clear traceability, fast search, and controlled access for staff.",
-            challenge:
-                "Keeping inventory data consistent across categories, manufacturers, and part numbers while maintaining a UI that stays fast and easy to use for day-to-day operations.",
-            role: "Full-Stack Developer responsible for implementing the web application, backend logic, database structure, and deployment on AWS.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2017",
-            platform: "Web",
-            team: "Solo project",
-            repository: "Private",
-        },
+        shortDescription:
+            "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
+        goal: "Create a reliable internal web platform to manage electronic component inventory with clear traceability, fast search, and controlled access for staff.",
+        challenge:
+            "Keeping inventory data consistent across categories, manufacturers, and part numbers while maintaining a UI that stays fast and easy to use for day-to-day operations.",
+        roleDescription:
+            "Full-Stack Developer responsible for implementing the web application, backend logic, database structure, and deployment on AWS.",
+        role: "Full-Stack Developer",
+        platform: "Web",
+        team: "Solo project",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/screen1.jpg",
@@ -1198,31 +1109,24 @@ export const PROJECTS: Project[] = [
             "Admin Dashboard",
             "Team Leadership",
         ],
-        year: "2016",
+        year: 2016,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/preview.png",
         label: "",
         slug: "absolute-color",
         isFeatured: true,
         type: "Client Project · E-commerce / Printing Platform",
         status: "Delivered",
-        hero: {
-            shortDescription:
-                "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build a complete web-based printing platform that enables customers to instantly quote printing jobs, place orders online, upload artwork, and track their orders throughout the full production lifecycle. From the business perspective, the platform aimed to unlock new digital revenue streams that previously did not exist for the company.",
-            challenge:
-                "Printing services involve complex configuration options, pricing rules, promotions, and production workflows. The main challenge was building an accurate instant quote estimator and a reliable order lifecycle system, while also supporting secure payments, loyalty rewards, discount coupons, and business reporting within a custom-built architecture.",
-            role: "I led the development team and worked as a full-stack developer, defining the technical direction of the platform and actively contributing to frontend development, backend logic, database design, pricing rules, payment integrations, reporting systems, and administrative tooling.",
-        },
-        facts: {
-            role: "Lead Full-Stack Developer",
-            timeline: "2016",
-            platform: "Web",
-            team: "Led a team of 3 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
+        goal: "The goal of this project was to build a complete web-based printing platform that enables customers to instantly quote printing jobs, place orders online, upload artwork, and track their orders throughout the full production lifecycle. From the business perspective, the platform aimed to unlock new digital revenue streams that previously did not exist for the company.",
+        challenge:
+            "Printing services involve complex configuration options, pricing rules, promotions, and production workflows. The main challenge was building an accurate instant quote estimator and a reliable order lifecycle system, while also supporting secure payments, loyalty rewards, discount coupons, and business reporting within a custom-built architecture.",
+        roleDescription:
+            "I led the development team and worked as a full-stack developer, defining the technical direction of the platform and actively contributing to frontend development, backend logic, database design, pricing rules, payment integrations, reporting systems, and administrative tooling.",
+        role: "Lead Full-Stack Developer",
+        platform: "Web",
+        team: "Led a team of 3 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/screen1.png",
@@ -1321,35 +1225,24 @@ export const PROJECTS: Project[] = [
             "Bootstrap",
             "Responsive Design",
         ],
-        year: "2015",
+        year: 2015,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
         label: "",
         slug: "biofractal",
         type: "Client Website · Corporate / Informational",
         status: "Delivered",
-        hero: {
-            shortDescription:
-                "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
-            ctas: [
-                {
-                    label: "View Live",
-                    href: "https://biofractal.com.mx/",
-                },
-            ],
-        },
-        overview: {
-            goal: "The primary goal of this project was to design and develop a professional informational website that clearly presents BioFractal's vision, methodology, and areas of expertise in sustainable technology. The site needed to communicate credibility, structure, and purpose while remaining accessible to a broad, non-technical audience.",
-            challenge:
-                "One of the main challenges was translating complex, multidisciplinary concepts related to sustainability, technology, and innovation into clear, easy-to-understand content without oversimplifying the message. The site also needed to maintain a strong institutional identity while being responsive and performant across devices.",
-            role: "I worked as a full-stack developer, responsible for the frontend architecture, backend integration, data handling, and overall technical implementation of the website.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2015",
-            platform: "Web",
-            team: "Multidisciplinary team",
-            repository: "Private",
-        },
+        shortDescription:
+            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
+        liveUrl: "https://biofractal.com.mx/",
+        goal: "The primary goal of this project was to design and develop a professional informational website that clearly presents BioFractal's vision, methodology, and areas of expertise in sustainable technology. The site needed to communicate credibility, structure, and purpose while remaining accessible to a broad, non-technical audience.",
+        challenge:
+            "One of the main challenges was translating complex, multidisciplinary concepts related to sustainability, technology, and innovation into clear, easy-to-understand content without oversimplifying the message. The site also needed to maintain a strong institutional identity while being responsive and performant across devices.",
+        roleDescription:
+            "I worked as a full-stack developer, responsible for the frontend architecture, backend integration, data handling, and overall technical implementation of the website.",
+        role: "Full-Stack Developer",
+        platform: "Web",
+        team: "Multidisciplinary team",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen1.jpg",
@@ -1414,30 +1307,23 @@ export const PROJECTS: Project[] = [
         description:
             "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
         technologies: ["Android", "Java", "Mobile App", "Team Project"],
-        year: "2015",
+        year: 2015,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
         label: "",
         slug: "controlec",
         type: "Mobile App + Web Platform",
         status: "Completed",
-        hero: {
-            shortDescription:
-                "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Support the coordination, tracking, and supervision of election-related activities through a mobile application connected to a web-based backend.",
-            challenge:
-                "Contributing to a time-sensitive, multi-module platform where reliability, clear workflows, and coordination between mobile and backend components were critical.",
-            role: "Android Developer (team contributor). Supported the development of multiple modules within the mobile application as part of a larger engineering team.",
-        },
-        facts: {
-            role: "Android Developer (Contributor)",
-            timeline: "2015",
-            platform: "Android + Web",
-            team: "Multiple developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
+        goal: "Support the coordination, tracking, and supervision of election-related activities through a mobile application connected to a web-based backend.",
+        challenge:
+            "Contributing to a time-sensitive, multi-module platform where reliability, clear workflows, and coordination between mobile and backend components were critical.",
+        roleDescription:
+            "Android Developer (team contributor). Supported the development of multiple modules within the mobile application as part of a larger engineering team.",
+        role: "Android Developer (Contributor)",
+        platform: "Android + Web",
+        team: "Multiple developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
@@ -1485,35 +1371,24 @@ export const PROJECTS: Project[] = [
         description:
             "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
         technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
-        year: "2015",
+        year: 2015,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/preview.png",
         label: "",
         slug: "hacienda-san-diego-cutz",
         type: "Corporate Informational Website",
         status: "Live",
-        hero: {
-            shortDescription:
-                "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
-            ctas: [
-                {
-                    label: "View Live",
-                    href: "https://haciendasandiegocutz.com/",
-                },
-            ],
-        },
-        overview: {
-            goal: "Create a professional online presence to present the venue, highlight its key features, and make it easy for visitors to explore galleries and get in touch.",
-            challenge:
-                "Implementing a visually attractive WordPress site with organized content (sections and galleries), while keeping it responsive and easy for the client to maintain.",
-            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2015",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
+        liveUrl: "https://haciendasandiegocutz.com/",
+        goal: "Create a professional online presence to present the venue, highlight its key features, and make it easy for visitors to explore galleries and get in touch.",
+        challenge:
+            "Implementing a visually attractive WordPress site with organized content (sections and galleries), while keeping it responsive and easy for the client to maintain.",
+        roleDescription:
+            "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
+        role: "Web Developer",
+        platform: "WordPress",
+        team: "2 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/screen1.jpg",
@@ -1576,30 +1451,23 @@ export const PROJECTS: Project[] = [
             "SEO",
             "PHP",
         ],
-        year: "2015",
+        year: 2015,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ipc-inmobiliaria/preview.png",
         label: "",
         slug: "ipc-inmobiliaria",
         type: "Informational Website",
         status: "Completed",
-        hero: {
-            shortDescription:
-                "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Create a professional and informative website to present the real estate offerings, services, and developments of IPC Inmobiliaria in a clear and accessible way.",
-            challenge:
-                "Structuring large amounts of property and service information while maintaining a clean design, good performance, and SEO-friendly structure within WordPress.",
-            role: "Web Developer, collaborating with another programmer on implementation, customization, and content structure.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2015",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
+        goal: "Create a professional and informative website to present the real estate offerings, services, and developments of IPC Inmobiliaria in a clear and accessible way.",
+        challenge:
+            "Structuring large amounts of property and service information while maintaining a clean design, good performance, and SEO-friendly structure within WordPress.",
+        roleDescription:
+            "Web Developer, collaborating with another programmer on implementation, customization, and content structure.",
+        role: "Web Developer",
+        platform: "WordPress",
+        team: "2 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ipc-inmobiliaria/screen1.png",
@@ -1659,30 +1527,23 @@ export const PROJECTS: Project[] = [
         description:
             "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
         technologies: ["WordPress", "PHP", "MySQL", "SEO", "Real Estate"],
-        year: "2015",
+        year: 2015,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
         label: "",
         slug: "astrea-realty",
         type: "WordPress Website · Real Estate",
         status: "Client Project (Public Website)",
-        hero: {
-            shortDescription:
-                "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Deliver an informative and easy-to-manage WordPress website that allows the client to publish and organize real estate listings, promote services, and capture leads through a clear contact flow.",
-            challenge:
-                "Balancing strong visual presentation (large image sections and property galleries) with usability and performance, while ensuring the site remained simple to update by non-technical users.",
-            role: "Collaborated as a web developer in a two-person team, contributing to implementation, WordPress configuration, layout building, and front-end styling.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2015",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
+        goal: "Deliver an informative and easy-to-manage WordPress website that allows the client to publish and organize real estate listings, promote services, and capture leads through a clear contact flow.",
+        challenge:
+            "Balancing strong visual presentation (large image sections and property galleries) with usability and performance, while ensuring the site remained simple to update by non-technical users.",
+        roleDescription:
+            "Collaborated as a web developer in a two-person team, contributing to implementation, WordPress configuration, layout building, and front-end styling.",
+        role: "Web Developer",
+        platform: "WordPress",
+        team: "2 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/screen1.png",
@@ -1749,30 +1610,23 @@ export const PROJECTS: Project[] = [
         description:
             "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
         technologies: ["Corporate Website", "WordPress", "PHP", "MySQL", "SEO"],
-        year: "2014",
+        year: 2014,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/preview.png",
         label: "",
         slug: "grupo-lamol",
         type: "Corporate Website",
         status: "Completed",
-        hero: {
-            shortDescription:
-                "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Provide Grupo Lamol with a professional online presence to communicate information about their gas stations, services, fuel prices, and contact details in a clear and user-friendly way.",
-            challenge:
-                "Designing and implementing a visually engaging yet informative website that could be easily managed and updated, while ensuring good performance and search engine visibility.",
-            role: "Web Developer collaborating with another developer, responsible for WordPress customization, frontend implementation, and content structure.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2014",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
+        goal: "Provide Grupo Lamol with a professional online presence to communicate information about their gas stations, services, fuel prices, and contact details in a clear and user-friendly way.",
+        challenge:
+            "Designing and implementing a visually engaging yet informative website that could be easily managed and updated, while ensuring good performance and search engine visibility.",
+        roleDescription:
+            "Web Developer collaborating with another developer, responsible for WordPress customization, frontend implementation, and content structure.",
+        role: "Web Developer",
+        platform: "WordPress",
+        team: "2 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/screen1.png",
@@ -1833,30 +1687,23 @@ export const PROJECTS: Project[] = [
         description:
             "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
         technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
-        year: "2014",
+        year: 2014,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/preview.png",
         label: "",
         slug: "cedu-noel",
         type: "Corporate Informational Website",
         status: "Live",
-        hero: {
-            shortDescription:
-                "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Develop a clear and maintainable informational website that communicates the organization's mission, services, and key information in an accessible and professional way.",
-            challenge:
-                "Structuring a content-heavy site in a way that remains easy to navigate and maintain, while ensuring responsive behavior across devices.",
-            role: "Web Developer collaborating with another programmer, responsible for WordPress implementation, page layout structure, and frontend customization.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2014",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
+        shortDescription:
+            "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
+        goal: "Develop a clear and maintainable informational website that communicates the organization's mission, services, and key information in an accessible and professional way.",
+        challenge:
+            "Structuring a content-heavy site in a way that remains easy to navigate and maintain, while ensuring responsive behavior across devices.",
+        roleDescription:
+            "Web Developer collaborating with another programmer, responsible for WordPress implementation, page layout structure, and frontend customization.",
+        role: "Web Developer",
+        platform: "WordPress",
+        team: "2 developers",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/screen1.png",
@@ -1923,30 +1770,23 @@ export const PROJECTS: Project[] = [
             "DineroMail",
             "REST API",
         ],
-        year: "2013",
+        year: 2013,
         image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/preview.png",
         label: "",
         slug: "canteras-creativas",
         type: "Web Application",
         status: "Completed",
-        hero: {
-            shortDescription:
-                "An e-commerce web application to showcase and sell handcrafted stone products, featuring a custom product catalog, shopping cart, and integrated online payments.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Develop a web platform to manage and display a catalog of stone products, enabling customers to browse products, view detailed specifications, and complete online purchases.",
-            challenge:
-                "Building a flexible product management system with detailed product attributes while integrating multiple payment gateways and ensuring a smooth shopping experience.",
-            role: "Full-Stack Developer responsible for front-end development, backend implementation, payment gateway integration, and API communication.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2013",
-            platform: "Web Application",
-            team: "Solo Developer",
-            repository: "Private",
-        },
+        shortDescription:
+            "An e-commerce web application to showcase and sell handcrafted stone products, featuring a custom product catalog, shopping cart, and integrated online payments.",
+        goal: "Develop a web platform to manage and display a catalog of stone products, enabling customers to browse products, view detailed specifications, and complete online purchases.",
+        challenge:
+            "Building a flexible product management system with detailed product attributes while integrating multiple payment gateways and ensuring a smooth shopping experience.",
+        roleDescription:
+            "Full-Stack Developer responsible for front-end development, backend implementation, payment gateway integration, and API communication.",
+        role: "Full-Stack Developer",
+        platform: "Web Application",
+        team: "Solo Developer",
+        repository: "Private",
         screenshots: [
             {
                 src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/screen1.jpg",

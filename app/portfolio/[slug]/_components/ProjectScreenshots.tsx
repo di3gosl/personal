@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { Maximize2 } from "lucide-react";
 import Lightbox from "yet-another-react-lightbox";
@@ -23,7 +23,7 @@ const imageVariants = {
 };
 
 interface ProjectScreenshotsProps {
-    project: ProjectDetail;
+    project: Project;
 }
 
 export default function ProjectScreenshots({

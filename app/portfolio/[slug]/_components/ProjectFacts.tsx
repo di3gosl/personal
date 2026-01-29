@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Briefcase, Calendar, Monitor, Users, FolderGit2 } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
 
 const itemVariants = {
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 interface ProjectFactsProps {
-    project: ProjectDetail;
+    project: Project;
 }
 
 export default function ProjectFacts({ project }: ProjectFactsProps) {
@@ -30,27 +30,27 @@ export default function ProjectFacts({ project }: ProjectFactsProps) {
         {
             icon: Briefcase,
             label: "Role",
-            value: project.facts.role,
+            value: project.role,
         },
         {
             icon: Calendar,
             label: "Timeline",
-            value: project.facts.timeline,
+            value: project.year,
         },
         {
             icon: Monitor,
             label: "Platform",
-            value: project.facts.platform,
+            value: project.platform,
         },
         {
             icon: Users,
             label: "Team",
-            value: project.facts.team,
+            value: project.team,
         },
         {
             icon: FolderGit2,
             label: "Repository",
-            value: project.facts.repository,
+            value: project.repository,
         },
     ];
 

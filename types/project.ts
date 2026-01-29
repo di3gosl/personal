@@ -1,34 +1,24 @@
 export type Project = {
+    slug: string;
     title: string;
     description: string;
     technologies: string[];
-    year: string;
+    year: number;
     image: string;
     label: string;
-    slug: string;
     isFeatured?: boolean;
     type: string;
     status: string;
-    hero: {
-        shortDescription: string;
-        ctas: {
-            label: string;
-            href: string;
-            variant?: "default" | "outline";
-        }[];
-    };
-    overview: {
-        goal: string;
-        challenge: string;
-        role: string;
-    };
-    facts: {
-        role: string;
-        timeline: string;
-        platform: string;
-        team: string;
-        repository: string;
-    };
+    shortDescription: string;
+    liveUrl?: string;
+    repoUrl?: string;
+    goal: string;
+    challenge: string;
+    roleDescription: string;
+    role: string;
+    platform: string;
+    team: string;
+    repository: string;
     screenshots: {
         src: string;
         previewSrc?: string;

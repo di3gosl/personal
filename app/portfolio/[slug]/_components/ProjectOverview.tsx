@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Target, Lightbulb, User } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
 
 const itemVariants = {
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 interface ProjectOverviewProps {
-    project: ProjectDetail;
+    project: Project;
 }
 
 export default function ProjectOverview({ project }: ProjectOverviewProps) {
@@ -30,22 +30,25 @@ export default function ProjectOverview({ project }: ProjectOverviewProps) {
         {
             icon: Target,
             title: "The Goal",
-            content: project.overview.goal,
+            content: project.goal,
         },
         {
             icon: Lightbulb,
             title: "The Challenge",
-            content: project.overview.challenge,
+            content: project.challenge,
         },
         {
             icon: User,
             title: "My Role",
-            content: project.overview.role,
+            content: project.roleDescription,
         },
     ];
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-background">
+        <section
+            ref={sectionRef}
+            className="py-16 md:py-24 px-6 md:px-12 bg-background"
+        >
             <div className="container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <motion.div

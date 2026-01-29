@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { naturalEase } from "../lib/animations";
 import Image from "next/image";
-import type { Project } from "@/types/portfolio";
+import type { Project } from "@/types/project";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
