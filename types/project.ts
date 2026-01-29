@@ -30,10 +30,7 @@ export type Project = {
         category: string;
         technologies: string[];
     }[];
-    designDecisions: {
-        title: string;
-        items: string[];
-    };
+    designDecisions: string[];
     results: string;
     badges: string[];
     navigation?: {

@@ -34,7 +34,10 @@ export default function ProjectContent({ project }: ProjectContentProps) {
     const isInView = useInView(sectionRef, { once: true, amount: 0.05 });
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-light/40">
+        <section
+            ref={sectionRef}
+            className="py-16 md:py-24 px-6 md:px-12 bg-light/40"
+        >
             <div className="container mx-auto max-w-4xl">
                 <motion.div
                     className="space-y-16"
@@ -106,7 +109,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
                         <div className="flex items-center gap-3">
                             <Palette className="w-6 h-6 text-primary" />
                             <h2 className="text-3xl font-bold text-primary">
-                                {project.designDecisions.title}
+                                Architecture & System Design Decisions
                             </h2>
                         </div>
                         <p className="text-accent leading-relaxed mb-4">
@@ -114,19 +117,17 @@ export default function ProjectContent({ project }: ProjectContentProps) {
                             feels professional, calm, and easy to navigate:
                         </p>
                         <ul className="space-y-3">
-                            {project.designDecisions.items.map(
-                                (item, index) => (
-                                    <li
-                                        key={index}
-                                        className="flex items-start gap-3 text-accent"
-                                    >
-                                        <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                                        <span className="leading-relaxed">
-                                            {item}
-                                        </span>
-                                    </li>
-                                ),
-                            )}
+                            {project.designDecisions.map((item, index) => (
+                                <li
+                                    key={index}
+                                    className="flex items-start gap-3 text-accent"
+                                >
+                                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                                    <span className="leading-relaxed">
+                                        {item}
+                                    </span>
+                                </li>
+                            ))}
                         </ul>
                     </motion.div>
 

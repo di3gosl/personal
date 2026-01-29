@@ -89,16 +89,13 @@ export const PROJECTS: Project[] = [
                 technologies: ["Vercel"],
             },
         ],
-        designDecisions: {
-            title: "Design & UX Decisions",
-            items: [
-                "Minimal black-and-white visual language to reduce distraction",
-                "Grayscale imagery in personal sections to reinforce storytelling",
-                "Color used intentionally only where it adds meaning",
-                "Mobile-first layout with progressive enhancement for desktop",
-                "Subtle animations to enhance interactivity without overwhelming",
-            ],
-        },
+        designDecisions: [
+            "Minimal black-and-white visual language to reduce distraction",
+            "Grayscale imagery in personal sections to reinforce storytelling",
+            "Color used intentionally only where it adds meaning",
+            "Mobile-first layout with progressive enhancement for desktop",
+            "Subtle animations to enhance interactivity without overwhelming",
+        ],
         results:
             "This project allowed me to consolidate a modern full-stack setup using Next.js and Supabase, while focusing on performance, clarity, and design restraint. It also serves as a living project that I can continuously evolve, refine, and extend as my experience and projects grow.",
         badges: [
@@ -191,15 +188,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["QuickBooks API", "REST APIs"],
             },
         ],
-        designDecisions: {
-            title: "Key Architectural and Technical Decisions",
-            items: [
-                "Custom gang-run algorithm developed from scratch using mathematical and geometric optimization techniques.",
-                "Modular system design to allow continuous feature expansion without disrupting existing workflows.",
-                "Separation of pricing logic, production logic, and accounting integrations for maintainability.",
-                "Use of AWS managed services to ensure scalability, fault tolerance, and long-term reliability.",
-            ],
-        },
+        designDecisions: [
+            "Custom gang-run algorithm developed from scratch using mathematical and geometric optimization techniques.",
+            "Modular system design to allow continuous feature expansion without disrupting existing workflows.",
+            "Separation of pricing logic, production logic, and accounting integrations for maintainability.",
+            "Use of AWS managed services to ensure scalability, fault tolerance, and long-term reliability.",
+        ],
         results:
             "The platform enabled printing companies to generate instant, highly optimized quotes, significantly reducing paper waste and manual estimation time. Its accounting integration streamlined invoicing workflows and improved financial reporting accuracy.",
         badges: [
@@ -289,15 +283,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["Node.js", "PHP", "MySQL"],
             },
         ],
-        designDecisions: {
-            title: "Technical & System Design Decisions",
-            items: [
-                "Separated firmware logic from web visualization for modularity",
-                "Real-time data flow optimized for low-latency position updates",
-                "Web interface designed to clearly represent spatial positioning",
-                "System structured to allow future commercial scalability",
-            ],
-        },
+        designDecisions: [
+            "Separated firmware logic from web visualization for modularity",
+            "Real-time data flow optimized for low-latency position updates",
+            "Web interface designed to clearly represent spatial positioning",
+            "System structured to allow future commercial scalability",
+        ],
         results:
             "This prototype successfully demonstrated an indoor RTLS system with approximately 30 cm accuracy, validating both the positioning algorithm and the end-to-end integration between embedded hardware and a web-based visualization platform.",
         badges: [
@@ -390,15 +381,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["Android"],
             },
         ],
-        designDecisions: {
-            title: "Technical Decisions",
-            items: [
-                "Firmware-first approach to keep the measurement logic close to the sensor and reduce backend complexity",
-                "Stable payload structure for long-term device compatibility and straightforward mobile consumption",
-                "Database design focused on traceability: device metadata + time-series measurement history",
-                "Clear separation of responsibilities between firmware delivery and mobile presentation layer",
-            ],
-        },
+        designDecisions: [
+            "Firmware-first approach to keep the measurement logic close to the sensor and reduce backend complexity",
+            "Stable payload structure for long-term device compatibility and straightforward mobile consumption",
+            "Database design focused on traceability: device metadata + time-series measurement history",
+            "Clear separation of responsibilities between firmware delivery and mobile presentation layer",
+        ],
         results:
             "The prototype achieved satisfactory measurement results and proved the feasibility of using capacitive sensing for water-level estimation in real-world conditions. The project also established a clean integration path between embedded firmware and a mobile-facing backend API, enabling reliable ingestion and storage of device readings.",
         badges: [
@@ -470,14 +458,11 @@ export const PROJECTS: Project[] = [
                 technologies: ["PHP"],
             },
         ],
-        designDecisions: {
-            title: "Key Design and Implementation Decisions",
-            items: [
-                "Use of WordPress to allow easy content management by the client.",
-                "Simple and clean visual structure focused on corporate clarity.",
-                "Responsive layout to ensure correct display across devices.",
-            ],
-        },
+        designDecisions: [
+            "Use of WordPress to allow easy content management by the client.",
+            "Simple and clean visual structure focused on corporate clarity.",
+            "Responsive layout to ensure correct display across devices.",
+        ],
         results:
             "The website provided the company with a professional online presence, enabling them to clearly communicate their services and corporate information while allowing easy future content updates.",
         badges: [
@@ -576,16 +561,13 @@ export const PROJECTS: Project[] = [
                 ],
             },
         ],
-        designDecisions: {
-            title: "Architecture & Platform Design Decisions",
-            items: [
-                "Modular platform design to support multiple user roles and workflows",
-                "Profile-driven expertise representation to enable meaningful matching",
-                "Project-centric collaboration model to track real development work",
-                "Cloud-native deployment on AWS to support scalability and reliability",
-                "Separation of application logic and infrastructure for future growth",
-            ],
-        },
+        designDecisions: [
+            "Modular platform design to support multiple user roles and workflows",
+            "Profile-driven expertise representation to enable meaningful matching",
+            "Project-centric collaboration model to track real development work",
+            "Cloud-native deployment on AWS to support scalability and reliability",
+            "Separation of application logic and infrastructure for future growth",
+        ],
         results:
             "BioFractal Network was launched as a functional prototype and received promising early validation, including interest from multiple universities looking to integrate their research teams into the platform. While the long-term continuation of the project is unknown, the prototype demonstrated strong product-market interest and validated the core concept of a collaborative knowledge and project management network.",
         badges: [
@@ -689,16 +671,13 @@ export const PROJECTS: Project[] = [
                 ],
             },
         ],
-        designDecisions: {
-            title: "Architecture & System Design Decisions",
-            items: [
-                "Filesystem-based video storage for simple and efficient media delivery",
-                "Database design focused on metadata (URL/filename) and event tracking rather than binary storage",
-                "API-driven architecture to decouple the web platform from devices in the field",
-                "Event-based interaction tracking triggered by hardware inputs",
-                "Statistics model based on per-video, per-machine counting to support publisher-level insights",
-            ],
-        },
+        designDecisions: [
+            "Filesystem-based video storage for simple and efficient media delivery",
+            "Database design focused on metadata (URL/filename) and event tracking rather than binary storage",
+            "API-driven architecture to decouple the web platform from devices in the field",
+            "Event-based interaction tracking triggered by hardware inputs",
+            "Statistics model based on per-video, per-machine counting to support publisher-level insights",
+        ],
         results:
             "The project delivered a working advertising platform capable of syncing video content to physical vending machines and tracking real-world user interactions through hardware events. By counting interactions per video on each machine, the platform produced reliable statistics per video and publisher; demonstrating a practical distributed system that combines web software, APIs, and IoT embedded hardware under NDA constraints.",
         badges: [
@@ -776,16 +755,13 @@ export const PROJECTS: Project[] = [
                 technologies: ["PHP", "Yii Framework"],
             },
         ],
-        designDecisions: {
-            title: "Design & Content Decisions",
-            items: [
-                "Strong visual emphasis on engineering and hardware-related imagery",
-                "Clear sectioning to separate services, plans, and value proposition",
-                "Content-first layout focused on explaining complex services clearly",
-                "Responsive design to ensure accessibility across devices",
-                "Professional visual language aligned with an engineering audience",
-            ],
-        },
+        designDecisions: [
+            "Strong visual emphasis on engineering and hardware-related imagery",
+            "Clear sectioning to separate services, plans, and value proposition",
+            "Content-first layout focused on explaining complex services clearly",
+            "Responsive design to ensure accessibility across devices",
+            "Professional visual language aligned with an engineering audience",
+        ],
         results:
             "The project delivered a clean and professional corporate website that effectively communicated B-Circuits' engineering services and development capabilities. It served as a digital presence aligned with the company's technical focus, reinforcing credibility and providing a clear entry point for potential clients.",
         badges: [
@@ -869,15 +845,12 @@ export const PROJECTS: Project[] = [
                 ],
             },
         ],
-        designDecisions: {
-            title: "Technical Decisions",
-            items: [
-                "Local LCD output to provide immediate validation and troubleshooting during field testing",
-                "Lightweight, consistent API payloads to integrate smoothly with an existing web platform",
-                "Time-series storage in MySQL to support charts and historical analysis in the client's dashboard",
-                "Separation of concerns: firmware focused on measurement + delivery; dashboard focused on visualization",
-            ],
-        },
+        designDecisions: [
+            "Local LCD output to provide immediate validation and troubleshooting during field testing",
+            "Lightweight, consistent API payloads to integrate smoothly with an existing web platform",
+            "Time-series storage in MySQL to support charts and historical analysis in the client's dashboard",
+            "Separation of concerns: firmware focused on measurement + delivery; dashboard focused on visualization",
+        ],
         results:
             "This project delivered a working monitoring prototype where device readings were displayed locally and reliably ingested into the client's backend. By integrating the firmware data flow with the client's REST API and MySQL storage, the existing dashboard could immediately visualize historical measurements without requiring changes to the frontend reporting experience.",
         badges: [
@@ -972,15 +945,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["USPS EDDM", "CardPointe Payment Gateway"],
             },
         ],
-        designDecisions: {
-            title: "Key Design & Technical Decisions",
-            items: [
-                "A guided, step-based customer flow to reduce friction for non-technical users purchasing mail campaigns.",
-                "Map-first interaction model to make route selection intuitive and visual.",
-                "Centralized pricing rules and admin-controlled configuration to support frequent business changes.",
-                "Payment processing abstracted into a dedicated integration layer to keep checkout logic maintainable.",
-            ],
-        },
+        designDecisions: [
+            "A guided, step-based customer flow to reduce friction for non-technical users purchasing mail campaigns.",
+            "Map-first interaction model to make route selection intuitive and visual.",
+            "Centralized pricing rules and admin-controlled configuration to support frequent business changes.",
+            "Payment processing abstracted into a dedicated integration layer to keep checkout logic maintainable.",
+        ],
         results:
             "The platform streamlined the process of launching EDDM campaigns by combining route discovery, pricing, artwork submission, and payment into a single workflow, reducing manual coordination and enabling faster fulfillment.",
         badges: [
@@ -1066,15 +1036,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["AWS"],
             },
         ],
-        designDecisions: {
-            title: "Design & UX Decisions",
-            items: [
-                "Material UI-based interface to keep internal screens consistent and easy to scan.",
-                "Table-first UX with search and filters to optimize for daily inventory operations.",
-                "Clear separation between inventory entities (components, categories, manufacturers) to reduce data duplication.",
-                "Role-based access patterns to keep internal administration controlled and auditable.",
-            ],
-        },
+        designDecisions: [
+            "Material UI-based interface to keep internal screens consistent and easy to scan.",
+            "Table-first UX with search and filters to optimize for daily inventory operations.",
+            "Clear separation between inventory entities (components, categories, manufacturers) to reduce data duplication.",
+            "Role-based access patterns to keep internal administration controlled and auditable.",
+        ],
         results:
             "The system replaced fragmented manual tracking with a centralized inventory source of truth, improving operational visibility and reducing time spent locating parts and validating stock data.",
         badges: [
@@ -1181,18 +1148,15 @@ export const PROJECTS: Project[] = [
                 technologies: ["Authorize.Net", "CardPointe"],
             },
         ],
-        designDecisions: {
-            title: "Architecture & UX Decisions",
-            items: [
-                "Custom-built pricing engine to support complex printing configurations",
-                "Instant quote estimator optimized for speed and accuracy",
-                "Step-by-step checkout flow to reduce friction during purchase",
-                "Loyalty and coupon systems designed to drive repeat business",
-                "Production workflow tracking integrated directly into the admin dashboard",
-                "Custom reporting tools to provide visibility into revenue and operational performance",
-                "Administrative interface optimized for daily operational efficiency",
-            ],
-        },
+        designDecisions: [
+            "Custom-built pricing engine to support complex printing configurations",
+            "Instant quote estimator optimized for speed and accuracy",
+            "Step-by-step checkout flow to reduce friction during purchase",
+            "Loyalty and coupon systems designed to drive repeat business",
+            "Production workflow tracking integrated directly into the admin dashboard",
+            "Custom reporting tools to provide visibility into revenue and operational performance",
+            "Administrative interface optimized for daily operational efficiency",
+        ],
         results:
             "The platform became a significant new digital sales channel for the client, generating hundreds of thousands of dollars in additional revenue that previously did not exist. This impact was measured through a custom-built reporting system designed specifically for the platform, providing visibility into sales performance, order volume, and revenue growth. The project strengthened my experience leading development teams and delivering business-critical systems with measurable commercial impact.",
         badges: [
@@ -1278,16 +1242,13 @@ export const PROJECTS: Project[] = [
                 technologies: ["MySQL"],
             },
         ],
-        designDecisions: {
-            title: "Design & UX Decisions",
-            items: [
-                "Clear content hierarchy to guide users through institutional information",
-                "Strong visual identity aligned with sustainability and nature-inspired themes",
-                "Responsive layout to ensure accessibility on desktop and mobile devices",
-                "Use of visual sections and iconography to simplify complex concepts",
-                "Balanced combination of framework-based layout and custom styling",
-            ],
-        },
+        designDecisions: [
+            "Clear content hierarchy to guide users through institutional information",
+            "Strong visual identity aligned with sustainability and nature-inspired themes",
+            "Responsive layout to ensure accessibility on desktop and mobile devices",
+            "Use of visual sections and iconography to simplify complex concepts",
+            "Balanced combination of framework-based layout and custom styling",
+        ],
         results:
             "This project resulted in a clear, professional corporate website that effectively communicates BioFractal's values and technological approach. It reinforced my experience building full-stack web applications that balance technical structure, usability, and institutional branding, especially in projects aimed at communicating complex ideas to diverse audiences.",
         badges: [
@@ -1348,14 +1309,11 @@ export const PROJECTS: Project[] = [
                 technologies: ["REST API", "Web Platform"],
             },
         ],
-        designDecisions: {
-            title: "Development Approach",
-            items: [
-                "Modular Android architecture to allow parallel development by multiple developers.",
-                "Clear separation between mobile UI logic and backend services.",
-                "Incremental feature delivery aligned with project timelines.",
-            ],
-        },
+        designDecisions: [
+            "Modular Android architecture to allow parallel development by multiple developers.",
+            "Clear separation between mobile UI logic and backend services.",
+            "Incremental feature delivery aligned with project timelines.",
+        ],
         results:
             "The project was successfully delivered as a collaborative effort, providing a functional platform to support the coordination and monitoring of electoral operations in Yucatan.",
         badges: [
@@ -1418,14 +1376,11 @@ export const PROJECTS: Project[] = [
                 technologies: ["PHP"],
             },
         ],
-        designDecisions: {
-            title: "Key Design and Implementation Decisions",
-            items: [
-                "WordPress chosen to keep content updates simple for non-technical users.",
-                "Content organized into clear sections (venue details, galleries, contact) for easy navigation.",
-                "Responsive layout to ensure a consistent experience across desktop and mobile devices.",
-            ],
-        },
+        designDecisions: [
+            "WordPress chosen to keep content updates simple for non-technical users.",
+            "Content organized into clear sections (venue details, galleries, contact) for easy navigation.",
+            "Responsive layout to ensure a consistent experience across desktop and mobile devices.",
+        ],
         results:
             "The website established a strong and accessible online presence for the venue, improving how visitors explore the location, view galleries, and contact the business. The platform remains live and maintainable through WordPress.",
         badges: [
@@ -1500,15 +1455,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["SEO"],
             },
         ],
-        designDecisions: {
-            title: "Key Design and Implementation Decisions",
-            items: [
-                "Use of WordPress to allow easy content management by non-technical users.",
-                "Clear separation of services, developments, and property listings.",
-                "SEO-oriented structure to improve online visibility.",
-                "Responsive layout to ensure usability across desktop and mobile devices.",
-            ],
-        },
+        designDecisions: [
+            "Use of WordPress to allow easy content management by non-technical users.",
+            "Clear separation of services, developments, and property listings.",
+            "SEO-oriented structure to improve online visibility.",
+            "Responsive layout to ensure usability across desktop and mobile devices.",
+        ],
         results:
             "The website provided IPC Inmobiliaria with a professional online presence, enabling them to clearly present their properties, services, and developments while improving accessibility and search engine visibility.",
         badges: [
@@ -1581,16 +1533,13 @@ export const PROJECTS: Project[] = [
                 technologies: ["SEO"],
             },
         ],
-        designDecisions: {
-            title: "Design & UX Decisions",
-            items: [
-                "Listing-first structure to help users find properties quickly.",
-                "Large imagery and clean spacing to support visual decision-making.",
-                "Bilingual-ready navigation to support a broader audience.",
-                "Simple, familiar WordPress editing flow to enable non-technical updates.",
-                "Mobile-responsive layouts to support browsing on-the-go.",
-            ],
-        },
+        designDecisions: [
+            "Listing-first structure to help users find properties quickly.",
+            "Large imagery and clean spacing to support visual decision-making.",
+            "Bilingual-ready navigation to support a broader audience.",
+            "Simple, familiar WordPress editing flow to enable non-technical updates.",
+            "Mobile-responsive layouts to support browsing on-the-go.",
+        ],
         results:
             "The website provided the client with a professional online presence and a structured way to publish and manage property listings, improving discoverability and lead capture through a clear browsing and contact experience.",
         badges: [
@@ -1660,15 +1609,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["On-page SEO"],
             },
         ],
-        designDecisions: {
-            title: "Key Design and Technical Decisions",
-            items: [
-                "Use of WordPress to allow easy content updates by non-technical users.",
-                "Clear information hierarchy focused on stations, prices, and contact details.",
-                "Responsive layout to ensure accessibility across desktop and mobile devices.",
-                "SEO-oriented structure to improve online visibility.",
-            ],
-        },
+        designDecisions: [
+            "Use of WordPress to allow easy content updates by non-technical users.",
+            "Clear information hierarchy focused on stations, prices, and contact details.",
+            "Responsive layout to ensure accessibility across desktop and mobile devices.",
+            "SEO-oriented structure to improve online visibility.",
+        ],
         results:
             "Grupo Lamol obtained a professional and informative web presence that improved visibility of their gas stations and services, making key information easily accessible to customers.",
         badges: [
@@ -1733,14 +1679,11 @@ export const PROJECTS: Project[] = [
                 technologies: ["PHP"],
             },
         ],
-        designDecisions: {
-            title: "Design & UX Decisions",
-            items: [
-                "Use of WordPress to allow easy content management by non-technical users.",
-                "Simple and intuitive navigation to prioritize information clarity.",
-                "Responsive layout to ensure compatibility across desktop and mobile devices.",
-            ],
-        },
+        designDecisions: [
+            "Use of WordPress to allow easy content management by non-technical users.",
+            "Simple and intuitive navigation to prioritize information clarity.",
+            "Responsive layout to ensure compatibility across desktop and mobile devices.",
+        ],
         results:
             "The project provided CEDU Noel with a professional and maintainable online presence, enabling clear communication of its services and institutional information.",
         badges: [
@@ -1837,15 +1780,12 @@ export const PROJECTS: Project[] = [
                 technologies: ["PayPal API", "DineroMail API"],
             },
         ],
-        designDecisions: {
-            title: "Key Architectural and Technical Decisions",
-            items: [
-                "Separation of frontend and backend responsibilities using a REST-based architecture.",
-                "Custom product data model to support detailed specifications such as dimensions, weight, and material type.",
-                "Payment gateway abstraction to support multiple providers.",
-                "SEO-friendly structure to improve product visibility in search engines.",
-            ],
-        },
+        designDecisions: [
+            "Separation of frontend and backend responsibilities using a REST-based architecture.",
+            "Custom product data model to support detailed specifications such as dimensions, weight, and material type.",
+            "Payment gateway abstraction to support multiple providers.",
+            "SEO-friendly structure to improve product visibility in search engines.",
+        ],
         results:
             "The platform allowed the client to present their handcrafted products in a professional online catalog, streamline customer inquiries, and accept online payments, improving sales reach and operational efficiency.",
         badges: [
