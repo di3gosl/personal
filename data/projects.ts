@@ -1,5 +1,4 @@
 import type { Project } from "@/types/portfolio";
-import type { ProjectDetail } from "@/types/projectDetails";
 
 export const PROJECTS: Project[] = [
     {
@@ -22,339 +21,6 @@ export const PROJECTS: Project[] = [
         label: "Public Repo",
         slug: "personal-portfolio",
         isFeatured: true,
-    },
-    {
-        title: "PrintQuoteNow",
-        description:
-            "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
-        technologies: [
-            "SaaS",
-            "Gang Optimization",
-            "AWS",
-            "React",
-            "Redux",
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "QuickBooks Integration",
-        ],
-        year: "2022",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/preview.png",
-        label: "",
-        slug: "print-quote-now",
-        isFeatured: true,
-    },
-    {
-        title: "RTLS System (Real-Time Locating System)",
-        description:
-            "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
-        technologies: [
-            "IoT",
-            "Embedded Systems",
-            "RTLS",
-            "Firmware",
-            "Prototype",
-            "React",
-            "PHP",
-            "MySQL",
-            "REST API",
-        ],
-        year: "2021",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/preview.png",
-        label: "",
-        slug: "rtls-system",
-    },
-    {
-        title: "Eiwa Water Level Sensor",
-        description:
-            "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
-        technologies: [
-            "IoT",
-            "Firmware",
-            "C++",
-            "ESP8266",
-            "WiFi",
-            "REST API",
-            "Android",
-            "Prototype",
-        ],
-        year: "2020",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/preview.png",
-        label: "",
-        slug: "eiwa",
-    },
-    {
-        title: "Corporativo Vega Website",
-        description:
-            "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
-        technologies: [
-            "WordPress",
-            "Corporate Website",
-            "Elementor",
-            "HTML",
-            "CSS",
-            "PHP",
-            "Responsive Design",
-        ],
-        year: "2019",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/preview.png",
-        label: "",
-        slug: "corporativo-vega",
-    },
-    {
-        title: "BioFractal Network",
-        description:
-            "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
-        technologies: [
-            "React.js",
-            "Redux",
-            "PHP/Yii Framework",
-            "MySQL",
-            "REST API",
-            "AWS Architecture",
-            "EC2",
-            "RDS",
-            "S3",
-            "Route 53",
-        ],
-        year: "2019",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/preview.png",
-        label: "",
-        slug: "biofractal-network",
-    },
-    {
-        title: "Sprink Ads",
-        description:
-            "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
-        technologies: [
-            "React.js",
-            "Redux",
-            "Node.js",
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "REST API",
-            "IoT",
-            "Raspberry Pi",
-        ],
-        year: "2019",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/preview.png",
-        label: "",
-        slug: "sprink-ads",
-    },
-    {
-        title: "B-Circuits Website",
-        description:
-            "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
-        technologies: [
-            "PHP",
-            "Yii Framework",
-            "HTML",
-            "CSS",
-            "Bootstrap",
-            "Corporate Website",
-        ],
-        year: "2019",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/preview.png",
-        label: "",
-        slug: "b-circuits",
-    },
-    {
-        title: "EcoHyT Temperature & Humidity Monitor",
-        description:
-            "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
-        technologies: [
-            "IoT",
-            "Firmware",
-            "C++",
-            "ESP8266",
-            "WiFi",
-            "REST API",
-            "MySQL",
-            "LCD",
-        ],
-        year: "2018",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/preview.png",
-        label: "",
-        slug: "ecohyt",
-    },
-    {
-        title: "Absolute EDDM",
-        description:
-            "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
-        technologies: [
-            "EDDM",
-            "USPS Integration",
-            "CardPointe",
-            "AWS Architecture",
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "Bootstrap",
-            "jQuery",
-        ],
-        year: "2018",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview2.png",
-        label: "",
-        slug: "absolute-eddm",
-    },
-    {
-        title: "B-Made Inventory System",
-        description:
-            "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
-        technologies: [
-            "Internal Tool",
-            "Inventory Management",
-            "React",
-            "Redux",
-            "Material UI",
-            "PHP",
-            "Node.js",
-            "Yii Framework",
-            "MySQL",
-            "AWS Architecture",
-            "REST API",
-        ],
-        year: "2017",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/preview.png",
-        label: "",
-        slug: "bmade-inventory",
-    },
-    {
-        title: "Absolute Color Printing Shop",
-        description:
-            "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
-        technologies: [
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "JavaScript",
-            "E-commerce",
-            "Instant Quote",
-            "Payment Integration",
-            "Loyalty System",
-            "Reporting & Analytics",
-            "Admin Dashboard",
-            "Team Leadership",
-        ],
-        year: "2016",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/preview.png",
-        label: "",
-        slug: "absolute-color",
-        isFeatured: true,
-    },
-    {
-        title: "BioFractal Website",
-        description:
-            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
-        technologies: [
-            "React.js",
-            "Redux",
-            "Node.js",
-            "PHP",
-            "MySQL",
-            "REST API",
-            "Bootstrap",
-            "Responsive Design",
-        ],
-        year: "2015",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
-        label: "",
-        slug: "biofractal",
-    },
-    {
-        title: "Controlec",
-        description:
-            "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
-        technologies: ["Android", "Java", "Mobile App", "Team Project"],
-        year: "2015",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
-        label: "",
-        slug: "controlec",
-    },
-    {
-        title: "Hacienda San Diego Cutz",
-        description:
-            "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
-        technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
-        year: "2015",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/preview.png",
-        label: "",
-        slug: "hacienda-san-diego-cutz",
-    },
-    {
-        title: "IPC Inmobiliaria",
-        description:
-            "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
-        technologies: [
-            "WordPress",
-            "Corporate Website",
-            "Real Estate",
-            "SEO",
-            "PHP",
-        ],
-        year: "2015",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ipc-inmobiliaria/preview.png",
-        label: "",
-        slug: "ipc-inmobiliaria",
-    },
-    {
-        title: "Astrea Realty",
-        description:
-            "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
-        technologies: ["WordPress", "PHP", "MySQL", "SEO", "Real Estate"],
-        year: "2015",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
-        label: "",
-        slug: "astrea-realty",
-    },
-    {
-        title: "Grupo Lamol",
-        description:
-            "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
-        technologies: ["Corporate Website", "WordPress", "PHP", "MySQL", "SEO"],
-        year: "2014",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/preview.png",
-        label: "",
-        slug: "grupo-lamol",
-    },
-    {
-        title: "CEDU Noel",
-        description:
-            "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
-        technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
-        year: "2014",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/preview.png",
-        label: "",
-        slug: "cedu-noel",
-    },
-    {
-        title: "Canteras Creativas",
-        description:
-            "An e-commerce web application to showcase and sell handcrafted stone products, featuring a custom product catalog, shopping cart, and integrated online payments.",
-        technologies: [
-            "E-commerce",
-            "Web Application",
-            "React",
-            "Yii Framework",
-            "PHP",
-            "MySQL",
-            "PayPal",
-            "DineroMail",
-            "REST API",
-        ],
-        year: "2013",
-        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/preview.png",
-        label: "",
-        slug: "canteras-creativas",
-    },
-];
-
-export const PROJECTS_DETAILS: ProjectDetail[] = [
-    {
-        slug: "personal-portfolio",
-        title: "Personal Portfolio Website",
-        year: "2025",
         type: "Personal Website · Portfolio",
         status: "Public Repository",
         hero: {
@@ -460,115 +126,1083 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Public Repo",
             "Personal Project",
         ],
-        navigation: {
-            next: {
-                slug: "biofractal",
-                title: "BioFractal Website",
-            },
-        },
     },
     {
-        slug: "biofractal",
-        title: "BioFractal Website",
-        year: "2015",
-        type: "Client Website · Corporate / Informational",
-        status: "Delivered",
+        title: "PrintQuoteNow",
+        description:
+            "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
+        technologies: [
+            "SaaS",
+            "Gang Optimization",
+            "AWS",
+            "React",
+            "Redux",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "QuickBooks Integration",
+        ],
+        year: "2022",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/preview.png",
+        label: "",
+        slug: "print-quote-now",
+        isFeatured: true,
+        type: "Enterprise Web Application",
+        status: "Active / Long-term Project",
         hero: {
             shortDescription:
-                "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
+                "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
             ctas: [
                 {
                     label: "View Live",
-                    href: "https://biofractal.com.mx/",
+                    href: "https://printquotenow.com",
                 },
             ],
         },
         overview: {
-            goal: "The primary goal of this project was to design and develop a professional informational website that clearly presents BioFractal's vision, methodology, and areas of expertise in sustainable technology. The site needed to communicate credibility, structure, and purpose while remaining accessible to a broad, non-technical audience.",
+            goal: "Build a scalable print management system capable of generating instant, highly optimized print quotes while managing the full production lifecycle, invoicing, and reporting.",
             challenge:
-                "One of the main challenges was translating complex, multidisciplinary concepts related to sustainability, technology, and innovation into clear, easy-to-understand content without oversimplifying the message. The site also needed to maintain a strong institutional identity while being responsive and performant across devices.",
-            role: "I worked as a full-stack developer, responsible for the frontend architecture, backend integration, data handling, and overall technical implementation of the website.",
+                "Designing and implementing a complex gang-run algorithm to optimally position multiple print jobs on a single sheet, minimizing paper waste and machine time, while keeping the system flexible for continuous feature expansion over multiple years.",
+            role: "Lead Full-Stack Developer responsible for system architecture, core algorithm development, API design, cloud infrastructure, and long-term platform evolution.",
         },
         facts: {
-            role: "Full-Stack Developer",
-            timeline: "2015",
-            platform: "Web",
-            team: "Multidisciplinary team",
+            role: "Lead Full-Stack Developer",
+            timeline: "2022",
+            platform: "Enterprise web application for printing companies",
+            team: "4 developers",
             repository: "Private",
         },
         screenshots: [
             {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen1.jpg",
-                alt: "BioFractal home page",
-                caption: "Homepage and primary landing experience",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen2.jpg",
-                alt: "About section",
-                caption: "Additional sections and internal pages",
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/screen1.jpg",
+                alt: "Instant quote builder interface",
+                caption:
+                    "Advanced quote builder powered by the gang-run optimization algorithm.",
             },
         ],
         whatIBuilt: [
-            "Developed a responsive, informative website using React.js for the frontend.",
-            "Implemented state management using Redux to handle application data flow.",
-            "Built backend services with Node.js and PHP to support data persistence.",
-            "Designed and integrated a MySQL database for structured content storage.",
-            "Implemented REST-style data communication between frontend and backend.",
-            "Structured the layout using Bootstrap combined with custom HTML and CSS.",
-            "Ensured cross-device compatibility and consistent behavior across screen sizes.",
+            "Gang-run optimization algorithm to efficiently position multiple print jobs on a single sheet.",
+            "Instant quote engine calculating costs based on paper usage, machine time, ink, and finishing processes.",
+            "REST API to support quoting, production workflows, and integrations.",
+            "Invoice management module with QuickBooks API integration to push invoices and synchronize accounting data.",
+            "Reporting system capable of exporting synchronized financial and production data.",
+            "AWS cloud infrastructure setup and deployment for scalability and reliability.",
+            "Reporting system capable of exporting synchronized financial and production data.",
         ],
         techStack: [
             {
                 category: "Frontend",
-                technologies: ["React.js", "Redux", "Bootstrap", "HTML", "CSS"],
+                technologies: ["React", "Redux", "HTML", "CSS"],
             },
             {
                 category: "Backend",
-                technologies: ["Node.js", "PHP", "REST API"],
+                technologies: ["PHP", "Node.js", "Yii Framework"],
             },
             {
                 category: "Database",
                 technologies: ["MySQL"],
             },
+            {
+                category: "Cloud & Infrastructure",
+                technologies: [
+                    "AWS EC2",
+                    "AWS Lambda",
+                    "AWS RDS",
+                    "AWS S3",
+                    "Route 53",
+                ],
+            },
+            {
+                category: "Integrations",
+                technologies: ["QuickBooks API", "REST APIs"],
+            },
         ],
         designDecisions: {
-            title: "Design & UX Decisions",
+            title: "Key Architectural and Technical Decisions",
             items: [
-                "Clear content hierarchy to guide users through institutional information",
-                "Strong visual identity aligned with sustainability and nature-inspired themes",
-                "Responsive layout to ensure accessibility on desktop and mobile devices",
-                "Use of visual sections and iconography to simplify complex concepts",
-                "Balanced combination of framework-based layout and custom styling",
+                "Custom gang-run algorithm developed from scratch using mathematical and geometric optimization techniques.",
+                "Modular system design to allow continuous feature expansion without disrupting existing workflows.",
+                "Separation of pricing logic, production logic, and accounting integrations for maintainability.",
+                "Use of AWS managed services to ensure scalability, fault tolerance, and long-term reliability.",
             ],
         },
         results:
-            "This project resulted in a clear, professional corporate website that effectively communicates BioFractal's values and technological approach. It reinforced my experience building full-stack web applications that balance technical structure, usability, and institutional branding, especially in projects aimed at communicating complex ideas to diverse audiences.",
+            "The platform enabled printing companies to generate instant, highly optimized quotes, significantly reducing paper waste and manual estimation time. Its accounting integration streamlined invoicing workflows and improved financial reporting accuracy.",
+        badges: [
+            "Enterprise Application",
+            "Custom Algorithm",
+            "Gang Optimization",
+            "AWS Architecture",
+            "EC2",
+            "RDS",
+            "S3",
+            "Route 53",
+            "Load Balancer",
+            "React",
+            "Redux",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "QuickBooks API",
+            "REST APIs",
+            "Private / Restricted",
+        ],
+    },
+    {
+        title: "RTLS System (Real-Time Locating System)",
+        description:
+            "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
+        technologies: [
+            "IoT",
+            "Embedded Systems",
+            "RTLS",
+            "Firmware",
+            "Prototype",
+            "React",
+            "PHP",
+            "MySQL",
+            "REST API",
+        ],
+        year: "2021",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/preview.png",
+        label: "",
+        slug: "rtls-system",
+        type: "IoT · Embedded Systems · Web Platform",
+        status: "Prototype",
+        hero: {
+            shortDescription:
+                "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to design and validate a real-time positioning system capable of tracking mobile devices inside an indoor environment, combining embedded electronics, positioning algorithms, and a web-based visualization interface.",
+            challenge:
+                "The main challenge was achieving reliable positioning accuracy in an indoor environment while integrating firmware, data transmission, and real-time visualization into a cohesive system suitable for future commercial development.",
+            role: "I worked across the full technical stack: developing the firmware for the microcontroller, implementing the positioning algorithm, building the backend API to receive device data, and creating the web interface to visualize device positions in real time.",
+        },
+        facts: {
+            role: "Full-Stack & Embedded Systems Developer",
+            timeline: "2021",
+            platform: "Web · Embedded · IoT",
+            team: "Hardware & software collaboration",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen2.jpg",
+                alt: "RTLS web dashboard",
+                caption:
+                    "Web-based visualization of real-time device positions",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen1.jpg",
+                alt: "RTLS electronic board prototype",
+                caption: "RTLS hardware prototype (firmware developed by me)",
+            },
+        ],
+        whatIBuilt: [
+            "Developed firmware for the microcontroller handling positioning logic and data transmission.",
+            "Implemented a trilateration-based positioning algorithm.",
+            "Built a backend API to receive positioning data from embedded devices.",
+            "Designed and developed a web interface to visualize device positions in real time.",
+            "Integrated wireless communication between anchors, tags, and the server.",
+            "Collaborated with the hardware team responsible for PCB design.",
+        ],
+        techStack: [
+            {
+                category: "Embedded Systems",
+                technologies: ["STM32 Microcontroller", "WiFi Communication"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["React", "Redux"],
+            },
+            {
+                category: "Backend",
+                technologies: ["Node.js", "PHP", "MySQL"],
+            },
+        ],
+        designDecisions: {
+            title: "Technical & System Design Decisions",
+            items: [
+                "Separated firmware logic from web visualization for modularity",
+                "Real-time data flow optimized for low-latency position updates",
+                "Web interface designed to clearly represent spatial positioning",
+                "System structured to allow future commercial scalability",
+            ],
+        },
+        results:
+            "This prototype successfully demonstrated an indoor RTLS system with approximately 30 cm accuracy, validating both the positioning algorithm and the end-to-end integration between embedded hardware and a web-based visualization platform.",
+        badges: [
+            "IoT",
+            "Embedded Systems",
+            "RTLS",
+            "Firmware",
+            "Web Platform",
+            "Prototype",
+            "React",
+            "PHP",
+            "MySQL",
+            "REST API",
+        ],
+    },
+    {
+        title: "Eiwa Water Level Sensor",
+        description:
+            "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
+        technologies: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "Android",
+            "Prototype",
+        ],
+        year: "2020",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/preview.png",
+        label: "",
+        slug: "eiwa",
+        type: "IoT Prototype · Firmware & API Integration",
+        status: "Private · Prototype",
+        hero: {
+            shortDescription:
+                "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to build a reliable prototype capable of estimating the liquid level in water containers using capacitive sensing, and to deliver those readings to a backend service that could be consumed by a mobile application.",
+            challenge:
+                "The main technical challenge was translating raw sensor readings into a stable and meaningful 'water level' value under real-world conditions. This required careful handling of noise, calibration behavior, and ensuring consistent measurements over time, while keeping the firmware lightweight and reliable.",
+            role: "I was responsible for developing the measurement algorithm in firmware and implementing the data delivery flow to a backend REST API. I also provided technical guidance to the Android team on the API contract and database structure to store device metadata and measurement history. I did not design or build the electronics, and I did not develop the Android application.",
+        },
+        facts: {
+            role: "Firmware & Backend Integration",
+            timeline: "2020",
+            platform: "IoT · Firmware + API",
+            team: "Cross-functional (mobile handled by a third party)",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen1.jpg",
+                alt: "Android app showing the water level percentage",
+                caption:
+                    "Mobile view consuming measurements from the backend API",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen2.jpg",
+                alt: "Capacitive sensor board close-up",
+                caption:
+                    "Hardware prototype used for validation (electronics not developed by me)",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen3.jpg",
+                alt: "Device installed on a water container for testing",
+                caption:
+                    "Prototype installation used during real-world measurement tests",
+            },
+        ],
+        whatIBuilt: [
+            "Designed and implemented the firmware algorithm to estimate liquid level from capacitive sensor readings.",
+            "Implemented the firmware networking flow to send measurements to a backend REST API over WiFi (ESP8266).",
+            "Defined the API contract required to register devices and store measurement history.",
+            "Advised on database modeling to persist device metadata, measurement logs, and last-known status.",
+            "Supported integration with a third-party Android application by aligning payload formats and endpoint behavior.",
+            "Validated the prototype through measurement tests with satisfactory results under real usage conditions.",
+        ],
+        techStack: [
+            {
+                category: "Firmware",
+                technologies: ["C++", "ESP8266", "WiFi"],
+            },
+            {
+                category: "Backend Integration",
+                technologies: ["REST API", "Database Modeling"],
+            },
+            {
+                category: "Domain",
+                technologies: ["Capacitive Sensing", "IoT Prototyping"],
+            },
+            {
+                category: "Mobile",
+                technologies: ["Android"],
+            },
+        ],
+        designDecisions: {
+            title: "Technical Decisions",
+            items: [
+                "Firmware-first approach to keep the measurement logic close to the sensor and reduce backend complexity",
+                "Stable payload structure for long-term device compatibility and straightforward mobile consumption",
+                "Database design focused on traceability: device metadata + time-series measurement history",
+                "Clear separation of responsibilities between firmware delivery and mobile presentation layer",
+            ],
+        },
+        results:
+            "The prototype achieved satisfactory measurement results and proved the feasibility of using capacitive sensing for water-level estimation in real-world conditions. The project also established a clean integration path between embedded firmware and a mobile-facing backend API, enabling reliable ingestion and storage of device readings.",
+        badges: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "Android",
+            "Prototype",
+        ],
+    },
+    {
+        title: "Corporativo Vega Website",
+        description:
+            "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
+        technologies: [
+            "WordPress",
+            "Corporate Website",
+            "Elementor",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Responsive Design",
+        ],
+        year: "2019",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/preview.png",
+        label: "",
+        slug: "corporativo-vega",
+        type: "Corporate Informational Website",
+        status: "Completed",
+        hero: {
+            shortDescription:
+                "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Develop a professional corporate website to clearly present the company's information, services, and brand identity in an accessible and well-structured format.",
+            challenge:
+                "Creating a clear and maintainable content structure in WordPress while ensuring visual consistency, responsive behavior, and easy content management for non-technical users.",
+            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
+        },
+        facts: {
+            role: "Web Developer",
+            timeline: "2019",
+            platform: "WordPress",
+            team: "2 developers",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/screen1.jpg",
+                alt: "Corporativo Vega homepage",
+                caption:
+                    "Main homepage presenting the company overview and branding.",
+            },
+        ],
+        whatIBuilt: [
+            "WordPress installation and configuration.",
+            "Implementation of custom layouts using Elementor and custom HTML/CSS.",
+            "Content structure setup for corporate sections and informational pages.",
+            "Collaboration on visual adjustments and responsive behavior.",
+        ],
+        techStack: [
+            {
+                category: "CMS",
+                technologies: ["WordPress"],
+            },
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS", "Elementor"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design and Implementation Decisions",
+            items: [
+                "Use of WordPress to allow easy content management by the client.",
+                "Simple and clean visual structure focused on corporate clarity.",
+                "Responsive layout to ensure correct display across devices.",
+            ],
+        },
+        results:
+            "The website provided the company with a professional online presence, enabling them to clearly communicate their services and corporate information while allowing easy future content updates.",
+        badges: [
+            "WordPress",
+            "Corporate Website",
+            "Informational Site",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Elementor",
+            "Responsive Design",
+            "Team Collaboration",
+        ],
+    },
+    {
+        title: "BioFractal Network",
+        description:
+            "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
+        technologies: [
+            "React.js",
+            "Redux",
+            "PHP/Yii Framework",
+            "MySQL",
+            "REST API",
+            "AWS Architecture",
+            "EC2",
+            "RDS",
+            "S3",
+            "Route 53",
+        ],
+        year: "2019",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/preview.png",
+        label: "",
+        slug: "biofractal-network",
+        type: "Prototype · Knowledge Network / Project Management Platform",
+        status: "Prototype (Validated)",
+        hero: {
+            shortDescription:
+                "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to build a web-based platform that enables professionals to create detailed profiles, showcase their experience, manage collaborative projects, and offer consulting services. The platform aimed to connect knowledge, talent, and real-world problems while providing tools for project tracking, expert recommendations, and payment handling.",
+            challenge:
+                "The main challenge was designing a flexible system that could support multiple user roles including developers, consultants, project owners, and organizations while maintaining a clear structure for profiles, expertise, project management, and transactions. Additionally, the platform needed to be scalable and production-ready despite being launched as a prototype.",
+            role: "I worked as a full-stack developer and cloud engineer, responsible for application development, system architecture, cloud infrastructure configuration, deployment, and operational setup on AWS.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2019",
+            platform: "Web",
+            team: "Small development team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen1.png",
+                alt: "Network landing and search",
+                caption:
+                    "Developer Profile Dashboard - Skills, Projects & Team Overview",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen2.png",
+                alt: "Landing page",
+                caption: "Landing page with search",
+            },
+        ],
+        whatIBuilt: [
+            "Developed a web application for professional networking and knowledge sharing.",
+            "Implemented user profiles with experience, skills, and expertise management.",
+            "Built project management functionality to track development progress.",
+            "Implemented a recommendation system to suggest relevant developers and consultants.",
+            "Developed consulting workflows allowing users to offer expertise and solve industry problems.",
+            "Designed and implemented a MySQL database for users, projects, expertise, and transactions.",
+            "Deployed and configured the platform on Amazon Web Services.",
+            "Configured EC2 instances for application compute.",
+            "Provisioned RDS MySQL for managed database services.",
+            "Set up S3 for file storage.",
+            "Configured Route 53 for domain management.",
+            "Implemented Load Balancers for traffic distribution and scalability.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["React.js", "Redux"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework", "REST API"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud Infrastructure",
+                technologies: [
+                    "AWS EC2",
+                    "AWS RDS",
+                    "AWS S3",
+                    "AWS Route 53",
+                    "AWS Load Balancer",
+                ],
+            },
+        ],
+        designDecisions: {
+            title: "Architecture & Platform Design Decisions",
+            items: [
+                "Modular platform design to support multiple user roles and workflows",
+                "Profile-driven expertise representation to enable meaningful matching",
+                "Project-centric collaboration model to track real development work",
+                "Cloud-native deployment on AWS to support scalability and reliability",
+                "Separation of application logic and infrastructure for future growth",
+            ],
+        },
+        results:
+            "BioFractal Network was launched as a functional prototype and received promising early validation, including interest from multiple universities looking to integrate their research teams into the platform. While the long-term continuation of the project is unknown, the prototype demonstrated strong product-market interest and validated the core concept of a collaborative knowledge and project management network.",
+        badges: [
+            "React.js",
+            "Redux",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "REST API",
+            "AWS Architecture",
+            "EC2",
+            "RDS",
+            "S3",
+            "Route 53",
+            "Load Balancer",
+            "Prototype",
+            "Validated Concept",
+        ],
+    },
+    {
+        title: "Sprink Ads",
+        description:
+            "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
+        technologies: [
+            "React.js",
+            "Redux",
+            "Node.js",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "REST API",
+            "IoT",
+            "Raspberry Pi",
+        ],
+        year: "2019",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/preview.png",
+        label: "",
+        slug: "sprink-ads",
+        type: "Client Project · Advertising Platform / IoT",
+        status: "Delivered (NDA)",
+        hero: {
+            shortDescription:
+                "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to build an end-to-end advertising platform that allows agencies and publishers to upload and manage video advertisements, synchronize content with vending machines in the field, and track real-world interactions generated by users. The system needed to bridge a web application with embedded devices while keeping data accurate and operationally manageable.",
+            challenge:
+                "The main challenge was designing a reliable communication flow between the web platform and physical machines operating under real-world network constraints. This included synchronizing video files over WiFi, tracking user interactions through hardware events, and keeping consistent counts per video, machine, and publisher to generate trustworthy statistics; while also operating under NDA constraints.",
+            role: "I worked as a full-stack developer, contributing to the design and implementation of the web platform, the API layer used by devices, the video synchronization workflow, and the interaction tracking and statistics logic.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2019",
+            platform: "Web + Physical Devices",
+            team: "Small development team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen1.png",
+                alt: "Login",
+                caption: "Login screen for advertisers and publishers",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen2.png",
+                previewSrc:
+                    "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen2-preview.jpg",
+                alt: "Dashboard",
+                caption: "Dashboard to manage videos, machines, and statistics",
+            },
+        ],
+        whatIBuilt: [
+            "Developed a web platform to upload and manage video advertisements.",
+            "Implemented a server-side upload workflow that stores videos in the filesystem (server folders).",
+            "Stored only video metadata in MySQL (URL and filename) to reference files efficiently.",
+            "Built management tools for publishers, agencies, clients, and vending machines.",
+            "Designed and implemented a REST API used by devices to sync and retrieve video content.",
+            "Implemented device communication to download videos over WiFi and keep local content updated.",
+            "Built interaction tracking triggered by physical button presses on vending machines.",
+            "Implemented counting per video on each machine to generate statistics per video and publisher.",
+            "Designed the MySQL data model to support machines, videos, publishers, and interaction events.",
+            "Implemented authentication and controlled access for platform users.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["React.js", "Redux"],
+            },
+            {
+                category: "Backend",
+                technologies: ["Node.js", "PHP", "Yii Framework", "REST API"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Storage",
+                technologies: ["Server File Storage (filesystem)"],
+            },
+            {
+                category: "Hardware & IoT",
+                technologies: [
+                    "Raspberry Pi",
+                    "Embedded Devices",
+                    "WiFi Communication",
+                ],
+            },
+        ],
+        designDecisions: {
+            title: "Architecture & System Design Decisions",
+            items: [
+                "Filesystem-based video storage for simple and efficient media delivery",
+                "Database design focused on metadata (URL/filename) and event tracking rather than binary storage",
+                "API-driven architecture to decouple the web platform from devices in the field",
+                "Event-based interaction tracking triggered by hardware inputs",
+                "Statistics model based on per-video, per-machine counting to support publisher-level insights",
+            ],
+        },
+        results:
+            "The project delivered a working advertising platform capable of syncing video content to physical vending machines and tracking real-world user interactions through hardware events. By counting interactions per video on each machine, the platform produced reliable statistics per video and publisher; demonstrating a practical distributed system that combines web software, APIs, and IoT embedded hardware under NDA constraints.",
         badges: [
             "React.js",
             "Redux",
             "Node.js",
             "PHP",
+            "Yii Framework",
             "MySQL",
             "REST API",
-            "Bootstrap",
-            "Responsive Design",
-            "Client Project",
+            "Filesystem Storage",
+            "IoT",
+            "Raspberry Pi",
+            "Distributed Systems",
         ],
-        navigation: {
-            previous: {
-                slug: "personal-portfolio",
-                title: "Personal Portfolio Website",
-            },
-            next: {
-                slug: "next-project-slug",
-                title: "Next Project",
-            },
-        },
     },
     {
-        slug: "absolute-color",
+        title: "B-Circuits Website",
+        description:
+            "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
+        technologies: [
+            "PHP",
+            "Yii Framework",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "Corporate Website",
+        ],
+        year: "2019",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/preview.png",
+        label: "",
+        slug: "b-circuits",
+        type: "Client Project · Corporate / Informational Website",
+        status: "Delivered",
+        hero: {
+            shortDescription:
+                "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to design and develop an informational website for B-Circuits that clearly presents the company's engineering services, development process, and value proposition. The site needed to communicate technical credibility while remaining accessible to potential clients from non-technical backgrounds.",
+            challenge:
+                "The main challenge was translating complex engineering and hardware development services into clear, well-structured content that could be easily understood by prospective clients, without oversimplifying the technical depth of the company's work.",
+            role: "I worked as a full-stack developer, responsible for the frontend implementation, backend structure, and overall technical execution of the website.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2019",
+            platform: "Web",
+            team: "Small team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen1.png",
+                alt: "Homepage hero section",
+                caption:
+                    "Hero section introducing B-Circuits' engineering services",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen2.jpg",
+                alt: "Services overview",
+                caption:
+                    "Additional sections detailing services and development process",
+            },
+        ],
+        whatIBuilt: [
+            "Developed a corporate informational website for an engineering and hardware company.",
+            "Implemented a responsive frontend layout using Bootstrap and custom HTML/CSS.",
+            "Built structured service pages to clearly explain development workflows and offerings.",
+            "Implemented backend logic using PHP and Yii Framework.",
+            "Ensured consistent behavior and layout across desktop and mobile devices.",
+            "Focused on clarity, hierarchy, and professional presentation over dynamic functionality.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework"],
+            },
+        ],
+        designDecisions: {
+            title: "Design & Content Decisions",
+            items: [
+                "Strong visual emphasis on engineering and hardware-related imagery",
+                "Clear sectioning to separate services, plans, and value proposition",
+                "Content-first layout focused on explaining complex services clearly",
+                "Responsive design to ensure accessibility across devices",
+                "Professional visual language aligned with an engineering audience",
+            ],
+        },
+        results:
+            "The project delivered a clean and professional corporate website that effectively communicated B-Circuits' engineering services and development capabilities. It served as a digital presence aligned with the company's technical focus, reinforcing credibility and providing a clear entry point for potential clients.",
+        badges: [
+            "PHP",
+            "Yii Framework",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "Corporate Website",
+            "Client Project",
+        ],
+    },
+    {
+        title: "EcoHyT Temperature & Humidity Monitor",
+        description:
+            "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
+        technologies: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "MySQL",
+            "LCD",
+        ],
+        year: "2018",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/preview.png",
+        label: "",
+        slug: "ecohyt",
+        type: "IoT Prototype · Firmware & API Integration",
+        status: "Private",
+        hero: {
+            shortDescription:
+                "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
+            ctas: [],
+        },
+        overview: {
+            goal: "The goal of this project was to implement the firmware and connectivity layer for an embedded monitoring device that captures temperature and humidity readings, shows them locally on an LCD, and reliably uploads the measurements to the client's backend for historical tracking and visualization.",
+            challenge:
+                "The core challenge was ensuring consistent measurements and dependable delivery over WiFi to the backend API, while keeping the firmware stable and lightweight. Additionally, integration required aligning the device payloads with an existing web platform and database schema so the client could visualize the data without changing their dashboard workflow.",
+            role: "I handled the firmware implementation end-to-end: sensor measurement logic, LCD rendering, and the networking flow to send readings to a REST API. I also implemented the required API endpoints within the client's existing web application to persist data into MySQL. I did not design or build the electronics hardware, and the dashboard UI was already provided by the client.",
+        },
+        facts: {
+            role: "Firmware & Backend Integration",
+            timeline: "2018",
+            platform: "IoT · Firmware + API",
+            team: "Collaborative (client owned dashboard)",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen2.jpg",
+                alt: "EcoHyT dashboard",
+                caption:
+                    "Monitoring dashboard displaying historical temperature and humidity readings",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen3.jpg",
+                alt: "EcoHyT device close-up",
+                caption: "Hardware prototype used for testing",
+            },
+        ],
+        whatIBuilt: [
+            "Implemented firmware logic to measure temperature and humidity from the embedded sensors.",
+            "Displayed real-time readings on the device LCD for local monitoring and quick validation.",
+            "Implemented WiFi connectivity (ESP8266) to send measurements to a backend REST API.",
+            "Aligned payload structure with the client's backend requirements for seamless ingestion.",
+            "Implemented the necessary API endpoints inside the client's existing web application.",
+            "Stored measurements in MySQL to enable historical tracking and visualization in the client dashboard.",
+            "Ensured stable, repeatable data delivery suitable for continuous monitoring scenarios.",
+        ],
+        techStack: [
+            {
+                category: "Firmware",
+                technologies: ["C++", "ESP8266", "WiFi", "LCD Display"],
+            },
+            {
+                category: "Backend Integration",
+                technologies: ["REST API", "MySQL"],
+            },
+            {
+                category: "Domain",
+                technologies: [
+                    "Temperature Monitoring",
+                    "Humidity Monitoring",
+                    "IoT Prototyping",
+                ],
+            },
+        ],
+        designDecisions: {
+            title: "Technical Decisions",
+            items: [
+                "Local LCD output to provide immediate validation and troubleshooting during field testing",
+                "Lightweight, consistent API payloads to integrate smoothly with an existing web platform",
+                "Time-series storage in MySQL to support charts and historical analysis in the client's dashboard",
+                "Separation of concerns: firmware focused on measurement + delivery; dashboard focused on visualization",
+            ],
+        },
+        results:
+            "This project delivered a working monitoring prototype where device readings were displayed locally and reliably ingested into the client's backend. By integrating the firmware data flow with the client's REST API and MySQL storage, the existing dashboard could immediately visualize historical measurements without requiring changes to the frontend reporting experience.",
+        badges: [
+            "IoT",
+            "Firmware",
+            "C++",
+            "ESP8266",
+            "WiFi",
+            "REST API",
+            "MySQL",
+            "LCD",
+        ],
+    },
+    {
+        title: "Absolute EDDM",
+        description:
+            "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
+        technologies: [
+            "EDDM",
+            "USPS Integration",
+            "CardPointe",
+            "AWS Architecture",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "Bootstrap",
+            "jQuery",
+        ],
+        year: "2018",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/preview2.png",
+        label: "",
+        slug: "absolute-eddm",
+        type: "Web Application · Direct Mail / EDDM Ordering Platform",
+        status: "Private / Restricted",
+        hero: {
+            shortDescription:
+                "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Create a self-service ordering experience for EDDM campaigns where users can select mailing routes, estimate total costs (printing + postage), upload artwork, complete checkout, and generate the necessary data to execute fulfillment through USPS.",
+            challenge:
+                "Building a workflow that combines interactive route selection and pricing logic with a reliable order management backend, while keeping the UX straightforward for non-technical customers.",
+            role: "Full-Stack Developer responsible for implementing the end-to-end web application, including customer checkout flows, admin management features, pricing logic, and integrations.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2018",
+            platform: "Web",
+            team: "Small team",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen1.png",
+                alt: "Absolute EDDM landing page",
+                caption: "Landing page introducing the Absolute EDDM platform.",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen2.png",
+                alt: "Route selection map tool",
+                caption:
+                    "Interactive map tool to select USPS routes and preview audience details and costs.",
+            },
+        ],
+        whatIBuilt: [
+            "Customer-facing EDDM ordering workflow: route selection, product configuration, artwork upload, and checkout.",
+            "Interactive mapping experience to browse and select USPS routes with detailed route statistics.",
+            "Pricing logic combining print options and EDDM postage costs for accurate campaign totals.",
+            "Checkout and payment flow integrated with CardPointe for secure transaction processing.",
+            "Admin dashboard to manage customers, orders, pricing rules, and operational settings.",
+            "AWS-based hosting and deployment setup for reliability and scalability.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: [
+                    "HTML",
+                    "CSS",
+                    "Bootstrap",
+                    "JavaScript",
+                    "jQuery",
+                ],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud & Infrastructure",
+                technologies: ["AWS"],
+            },
+            {
+                category: "Integrations",
+                technologies: ["USPS EDDM", "CardPointe Payment Gateway"],
+            },
+        ],
+        designDecisions: {
+            title: "Key Design & Technical Decisions",
+            items: [
+                "A guided, step-based customer flow to reduce friction for non-technical users purchasing mail campaigns.",
+                "Map-first interaction model to make route selection intuitive and visual.",
+                "Centralized pricing rules and admin-controlled configuration to support frequent business changes.",
+                "Payment processing abstracted into a dedicated integration layer to keep checkout logic maintainable.",
+            ],
+        },
+        results:
+            "The platform streamlined the process of launching EDDM campaigns by combining route discovery, pricing, artwork submission, and payment into a single workflow, reducing manual coordination and enabling faster fulfillment.",
+        badges: [
+            "EDDM",
+            "USPS Integration",
+            "Mapping Tool",
+            "Payment Processing",
+            "CardPointe",
+            "AWS",
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "Bootstrap",
+            "jQuery",
+            "Private / Restricted",
+        ],
+    },
+    {
+        title: "B-Made Inventory System",
+        description:
+            "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
+        technologies: [
+            "Internal Tool",
+            "Inventory Management",
+            "React",
+            "Redux",
+            "Material UI",
+            "PHP",
+            "Node.js",
+            "Yii Framework",
+            "MySQL",
+            "AWS Architecture",
+            "REST API",
+        ],
+        year: "2017",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/preview.png",
+        label: "",
+        slug: "bmade-inventory",
+        type: "Internal Web Application · Inventory Management",
+        status: "Private / Internal Use",
+        hero: {
+            shortDescription:
+                "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
+            ctas: [],
+        },
+        overview: {
+            goal: "Create a reliable internal web platform to manage electronic component inventory with clear traceability, fast search, and controlled access for staff.",
+            challenge:
+                "Keeping inventory data consistent across categories, manufacturers, and part numbers while maintaining a UI that stays fast and easy to use for day-to-day operations.",
+            role: "Full-Stack Developer responsible for implementing the web application, backend logic, database structure, and deployment on AWS.",
+        },
+        facts: {
+            role: "Full-Stack Developer",
+            timeline: "2017",
+            platform: "Web",
+            team: "Solo project",
+            repository: "Private",
+        },
+        screenshots: [
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/screen1.jpg",
+                alt: "B-Made dashboard navigation",
+                caption:
+                    "Structured navigation for inventory and administration modules.",
+            },
+        ],
+        whatIBuilt: [
+            "Inventory module to manage electronic components with categories, manufacturers, and part number references.",
+            "Search and filtering experience to quickly locate parts across large inventories.",
+            "Admin section to manage internal users and configuration settings.",
+            "Core entities for client and company records to support internal operational workflows.",
+            "REST API endpoints to support CRUD operations and future integration needs.",
+            "Deployment and hosting on AWS for a stable internal environment.",
+        ],
+        techStack: [
+            {
+                category: "Frontend",
+                technologies: ["React", "Redux", "Material UI"],
+            },
+            {
+                category: "Backend",
+                technologies: ["PHP", "Node.js", "Yii Framework"],
+            },
+            {
+                category: "Database",
+                technologies: ["MySQL"],
+            },
+            {
+                category: "Cloud & Infrastructure",
+                technologies: ["AWS"],
+            },
+        ],
+        designDecisions: {
+            title: "Design & UX Decisions",
+            items: [
+                "Material UI-based interface to keep internal screens consistent and easy to scan.",
+                "Table-first UX with search and filters to optimize for daily inventory operations.",
+                "Clear separation between inventory entities (components, categories, manufacturers) to reduce data duplication.",
+                "Role-based access patterns to keep internal administration controlled and auditable.",
+            ],
+        },
+        results:
+            "The system replaced fragmented manual tracking with a centralized inventory source of truth, improving operational visibility and reducing time spent locating parts and validating stock data.",
+        badges: [
+            "Internal Tool",
+            "Inventory Management",
+            "React",
+            "Redux",
+            "Material UI",
+            "PHP",
+            "Node.js",
+            "Yii Framework",
+            "MySQL",
+            "AWS Architecture",
+            "REST API",
+            "Private / Restricted",
+        ],
+    },
+    {
         title: "Absolute Color Printing Shop",
+        description:
+            "A custom-built online printing platform for a wholesale printing company, featuring instant price estimation, online ordering, secure payment processing, loyalty rewards, and full production workflow tracking, generating significant new revenue through digital sales.",
+        technologies: [
+            "PHP",
+            "Yii Framework",
+            "MySQL",
+            "JavaScript",
+            "E-commerce",
+            "Instant Quote",
+            "Payment Integration",
+            "Loyalty System",
+            "Reporting & Analytics",
+            "Admin Dashboard",
+            "Team Leadership",
+        ],
         year: "2016",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/absolute-color/preview.png",
+        label: "",
+        slug: "absolute-color",
+        isFeatured: true,
         type: "Client Project · E-commerce / Printing Platform",
         status: "Delivered",
         hero: {
@@ -672,807 +1306,118 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Team Leadership",
             "Client Project",
         ],
-        navigation: {
-            next: {
-                slug: "next-project-slug",
-                title: "Next Project",
-            },
-        },
     },
     {
-        slug: "sprink-ads",
-        title: "Sprink Ads Advertising Platform",
-        year: "2019",
-        type: "Client Project · Advertising Platform / IoT",
-        status: "Delivered (NDA)",
-        hero: {
-            shortDescription:
-                "A distributed advertising platform that connects a web-based management system with physical vending machines, enabling video ad synchronization, real-time interaction tracking, and usage statistics per video and publisher.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build an end-to-end advertising platform that allows agencies and publishers to upload and manage video advertisements, synchronize content with vending machines in the field, and track real-world interactions generated by users. The system needed to bridge a web application with embedded devices while keeping data accurate and operationally manageable.",
-            challenge:
-                "The main challenge was designing a reliable communication flow between the web platform and physical machines operating under real-world network constraints. This included synchronizing video files over WiFi, tracking user interactions through hardware events, and keeping consistent counts per video, machine, and publisher to generate trustworthy statistics; while also operating under NDA constraints.",
-            role: "I worked as a full-stack developer, contributing to the design and implementation of the web platform, the API layer used by devices, the video synchronization workflow, and the interaction tracking and statistics logic.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2019",
-            platform: "Web + Physical Devices",
-            team: "Small development team",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen1.png",
-                alt: "Login",
-                caption: "Login screen for advertisers and publishers",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen2.png",
-                previewSrc:
-                    "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/sprink-ads/screen2-preview.jpg",
-                alt: "Dashboard",
-                caption: "Dashboard to manage videos, machines, and statistics",
-            },
-        ],
-        whatIBuilt: [
-            "Developed a web platform to upload and manage video advertisements.",
-            "Implemented a server-side upload workflow that stores videos in the filesystem (server folders).",
-            "Stored only video metadata in MySQL (URL and filename) to reference files efficiently.",
-            "Built management tools for publishers, agencies, clients, and vending machines.",
-            "Designed and implemented a REST API used by devices to sync and retrieve video content.",
-            "Implemented device communication to download videos over WiFi and keep local content updated.",
-            "Built interaction tracking triggered by physical button presses on vending machines.",
-            "Implemented counting per video on each machine to generate statistics per video and publisher.",
-            "Designed the MySQL data model to support machines, videos, publishers, and interaction events.",
-            "Implemented authentication and controlled access for platform users.",
-        ],
-        techStack: [
-            {
-                category: "Frontend",
-                technologies: ["React.js", "Redux"],
-            },
-            {
-                category: "Backend",
-                technologies: ["Node.js", "PHP", "Yii Framework", "REST API"],
-            },
-            {
-                category: "Database",
-                technologies: ["MySQL"],
-            },
-            {
-                category: "Storage",
-                technologies: ["Server File Storage (filesystem)"],
-            },
-            {
-                category: "Hardware & IoT",
-                technologies: [
-                    "Raspberry Pi",
-                    "Embedded Devices",
-                    "WiFi Communication",
-                ],
-            },
-        ],
-        designDecisions: {
-            title: "Architecture & System Design Decisions",
-            items: [
-                "Filesystem-based video storage for simple and efficient media delivery",
-                "Database design focused on metadata (URL/filename) and event tracking rather than binary storage",
-                "API-driven architecture to decouple the web platform from devices in the field",
-                "Event-based interaction tracking triggered by hardware inputs",
-                "Statistics model based on per-video, per-machine counting to support publisher-level insights",
-            ],
-        },
-        results:
-            "The project delivered a working advertising platform capable of syncing video content to physical vending machines and tracking real-world user interactions through hardware events. By counting interactions per video on each machine, the platform produced reliable statistics per video and publisher; demonstrating a practical distributed system that combines web software, APIs, and IoT embedded hardware under NDA constraints.",
-        badges: [
+        title: "BioFractal Website",
+        description:
+            "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
+        technologies: [
             "React.js",
             "Redux",
             "Node.js",
             "PHP",
-            "Yii Framework",
             "MySQL",
             "REST API",
-            "Filesystem Storage",
-            "IoT",
-            "Raspberry Pi",
-            "Distributed Systems",
+            "Bootstrap",
+            "Responsive Design",
         ],
-        navigation: {
-            next: {
-                slug: "next-project-slug",
-                title: "Next Project",
-            },
-        },
-    },
-    {
-        slug: "biofractal-network",
-        title: "BioFractal Network",
-        year: "2019",
-        type: "Prototype · Knowledge Network / Project Management Platform",
-        status: "Prototype (Validated)",
-        hero: {
-            shortDescription:
-                "A prototype knowledge and project management platform designed to connect researchers, developers, and consultants, enabling collaboration, expertise matching, and paid consulting workflows within a unified network.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build a web-based platform that enables professionals to create detailed profiles, showcase their experience, manage collaborative projects, and offer consulting services. The platform aimed to connect knowledge, talent, and real-world problems while providing tools for project tracking, expert recommendations, and payment handling.",
-            challenge:
-                "The main challenge was designing a flexible system that could support multiple user roles including developers, consultants, project owners, and organizations while maintaining a clear structure for profiles, expertise, project management, and transactions. Additionally, the platform needed to be scalable and production-ready despite being launched as a prototype.",
-            role: "I worked as a full-stack developer and cloud engineer, responsible for application development, system architecture, cloud infrastructure configuration, deployment, and operational setup on AWS.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2019",
-            platform: "Web",
-            team: "Small development team",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen1.png",
-                alt: "Network landing and search",
-                caption:
-                    "Developer Profile Dashboard - Skills, Projects & Team Overview",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal-network/screen2.png",
-                alt: "Landing page",
-                caption: "Landing page with search",
-            },
-        ],
-        whatIBuilt: [
-            "Developed a web application for professional networking and knowledge sharing.",
-            "Implemented user profiles with experience, skills, and expertise management.",
-            "Built project management functionality to track development progress.",
-            "Implemented a recommendation system to suggest relevant developers and consultants.",
-            "Developed consulting workflows allowing users to offer expertise and solve industry problems.",
-            "Designed and implemented a MySQL database for users, projects, expertise, and transactions.",
-            "Deployed and configured the platform on Amazon Web Services.",
-            "Configured EC2 instances for application compute.",
-            "Provisioned RDS MySQL for managed database services.",
-            "Set up S3 for file storage.",
-            "Configured Route 53 for domain management.",
-            "Implemented Load Balancers for traffic distribution and scalability.",
-        ],
-        techStack: [
-            {
-                category: "Frontend",
-                technologies: ["React.js", "Redux"],
-            },
-            {
-                category: "Backend",
-                technologies: ["PHP", "Yii Framework", "REST API"],
-            },
-            {
-                category: "Database",
-                technologies: ["MySQL"],
-            },
-            {
-                category: "Cloud Infrastructure",
-                technologies: [
-                    "AWS EC2",
-                    "AWS RDS",
-                    "AWS S3",
-                    "AWS Route 53",
-                    "AWS Load Balancer",
-                ],
-            },
-        ],
-        designDecisions: {
-            title: "Architecture & Platform Design Decisions",
-            items: [
-                "Modular platform design to support multiple user roles and workflows",
-                "Profile-driven expertise representation to enable meaningful matching",
-                "Project-centric collaboration model to track real development work",
-                "Cloud-native deployment on AWS to support scalability and reliability",
-                "Separation of application logic and infrastructure for future growth",
-            ],
-        },
-        results:
-            "BioFractal Network was launched as a functional prototype and received promising early validation, including interest from multiple universities looking to integrate their research teams into the platform. While the long-term continuation of the project is unknown, the prototype demonstrated strong product-market interest and validated the core concept of a collaborative knowledge and project management network.",
-        badges: [
-            "React.js",
-            "Redux",
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "REST API",
-            "AWS Architecture",
-            "EC2",
-            "RDS",
-            "S3",
-            "Route 53",
-            "Load Balancer",
-            "Prototype",
-            "Validated Concept",
-        ],
-        navigation: {
-            next: {
-                slug: "next-project-slug",
-                title: "Next Project",
-            },
-        },
-    },
-    {
-        slug: "b-circuits",
-        title: "B-Circuits Website",
-        year: "2019",
-        type: "Client Project · Corporate / Informational Website",
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/preview.png",
+        label: "",
+        slug: "biofractal",
+        type: "Client Website · Corporate / Informational",
         status: "Delivered",
         hero: {
             shortDescription:
-                "A corporate informational website built for an engineering and hardware development company, designed to clearly communicate services, capabilities, and development processes through a structured and professional interface.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to design and develop an informational website for B-Circuits that clearly presents the company's engineering services, development process, and value proposition. The site needed to communicate technical credibility while remaining accessible to potential clients from non-technical backgrounds.",
-            challenge:
-                "The main challenge was translating complex engineering and hardware development services into clear, well-structured content that could be easily understood by prospective clients, without oversimplifying the technical depth of the company's work.",
-            role: "I worked as a full-stack developer, responsible for the frontend implementation, backend structure, and overall technical execution of the website.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2019",
-            platform: "Web",
-            team: "Small team",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen1.png",
-                alt: "Homepage hero section",
-                caption:
-                    "Hero section introducing B-Circuits' engineering services",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/b-circuits/screen2.jpg",
-                alt: "Services overview",
-                caption:
-                    "Additional sections detailing services and development process",
-            },
-        ],
-        whatIBuilt: [
-            "Developed a corporate informational website for an engineering and hardware company.",
-            "Implemented a responsive frontend layout using Bootstrap and custom HTML/CSS.",
-            "Built structured service pages to clearly explain development workflows and offerings.",
-            "Implemented backend logic using PHP and Yii Framework.",
-            "Ensured consistent behavior and layout across desktop and mobile devices.",
-            "Focused on clarity, hierarchy, and professional presentation over dynamic functionality.",
-        ],
-        techStack: [
-            {
-                category: "Frontend",
-                technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-            },
-            {
-                category: "Backend",
-                technologies: ["PHP", "Yii Framework"],
-            },
-        ],
-        designDecisions: {
-            title: "Design & Content Decisions",
-            items: [
-                "Strong visual emphasis on engineering and hardware-related imagery",
-                "Clear sectioning to separate services, plans, and value proposition",
-                "Content-first layout focused on explaining complex services clearly",
-                "Responsive design to ensure accessibility across devices",
-                "Professional visual language aligned with an engineering audience",
-            ],
-        },
-        results:
-            "The project delivered a clean and professional corporate website that effectively communicated B-Circuits' engineering services and development capabilities. It served as a digital presence aligned with the company's technical focus, reinforcing credibility and providing a clear entry point for potential clients.",
-        badges: [
-            "PHP",
-            "Yii Framework",
-            "HTML",
-            "CSS",
-            "Bootstrap",
-            "Corporate Website",
-            "Client Project",
-        ],
-        navigation: {
-            next: {
-                slug: "next-project-slug",
-                title: "Next Project",
-            },
-        },
-    },
-    {
-        slug: "rtls-system",
-        title: "RTLS System (Real-Time Locating System)",
-        year: "2021",
-        type: "IoT · Embedded Systems · Web Platform",
-        status: "Prototype",
-        hero: {
-            shortDescription:
-                "A real-time locating system (RTLS) prototype combining embedded firmware, wireless communication, and a web-based visualization platform to track the position of electronic devices with high accuracy.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to design and validate a real-time positioning system capable of tracking mobile devices inside an indoor environment, combining embedded electronics, positioning algorithms, and a web-based visualization interface.",
-            challenge:
-                "The main challenge was achieving reliable positioning accuracy in an indoor environment while integrating firmware, data transmission, and real-time visualization into a cohesive system suitable for future commercial development.",
-            role: "I worked across the full technical stack: developing the firmware for the microcontroller, implementing the positioning algorithm, building the backend API to receive device data, and creating the web interface to visualize device positions in real time.",
-        },
-        facts: {
-            role: "Full-Stack & Embedded Systems Developer",
-            timeline: "2021",
-            platform: "Web · Embedded · IoT",
-            team: "Hardware & software collaboration",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen2.jpg",
-                alt: "RTLS web dashboard",
-                caption:
-                    "Web-based visualization of real-time device positions",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/rtls/screen1.jpg",
-                alt: "RTLS electronic board prototype",
-                caption: "RTLS hardware prototype (firmware developed by me)",
-            },
-        ],
-        whatIBuilt: [
-            "Developed firmware for the microcontroller handling positioning logic and data transmission.",
-            "Implemented a trilateration-based positioning algorithm.",
-            "Built a backend API to receive positioning data from embedded devices.",
-            "Designed and developed a web interface to visualize device positions in real time.",
-            "Integrated wireless communication between anchors, tags, and the server.",
-            "Collaborated with the hardware team responsible for PCB design.",
-        ],
-        techStack: [
-            {
-                category: "Embedded Systems",
-                technologies: ["STM32 Microcontroller", "WiFi Communication"],
-            },
-            {
-                category: "Frontend",
-                technologies: ["React", "Redux"],
-            },
-            {
-                category: "Backend",
-                technologies: ["Node.js", "PHP", "MySQL"],
-            },
-        ],
-        designDecisions: {
-            title: "Technical & System Design Decisions",
-            items: [
-                "Separated firmware logic from web visualization for modularity",
-                "Real-time data flow optimized for low-latency position updates",
-                "Web interface designed to clearly represent spatial positioning",
-                "System structured to allow future commercial scalability",
-            ],
-        },
-        results:
-            "This prototype successfully demonstrated an indoor RTLS system with approximately 30 cm accuracy, validating both the positioning algorithm and the end-to-end integration between embedded hardware and a web-based visualization platform.",
-        badges: [
-            "IoT",
-            "Embedded Systems",
-            "RTLS",
-            "Firmware",
-            "Web Platform",
-            "Prototype",
-            "React",
-            "PHP",
-            "MySQL",
-            "REST API",
-        ],
-        navigation: {
-            next: {
-                slug: "next-project-slug",
-                title: "Next Project",
-            },
-        },
-    },
-    {
-        slug: "eiwa",
-        title: "Eiwa Water Level Sensor",
-        year: "2020",
-        type: "IoT Prototype · Firmware & API Integration",
-        status: "Private · Prototype",
-        hero: {
-            shortDescription:
-                "A prototype IoT solution to estimate water level in 20L containers using capacitive sensing, featuring a custom firmware algorithm and an API integration layer to store and expose measurements to a companion Android app.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to build a reliable prototype capable of estimating the liquid level in water containers using capacitive sensing, and to deliver those readings to a backend service that could be consumed by a mobile application.",
-            challenge:
-                "The main technical challenge was translating raw sensor readings into a stable and meaningful “water level” value under real-world conditions. This required careful handling of noise, calibration behavior, and ensuring consistent measurements over time, while keeping the firmware lightweight and reliable.",
-            role: "I was responsible for developing the measurement algorithm in firmware and implementing the data delivery flow to a backend REST API. I also provided technical guidance to the Android team on the API contract and database structure to store device metadata and measurement history. I did not design or build the electronics, and I did not develop the Android application.",
-        },
-        facts: {
-            role: "Firmware & Backend Integration",
-            timeline: "2020",
-            platform: "IoT · Firmware + API",
-            team: "Cross-functional (mobile handled by a third party)",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen1.jpg",
-                alt: "Android app showing the water level percentage",
-                caption:
-                    "Mobile view consuming measurements from the backend API",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen2.jpg",
-                alt: "Capacitive sensor board close-up",
-                caption:
-                    "Hardware prototype used for validation (electronics not developed by me)",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eiwa/screen3.jpg",
-                alt: "Device installed on a water container for testing",
-                caption:
-                    "Prototype installation used during real-world measurement tests",
-            },
-        ],
-        whatIBuilt: [
-            "Designed and implemented the firmware algorithm to estimate liquid level from capacitive sensor readings.",
-            "Implemented the firmware networking flow to send measurements to a backend REST API over WiFi (ESP8266).",
-            "Defined the API contract required to register devices and store measurement history.",
-            "Advised on database modeling to persist device metadata, measurement logs, and last-known status.",
-            "Supported integration with a third-party Android application by aligning payload formats and endpoint behavior.",
-            "Validated the prototype through measurement tests with satisfactory results under real usage conditions.",
-        ],
-        techStack: [
-            {
-                category: "Firmware",
-                technologies: ["C++", "ESP8266", "WiFi"],
-            },
-            {
-                category: "Backend Integration",
-                technologies: ["REST API", "Database Modeling"],
-            },
-            {
-                category: "Domain",
-                technologies: ["Capacitive Sensing", "IoT Prototyping"],
-            },
-            {
-                category: "Mobile",
-                technologies: ["Android"],
-            },
-        ],
-        designDecisions: {
-            title: "Technical Decisions",
-            items: [
-                "Firmware-first approach to keep the measurement logic close to the sensor and reduce backend complexity",
-                "Stable payload structure for long-term device compatibility and straightforward mobile consumption",
-                "Database design focused on traceability: device metadata + time-series measurement history",
-                "Clear separation of responsibilities between firmware delivery and mobile presentation layer",
-            ],
-        },
-        results:
-            "The prototype achieved satisfactory measurement results and proved the feasibility of using capacitive sensing for water-level estimation in real-world conditions. The project also established a clean integration path between embedded firmware and a mobile-facing backend API, enabling reliable ingestion and storage of device readings.",
-        badges: [
-            "IoT",
-            "Firmware",
-            "C++",
-            "ESP8266",
-            "WiFi",
-            "REST API",
-            "Android",
-            "Prototype",
-        ],
-        navigation: {
-            next: {
-                slug: "rtls-system",
-                title: "RTLS System",
-            },
-        },
-    },
-    {
-        slug: "ecohyt",
-        title: "EcoHyT Temperature & Humidity Monitor",
-        year: "2018",
-        type: "IoT Prototype · Firmware & API Integration",
-        status: "Private",
-        hero: {
-            shortDescription:
-                "An IoT monitoring prototype that measures room temperature and humidity, displays readings on an onboard LCD, and sends time-series measurements to a REST API for storage in MySQL and visualization in an existing web dashboard.",
-            ctas: [],
-        },
-        overview: {
-            goal: "The goal of this project was to implement the firmware and connectivity layer for an embedded monitoring device that captures temperature and humidity readings, shows them locally on an LCD, and reliably uploads the measurements to the client's backend for historical tracking and visualization.",
-            challenge:
-                "The core challenge was ensuring consistent measurements and dependable delivery over WiFi to the backend API, while keeping the firmware stable and lightweight. Additionally, integration required aligning the device payloads with an existing web platform and database schema so the client could visualize the data without changing their dashboard workflow.",
-            role: "I handled the firmware implementation end-to-end: sensor measurement logic, LCD rendering, and the networking flow to send readings to a REST API. I also implemented the required API endpoints within the client's existing web application to persist data into MySQL. I did not design or build the electronics hardware, and the dashboard UI was already provided by the client.",
-        },
-        facts: {
-            role: "Firmware & Backend Integration",
-            timeline: "2018",
-            platform: "IoT · Firmware + API",
-            team: "Collaborative (client owned dashboard)",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen2.jpg",
-                alt: "EcoHyT dashboard",
-                caption:
-                    "Monitoring dashboard displaying historical temperature and humidity readings",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ecohyt/screen3.jpg",
-                alt: "EcoHyT device close-up",
-                caption: "Hardware prototype used for testing",
-            },
-        ],
-        whatIBuilt: [
-            "Implemented firmware logic to measure temperature and humidity from the embedded sensors.",
-            "Displayed real-time readings on the device LCD for local monitoring and quick validation.",
-            "Implemented WiFi connectivity (ESP8266) to send measurements to a backend REST API.",
-            "Aligned payload structure with the client's backend requirements for seamless ingestion.",
-            "Implemented the necessary API endpoints inside the client's existing web application.",
-            "Stored measurements in MySQL to enable historical tracking and visualization in the client dashboard.",
-            "Ensured stable, repeatable data delivery suitable for continuous monitoring scenarios.",
-        ],
-        techStack: [
-            {
-                category: "Firmware",
-                technologies: ["C++", "ESP8266", "WiFi", "LCD Display"],
-            },
-            {
-                category: "Backend Integration",
-                technologies: ["REST API", "MySQL"],
-            },
-            {
-                category: "Domain",
-                technologies: [
-                    "Temperature Monitoring",
-                    "Humidity Monitoring",
-                    "IoT Prototyping",
-                ],
-            },
-        ],
-        designDecisions: {
-            title: "Technical Decisions",
-            items: [
-                "Local LCD output to provide immediate validation and troubleshooting during field testing",
-                "Lightweight, consistent API payloads to integrate smoothly with an existing web platform",
-                "Time-series storage in MySQL to support charts and historical analysis in the client's dashboard",
-                "Separation of concerns: firmware focused on measurement + delivery; dashboard focused on visualization",
-            ],
-        },
-        results:
-            "This project delivered a working monitoring prototype where device readings were displayed locally and reliably ingested into the client's backend. By integrating the firmware data flow with the client's REST API and MySQL storage, the existing dashboard could immediately visualize historical measurements without requiring changes to the frontend reporting experience.",
-        badges: [
-            "IoT",
-            "Firmware",
-            "C++",
-            "ESP8266",
-            "WiFi",
-            "REST API",
-            "MySQL",
-            "LCD",
-        ],
-        navigation: {
-            next: {
-                slug: "eiwa-water-level-sensor",
-                title: "Eiwa Water Level Sensor",
-            },
-        },
-    },
-    {
-        slug: "print-quote-now",
-        title: "PrintQuoteNow",
-        year: "2022",
-        type: "Enterprise Web Application",
-        status: "Active / Long-term Project",
-        hero: {
-            shortDescription:
-                "A comprehensive print management platform featuring an advanced gang-run optimization algorithm, instant quoting, production workflows, and accounting integration through QuickBooks.",
+                "An informative corporate website built to communicate BioFractal's mission, values, and sustainable technology approach through a clean structure and clear visual storytelling.",
             ctas: [
                 {
                     label: "View Live",
-                    href: "https://printquotenow.com",
+                    href: "https://biofractal.com.mx/",
                 },
             ],
         },
         overview: {
-            goal: "Build a scalable print management system capable of generating instant, highly optimized print quotes while managing the full production lifecycle, invoicing, and reporting.",
+            goal: "The primary goal of this project was to design and develop a professional informational website that clearly presents BioFractal's vision, methodology, and areas of expertise in sustainable technology. The site needed to communicate credibility, structure, and purpose while remaining accessible to a broad, non-technical audience.",
             challenge:
-                "Designing and implementing a complex gang-run algorithm to optimally position multiple print jobs on a single sheet, minimizing paper waste and machine time, while keeping the system flexible for continuous feature expansion over multiple years.",
-            role: "Lead Full-Stack Developer responsible for system architecture, core algorithm development, API design, cloud infrastructure, and long-term platform evolution.",
-        },
-        facts: {
-            role: "Lead Full-Stack Developer",
-            timeline: "2022",
-            platform: "Enterprise web application for printing companies",
-            team: "4 developers",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/pqn/screen1.jpg",
-                alt: "Instant quote builder interface",
-                caption:
-                    "Advanced quote builder powered by the gang-run optimization algorithm.",
-            },
-        ],
-        whatIBuilt: [
-            "Gang-run optimization algorithm to efficiently position multiple print jobs on a single sheet.",
-            "Instant quote engine calculating costs based on paper usage, machine time, ink, and finishing processes.",
-            "REST API to support quoting, production workflows, and integrations.",
-            "Invoice management module with QuickBooks API integration to push invoices and synchronize accounting data.",
-            "Reporting system capable of exporting synchronized financial and production data.",
-            "AWS cloud infrastructure setup and deployment for scalability and reliability.",
-            "Reporting system capable of exporting synchronized financial and production data.",
-        ],
-        techStack: [
-            {
-                category: "Frontend",
-                technologies: ["React", "Redux", "HTML", "CSS"],
-            },
-            {
-                category: "Backend",
-                technologies: ["PHP", "Node.js", "Yii Framework"],
-            },
-            {
-                category: "Database",
-                technologies: ["MySQL"],
-            },
-            {
-                category: "Cloud & Infrastructure",
-                technologies: [
-                    "AWS EC2",
-                    "AWS Lambda",
-                    "AWS RDS",
-                    "AWS S3",
-                    "Route 53",
-                ],
-            },
-            {
-                category: "Integrations",
-                technologies: ["QuickBooks API", "REST APIs"],
-            },
-        ],
-        designDecisions: {
-            title: "Key Architectural and Technical Decisions",
-            items: [
-                "Custom gang-run algorithm developed from scratch using mathematical and geometric optimization techniques.",
-                "Modular system design to allow continuous feature expansion without disrupting existing workflows.",
-                "Separation of pricing logic, production logic, and accounting integrations for maintainability.",
-                "Use of AWS managed services to ensure scalability, fault tolerance, and long-term reliability.",
-            ],
-        },
-        results:
-            "The platform enabled printing companies to generate instant, highly optimized quotes, significantly reducing paper waste and manual estimation time. Its accounting integration streamlined invoicing workflows and improved financial reporting accuracy.",
-        badges: [
-            "Enterprise Application",
-            "Custom Algorithm",
-            "Gang Optimization",
-            "AWS Architecture",
-            "EC2",
-            "RDS",
-            "S3",
-            "Route 53",
-            "Load Balancer",
-            "React",
-            "Redux",
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "QuickBooks API",
-            "REST APIs",
-            "Private / Restricted",
-        ],
-        navigation: {
-            previous: {
-                slug: "eco-hyt",
-                title: "EcoHyT",
-            },
-            next: {
-                slug: "printing-shop-platform",
-                title: "Printing Shop Platform",
-            },
-        },
-    },
-    {
-        slug: "bmade-inventory",
-        title: "B-Made Inventory System",
-        year: "2017",
-        type: "Internal Web Application · Inventory Management",
-        status: "Private / Internal Use",
-        hero: {
-            shortDescription:
-                "An internal inventory management system designed to centralize electronic component tracking, supplier data, and operational records in a structured, searchable web dashboard.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Create a reliable internal web platform to manage electronic component inventory with clear traceability, fast search, and controlled access for staff.",
-            challenge:
-                "Keeping inventory data consistent across categories, manufacturers, and part numbers while maintaining a UI that stays fast and easy to use for day-to-day operations.",
-            role: "Full-Stack Developer responsible for implementing the web application, backend logic, database structure, and deployment on AWS.",
+                "One of the main challenges was translating complex, multidisciplinary concepts related to sustainability, technology, and innovation into clear, easy-to-understand content without oversimplifying the message. The site also needed to maintain a strong institutional identity while being responsive and performant across devices.",
+            role: "I worked as a full-stack developer, responsible for the frontend architecture, backend integration, data handling, and overall technical implementation of the website.",
         },
         facts: {
             role: "Full-Stack Developer",
-            timeline: "2017",
+            timeline: "2015",
             platform: "Web",
-            team: "Solo project",
+            team: "Multidisciplinary team",
             repository: "Private",
         },
         screenshots: [
             {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/bmade-inventory/screen1.jpg",
-                alt: "B-Made dashboard navigation",
-                caption:
-                    "Structured navigation for inventory and administration modules.",
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen1.jpg",
+                alt: "BioFractal home page",
+                caption: "Homepage and primary landing experience",
+            },
+            {
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/biofractal/screen2.jpg",
+                alt: "About section",
+                caption: "Additional sections and internal pages",
             },
         ],
         whatIBuilt: [
-            "Inventory module to manage electronic components with categories, manufacturers, and part number references.",
-            "Search and filtering experience to quickly locate parts across large inventories.",
-            "Admin section to manage internal users and configuration settings.",
-            "Core entities for client and company records to support internal operational workflows.",
-            "REST API endpoints to support CRUD operations and future integration needs.",
-            "Deployment and hosting on AWS for a stable internal environment.",
+            "Developed a responsive, informative website using React.js for the frontend.",
+            "Implemented state management using Redux to handle application data flow.",
+            "Built backend services with Node.js and PHP to support data persistence.",
+            "Designed and integrated a MySQL database for structured content storage.",
+            "Implemented REST-style data communication between frontend and backend.",
+            "Structured the layout using Bootstrap combined with custom HTML and CSS.",
+            "Ensured cross-device compatibility and consistent behavior across screen sizes.",
         ],
         techStack: [
             {
                 category: "Frontend",
-                technologies: ["React", "Redux", "Material UI"],
+                technologies: ["React.js", "Redux", "Bootstrap", "HTML", "CSS"],
             },
             {
                 category: "Backend",
-                technologies: ["PHP", "Node.js", "Yii Framework"],
+                technologies: ["Node.js", "PHP", "REST API"],
             },
             {
                 category: "Database",
                 technologies: ["MySQL"],
-            },
-            {
-                category: "Cloud & Infrastructure",
-                technologies: ["AWS"],
             },
         ],
         designDecisions: {
             title: "Design & UX Decisions",
             items: [
-                "Material UI-based interface to keep internal screens consistent and easy to scan.",
-                "Table-first UX with search and filters to optimize for daily inventory operations.",
-                "Clear separation between inventory entities (components, categories, manufacturers) to reduce data duplication.",
-                "Role-based access patterns to keep internal administration controlled and auditable.",
+                "Clear content hierarchy to guide users through institutional information",
+                "Strong visual identity aligned with sustainability and nature-inspired themes",
+                "Responsive layout to ensure accessibility on desktop and mobile devices",
+                "Use of visual sections and iconography to simplify complex concepts",
+                "Balanced combination of framework-based layout and custom styling",
             ],
         },
         results:
-            "The system replaced fragmented manual tracking with a centralized inventory source of truth, improving operational visibility and reducing time spent locating parts and validating stock data.",
+            "This project resulted in a clear, professional corporate website that effectively communicates BioFractal's values and technological approach. It reinforced my experience building full-stack web applications that balance technical structure, usability, and institutional branding, especially in projects aimed at communicating complex ideas to diverse audiences.",
         badges: [
-            "Internal Tool",
-            "Inventory Management",
-            "React",
+            "React.js",
             "Redux",
-            "Material UI",
-            "PHP",
             "Node.js",
-            "Yii Framework",
+            "PHP",
             "MySQL",
-            "AWS Architecture",
             "REST API",
-            "Private / Restricted",
+            "Bootstrap",
+            "Responsive Design",
+            "Client Project",
         ],
-        navigation: {
-            previous: {
-                slug: "print-quote-now",
-                title: "PrintQuoteNow",
-            },
-            next: {
-                slug: "sprink-ads",
-                title: "Sprink Ads",
-            },
-        },
     },
     {
-        slug: "controlec",
         title: "Controlec",
+        description:
+            "A mobile and web-based platform designed to support the coordination and monitoring of electoral processes in Yucatan, providing operational tools for field teams and administrators.",
+        technologies: ["Android", "Java", "Mobile App", "Team Project"],
         year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/controlec/preview.png",
+        label: "",
+        slug: "controlec",
         type: "Mobile App + Web Platform",
         status: "Completed",
         hero: {
@@ -1534,164 +1479,55 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Team Project",
             "Private / Restricted",
         ],
-        navigation: {
-            previous: {
-                slug: "b-made-inventory-system",
-                title: "B-Made - Inventory System",
-            },
-            next: {
-                slug: "print-quote-now",
-                title: "PrintQuoteNow",
-            },
-        },
     },
     {
-        slug: "absolute-eddm",
-        title: "Absolute EDDM",
-        year: "2018",
-        type: "Web Application · Direct Mail / EDDM Ordering Platform",
-        status: "Private / Restricted",
+        title: "Hacienda San Diego Cutz",
+        description:
+            "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
+        technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
+        year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/preview.png",
+        label: "",
+        slug: "hacienda-san-diego-cutz",
+        type: "Corporate Informational Website",
+        status: "Live",
         hero: {
             shortDescription:
-                "A web platform that allows customers to plan EDDM (Every Door Direct Mail) campaigns by selecting USPS routes, uploading print-ready artwork, completing payment via CardPointe, and generating the required list and documentation for fulfillment.",
-            ctas: [],
-        },
-        overview: {
-            goal: "Create a self-service ordering experience for EDDM campaigns where users can select mailing routes, estimate total costs (printing + postage), upload artwork, complete checkout, and generate the necessary data to execute fulfillment through USPS.",
-            challenge:
-                "Building a workflow that combines interactive route selection and pricing logic with a reliable order management backend, while keeping the UX straightforward for non-technical customers.",
-            role: "Full-Stack Developer responsible for implementing the end-to-end web application, including customer checkout flows, admin management features, pricing logic, and integrations.",
-        },
-        facts: {
-            role: "Full-Stack Developer",
-            timeline: "2018",
-            platform: "Web",
-            team: "Small team",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen1.png",
-                alt: "Absolute EDDM landing page",
-                caption: "Landing page introducing the Absolute EDDM platform.",
-            },
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/eddm/screen2.png",
-                alt: "Route selection map tool",
-                caption:
-                    "Interactive map tool to select USPS routes and preview audience details and costs.",
-            },
-        ],
-        whatIBuilt: [
-            "Customer-facing EDDM ordering workflow: route selection, product configuration, artwork upload, and checkout.",
-            "Interactive mapping experience to browse and select USPS routes with detailed route statistics.",
-            "Pricing logic combining print options and EDDM postage costs for accurate campaign totals.",
-            "Checkout and payment flow integrated with CardPointe for secure transaction processing.",
-            "Admin dashboard to manage customers, orders, pricing rules, and operational settings.",
-            "AWS-based hosting and deployment setup for reliability and scalability.",
-        ],
-        techStack: [
-            {
-                category: "Frontend",
-                technologies: [
-                    "HTML",
-                    "CSS",
-                    "Bootstrap",
-                    "JavaScript",
-                    "jQuery",
-                ],
-            },
-            {
-                category: "Backend",
-                technologies: ["PHP", "Yii Framework"],
-            },
-            {
-                category: "Database",
-                technologies: ["MySQL"],
-            },
-            {
-                category: "Cloud & Infrastructure",
-                technologies: ["AWS"],
-            },
-            {
-                category: "Integrations",
-                technologies: ["USPS EDDM", "CardPointe Payment Gateway"],
-            },
-        ],
-        designDecisions: {
-            title: "Key Design & Technical Decisions",
-            items: [
-                "A guided, step-based customer flow to reduce friction for non-technical users purchasing mail campaigns.",
-                "Map-first interaction model to make route selection intuitive and visual.",
-                "Centralized pricing rules and admin-controlled configuration to support frequent business changes.",
-                "Payment processing abstracted into a dedicated integration layer to keep checkout logic maintainable.",
+                "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
+            ctas: [
+                {
+                    label: "View Live",
+                    href: "https://haciendasandiegocutz.com/",
+                },
             ],
         },
-        results:
-            "The platform streamlined the process of launching EDDM campaigns by combining route discovery, pricing, artwork submission, and payment into a single workflow, reducing manual coordination and enabling faster fulfillment.",
-        badges: [
-            "EDDM",
-            "USPS Integration",
-            "Mapping Tool",
-            "Payment Processing",
-            "CardPointe",
-            "AWS",
-            "PHP",
-            "Yii Framework",
-            "MySQL",
-            "Bootstrap",
-            "jQuery",
-            "Private / Restricted",
-        ],
-        navigation: {
-            previous: {
-                slug: "controlec",
-                title: "Controlec",
-            },
-            next: {
-                slug: "print-quote-now",
-                title: "PrintQuoteNow",
-            },
-        },
-    },
-    {
-        slug: "grupo-lamol",
-        title: "Grupo Lamol",
-        year: "2014",
-        type: "Corporate Website",
-        status: "Completed",
-        hero: {
-            shortDescription:
-                "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
-            ctas: [],
-        },
         overview: {
-            goal: "Provide Grupo Lamol with a professional online presence to communicate information about their gas stations, services, fuel prices, and contact details in a clear and user-friendly way.",
+            goal: "Create a professional online presence to present the venue, highlight its key features, and make it easy for visitors to explore galleries and get in touch.",
             challenge:
-                "Designing and implementing a visually engaging yet informative website that could be easily managed and updated, while ensuring good performance and search engine visibility.",
-            role: "Web Developer collaborating with another developer, responsible for WordPress customization, frontend implementation, and content structure.",
+                "Implementing a visually attractive WordPress site with organized content (sections and galleries), while keeping it responsive and easy for the client to maintain.",
+            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
         },
         facts: {
             role: "Web Developer",
-            timeline: "2014",
+            timeline: "2015",
             platform: "WordPress",
             team: "2 developers",
             repository: "Private",
         },
         screenshots: [
             {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/screen1.png",
-                alt: "Grupo Lamol homepage",
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/screen1.jpg",
+                alt: "Hacienda San Diego Cutz homepage",
                 caption:
-                    "Homepage showcasing Grupo Lamol gas stations and corporate identity.",
+                    "Homepage introducing the venue and its main sections.",
             },
         ],
         whatIBuilt: [
-            "WordPress-based corporate website structure and customization.",
-            "Frontend implementation using HTML and CSS for a responsive layout.",
-            "Integration of dynamic content sections for gas stations and fuel prices.",
-            "SEO-friendly structure and content organization.",
-            "Collaboration with another developer to deliver the complete website.",
+            "WordPress installation and base configuration.",
+            "Implementation of page layouts and content structure for the site sections.",
+            "Styling adjustments using HTML/CSS to match the intended look and improve readability.",
+            "Setup and customization of galleries and media content organization.",
+            "Collaboration with a second developer to deliver the full site.",
         ],
         techStack: [
             {
@@ -1699,54 +1535,51 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
                 technologies: ["WordPress"],
             },
             {
-                category: "Backend",
-                technologies: ["PHP", "MySQL"],
-            },
-            {
                 category: "Frontend",
                 technologies: ["HTML", "CSS"],
             },
             {
-                category: "SEO",
-                technologies: ["On-page SEO"],
+                category: "Backend",
+                technologies: ["PHP"],
             },
         ],
         designDecisions: {
-            title: "Key Design and Technical Decisions",
+            title: "Key Design and Implementation Decisions",
             items: [
-                "Use of WordPress to allow easy content updates by non-technical users.",
-                "Clear information hierarchy focused on stations, prices, and contact details.",
-                "Responsive layout to ensure accessibility across desktop and mobile devices.",
-                "SEO-oriented structure to improve online visibility.",
+                "WordPress chosen to keep content updates simple for non-technical users.",
+                "Content organized into clear sections (venue details, galleries, contact) for easy navigation.",
+                "Responsive layout to ensure a consistent experience across desktop and mobile devices.",
             ],
         },
         results:
-            "Grupo Lamol obtained a professional and informative web presence that improved visibility of their gas stations and services, making key information easily accessible to customers.",
+            "The website established a strong and accessible online presence for the venue, improving how visitors explore the location, view galleries, and contact the business. The platform remains live and maintainable through WordPress.",
         badges: [
-            "Corporate Website",
             "WordPress",
-            "PHP",
-            "MySQL",
+            "Corporate Website",
+            "Informational Site",
+            "Gallery",
             "HTML",
             "CSS",
-            "SEO",
-            "Private / Restricted",
+            "PHP",
+            "Responsive Design",
+            "Team Collaboration",
         ],
-        navigation: {
-            previous: {
-                slug: "absolute-eddm",
-                title: "Absolute EDDM",
-            },
-            next: {
-                slug: "controlec",
-                title: "Controlec",
-            },
-        },
     },
     {
-        slug: "ipc-inmobiliaria",
         title: "IPC Inmobiliaria",
+        description:
+            "Corporate informational website for a real estate company, showcasing properties, developments, services, and contact information through a clean and structured WordPress-based solution.",
+        technologies: [
+            "WordPress",
+            "Corporate Website",
+            "Real Estate",
+            "SEO",
+            "PHP",
+        ],
         year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/ipc-inmobiliaria/preview.png",
+        label: "",
+        slug: "ipc-inmobiliaria",
         type: "Informational Website",
         status: "Completed",
         hero: {
@@ -1820,21 +1653,16 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Collaborative Project",
             "Private / Client Work",
         ],
-        navigation: {
-            previous: {
-                slug: "grupo-lamol",
-                title: "Grupo Lamol",
-            },
-            next: {
-                slug: "controlec",
-                title: "Controlec",
-            },
-        },
     },
     {
-        slug: "astrea-realty",
         title: "Astrea Realty",
+        description:
+            "A bilingual real estate website built on WordPress to showcase property listings with strong visual presentation, clear navigation, and SEO-friendly structure for a regional realty brand.",
+        technologies: ["WordPress", "PHP", "MySQL", "SEO", "Real Estate"],
         year: "2015",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/astrea-realty/preview.png",
+        label: "",
+        slug: "astrea-realty",
         type: "WordPress Website · Real Estate",
         status: "Client Project (Public Website)",
         hero: {
@@ -1915,187 +1743,100 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Client Project",
             "Team Project",
         ],
-        navigation: {
-            previous: {
-                slug: "ipc-inmobiliaria",
-                title: "IPC Inmobiliaria",
-            },
-            next: {
-                slug: "grupo-lamol",
-                title: "Grupo Lamol",
-            },
-        },
     },
     {
-        slug: "corporativo-vega",
-        title: "Corporativo Vega Website",
-        year: "2019",
-        type: "Corporate Informational Website",
+        title: "Grupo Lamol",
+        description:
+            "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
+        technologies: ["Corporate Website", "WordPress", "PHP", "MySQL", "SEO"],
+        year: "2014",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/preview.png",
+        label: "",
+        slug: "grupo-lamol",
+        type: "Corporate Website",
         status: "Completed",
         hero: {
             shortDescription:
-                "Corporate informational website built with WordPress to present the company's services, business areas, and contact information through a clean and structured interface.",
+                "Corporate informational website built for Grupo Lamol to showcase gas stations, products, fuel prices, and corporate information through a clear and accessible web presence.",
             ctas: [],
         },
         overview: {
-            goal: "Develop a professional corporate website to clearly present the company's information, services, and brand identity in an accessible and well-structured format.",
+            goal: "Provide Grupo Lamol with a professional online presence to communicate information about their gas stations, services, fuel prices, and contact details in a clear and user-friendly way.",
             challenge:
-                "Creating a clear and maintainable content structure in WordPress while ensuring visual consistency, responsive behavior, and easy content management for non-technical users.",
-            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
+                "Designing and implementing a visually engaging yet informative website that could be easily managed and updated, while ensuring good performance and search engine visibility.",
+            role: "Web Developer collaborating with another developer, responsible for WordPress customization, frontend implementation, and content structure.",
         },
         facts: {
             role: "Web Developer",
-            timeline: "2019",
+            timeline: "2014",
             platform: "WordPress",
             team: "2 developers",
             repository: "Private",
         },
         screenshots: [
             {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/corporativo-vega/screen1.jpg",
-                alt: "Corporativo Vega homepage",
+                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/grupo-lamol/screen1.png",
+                alt: "Grupo Lamol homepage",
                 caption:
-                    "Main homepage presenting the company overview and branding.",
+                    "Homepage showcasing Grupo Lamol gas stations and corporate identity.",
             },
         ],
         whatIBuilt: [
-            "WordPress installation and configuration.",
-            "Implementation of custom layouts using Elementor and custom HTML/CSS.",
-            "Content structure setup for corporate sections and informational pages.",
-            "Collaboration on visual adjustments and responsive behavior.",
+            "WordPress-based corporate website structure and customization.",
+            "Frontend implementation using HTML and CSS for a responsive layout.",
+            "Integration of dynamic content sections for gas stations and fuel prices.",
+            "SEO-friendly structure and content organization.",
+            "Collaboration with another developer to deliver the complete website.",
         ],
         techStack: [
             {
                 category: "CMS",
                 technologies: ["WordPress"],
-            },
-            {
-                category: "Frontend",
-                technologies: ["HTML", "CSS", "Elementor"],
             },
             {
                 category: "Backend",
-                technologies: ["PHP"],
-            },
-        ],
-        designDecisions: {
-            title: "Key Design and Implementation Decisions",
-            items: [
-                "Use of WordPress to allow easy content management by the client.",
-                "Simple and clean visual structure focused on corporate clarity.",
-                "Responsive layout to ensure correct display across devices.",
-            ],
-        },
-        results:
-            "The website provided the company with a professional online presence, enabling them to clearly communicate their services and corporate information while allowing easy future content updates.",
-        badges: [
-            "WordPress",
-            "Corporate Website",
-            "Informational Site",
-            "HTML",
-            "CSS",
-            "PHP",
-            "Elementor",
-            "Responsive Design",
-            "Team Collaboration",
-        ],
-        navigation: {
-            previous: {
-                slug: "astrea-realty",
-                title: "Astrea Realty",
-            },
-        },
-    },
-    {
-        slug: "hacienda-san-diego-cutz",
-        title: "Hacienda San Diego Cutz",
-        year: "2015",
-        type: "Corporate Informational Website",
-        status: "Live",
-        hero: {
-            shortDescription:
-                "WordPress website built to showcase Hacienda San Diego Cutz, presenting the venue's information, galleries, and contact details with a clear, user-friendly structure.",
-            ctas: [
-                {
-                    label: "View Live",
-                    href: "https://haciendasandiegocutz.com/",
-                },
-            ],
-        },
-        overview: {
-            goal: "Create a professional online presence to present the venue, highlight its key features, and make it easy for visitors to explore galleries and get in touch.",
-            challenge:
-                "Implementing a visually attractive WordPress site with organized content (sections and galleries), while keeping it responsive and easy for the client to maintain.",
-            role: "Web Developer collaborating with another programmer, focused on WordPress setup, layout implementation, and frontend customization.",
-        },
-        facts: {
-            role: "Web Developer",
-            timeline: "2015",
-            platform: "WordPress",
-            team: "2 developers",
-            repository: "Private",
-        },
-        screenshots: [
-            {
-                src: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/hacienda-san-diego-cutz/screen1.jpg",
-                alt: "Hacienda San Diego Cutz homepage",
-                caption:
-                    "Homepage introducing the venue and its main sections.",
-            },
-        ],
-        whatIBuilt: [
-            "WordPress installation and base configuration.",
-            "Implementation of page layouts and content structure for the site sections.",
-            "Styling adjustments using HTML/CSS to match the intended look and improve readability.",
-            "Setup and customization of galleries and media content organization.",
-            "Collaboration with a second developer to deliver the full site.",
-        ],
-        techStack: [
-            {
-                category: "CMS",
-                technologies: ["WordPress"],
+                technologies: ["PHP", "MySQL"],
             },
             {
                 category: "Frontend",
                 technologies: ["HTML", "CSS"],
             },
             {
-                category: "Backend",
-                technologies: ["PHP"],
+                category: "SEO",
+                technologies: ["On-page SEO"],
             },
         ],
         designDecisions: {
-            title: "Key Design and Implementation Decisions",
+            title: "Key Design and Technical Decisions",
             items: [
-                "WordPress chosen to keep content updates simple for non-technical users.",
-                "Content organized into clear sections (venue details, galleries, contact) for easy navigation.",
-                "Responsive layout to ensure a consistent experience across desktop and mobile devices.",
+                "Use of WordPress to allow easy content updates by non-technical users.",
+                "Clear information hierarchy focused on stations, prices, and contact details.",
+                "Responsive layout to ensure accessibility across desktop and mobile devices.",
+                "SEO-oriented structure to improve online visibility.",
             ],
         },
         results:
-            "The website established a strong and accessible online presence for the venue, improving how visitors explore the location, view galleries, and contact the business. The platform remains live and maintainable through WordPress.",
+            "Grupo Lamol obtained a professional and informative web presence that improved visibility of their gas stations and services, making key information easily accessible to customers.",
         badges: [
-            "WordPress",
             "Corporate Website",
-            "Informational Site",
-            "Gallery",
+            "WordPress",
+            "PHP",
+            "MySQL",
             "HTML",
             "CSS",
-            "PHP",
-            "Responsive Design",
-            "Team Collaboration",
+            "SEO",
+            "Private / Restricted",
         ],
-        navigation: {
-            previous: {
-                slug: "corporativo-vega-website",
-                title: "Corporativo Vega Website",
-            },
-        },
     },
     {
-        slug: "cedu-noel",
         title: "CEDU Noel",
+        description:
+            "WordPress-based informational website developed to present CEDU Noel's services, institutional information, and contact details through a clear and structured interface.",
+        technologies: ["WordPress", "Corporate Website", "HTML", "CSS", "PHP"],
         year: "2014",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/cedu-noel/preview.png",
+        label: "",
+        slug: "cedu-noel",
         type: "Corporate Informational Website",
         status: "Live",
         hero: {
@@ -2166,21 +1907,26 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "Team Collaboration",
             "Legacy Project",
         ],
-        navigation: {
-            previous: {
-                slug: "hacienda-san-diego-cutz",
-                title: "Hacienda San Diego Cutz",
-            },
-            next: {
-                slug: "grupo-lamol",
-                title: "Grupo Lamol",
-            },
-        },
     },
     {
-        slug: "canteras-creativas",
         title: "Canteras Creativas",
+        description:
+            "An e-commerce web application to showcase and sell handcrafted stone products, featuring a custom product catalog, shopping cart, and integrated online payments.",
+        technologies: [
+            "E-commerce",
+            "Web Application",
+            "React",
+            "Yii Framework",
+            "PHP",
+            "MySQL",
+            "PayPal",
+            "DineroMail",
+            "REST API",
+        ],
         year: "2013",
+        image: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/projects/canteras-creativas/preview.png",
+        label: "",
+        slug: "canteras-creativas",
         type: "Web Application",
         status: "Completed",
         hero: {
@@ -2274,15 +2020,5 @@ export const PROJECTS_DETAILS: ProjectDetail[] = [
             "REST API",
             "Private / Restricted",
         ],
-        navigation: {
-            previous: {
-                slug: "cedu-noel",
-                title: "CEDU Noel",
-            },
-            next: {
-                slug: "inventory-system",
-                title: "Inventory System",
-            },
-        },
     },
 ];

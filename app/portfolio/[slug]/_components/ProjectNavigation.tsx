@@ -3,11 +3,11 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Grid3x3 } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { Project } from "@/types/portfolio";
 import { naturalEase } from "@/lib/animations";
 
 interface ProjectNavigationProps {
-    navigation: ProjectDetail["navigation"];
+    navigation: Project["navigation"];
 }
 
 export default function ProjectNavigation({
@@ -24,7 +24,7 @@ export default function ProjectNavigation({
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, ease: naturalEase }}
                     >
-                        {navigation.previous ? (
+                        {navigation?.previous ? (
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.2 }}
@@ -92,7 +92,7 @@ export default function ProjectNavigation({
                             delay: 0.2,
                         }}
                     >
-                        {navigation.next ? (
+                        {navigation?.next ? (
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.2 }}

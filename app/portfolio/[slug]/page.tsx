@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { PROJECTS_DETAILS } from "@/data/projects";
+import { PROJECTS } from "@/data/projects";
 import ProjectHero from "./_components/ProjectHero";
 import ProjectOverview from "./_components/ProjectOverview";
 import ProjectFacts from "./_components/ProjectFacts";
@@ -13,8 +13,7 @@ export default async function PortfolioDetailsPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    console.log(slug);
-    const project = PROJECTS_DETAILS.find((p) => p.slug === slug);
+    const project = PROJECTS.find((p) => p.slug === slug);
 
     if (!project) {
         notFound();
