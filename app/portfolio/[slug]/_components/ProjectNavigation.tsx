@@ -3,16 +3,14 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Grid3x3 } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
 import { naturalEase } from "@/lib/animations";
+import type { ProjectWithRelations } from "@/types/projects-with-relations";
 
-interface ProjectNavigationProps {
-    navigation: ProjectDetail["navigation"];
+interface Props {
+    project: ProjectWithRelations;
 }
 
-export default function ProjectNavigation({
-    navigation,
-}: ProjectNavigationProps) {
+export default function ProjectNavigation({ project }: Props) {
     return (
         <section className="py-8 md:py-16 px-6 md:px-12 bg-background border-t border-primary/10">
             <div className="container mx-auto max-w-6xl">
@@ -24,13 +22,13 @@ export default function ProjectNavigation({
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, ease: naturalEase }}
                     >
-                        {navigation.previous ? (
+                        {project.navigation?.previous ? (
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.2 }}
                             >
                                 <Link
-                                    href={`/portfolio/${navigation.previous.slug}`}
+                                    href={`/portfolio/${project.navigation.previous.slug}`}
                                     className="group flex items-center gap-3 p-6 rounded-lg transition-all duration-300 hover:bg-light/40"
                                 >
                                     <ArrowLeft className="w-5 h-5 text-primary group-hover:-translate-x-1 transition-transform" />
@@ -39,7 +37,7 @@ export default function ProjectNavigation({
                                             Previous
                                         </p>
                                         <p className="font-semibold text-primary group-hover:text-secondary transition-colors">
-                                            {navigation.previous.title}
+                                            {project.navigation.previous.title}
                                         </p>
                                     </div>
                                 </Link>
@@ -92,13 +90,13 @@ export default function ProjectNavigation({
                             delay: 0.2,
                         }}
                     >
-                        {navigation.next ? (
+                        {project.navigation?.next ? (
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.2 }}
                             >
                                 <Link
-                                    href={`/portfolio/${navigation.next.slug}`}
+                                    href={`/portfolio/${project.navigation.next.slug}`}
                                     className="group flex items-center justify-end gap-3 p-6 rounded-lg transition-all duration-300 hover:bg-light/70"
                                 >
                                     <div className="text-right">
@@ -106,7 +104,7 @@ export default function ProjectNavigation({
                                             Next
                                         </p>
                                         <p className="font-semibold text-primary group-hover:text-secondary transition-colors">
-                                            {navigation.next.title}
+                                            {project.navigation.next.title}
                                         </p>
                                     </div>
                                     <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />

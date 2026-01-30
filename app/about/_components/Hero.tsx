@@ -20,7 +20,7 @@ const itemVariants = {
 
 export default function Hero() {
     return (
-        <section className="relative md:min-h-screen 2xl:min-h-0 flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 md:px-12">
+        <section className="relative md:min-h-screen flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 md:px-12">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     {/* Left Column - Main Content */}

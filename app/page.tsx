@@ -1,12 +1,15 @@
 import Hero from "./_components/Hero";
 import Skills from "./_components/Skills";
 import Portfolio from "./_components/Portfolio";
+import { getProjects } from "./actions";
 
-export default function Home() {
+export default async function Home() {
+    const { data: projects } = await getProjects();
+
     return (
         <>
             <Hero />
-            <Portfolio />
+            <Portfolio projects={projects} />
             <Skills />
         </>
     );

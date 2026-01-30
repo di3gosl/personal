@@ -7,7 +7,7 @@ datasource db {
 }
 
 model ContactMessage {
-  id          String   @id @default(cuid())
+  id          String  @id @default(cuid())
   firstName   String
   lastName    String
   email       String
@@ -15,8 +15,129 @@ model ContactMessage {
   projectType String?
   foundMe     String?
   message     String
-  createdAt   DateTime @default(now())
+
+  createdAt DateTime @default(now())
 
   @@index([createdAt])
   @@index([email])
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String   @unique
+  password   String
+  resetToken String?  @unique
+  isActive   Boolean  @default(true)
+  isDeleted  Boolean  @default(false)
+  role       UserRole @default(USER)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+}
+
+model Project {
+  id               String  @id @default(cuid())
+  slug             String  @unique
+  title            String
+  description      String  @db.Text
+  year             Int
+  image            String
+  label            String?
+  isFeatured       Boolean @default(false)
+  type             String
+  status           String
+  liveUrl          String?
+  repoUrl          String?
+  goal             String  @db.Text
+  challenge        String  @db.Text
+  roleDescription  String  @db.Text
+  role             String
+  platform         String
+  team             String
+  repository       String
+  results          String  @db.Text
+  order            Int     @default(0)
+  isActive         Boolean @default(true)
+  isDeleted        Boolean @default(false)
+
+  // JSON columns for presentational data
+  techStack       Json // Array of { category: string, technologies: string[] }
+  designDecisions Json // Array of strings
+  whatIBuilt      Json // Array of strings
+
+  // Relations
+  screenshots Screenshot[]
+  tags        ProjectTag[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@index([isFeatured])
+  @@index([year])
+  @@index([status])
+  @@index([type])
+  @@index([order])
+}
+
+model Screenshot {
+  id         String  @id @default(cuid())
+  projectId  String
+  src        String
+  previewSrc String?
+  caption    String
+  order      Int     @default(0)
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@index([order])
+}
+
+model Tag {
+  id           String  @id @default(cuid())
+  tag          String  @unique
+  kind         TagKind
+  isFilterable Boolean @default(false) // Display in filter
+  order        Int     @default(0) // Control sorting
+
+  projects ProjectTag[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([kind])
+  @@index([isFilterable])
+  @@index([order])
+}
+
+model ProjectTag {
+  id        String  @id @default(cuid())
+  projectId String
+  tagId     String
+  isPreview Boolean @default(false) // Display in preview card
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([projectId, tagId])
+  @@index([projectId])
+  @@index([tagId])
+  @@index([isPreview])
+}
+
+enum TagKind {
+  tech
+  service
+  tool
+  platform
+  meta
+}
+
+enum UserRole {
+  ADMIN
+  USER
 }

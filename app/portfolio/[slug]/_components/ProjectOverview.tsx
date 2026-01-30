@@ -3,8 +3,8 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Target, Lightbulb, User } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 interface ProjectOverviewProps {
-    project: ProjectDetail;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectOverview({ project }: ProjectOverviewProps) {
@@ -30,22 +30,25 @@ export default function ProjectOverview({ project }: ProjectOverviewProps) {
         {
             icon: Target,
             title: "The Goal",
-            content: project.overview.goal,
+            content: project.goal,
         },
         {
             icon: Lightbulb,
             title: "The Challenge",
-            content: project.overview.challenge,
+            content: project.challenge,
         },
         {
             icon: User,
             title: "My Role",
-            content: project.overview.role,
+            content: project.roleDescription,
         },
     ];
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-background">
+        <section
+            ref={sectionRef}
+            className="py-16 md:py-24 px-6 md:px-12 bg-background"
+        >
             <div className="container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <motion.div
@@ -66,7 +69,7 @@ export default function ProjectOverview({ project }: ProjectOverviewProps) {
 
                 {/* Overview Grid */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 2xl:gap-20"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
