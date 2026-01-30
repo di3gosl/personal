@@ -43,7 +43,6 @@ model Project {
   slug             String  @unique
   title            String
   description      String  @db.Text
-  shortDescription String  @db.Text
   year             Int
   image            String
   label            String?

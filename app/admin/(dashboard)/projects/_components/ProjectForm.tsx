@@ -57,7 +57,6 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
             slug: "",
             title: "",
             description: "",
-            shortDescription: "",
             year: new Date().getFullYear(),
             image: "",
             label: "",
@@ -266,34 +265,11 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
 
                                 <FormField
                                     control={form.control}
-                                    name="shortDescription"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>
-                                                Short Description{" "}
-                                                <span className="text-destructive">
-                                                    *
-                                                </span>
-                                            </FormLabel>
-                                            <FormControl>
-                                                <Textarea {...field} rows={2} />
-                                            </FormControl>
-                                            <FormDescription>
-                                                Brief summary for cards and
-                                                previews
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-
-                                <FormField
-                                    control={form.control}
                                     name="description"
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormLabel>
-                                                Full Description{" "}
+                                                Description{" "}
                                                 <span className="text-destructive">
                                                     *
                                                 </span>

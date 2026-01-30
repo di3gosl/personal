@@ -36,9 +36,6 @@ export const projectSchema = z.object({
     description: z
         .string()
         .min(10, "Description must be at least 10 characters"),
-    shortDescription: z
-        .string()
-        .min(10, "Short description must be at least 10 characters"),
     year: z.coerce.number().min(2000).max(2100),
     image: z.string().min(1, "Image URL is required"),
     label: z.string().optional().or(z.literal("")),

@@ -14,7 +14,6 @@ type ImportProject = {
     isFeatured?: boolean;
     type: string;
     status: string;
-    shortDescription: string;
     liveUrl?: string;
     repoUrl?: string;
     goal: string;
@@ -72,7 +71,6 @@ export async function importProjectFromJson(
             "label",
             "type",
             "status",
-            "shortDescription",
             "goal",
             "challenge",
             "roleDescription",
@@ -189,7 +187,6 @@ export async function importProjectFromJson(
             slug: projectData.slug,
             title: projectData.title,
             description: projectData.description,
-            shortDescription: projectData.shortDescription,
             year: projectData.year,
             image: projectData.image,
             label: projectData.label,

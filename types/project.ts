@@ -8,7 +8,6 @@ export type Project = {
     isFeatured?: boolean;
     type: string;
     status: string;
-    shortDescription: string;
     liveUrl?: string | null;
     repoUrl?: string | null;
     goal: string;

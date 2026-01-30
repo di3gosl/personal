@@ -25,7 +25,6 @@ export default async function EditProjectPage({
         slug: project.slug,
         title: project.title,
         description: project.description,
-        shortDescription: project.shortDescription,
         year: project.year,
         image: project.image,
         label: project.label || "",

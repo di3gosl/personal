@@ -62,7 +62,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="text-lg md:text-xl text-accent max-w-3xl mx-auto leading-relaxed"
                         variants={itemVariants}
                     >
-                        {project.shortDescription}
+                        {project.description}
                     </motion.p>
 
                     {/* CTAs */}
