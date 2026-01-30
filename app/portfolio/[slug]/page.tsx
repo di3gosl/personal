@@ -26,7 +26,7 @@ export default async function PortfolioDetailsPage({
             <ProjectFacts project={project} />
             <ProjectScreenshots project={project} />
             <ProjectContent project={project} />
-            <ProjectNavigation navigation={null} />
+            <ProjectNavigation project={project} />
         </>
     );
 }

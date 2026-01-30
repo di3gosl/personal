@@ -27,6 +27,44 @@ export async function getProject(slug: string): Promise<{
             return { success: false, error: "Project not found" };
         }
 
+        // Fetch previous and next projects based on the order field
+        const previousProject = await prisma.project.findFirst({
+            where: {
+                order: { lt: project.order },
+            },
+            orderBy: { order: "desc" },
+        });
+
+        let previousProjectNavigation = undefined;
+        if (previousProject) {
+            previousProjectNavigation = {
+                slug: previousProject.slug,
+                title: previousProject.title,
+            };
+        }
+
+        const nextProject = await prisma.project.findFirst({
+            where: {
+                order: { gt: project.order },
+            },
+            orderBy: { order: "asc" },
+        });
+
+        let nextProjectNavigation = undefined;
+        if (nextProject) {
+            nextProjectNavigation = {
+                slug: nextProject.slug,
+                title: nextProject.title,
+            };
+        }
+
+        if (previousProject || nextProject) {
+            (project as ProjectWithRelations).navigation = {
+                previous: previousProjectNavigation,
+                next: nextProjectNavigation,
+            };
+        }
+
         return {
             success: true,
             data: project as ProjectWithRelations,

@@ -9,4 +9,14 @@ export type ProjectWithRelations = Omit<
     whatIBuilt: string[];
     techStack: { category: string; technologies: string[] }[];
     designDecisions: string[];
+    navigation?: {
+        previous?: {
+            slug: string;
+            title: string;
+        };
+        next?: {
+            slug: string;
+            title: string;
+        };
+    };
 };
