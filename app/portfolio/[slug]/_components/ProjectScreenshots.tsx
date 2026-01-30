@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import type { ProjectDetail } from "@/types/projectDetails";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { Maximize2 } from "lucide-react";
 import Lightbox from "yet-another-react-lightbox";
@@ -23,20 +23,19 @@ const imageVariants = {
 };
 
 interface ProjectScreenshotsProps {
-    project: ProjectDetail;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectScreenshots({
     project,
 }: ProjectScreenshotsProps) {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+    const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
 
     const slides = project.screenshots.map((screenshot) => ({
         src: screenshot.src,
-        alt: screenshot.alt,
         title: screenshot.caption,
     }));
 
@@ -46,7 +45,10 @@ export default function ProjectScreenshots({
     };
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 px-6 md:px-12 bg-background">
+        <section
+            ref={sectionRef}
+            className="py-16 md:py-24 px-6 md:px-12 bg-background"
+        >
             <div className="container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <motion.div
@@ -83,8 +85,12 @@ export default function ProjectScreenshots({
                                 onClick={() => openLightbox(index)}
                             >
                                 <Image
-                                    src={screenshot.src}
-                                    alt={screenshot.alt}
+                                    src={
+                                        screenshot.previewSrc
+                                            ? screenshot.previewSrc
+                                            : screenshot.src
+                                    }
+                                    alt={screenshot.caption}
                                     fill
                                     className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110 group-hover:translate-y-[5%] brightness-95"
                                     sizes="(max-width: 1440px) 100vw, 1440px"

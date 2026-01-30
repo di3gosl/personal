@@ -3,10 +3,10 @@
 import { motion } from "motion/react";
 import { naturalEase } from "../lib/animations";
 import Image from "next/image";
-import type { Project } from "@/types/portfolio";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { ProjectCard } from "@/types/project";
 
 const itemVariants = {
     hidden: {
@@ -26,7 +26,7 @@ const itemVariants = {
 };
 
 interface Props {
-    project: Project;
+    project: ProjectCard;
 }
 
 export default function PortfolioCard({ project }: Props) {
@@ -89,12 +89,12 @@ export default function PortfolioCard({ project }: Props) {
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 pt-2">
-                    {project.technologies.map((tech, techIdx) => (
+                    {project.tags.map((tag) => (
                         <span
-                            key={techIdx}
+                            key={tag.tag.id}
                             className="px-3 py-1 bg-background text-secondary text-sm md:text-xs font-medium rounded-full"
                         >
-                            {tech}
+                            {tag.tag.tag}
                         </span>
                     ))}
                 </div>

@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
-import type { ProjectDetail } from "@/types/projectDetails";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -20,12 +20,12 @@ const itemVariants = {
 };
 
 interface ProjectHeroProps {
-    project: ProjectDetail;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
     return (
-        <section className="relative md:min-h-screen 2xl:min-h-0 flex items-center justify-center pt-24 md:pt-0 2xl:pt-28 pb-16 2xl:pb-24 px-6 md:px-12 bg-linear-to-b from-background to-light/40">
+        <section className="relative md:min-h-screen flex items-center justify-center pt-24 md:pt-0 pb-16 px-6 md:px-12 bg-linear-to-b from-background to-light/40">
             <div className="container mx-auto max-w-4xl text-center">
                 <motion.div
                     className="space-y-8"
@@ -62,7 +62,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="text-lg md:text-xl text-accent max-w-3xl mx-auto leading-relaxed"
                         variants={itemVariants}
                     >
-                        {project.hero.shortDescription}
+                        {project.description}
                     </motion.p>
 
                     {/* CTAs */}
@@ -70,40 +70,46 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="flex flex-wrap items-center justify-center gap-4 pt-4"
                         variants={itemVariants}
                     >
-                        {project.hero.ctas.map((cta, index) => {
-                            const isOutline = cta.variant === "outline";
-                            const Icon = cta.label
-                                .toLowerCase()
-                                .includes("repo")
-                                ? Github
-                                : ExternalLink;
-
-                            return (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <Link
-                                        href={cta.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`
+                        {project.liveUrl && (
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <Link
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`
                                         inline-flex items-center gap-2 px-6 py-2 rounded-lg
                                         font-medium transition-all duration-300 border-2 border-primary
-                                        ${
-                                            isOutline
-                                                ? "text-primary hover:bg-primary hover:text-white"
-                                                : "bg-primary text-white hover:bg-secondary"
-                                        }
+                                        bg-primary text-white hover:bg-secondary
                                     `}
-                                    >
-                                        {cta.label}
-                                        <Icon className="w-4 h-4" />
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
+                                >
+                                    Live Site
+                                    <ExternalLink className="w-4 h-4" />
+                                </Link>
+                            </motion.div>
+                        )}
+                        {project.repoUrl && (
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <Link
+                                    href={project.repoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`
+                                        inline-flex items-center gap-2 px-6 py-2 rounded-lg
+                                        font-medium transition-all duration-300 border-2 border-primary
+                                        text-primary hover:bg-primary hover:text-white
+                                    `}
+                                >
+                                    Public Repo
+                                    <Github className="w-4 h-4" />
+                                </Link>
+                            </motion.div>
+                        )}
                     </motion.div>
 
                     {/* Badges */}
@@ -111,12 +117,12 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="flex flex-wrap items-center justify-center gap-2 pt-8"
                         variants={itemVariants}
                     >
-                        {project.badges.map((badge) => (
+                        {project.tags.map((tag) => (
                             <span
-                                key={badge}
+                                key={tag.id}
                                 className="px-3 py-1 text-xs font-medium bg-light/60 text-primary rounded-full border border-primary/10"
                             >
-                                {badge}
+                                {tag.tag.tag}
                             </span>
                         ))}
                     </motion.div>
