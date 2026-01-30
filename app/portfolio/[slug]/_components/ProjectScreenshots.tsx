@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import type { Project } from "@/types/project";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import { Maximize2 } from "lucide-react";
 import Lightbox from "yet-another-react-lightbox";
@@ -23,7 +23,7 @@ const imageVariants = {
 };
 
 interface ProjectScreenshotsProps {
-    project: Project;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectScreenshots({
@@ -36,7 +36,6 @@ export default function ProjectScreenshots({
 
     const slides = project.screenshots.map((screenshot) => ({
         src: screenshot.src,
-        alt: screenshot.alt,
         title: screenshot.caption,
     }));
 
@@ -91,7 +90,7 @@ export default function ProjectScreenshots({
                                             ? screenshot.previewSrc
                                             : screenshot.src
                                     }
-                                    alt={screenshot.alt}
+                                    alt={screenshot.caption}
                                     fill
                                     className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110 group-hover:translate-y-[5%] brightness-95"
                                     sizes="(max-width: 1440px) 100vw, 1440px"

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { naturalEase } from "../lib/animations";
 import { Heart, Mail } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,8 +52,13 @@ const linkVariants = {
 };
 
 export default function Footer() {
+    const pathname = usePathname();
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+    if (pathname.startsWith("/admin")) {
+        return null;
+    }
 
     return (
         <footer ref={ref} className="bg-background pb-6 px-6 md:px-12">

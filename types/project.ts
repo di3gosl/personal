@@ -2,16 +2,15 @@ export type Project = {
     slug: string;
     title: string;
     description: string;
-    technologies: string[];
     year: number;
     image: string;
-    label: string;
+    label?: string | null;
     isFeatured?: boolean;
     type: string;
     status: string;
     shortDescription: string;
-    liveUrl?: string;
-    repoUrl?: string;
+    liveUrl?: string | null;
+    repoUrl?: string | null;
     goal: string;
     challenge: string;
     roleDescription: string;
@@ -21,9 +20,8 @@ export type Project = {
     repository: string;
     screenshots: {
         src: string;
-        previewSrc?: string;
-        alt: string;
-        caption?: string;
+        previewSrc?: string | null;
+        caption: string;
     }[];
     whatIBuilt: string[];
     techStack: {
@@ -32,15 +30,25 @@ export type Project = {
     }[];
     designDecisions: string[];
     results: string;
-    badges: string[];
-    navigation?: {
-        previous?: {
-            slug: string;
-            title: string;
-        };
-        next?: {
-            slug: string;
-            title: string;
-        };
-    };
+    // navigation?: {
+    //     previous?: {
+    //         slug: string;
+    //         title: string;
+    //     };
+    //     next?: {
+    //         slug: string;
+    //         title: string;
+    //     };
+    // };
+};
+
+export type ProjectCard = {
+    id: string;
+    slug: string;
+    title: string;
+    description: string;
+    image: string;
+    year: number;
+    label: string | null;
+    tags: { tag: { id: string; tag: string } }[];
 };

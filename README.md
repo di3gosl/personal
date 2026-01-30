@@ -1,5 +1,37 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/database"
+
+# NextAuth
+AUTH_SECRET="your-secret-key-here"
+AUTH_URL="http://localhost:3000"
+```
+
+To generate a secure `AUTH_SECRET`, run:
+```bash
+npx auth secret
+```
+
+## Admin Dashboard Setup
+
+1. First, run the database migrations:
+```bash
+npx prisma migrate deploy
+```
+
+2. Create an admin user:
+```bash
+npm run create-admin
+```
+
+3. Access the admin dashboard at `/admin/login`
+
 ## Getting Started
 
 First, run the development server:

@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
-import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -20,7 +20,7 @@ const itemVariants = {
 };
 
 interface ProjectHeroProps {
-    project: Project;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
@@ -117,12 +117,12 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         className="flex flex-wrap items-center justify-center gap-2 pt-8"
                         variants={itemVariants}
                     >
-                        {project.badges.map((badge) => (
+                        {project.tags.map((tag) => (
                             <span
-                                key={badge}
+                                key={tag.id}
                                 className="px-3 py-1 text-xs font-medium bg-light/60 text-primary rounded-full border border-primary/10"
                             >
-                                {badge}
+                                {tag.tag.tag}
                             </span>
                         ))}
                     </motion.div>

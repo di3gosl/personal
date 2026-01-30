@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Briefcase, Calendar, Monitor, Users, FolderGit2 } from "lucide-react";
-import type { Project } from "@/types/project";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 import { containerVariants, naturalEase } from "@/lib/animations";
 
 const itemVariants = {
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 interface ProjectFactsProps {
-    project: Project;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectFacts({ project }: ProjectFactsProps) {

@@ -5,8 +5,8 @@ import { motion, useInView } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import PortfolioCard from "@/components/PortfolioCard";
 import { naturalEase } from "@/lib/animations";
-import { PROJECTS } from "@/data/projects";
 import { ArrowRight } from "lucide-react";
+import { ProjectCard } from "@/types/project";
 
 const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -42,7 +42,11 @@ const additionalInfoVariants = {
     },
 };
 
-export default function Portfolio() {
+interface Props {
+    projects: ProjectCard[];
+}
+
+export default function Portfolio({ projects }: Props) {
     const ref = useRef(null);
     const [amount, setAmount] = useState(0.2);
 
@@ -57,8 +61,6 @@ export default function Portfolio() {
     }, []);
 
     const isInView = useInView(ref, { once: true, amount });
-
-    const featuredProjects = PROJECTS.filter((project) => project.isFeatured);
 
     return (
         <section
@@ -93,7 +95,7 @@ export default function Portfolio() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {featuredProjects.map((project) => (
+                    {projects.map((project) => (
                         <PortfolioCard key={project.title} project={project} />
                     ))}
                 </motion.div>

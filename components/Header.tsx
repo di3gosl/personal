@@ -5,6 +5,7 @@ import { Mail, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { naturalEase } from "../lib/animations";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const headerVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -55,6 +56,7 @@ const menuItemVariants = {
 };
 
 export default function Header() {
+    const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [menuButtonPosition, setMenuButtonPosition] = useState({
         x: 0,
@@ -70,6 +72,10 @@ export default function Header() {
             document.body.classList.remove("overflow-hidden");
         };
     }, [isMenuOpen]);
+
+    if (pathname.startsWith("/admin")) {
+        return null;
+    }
 
     const menuItems = [
         { label: "Home", link: "/" },

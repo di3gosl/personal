@@ -3,8 +3,8 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Target, Lightbulb, User } from "lucide-react";
-import type { Project } from "@/types/project";
 import { containerVariants, naturalEase } from "@/lib/animations";
+import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 interface ProjectOverviewProps {
-    project: Project;
+    project: ProjectWithRelations;
 }
 
 export default function ProjectOverview({ project }: ProjectOverviewProps) {
