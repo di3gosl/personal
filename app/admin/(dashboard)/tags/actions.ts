@@ -1,10 +1,17 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
+import authOptions from "@/lib/auth";
 import { tagSchema, type TagFormData } from "@/lib/validators/tag";
 
 export async function getTags() {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const tags = await prisma.tag.findMany({
             orderBy: [{ kind: "asc" }, { order: "asc" }, { tag: "asc" }],
@@ -25,6 +32,11 @@ export async function getTags() {
 }
 
 export async function getTag(id: string) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const tag = await prisma.tag.findUnique({
             where: { id },
@@ -38,6 +50,11 @@ export async function getTag(id: string) {
 }
 
 export async function createTag(data: TagFormData) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const validatedData = tagSchema.parse(data);
 
@@ -54,6 +71,11 @@ export async function createTag(data: TagFormData) {
 }
 
 export async function updateTag(id: string, data: TagFormData) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const validatedData = tagSchema.parse(data);
 
@@ -71,6 +93,11 @@ export async function updateTag(id: string, data: TagFormData) {
 }
 
 export async function deleteTag(id: string) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         // First check if the tag is being used by any projects
         const tagWithProjects = await prisma.tag.findUnique({
