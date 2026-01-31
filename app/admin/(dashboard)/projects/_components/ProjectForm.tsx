@@ -683,7 +683,7 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
                                             disabled={
                                                 techStackFields.length === 1
                                             }
-                                            className="text-destructive hover:text-destructive cursor-pointer"
+                                            className="text-destructive hover:text-destructive hover:bg-destructive/10! cursor-pointer"
                                         >
                                             <Trash2 className="size-4" />
                                         </Button>
@@ -742,7 +742,7 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
                                             onClick={() =>
                                                 removeWhatIBuilt(index)
                                             }
-                                            className="text-destructive hover:text-destructive cursor-pointer"
+                                            className="text-destructive hover:text-destructive hover:bg-destructive/10! cursor-pointer"
                                         >
                                             <Trash2 className="size-4" />
                                         </Button>
@@ -796,7 +796,7 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
                                             onClick={() =>
                                                 removeDesignDecision(index)
                                             }
-                                            className="text-destructive hover:text-destructive cursor-pointer"
+                                            className="text-destructive hover:text-destructive hover:bg-destructive/10! cursor-pointer"
                                         >
                                             <Trash2 className="size-4" />
                                         </Button>
@@ -914,7 +914,7 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
                                             onClick={() =>
                                                 removeScreenshot(index)
                                             }
-                                            className="text-destructive hover:text-destructive cursor-pointer"
+                                            className="text-destructive hover:text-destructive hover:bg-destructive/10! cursor-pointer"
                                         >
                                             <Trash2 className="size-4" />
                                         </Button>

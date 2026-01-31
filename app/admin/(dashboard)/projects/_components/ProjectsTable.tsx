@@ -196,7 +196,7 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
                                                 handleDeleteClick(project)
                                             }
                                             title="Delete"
-                                            className="text-destructive hover:text-destructive hover:bg-destructive/10 cursor-pointer"
+                                            className="text-destructive hover:text-destructive hover:bg-destructive/10! cursor-pointer"
                                         >
                                             <Trash2 className="size-4" />
                                         </Button>
