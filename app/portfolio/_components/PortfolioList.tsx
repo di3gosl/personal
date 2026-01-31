@@ -6,6 +6,7 @@ import { naturalEase } from "@/lib/animations";
 import PortfolioCard from "@/components/PortfolioCard";
 import { ProjectCard } from "@/types/project";
 import { Badge } from "@/components/ui/badge";
+import { Funnel } from "lucide-react";
 
 const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -112,8 +113,8 @@ export default function PortfolioList({ projects, tags }: Props) {
                     animate="visible"
                 >
                     <div className="flex flex-wrap items-center gap-3">
-                        <span className="text-sm font-medium text-accent">
-                            Filter by:
+                        <span className="text-sm font-medium text-accent flex items-center gap-1.5">
+                            <Funnel className="w-4 h-4 inline-block" /> Filter by:
                         </span>
                         {tags.map((tag) => (
                             <Badge
