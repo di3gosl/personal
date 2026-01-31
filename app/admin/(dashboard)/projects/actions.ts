@@ -237,7 +237,7 @@ export async function getTags() {
 
     try {
         const tags = await prisma.tag.findMany({
-            orderBy: [{ kind: "asc" }, { order: "asc" }, { tag: "asc" }],
+            orderBy: [{ kind: "asc" }, { tag: "asc" }],
         });
 
         return { success: true, data: tags };
