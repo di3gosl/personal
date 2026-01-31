@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useForm, useFieldArray, FieldValues } from "react-hook-form";
-import { Save, Loader2, Plus, Trash2, ArrowLeft } from "lucide-react";
+import { Save, Loader2, Plus, Trash2, ArrowLeft, Download } from "lucide-react";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -159,11 +159,57 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
         }
     }
 
+    // Export project to JSON file (only available in edit mode)
+    function exportToJson() {
+        if (mode !== "edit") {
+            toast.error("Export is only available in edit mode");
+            return;
+        }
+
+        try {
+            // Extract tag names for technologies (isPreview=true) and badges (all)
+            const tags = (initialData?.tags || []) as Array<{
+                tagId: string;
+                isPreview: boolean;
+                name: string;
+            }>;
+            const technologies = tags
+                .filter((tag) => tag.isPreview)
+                .map((tag) => tag.name);
+            const badges = tags.map((tag) => tag.name);
+
+            // Create export data without tags, but with technologies and badges
+            const { tags: _, ...dataWithoutTags } = initialData || {};
+            const exportData = {
+                ...dataWithoutTags,
+                technologies,
+                badges,
+                exportedAt: new Date().toISOString(),
+            };
+
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `project-${initialData?.slug || "export"}-${new Date().getTime()}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            toast.success("Project exported successfully");
+        } catch (error) {
+            console.error("Export error:", error);
+            toast.error("Failed to export project");
+        }
+    }
+
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 {/* Header */}
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap gap-6 items-center justify-between">
                     <div className="flex items-center gap-4">
                         <Button variant="ghost" size="icon" asChild>
                             <Link href="/admin/projects">
@@ -183,23 +229,36 @@ export default function ProjectForm({ initialData, mode }: ProjectFormProps) {
                             </p>
                         </div>
                     </div>
-                    <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="cursor-pointer"
-                    >
-                        {isSubmitting ? (
-                            <>
-                                <Loader2 className="animate-spin" />
-                                Saving...
-                            </>
-                        ) : (
-                            <>
-                                <Save />
-                                Save Project
-                            </>
+                    <div className="flex items-center gap-2">
+                        {mode === "edit" && (
+                            <Button
+                                type="button"
+                                variant="outline"
+                                onClick={exportToJson}
+                                className="cursor-pointer"
+                            >
+                                <Download />
+                                Export JSON
+                            </Button>
                         )}
-                    </Button>
+                        <Button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="cursor-pointer"
+                        >
+                            {isSubmitting ? (
+                                <>
+                                    <Loader2 className="animate-spin" />
+                                    Saving...
+                                </>
+                            ) : (
+                                <>
+                                    <Save />
+                                    Save Project
+                                </>
+                            )}
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
