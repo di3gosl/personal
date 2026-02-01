@@ -35,3 +35,22 @@ export async function getProjects() {
         return { success: false, error: "Failed to fetch projects", data: [] };
     }
 }
+
+export async function getFilterableTags() {
+    try {
+        const tags = await prisma.tag.findMany({
+            where: { isFilterable: true },
+            orderBy: { tag: "asc" },
+            select: {
+                id: true,
+                tag: true,
+                kind: true,
+            },
+        });
+
+        return { success: true, data: tags };
+    } catch (error) {
+        console.error("Failed to fetch filterable tags:", error);
+        return { success: false, error: "Failed to fetch tags", data: [] };
+    }
+}

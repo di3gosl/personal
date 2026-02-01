@@ -1,9 +1,12 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import { motion } from "motion/react";
 import { naturalEase } from "@/lib/animations";
 import PortfolioCard from "@/components/PortfolioCard";
 import { ProjectCard } from "@/types/project";
+import { Badge } from "@/components/ui/badge";
+import { Funnel } from "lucide-react";
 
 const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -38,16 +41,53 @@ const additionalInfoVariants = {
     },
 };
 
+const filterVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            delay: 0.3,
+            ease: naturalEase,
+        },
+    },
+};
+
 interface Props {
     projects: ProjectCard[];
+    tags: { id: string; tag: string; kind: string }[];
 }
 
-export default function PortfolioList({ projects }: Props) {
+export default function PortfolioList({ projects, tags }: Props) {
+    const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+    const filteredProjects = useMemo(() => {
+        if (selectedTags.length === 0) return projects;
+
+        return projects.filter((project) => {
+            const projectTagIds = project.tags.map((t) => t.tag.id);
+            return selectedTags.every((tagId) => projectTagIds.includes(tagId));
+        });
+    }, [projects, selectedTags]);
+
+    const toggleTag = (tagId: string) => {
+        setSelectedTags((prev) =>
+            prev.includes(tagId)
+                ? prev.filter((id) => id !== tagId)
+                : [...prev, tagId],
+        );
+    };
+
+    const clearFilters = () => {
+        setSelectedTags([]);
+    };
+
     return (
         <div className="container mx-auto">
             {/* Header with animation */}
             <motion.div
-                className="mb-8 md:mb-16 space-y-4"
+                className="mb-8 md:mb-12 space-y-4"
                 variants={headerVariants}
                 initial="hidden"
                 animate="visible"
@@ -64,16 +104,69 @@ export default function PortfolioList({ projects }: Props) {
                 </p>
             </motion.div>
 
+            {/* Filters */}
+            {tags.length > 0 && (
+                <motion.div
+                    className="mb-8 md:mb-12"
+                    variants={filterVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <div className="flex flex-wrap items-center gap-3">
+                        <span className="text-sm font-medium text-accent flex items-center gap-1.5">
+                            <Funnel className="w-4 h-4 inline-block" /> Filter by:
+                        </span>
+                        {tags.map((tag) => (
+                            <Badge
+                                key={tag.id}
+                                variant={
+                                    selectedTags.includes(tag.id)
+                                        ? "default"
+                                        : "outline"
+                                }
+                                className="cursor-pointer transition-all hover:scale-105"
+                                onClick={() => toggleTag(tag.id)}
+                            >
+                                {tag.tag}
+                            </Badge>
+                        ))}
+                        {selectedTags.length > 0 && (
+                            <button
+                                onClick={clearFilters}
+                                className="text-sm text-accent hover:text-primary underline underline-offset-4 transition-colors cursor-pointer"
+                            >
+                                Clear all
+                            </button>
+                        )}
+                    </div>
+                    {selectedTags.length > 0 && (
+                        <p className="text-sm text-accent mt-3">
+                            Showing {filteredProjects.length} of{" "}
+                            {projects.length} projects
+                        </p>
+                    )}
+                </motion.div>
+            )}
+
             {/* Projects Grid with stagger animation */}
             <motion.div
+                key={selectedTags.join("-")}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
-                {projects.map((project) => (
-                    <PortfolioCard key={project.title} project={project} />
-                ))}
+                {filteredProjects.length > 0 ? (
+                    filteredProjects.map((project) => (
+                        <PortfolioCard key={project.id} project={project} />
+                    ))
+                ) : (
+                    <div className="col-span-full text-center py-12">
+                        <p className="text-lg text-accent">
+                            No projects match the selected filters.
+                        </p>
+                    </div>
+                )}
             </motion.div>
 
             {/* Additional Info */}
