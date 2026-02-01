@@ -1,10 +1,17 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
+import authOptions from "@/lib/auth";
 import { projectSchema, type ProjectFormData } from "@/lib/validators/project";
 
 export async function getProjects() {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const projects = await prisma.project.findMany({
             where: {
@@ -29,6 +36,11 @@ export async function getProjects() {
 }
 
 export async function getProject(id: string) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const project = await prisma.project.findUnique({
             where: { id },
@@ -52,6 +64,11 @@ export async function getProject(id: string) {
 }
 
 export async function createProject(data: ProjectFormData) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const validated = projectSchema.safeParse(data);
 
@@ -111,6 +128,11 @@ export async function createProject(data: ProjectFormData) {
 }
 
 export async function updateProject(id: string, data: ProjectFormData) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const validated = projectSchema.safeParse(data);
 
@@ -184,6 +206,11 @@ export async function updateProject(id: string, data: ProjectFormData) {
 }
 
 export async function deleteProject(id: string) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         // Soft delete - just mark as deleted
         await prisma.project.update({
@@ -203,9 +230,14 @@ export async function deleteProject(id: string) {
 }
 
 export async function getTags() {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
     try {
         const tags = await prisma.tag.findMany({
-            orderBy: [{ kind: "asc" }, { order: "asc" }, { tag: "asc" }],
+            orderBy: [{ kind: "asc" }, { tag: "asc" }],
         });
 
         return { success: true, data: tags };

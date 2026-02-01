@@ -59,6 +59,7 @@ export default async function EditProjectPage({
         tags: project.tags.map((pt) => ({
             tagId: pt.tagId,
             isPreview: pt.isPreview,
+            name: pt.tag.tag,
         })),
     };
 

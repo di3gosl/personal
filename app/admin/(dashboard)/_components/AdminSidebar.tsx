@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-    ArrowRight,
-    FolderKanban,
-    KeyRound,
-    LayoutDashboard,
-    Tags,
-} from "lucide-react";
+import { ArrowRight, FolderKanban, LayoutDashboard, Tags } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -21,11 +15,6 @@ const navigation = [
         name: "Tags",
         href: "/admin/tags",
         icon: Tags,
-    },
-    {
-        name: "Demo Keys",
-        href: "/admin/keys",
-        icon: KeyRound,
     },
 ];
 

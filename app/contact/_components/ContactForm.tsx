@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useState, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -34,6 +35,8 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ onSubmit }: ContactFormProps) {
+    const [formLoadTime, setFormLoadTime] = useState(() => Date.now());
+
     const form = useForm<ContactFormData>({
         resolver: zodResolver(contactSchema),
         defaultValues: {
@@ -48,27 +51,43 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
         },
     });
 
-    async function handleSubmit(values: ContactFormData) {
-        try {
-            const result = await onSubmit(values);
+    const handleSubmit = useCallback(
+        async (values: ContactFormData) => {
+            try {
+                // Time-based validation
+                const submissionTime = Date.now();
+                const timeDifference = submissionTime - formLoadTime;
+                const minimumTime = 5000; // Minimum time in milliseconds before form can be submitted
 
-            if (result.success) {
-                toast.success("Message sent successfully!", {
-                    description:
-                        "Thank you for reaching out. I'll get back to you soon.",
-                });
-                form.reset();
-            } else {
-                toast.error("Failed to send message", {
+                if (timeDifference < minimumTime) {
+                    toast.warning("Submission too fast", {
+                        description:
+                            "Please take your time filling out the form.",
+                    });
+                    return;
+                }
+
+                const result = await onSubmit(values);
+                if (result.success) {
+                    toast.success("Message sent successfully!", {
+                        description:
+                            "Thank you for reaching out. I'll get back to you soon.",
+                    });
+                    form.reset();
+                    setFormLoadTime(Date.now());
+                } else {
+                    toast.error("Failed to send message", {
+                        description: "Please try again later.",
+                    });
+                }
+            } catch {
+                toast.error("An unexpected error occurred", {
                     description: "Please try again later.",
                 });
             }
-        } catch {
-            toast.error("An unexpected error occurred", {
-                description: "Please try again later.",
-            });
-        }
-    }
+        },
+        [onSubmit, form, formLoadTime],
+    );
 
     return (
         <Form {...form}>

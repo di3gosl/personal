@@ -10,7 +10,7 @@ export async function getProject(slug: string): Promise<{
 }> {
     try {
         const project = await prisma.project.findUnique({
-            where: { slug },
+            where: { slug, isDeleted: false, isActive: true },
             include: {
                 screenshots: {
                     orderBy: { order: "asc" },
@@ -30,6 +30,8 @@ export async function getProject(slug: string): Promise<{
         // Fetch previous and next projects based on the order field
         const previousProject = await prisma.project.findFirst({
             where: {
+                isDeleted: false,
+                isActive: true,
                 order: { lt: project.order },
             },
             orderBy: { order: "desc" },
@@ -45,6 +47,8 @@ export async function getProject(slug: string): Promise<{
 
         const nextProject = await prisma.project.findFirst({
             where: {
+                isDeleted: false,
+                isActive: true,
                 order: { gt: project.order },
             },
             orderBy: { order: "asc" },
