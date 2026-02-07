@@ -43,7 +43,6 @@ interface TagFormDialogProps {
         tag: string;
         kind: string;
         isFilterable: boolean;
-        order: number;
     };
     defaultKind?: string;
 }
@@ -65,13 +64,11 @@ export function TagFormDialog({
                   tag: tag.tag,
                   kind: tag.kind,
                   isFilterable: tag.isFilterable,
-                  order: tag.order,
               }
             : {
                   tag: "",
                   kind: defaultKind ?? "tech",
                   isFilterable: false,
-                  order: 0,
               }) as FieldValues,
     });
 
@@ -82,14 +79,12 @@ export function TagFormDialog({
                 tag: tag.tag,
                 kind: tag.kind,
                 isFilterable: tag.isFilterable,
-                order: tag.order,
             });
         } else {
             form.reset({
                 tag: "",
                 kind: defaultKind ?? "tech",
                 isFilterable: false,
-                order: 0,
             });
         }
     }, [tag, defaultKind, form]);
@@ -182,34 +177,6 @@ export function TagFormDialog({
                                             ))}
                                         </SelectContent>
                                     </Select>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            name="order"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Order</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            type="number"
-                                            placeholder="0"
-                                            {...field}
-                                            onChange={(e) =>
-                                                field.onChange(
-                                                    parseInt(e.target.value) ||
-                                                        0,
-                                                )
-                                            }
-                                        />
-                                    </FormControl>
-                                    <FormDescription>
-                                        Controls the sorting order (lower
-                                        numbers appear first)
-                                    </FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}

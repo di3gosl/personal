@@ -25,7 +25,6 @@ interface Tag {
     tag: string;
     kind: "tech" | "service" | "tool" | "platform" | "meta";
     isFilterable: boolean;
-    order: number;
 }
 
 interface ProjectTag {

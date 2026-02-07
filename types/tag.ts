@@ -5,7 +5,6 @@ export type Tag = {
     tag: string;
     kind: (typeof TAG_KINDS)[number]["value"];
     isFilterable: boolean;
-    order: number;
     _count: {
         projects: number;
     };
