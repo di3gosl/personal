@@ -20,7 +20,6 @@ interface Tag {
     tag: string;
     kind: string;
     isFilterable: boolean;
-    order: number;
     _count: {
         projects: number;
     };

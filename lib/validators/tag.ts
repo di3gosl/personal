@@ -14,7 +14,6 @@ export const tagSchema = z.object({
         message: "Tag kind is required",
     }),
     isFilterable: z.boolean().default(false),
-    order: z.coerce.number().min(0).default(0),
 });
 
 export type TagFormData = z.infer<typeof tagSchema>;
