@@ -54,12 +54,12 @@ const filterVariants = {
     },
 };
 
-interface Props {
+interface PortfolioListProps {
     projects: ProjectCard[];
     tags: { id: string; tag: string; kind: string }[];
 }
 
-export default function PortfolioList({ projects, tags }: Props) {
+export default function PortfolioList({ projects, tags }: PortfolioListProps) {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
     const filteredProjects = useMemo(() => {
@@ -114,7 +114,8 @@ export default function PortfolioList({ projects, tags }: Props) {
                 >
                     <div className="flex flex-wrap items-center gap-3">
                         <span className="text-sm font-medium text-accent flex items-center gap-1.5">
-                            <Funnel className="w-4 h-4 inline-block" /> Filter by:
+                            <Funnel className="w-4 h-4 inline-block" /> Filter
+                            by:
                         </span>
                         {tags.map((tag) => (
                             <Badge

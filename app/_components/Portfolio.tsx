@@ -42,11 +42,11 @@ const additionalInfoVariants = {
     },
 };
 
-interface Props {
+interface PortfolioProps {
     projects: ProjectCard[];
 }
 
-export default function Portfolio({ projects }: Props) {
+export default function Portfolio({ projects }: PortfolioProps) {
     const ref = useRef(null);
     const [amount, setAmount] = useState(0.2);
 

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import ContactForm from "./ContactForm";
 import { type ContactFormData } from "@/lib/validators/contact";
 
-interface Props {
+interface ContactContainerProps {
     submitContactForm: (data: ContactFormData) => Promise<{
         success: boolean;
         message?: string;
@@ -12,7 +12,9 @@ interface Props {
     }>;
 }
 
-export default function ContactContainer({ submitContactForm }: Props) {
+export default function ContactContainer({
+    submitContactForm,
+}: ContactContainerProps) {
     return (
         <div className="max-w-7xl mx-auto">
             <motion.div
