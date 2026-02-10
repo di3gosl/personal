@@ -1,18 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
-import authOptions from "@/lib/auth";
 import { tagSchema, type TagFormData } from "@/lib/validators/tag";
+import { requireAdmin } from "@/lib/auth/requireAdmin";
 
 export async function getTags() {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         const tags = await prisma.tag.findMany({
             orderBy: [{ kind: "asc" }, { tag: "asc" }],
             include: {
@@ -32,12 +28,9 @@ export async function getTags() {
 }
 
 export async function getTag(id: string) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         const tag = await prisma.tag.findUnique({
             where: { id },
         });
@@ -50,14 +43,10 @@ export async function getTag(id: string) {
 }
 
 export async function createTag(data: TagFormData) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
-        const validatedData = tagSchema.parse(data);
+        await requireAdmin();
 
+        const validatedData = tagSchema.parse(data);
         const tag = await prisma.tag.create({
             data: validatedData,
         });
@@ -71,14 +60,10 @@ export async function createTag(data: TagFormData) {
 }
 
 export async function updateTag(id: string, data: TagFormData) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
-        const validatedData = tagSchema.parse(data);
+        await requireAdmin();
 
+        const validatedData = tagSchema.parse(data);
         const tag = await prisma.tag.update({
             where: { id },
             data: validatedData,
@@ -93,12 +78,9 @@ export async function updateTag(id: string, data: TagFormData) {
 }
 
 export async function deleteTag(id: string) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         // First check if the tag is being used by any projects
         const tagWithProjects = await prisma.tag.findUnique({
             where: { id },

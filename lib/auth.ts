@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { z } from "zod";
 import bcrypt from "bcryptjs";
 import prisma from "@/lib/prisma";
+import { UserRole } from "@prisma/client";
 
 const loginSchema = z.object({
     email: z.string().email(),
@@ -56,7 +57,7 @@ export const authOptions: AuthOptions = {
                     return null;
                 }
 
-                if (user.role !== "ADMIN") {
+                if (user.role !== UserRole.ADMIN) {
                     return null;
                 }
 

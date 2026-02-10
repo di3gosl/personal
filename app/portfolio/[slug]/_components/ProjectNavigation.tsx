@@ -6,11 +6,11 @@ import { ArrowLeft, ArrowRight, Grid3x3 } from "lucide-react";
 import { naturalEase } from "@/lib/animations";
 import type { ProjectWithRelations } from "@/types/projects-with-relations";
 
-interface Props {
+interface ProjectNavigationProps {
     project: ProjectWithRelations;
 }
 
-export default function ProjectNavigation({ project }: Props) {
+export default function ProjectNavigation({ project }: ProjectNavigationProps) {
     return (
         <section className="py-8 md:py-16 px-6 md:px-12 bg-background border-t border-primary/10">
             <div className="container mx-auto max-w-6xl">

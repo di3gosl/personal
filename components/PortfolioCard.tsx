@@ -25,11 +25,11 @@ const itemVariants = {
     },
 };
 
-interface Props {
+interface PortfolioCardProps {
     project: ProjectCard;
 }
 
-export default function PortfolioCard({ project }: Props) {
+export default function PortfolioCard({ project }: PortfolioCardProps) {
     return (
         <motion.div
             variants={itemVariants}

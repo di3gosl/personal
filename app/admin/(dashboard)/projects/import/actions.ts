@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prisma";
+import { requireAdmin } from "@/lib/auth/requireAdmin";
 
 type ImportProject = {
     slug: string;
@@ -48,6 +49,8 @@ export async function importProjectFromJson(
     jsonData: string,
 ): Promise<ImportResult> {
     try {
+        await requireAdmin();
+
         // Parse the JSON
         let projectData: ImportProject;
         console.log(jsonData);

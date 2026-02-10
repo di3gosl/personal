@@ -4,11 +4,13 @@ import authOptions from "@/lib/auth";
 import AdminSidebar from "./_components/AdminSidebar";
 import AdminHeader from "./_components/AdminHeader";
 
+interface DashboardLayoutProps {
+    children: React.ReactNode;
+}
+
 export default async function DashboardLayout({
     children,
-}: {
-    children: React.ReactNode;
-}) {
+}: DashboardLayoutProps) {
     const session = await getServerSession(authOptions);
     if (!session?.user) {
         redirect("/admin/login");

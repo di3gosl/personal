@@ -7,11 +7,13 @@ import ProjectContent from "./_components/ProjectContent";
 import ProjectNavigation from "./_components/ProjectNavigation";
 import { getProject } from "./actions";
 
+interface PortfolioDetailsPageProps {
+    params: Promise<{ slug: string }>;
+}
+
 export default async function PortfolioDetailsPage({
     params,
-}: {
-    params: Promise<{ slug: string }>;
-}) {
+}: PortfolioDetailsPageProps) {
     const { slug } = await params;
     const { data: project } = await getProject(slug);
 
