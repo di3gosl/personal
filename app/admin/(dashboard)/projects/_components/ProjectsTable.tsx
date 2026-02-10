@@ -3,20 +3,8 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {
-    Pencil,
-    Trash2,
-    ExternalLink,
-    Loader2,
-    Plus,
-    ChevronLeft,
-    ChevronRight,
-    Search,
-    X,
-} from "lucide-react";
+import { Pencil, Trash2, ExternalLink, Loader2, Plus } from "lucide-react";
 import { toast } from "sonner";
-import type { Project } from "@prisma/client";
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -35,23 +23,10 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { PROJECT_TYPES } from "@/data/projectTypes";
 import { deleteProject } from "../actions";
-
-type ProjectWithCounts = Project & {
-    _count: {
-        screenshots: number;
-        tags: number;
-    };
-};
+import ProjectsTableFilters from "./ProjectsTableFilters";
+import ProjectsTablePagination from "./ProjectsTablePagination";
+import { type ProjectWithCounts } from "@/types/project";
 
 interface ProjectsTableProps {
     projects: ProjectWithCounts[];
@@ -68,12 +43,6 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
     const [typeFilter, setTypeFilter] = useState("all");
     const [yearFilter, setYearFilter] = useState("all");
     const itemsPerPage = 15;
-
-    // Get unique years from projects
-    const availableYears = useMemo(() => {
-        const years = [...new Set(projects.map((p) => p.year))];
-        return years.sort((a, b) => b - a); // Sort descending
-    }, [projects]);
 
     // Filter projects
     const filteredProjects = useMemo(() => {
@@ -99,21 +68,6 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
-
-    function handleSearchChange(value: string) {
-        setSearchQuery(value);
-        setCurrentPage(1);
-    }
-
-    function handleTypeFilterChange(value: string) {
-        setTypeFilter(value);
-        setCurrentPage(1);
-    }
-
-    function handleYearFilterChange(value: string) {
-        setYearFilter(value);
-        setCurrentPage(1);
-    }
 
     function clearFilters() {
         setSearchQuery("");
@@ -173,60 +127,17 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
 
     return (
         <>
-            <div className="flex flex-wrap items-center gap-3">
-                <div className="relative flex-1 min-w-[200px]">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
-                    <Input
-                        placeholder="Search by name..."
-                        value={searchQuery}
-                        onChange={(e) => handleSearchChange(e.target.value)}
-                        className="pl-9 bg-[#ffffff] dark:bg-[#ffffff]"
-                    />
-                </div>
-                <Select
-                    value={typeFilter}
-                    onValueChange={handleTypeFilterChange}
-                >
-                    <SelectTrigger className="w-[180px] bg-[#ffffff] dark:bg-[#ffffff]">
-                        <SelectValue placeholder="All Types" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="all">All Types</SelectItem>
-                        {PROJECT_TYPES.map((type) => (
-                            <SelectItem key={type} value={type}>
-                                {type}
-                            </SelectItem>
-                        ))}
-                    </SelectContent>
-                </Select>
-                <Select
-                    value={yearFilter}
-                    onValueChange={handleYearFilterChange}
-                >
-                    <SelectTrigger className="w-[140px] bg-[#ffffff] dark:bg-[#ffffff]">
-                        <SelectValue placeholder="All Years" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="all">All Years</SelectItem>
-                        {availableYears.map((year) => (
-                            <SelectItem key={year} value={year.toString()}>
-                                {year}
-                            </SelectItem>
-                        ))}
-                    </SelectContent>
-                </Select>
-                {hasActiveFilters && (
-                    <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={clearFilters}
-                        className="cursor-pointer"
-                    >
-                        <X className="size-4" />
-                        Clear
-                    </Button>
-                )}
-            </div>
+            {/* Filters */}
+            <ProjectsTableFilters
+                projects={projects}
+                setCurrentPage={setCurrentPage}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                typeFilter={typeFilter}
+                setTypeFilter={setTypeFilter}
+                yearFilter={yearFilter}
+                setYearFilter={setYearFilter}
+            />
 
             {filteredProjects.length === 0 && hasActiveFilters ? (
                 <div className="bg-card rounded-lg border border-border p-12 text-center">
@@ -367,66 +278,16 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
                         </Table>
                     </div>
 
+                    {/* Pagination */}
                     {totalPages > 1 && (
-                        <div className="flex items-center justify-between px-2">
-                            <p className="text-sm text-muted-foreground">
-                                Showing {startIndex + 1} to{" "}
-                                {Math.min(endIndex, filteredProjects.length)} of{" "}
-                                {filteredProjects.length} projects
-                                {hasActiveFilters &&
-                                    ` (filtered from ${projects.length})`}
-                            </p>
-                            <div className="flex items-center gap-2">
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    onClick={() =>
-                                        setCurrentPage((p) =>
-                                            Math.max(1, p - 1),
-                                        )
-                                    }
-                                    disabled={currentPage === 1}
-                                    className="cursor-pointer"
-                                >
-                                    <ChevronLeft className="size-4" />
-                                    Previous
-                                </Button>
-                                <div className="flex items-center gap-1">
-                                    {Array.from(
-                                        { length: totalPages },
-                                        (_, i) => i + 1,
-                                    ).map((page) => (
-                                        <Button
-                                            key={page}
-                                            variant={
-                                                currentPage === page
-                                                    ? "default"
-                                                    : "outline"
-                                            }
-                                            size="sm"
-                                            onClick={() => setCurrentPage(page)}
-                                            className="min-w-9 cursor-pointer"
-                                        >
-                                            {page}
-                                        </Button>
-                                    ))}
-                                </div>
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    onClick={() =>
-                                        setCurrentPage((p) =>
-                                            Math.min(totalPages, p + 1),
-                                        )
-                                    }
-                                    disabled={currentPage === totalPages}
-                                    className="cursor-pointer"
-                                >
-                                    Next
-                                    <ChevronRight className="size-4" />
-                                </Button>
-                            </div>
-                        </div>
+                        <ProjectsTablePagination
+                            projects={projects}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                            searchQuery={searchQuery}
+                            typeFilter={typeFilter}
+                            yearFilter={yearFilter}
+                        />
                     )}
                 </>
             )}
