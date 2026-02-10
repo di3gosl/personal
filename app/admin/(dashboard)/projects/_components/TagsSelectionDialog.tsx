@@ -18,21 +18,10 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { TAG_KIND_LABELS } from "@/data/tags";
-
-interface Tag {
-    id: string;
-    tag: string;
-    kind: "tech" | "service" | "tool" | "platform" | "meta";
-    isFilterable: boolean;
-}
-
-interface ProjectTag {
-    tagId: string;
-    isPreview: boolean;
-}
+import { type TagBase, type ProjectTag } from "@/types/tag-shared";
 
 interface TagsSelectionDialogProps {
-    allTags: Tag[];
+    allTags: TagBase[];
     isLoading: boolean;
     onChange: (tags: ProjectTag[]) => void;
     selectedTags: ProjectTag[];
@@ -48,7 +37,7 @@ export default function TagsSelectionDialog({
     isDialogOpen,
     setIsDialogOpen,
 }: TagsSelectionDialogProps) {
-    const [selectedKind, setSelectedKind] = useState<Tag["kind"] | "all">(
+    const [selectedKind, setSelectedKind] = useState<TagBase["kind"] | "all">(
         "all",
     );
 
@@ -76,7 +65,7 @@ export default function TagsSelectionDialog({
             acc[tag.kind].push(tag);
             return acc;
         },
-        {} as Record<Tag["kind"], Tag[]>,
+        {} as Record<TagBase["kind"], TagBase[]>,
     );
 
     return (
@@ -96,7 +85,9 @@ export default function TagsSelectionDialog({
                         <Select
                             value={selectedKind}
                             onValueChange={(value) =>
-                                setSelectedKind(value as Tag["kind"] | "all")
+                                setSelectedKind(
+                                    value as TagBase["kind"] | "all",
+                                )
                             }
                         >
                             <SelectTrigger className="w-[200px]">
@@ -128,7 +119,7 @@ export default function TagsSelectionDialog({
                             <div className="text-center py-4 text-muted-foreground text-sm">
                                 {selectedKind === "all"
                                     ? "All tags have been added"
-                                    : `No ${TAG_KIND_LABELS[selectedKind as Tag["kind"]]} tags available`}
+                                    : `No ${TAG_KIND_LABELS[selectedKind as TagBase["kind"]]} tags available`}
                             </div>
                         ) : selectedKind === "all" ? (
                             Object.entries(groupedAvailableTags).map(
@@ -137,7 +128,7 @@ export default function TagsSelectionDialog({
                                         <h4 className="text-sm font-medium mb-2 text-muted-foreground">
                                             {
                                                 TAG_KIND_LABELS[
-                                                    kind as Tag["kind"]
+                                                    kind as TagBase["kind"]
                                                 ]
                                             }
                                         </h4>

@@ -6,19 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getTags } from "../actions";
 import { TAG_KIND_LABELS } from "@/data/tags";
+import { type TagBase, type ProjectTag } from "@/types/tag-shared";
 import TagsSelectionDialog from "./TagsSelectionDialog";
-
-interface Tag {
-    id: string;
-    tag: string;
-    kind: "tech" | "service" | "tool" | "platform" | "meta";
-    isFilterable: boolean;
-}
-
-interface ProjectTag {
-    tagId: string;
-    isPreview: boolean;
-}
 
 interface TagsSelectorProps {
     selectedTags: ProjectTag[];
@@ -29,7 +18,7 @@ export default function TagsSelector({
     selectedTags,
     onChange,
 }: TagsSelectorProps) {
-    const [allTags, setAllTags] = useState<Tag[]>([]);
+    const [allTags, setAllTags] = useState<TagBase[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
@@ -52,7 +41,7 @@ export default function TagsSelector({
             const tag = allTags.find((t) => t.id === pt.tagId);
             return tag ? { ...tag, isPreview: pt.isPreview } : null;
         })
-        .filter((t): t is Tag & { isPreview: boolean } => t !== null);
+        .filter((t): t is TagBase & { isPreview: boolean } => t !== null);
 
     const removeTag = (tagId: string) => {
         onChange(selectedTags.filter((t) => t.tagId !== tagId));
@@ -133,9 +122,9 @@ export default function TagsSelector({
                                 </Button>
                                 <Button
                                     type="button"
-                                    variant="ghost"
+                                    variant="destructive-ghost"
                                     size="sm"
-                                    className="h-7 px-2 cursor-pointer hover:text-destructive hover:bg-destructive/30!"
+                                    className="h-7 px-2"
                                     onClick={() => removeTag(tag.id)}
                                 >
                                     <X className="h-3.5 w-3.5" />

@@ -16,24 +16,28 @@ import { ProjectWithCounts } from "@/types/project";
 
 interface ProjectsTableFiltersProps {
     projects: ProjectWithCounts[];
-    setCurrentPage: (page: number) => void;
     searchQuery: string;
     setSearchQuery: (query: string) => void;
     typeFilter: string;
     setTypeFilter: (type: string) => void;
     yearFilter: string;
     setYearFilter: (year: string) => void;
+    setCurrentPage: (page: number) => void;
+    hasActiveFilters: boolean;
+    clearFilters: () => void;
 }
 
 export default function ProjectsTableFilters({
     projects,
-    setCurrentPage,
-    setSearchQuery,
     searchQuery,
+    setSearchQuery,
     typeFilter,
     setTypeFilter,
     yearFilter,
     setYearFilter,
+    setCurrentPage,
+    hasActiveFilters,
+    clearFilters,
 }: ProjectsTableFiltersProps) {
     // Get unique years from projects
     const availableYears = useMemo(() => {
@@ -55,16 +59,6 @@ export default function ProjectsTableFilters({
         setYearFilter(value);
         setCurrentPage(1);
     }
-
-    function clearFilters() {
-        setSearchQuery("");
-        setTypeFilter("all");
-        setYearFilter("all");
-        setCurrentPage(1);
-    }
-
-    const hasActiveFilters =
-        searchQuery !== "" || typeFilter !== "all" || yearFilter !== "all";
 
     return (
         <div className="flex flex-wrap items-center gap-3">

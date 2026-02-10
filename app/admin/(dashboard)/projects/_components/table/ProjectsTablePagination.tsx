@@ -1,63 +1,35 @@
 "use client";
 
-import { useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProjectWithCounts } from "@/types/project";
 
 interface ProjectsTablePaginationProps {
-    projects: ProjectWithCounts[];
     currentPage: number;
     setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
-    searchQuery: string;
-    typeFilter: string;
-    yearFilter: string;
+    totalPages: number;
+    startIndex: number;
+    endIndex: number;
+    filteredCount: number;
+    totalCount: number;
+    hasActiveFilters: boolean;
 }
 
 export default function ProjectsTablePagination({
-    projects,
     currentPage,
     setCurrentPage,
-    searchQuery,
-    typeFilter,
-    yearFilter,
+    totalPages,
+    startIndex,
+    endIndex,
+    filteredCount,
+    totalCount,
+    hasActiveFilters,
 }: ProjectsTablePaginationProps) {
-    const itemsPerPage = 15;
-
-    // Filter projects
-    const filteredProjects = useMemo(() => {
-        return projects.filter((project) => {
-            const query = searchQuery.toLowerCase().trim();
-            const matchesSearch =
-                !query ||
-                project.title.toLowerCase().includes(query) ||
-                project.slug.toLowerCase().includes(query);
-
-            const matchesType =
-                typeFilter === "all" || project.type === typeFilter;
-
-            const matchesYear =
-                yearFilter === "all" || project.year.toString() === yearFilter;
-
-            return matchesSearch && matchesType && matchesYear;
-        });
-    }, [projects, searchQuery, typeFilter, yearFilter]);
-
-    // Calculate pagination
-    const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    const hasActiveFilters =
-        searchQuery !== "" || typeFilter !== "all" || yearFilter !== "all";
-
     return (
         <div className="flex items-center justify-between px-2">
             <p className="text-sm text-muted-foreground">
-                Showing {startIndex + 1} to{" "}
-                {Math.min(endIndex, filteredProjects.length)} of{" "}
-                {filteredProjects.length} projects
-                {hasActiveFilters && ` (filtered from ${projects.length})`}
+                Showing {startIndex + 1} to {Math.min(endIndex, filteredCount)}{" "}
+                of {filteredCount} projects
+                {hasActiveFilters && ` (filtered from ${totalCount})`}
             </p>
             <div className="flex items-center gap-2">
                 <Button

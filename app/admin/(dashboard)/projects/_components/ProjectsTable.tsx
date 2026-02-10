@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Pencil, Trash2, ExternalLink, Loader2, Plus } from "lucide-react";
@@ -24,8 +24,9 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { deleteProject } from "../actions";
-import ProjectsTableFilters from "./ProjectsTableFilters";
-import ProjectsTablePagination from "./ProjectsTablePagination";
+import { useProjectFilters } from "../_hooks/useProjectFilters";
+import ProjectsTableFilters from "./table/ProjectsTableFilters";
+import ProjectsTablePagination from "./table/ProjectsTablePagination";
 import { type ProjectWithCounts } from "@/types/project";
 
 interface ProjectsTableProps {
@@ -38,46 +39,24 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
     const [projectToDelete, setProjectToDelete] =
         useState<ProjectWithCounts | null>(null);
     const [isDeleting, setIsDeleting] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [searchQuery, setSearchQuery] = useState("");
-    const [typeFilter, setTypeFilter] = useState("all");
-    const [yearFilter, setYearFilter] = useState("all");
-    const itemsPerPage = 15;
 
-    // Filter projects
-    const filteredProjects = useMemo(() => {
-        return projects.filter((project) => {
-            const query = searchQuery.toLowerCase().trim();
-            const matchesSearch =
-                !query ||
-                project.title.toLowerCase().includes(query) ||
-                project.slug.toLowerCase().includes(query);
-
-            const matchesType =
-                typeFilter === "all" || project.type === typeFilter;
-
-            const matchesYear =
-                yearFilter === "all" || project.year.toString() === yearFilter;
-
-            return matchesSearch && matchesType && matchesYear;
-        });
-    }, [projects, searchQuery, typeFilter, yearFilter]);
-
-    // Calculate pagination
-    const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
-
-    function clearFilters() {
-        setSearchQuery("");
-        setTypeFilter("all");
-        setYearFilter("all");
-        setCurrentPage(1);
-    }
-
-    const hasActiveFilters =
-        searchQuery !== "" || typeFilter !== "all" || yearFilter !== "all";
+    const {
+        searchQuery,
+        setSearchQuery,
+        typeFilter,
+        setTypeFilter,
+        yearFilter,
+        setYearFilter,
+        hasActiveFilters,
+        clearFilters,
+        currentPage,
+        setCurrentPage,
+        totalPages,
+        startIndex,
+        endIndex,
+        filteredProjects,
+        paginatedProjects,
+    } = useProjectFilters({ projects });
 
     function handleDeleteClick(project: ProjectWithCounts) {
         setProjectToDelete(project);
@@ -130,13 +109,15 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
             {/* Filters */}
             <ProjectsTableFilters
                 projects={projects}
-                setCurrentPage={setCurrentPage}
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 typeFilter={typeFilter}
                 setTypeFilter={setTypeFilter}
                 yearFilter={yearFilter}
                 setYearFilter={setYearFilter}
+                setCurrentPage={setCurrentPage}
+                hasActiveFilters={hasActiveFilters}
+                clearFilters={clearFilters}
             />
 
             {filteredProjects.length === 0 && hasActiveFilters ? (
@@ -257,7 +238,7 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
                                                     </Link>
                                                 </Button>
                                                 <Button
-                                                    variant="ghost"
+                                                    variant="destructive-ghost"
                                                     size="icon-sm"
                                                     onClick={() =>
                                                         handleDeleteClick(
@@ -266,7 +247,6 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
                                                     }
                                                     title="Delete"
                                                     aria-label={`Delete ${project.title}`}
-                                                    className="text-destructive hover:text-destructive hover:bg-destructive/10! cursor-pointer"
                                                 >
                                                     <Trash2 className="size-4" />
                                                 </Button>
@@ -281,12 +261,14 @@ export default function ProjectsTable({ projects }: ProjectsTableProps) {
                     {/* Pagination */}
                     {totalPages > 1 && (
                         <ProjectsTablePagination
-                            projects={projects}
                             currentPage={currentPage}
                             setCurrentPage={setCurrentPage}
-                            searchQuery={searchQuery}
-                            typeFilter={typeFilter}
-                            yearFilter={yearFilter}
+                            totalPages={totalPages}
+                            startIndex={startIndex}
+                            endIndex={endIndex}
+                            filteredCount={filteredProjects.length}
+                            totalCount={projects.length}
+                            hasActiveFilters={hasActiveFilters}
                         />
                     )}
                 </>
