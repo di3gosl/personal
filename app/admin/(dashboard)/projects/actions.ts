@@ -1,18 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
-import authOptions from "@/lib/auth";
 import { projectSchema, type ProjectFormData } from "@/lib/validators/project";
+import { requireAdmin } from "@/lib/auth/requireAdmin";
 
 export async function getProjects() {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         const projects = await prisma.project.findMany({
             where: {
                 isDeleted: false,
@@ -36,12 +32,9 @@ export async function getProjects() {
 }
 
 export async function getProject(id: string) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         const project = await prisma.project.findUnique({
             where: { id },
             include: {
@@ -64,14 +57,10 @@ export async function getProject(id: string) {
 }
 
 export async function createProject(data: ProjectFormData) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
-        const validated = projectSchema.safeParse(data);
+        await requireAdmin();
 
+        const validated = projectSchema.safeParse(data);
         if (!validated.success) {
             return {
                 success: false,
@@ -128,14 +117,10 @@ export async function createProject(data: ProjectFormData) {
 }
 
 export async function updateProject(id: string, data: ProjectFormData) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
-        const validated = projectSchema.safeParse(data);
+        await requireAdmin();
 
+        const validated = projectSchema.safeParse(data);
         if (!validated.success) {
             return {
                 success: false,
@@ -206,12 +191,9 @@ export async function updateProject(id: string, data: ProjectFormData) {
 }
 
 export async function deleteProject(id: string) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         // Soft delete - just mark as deleted
         await prisma.project.update({
             where: { id },
@@ -230,12 +212,9 @@ export async function deleteProject(id: string) {
 }
 
 export async function getTags() {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return { success: false, error: "Unauthorized" };
-    }
-
     try {
+        await requireAdmin();
+
         const tags = await prisma.tag.findMany({
             orderBy: [{ kind: "asc" }, { tag: "asc" }],
         });

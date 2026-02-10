@@ -1,3 +1,5 @@
+import type { Project as PrismaProject } from "@prisma/client";
+
 export type Project = {
     slug: string;
     title: string;
@@ -50,4 +52,11 @@ export type ProjectCard = {
     year: number;
     label: string | null;
     tags: { tag: { id: string; tag: string } }[];
+};
+
+export type ProjectWithCounts = PrismaProject & {
+    _count: {
+        screenshots: number;
+        tags: number;
+    };
 };
