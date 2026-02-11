@@ -105,7 +105,7 @@ export default function Header() {
                     {/* Logo */}
                     <div>
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="w-10 md:w-12 h-10 md:h-12 rounded-xl border-3 border-primary flex items-center justify-center mr-0 md:mr-2">
+                            <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg border-3 border-primary flex items-center justify-center mr-0 md:mr-2">
                                 <span className="text-xl font-bold text-primary">
                                     D<span className="cursor-blink">_</span>
                                 </span>
