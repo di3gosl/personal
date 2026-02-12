@@ -6,7 +6,14 @@ import { naturalEase } from "@/lib/animations";
 import PortfolioCard from "@/components/PortfolioCard";
 import { ProjectCard } from "@/types/project";
 import { Badge } from "@/components/ui/badge";
-import { Funnel } from "lucide-react";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+import { Funnel, ArrowUpDown } from "lucide-react";
 
 const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -61,15 +68,31 @@ interface PortfolioListProps {
 
 export default function PortfolioList({ projects, tags }: PortfolioListProps) {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
+    const [sortBy, setSortBy] = useState<"relevance" | "year">("relevance");
 
-    const filteredProjects = useMemo(() => {
-        if (selectedTags.length === 0) return projects;
+    const filteredAndSortedProjects = useMemo(() => {
+        // First, filter by tags
+        let filtered = projects;
+        if (selectedTags.length > 0) {
+            filtered = projects.filter((project) => {
+                const projectTagIds = project.tags.map((t) => t.tag.id);
+                return selectedTags.every((tagId) =>
+                    projectTagIds.includes(tagId),
+                );
+            });
+        }
 
-        return projects.filter((project) => {
-            const projectTagIds = project.tags.map((t) => t.tag.id);
-            return selectedTags.every((tagId) => projectTagIds.includes(tagId));
+        // Then, sort
+        const sorted = [...filtered].sort((a, b) => {
+            if (sortBy === "relevance") {
+                return b.order - a.order; // Higher order first
+            } else {
+                return b.year - a.year; // More recent year first
+            }
         });
-    }, [projects, selectedTags]);
+
+        return sorted;
+    }, [projects, selectedTags, sortBy]);
 
     const toggleTag = (tagId: string) => {
         setSelectedTags((prev) =>
@@ -104,14 +127,15 @@ export default function PortfolioList({ projects, tags }: PortfolioListProps) {
                 </p>
             </motion.div>
 
-            {/* Filters */}
-            {tags.length > 0 && (
-                <motion.div
-                    className="mb-8 md:mb-12"
-                    variants={filterVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
+            {/* Filters and Sorting */}
+            <motion.div
+                className="mb-4 md:mb-6 space-y-4"
+                variants={filterVariants}
+                initial="hidden"
+                animate="visible"
+            >
+                {/* Tag Filters */}
+                {tags.length > 0 && (
                     <div className="flex flex-wrap items-center gap-3">
                         <span className="text-sm font-medium text-accent flex items-center gap-1.5">
                             <Funnel className="w-4 h-4 inline-block" /> Filter
@@ -140,25 +164,48 @@ export default function PortfolioList({ projects, tags }: PortfolioListProps) {
                             </button>
                         )}
                     </div>
-                    {selectedTags.length > 0 && (
-                        <p className="text-sm text-accent mt-3">
-                            Showing {filteredProjects.length} of{" "}
-                            {projects.length} projects
-                        </p>
-                    )}
-                </motion.div>
-            )}
+                )}
+
+                {selectedTags.length > 0 && (
+                    <p className="text-sm text-accent">
+                        Showing {filteredAndSortedProjects.length} of{" "}
+                        {projects.length} projects
+                    </p>
+                )}
+
+                {/* Sorting */}
+                <div className="flex flex-wrap items-center gap-3 justify-end mt-5">
+                    <span className="text-sm font-medium text-accent flex items-center gap-1.5">
+                        <ArrowUpDown className="w-4 h-4 inline-block" /> Sort
+                        by:
+                    </span>
+                    <Select
+                        value={sortBy}
+                        onValueChange={(value: "relevance" | "year") =>
+                            setSortBy(value)
+                        }
+                    >
+                        <SelectTrigger className="w-[180px]">
+                            <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="relevance">Relevance</SelectItem>
+                            <SelectItem value="year">Year</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
+            </motion.div>
 
             {/* Projects Grid with stagger animation */}
             <motion.div
-                key={selectedTags.join("-")}
+                key={`${selectedTags.join("-")}-${sortBy}`}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
-                {filteredProjects.length > 0 ? (
-                    filteredProjects.map((project) => (
+                {filteredAndSortedProjects.length > 0 ? (
+                    filteredAndSortedProjects.map((project) => (
                         <PortfolioCard key={project.id} project={project} />
                     ))
                 ) : (

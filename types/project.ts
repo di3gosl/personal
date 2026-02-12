@@ -50,6 +50,7 @@ export type ProjectCard = {
     description: string;
     image: string;
     year: number;
+    order: number;
     label: string | null;
     tags: { tag: { id: string; tag: string } }[];
 };
