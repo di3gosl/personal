@@ -22,8 +22,8 @@ export const gridVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2,
-            delayChildren: 0.3,
+            staggerChildren: 0.1,
+            delayChildren: 0.2,
             ease: naturalEase,
         },
     },
@@ -48,11 +48,11 @@ interface PortfolioProps {
 
 export default function Portfolio({ projects }: PortfolioProps) {
     const ref = useRef(null);
-    const [amount, setAmount] = useState(0.2);
+    const [amount, setAmount] = useState(0.1);
 
     useEffect(() => {
         const updateAmount = () => {
-            setAmount(window.innerWidth < 768 ? 0.04 : 0.2);
+            setAmount(window.innerWidth < 768 ? 0.02 : 0.1);
         };
 
         updateAmount();
