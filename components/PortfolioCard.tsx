@@ -66,7 +66,7 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
                     </span>
                     {project.label && (
                         <motion.span
-                            className="px-2.5 py-1 bg-primary text-white text-xs font-semibold rounded-full uppercase tracking-wide"
+                            className="px-2.5 py-1 bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs font-semibold rounded-full uppercase tracking-wide"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3, duration: 0.3 }}

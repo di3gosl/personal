@@ -24,10 +24,11 @@ export const EXPRERIENCE: Experience[] = [
         endDate: "September 2020",
         duration: "5 years 3 months",
         description: [
-            "Led the design and development of enterprise-level web applications and R&D initiatives.",
-            "Worked with technologies such as Node.js, React, Redux, GraphQL, PHP, and Python.",
-            "Built scalable systems for data processing, automation, and analytics.",
-            "Architected modular platforms and managed AWS servers for production environments.",
+            "Co-founded BioFractal and led R&D and product development across multiple internal brands.",
+            "Built enterprise web platforms and automation systems using Node.js, React, Redux, GraphQL, PHP, and Python.",
+            "Led IoT & embedded initiatives under the B-Circuits brand (microcontrollers, sensors, connectivity, and device integrations).",
+            "Led interactive surfaces and electronics-driven initiatives under the INKCU brand.",
+            "Architected modular systems for data processing, analytics, and integrations; managed AWS infrastructure for production environments.",
         ],
     },
     {
@@ -41,31 +42,6 @@ export const EXPRERIENCE: Experience[] = [
             "Created administrative systems, dashboards, e-commerce platforms, and automation solutions.",
             "Collaborated directly with entrepreneurs, agencies, and small businesses.",
             "Delivered end-to-end tailored digital products.",
-        ],
-    },
-    {
-        role: "Co-Founder & Senior Embedded Software Developer",
-        company: "B-Circuits",
-        startDate: "January 2016",
-        endDate: "September 2020",
-        duration: "4 years 9 months",
-        description: [
-            "Specialized in embedded software development for microcontrollers and IoT devices.",
-            "Designed and implemented firmware solutions.",
-            "Collaborated with hardware engineers to create integrated solutions.",
-            "Ensured reliability and performance in embedded systems.",
-        ],
-    },
-    {
-        role: "Co-Founder & IT Consultant",
-        company: "INKCU",
-        startDate: "April 2017",
-        endDate: "January 2020",
-        duration: "2 years 10 months",
-        description: [
-            "Supported digital transformation projects.",
-            "Built internal tools, automation workflows, and embedded system integrations.",
-            "Combined software development with strategic technical guidance for early-stage initiatives.",
         ],
     },
     {

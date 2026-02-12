@@ -81,7 +81,7 @@ export default function Skills() {
                 >
                     {SKILLS.map((skill) => (
                         <motion.span
-                            key={skill.name}
+                            key={skill}
                             className="px-5 py-3 bg-white text-gray-800 text-base font-medium rounded-lg border border-light hover:bg-primary hover:text-white transition-colors cursor-default"
                             variants={skillBadgeVariants}
                             whileHover={{
@@ -92,7 +92,7 @@ export default function Skills() {
                                 },
                             }}
                         >
-                            {skill.name}
+                            {skill}
                         </motion.span>
                     ))}
                 </motion.div>

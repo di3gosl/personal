@@ -43,7 +43,7 @@ export default function Hero() {
                                     Diego Salazar
                                 </h1>
                                 <p className="text-xl md:text-3xl text-accent">
-                                    Full-Stack Developer
+                                    Full-Stack Architect
                                 </p>
                             </motion.div>
 
@@ -62,23 +62,27 @@ export default function Hero() {
                                             Professional Summary
                                         </h2>
                                         <p className="text-base md:text-lg leading-relaxed text-accent">
-                                            I&apos;m Diego Salazar, a full-stack
-                                            developer with a Master&apos;s
-                                            degree in Computer Science. I focus
-                                            on building clear, efficient, and
-                                            meaningful digital experiences. I
-                                            specialize in scalable web
-                                            applications, SaaS platforms, and
-                                            AI-powered systems that help
-                                            businesses bring their ideas to
-                                            life.
+                                            I&apos;m Diego Salazar, a Full-Stack
+                                            Architect and Technical Founder with
+                                            a Master&apos;s degree in Computer
+                                            Science. I design and build scalable
+                                            SaaS platforms, enterprise web
+                                            applications, and AI-powered systems
+                                            that help businesses operate smarter
+                                            and more efficiently.
                                         </p>
                                         <p className="text-base md:text-lg leading-relaxed text-accent">
-                                            With over a decade of experience
-                                            across frontend, backend, and cloud
-                                            infrastructure, I enjoy creating
-                                            solutions that are fast, reliable,
-                                            and easy to maintain.
+                                            With over a decade of hands-on
+                                            experience across frontend, backend,
+                                            and cloud architecture, I specialize
+                                            in structuring robust systems from
+                                            the ground up, from custom
+                                            algorithms and complex API
+                                            ecosystems to distributed cloud
+                                            infrastructures. I focus on creating
+                                            reliable, maintainable, and
+                                            performance-driven software that
+                                            solves real business challenges.
                                         </p>
                                     </div>
                                 </div>
