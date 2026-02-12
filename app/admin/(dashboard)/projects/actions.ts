@@ -225,3 +225,64 @@ export async function getTags() {
         return { success: false, error: "Failed to fetch tags" };
     }
 }
+
+export async function exportProjectsToJson() {
+    try {
+        await requireAdmin();
+
+        const projects = await prisma.project.findMany({
+            where: {
+                isDeleted: false,
+                isActive: true,
+            },
+            orderBy: [{ order: "desc" }, { createdAt: "desc" }],
+            include: {
+                screenshots: {
+                    orderBy: { order: "asc" },
+                },
+                tags: {
+                    include: {
+                        tag: true,
+                    },
+                },
+            },
+        });
+
+        // Transform projects to export format
+        const exportData = projects.map((project) => {
+            const tags = project.tags || [];
+            const technologies = tags
+                .filter((tag) => tag.isPreview)
+                .map((tag) => tag.tag.tag);
+            const badges = tags.map((tag) => tag.tag.tag);
+
+            // Remove internal fields and tags relation
+            const {
+                id: _id,
+                createdAt: _createdAt,
+                updatedAt: _updatedAt,
+                isDeleted: _isDeleted,
+                tags: _tags,
+                ...projectData
+            } = project;
+
+            return {
+                ...projectData,
+                technologies,
+                badges,
+            };
+        });
+
+        return {
+            success: true,
+            data: {
+                projects: exportData,
+                exportedAt: new Date().toISOString(),
+                count: exportData.length,
+            },
+        };
+    } catch (error) {
+        console.error("Failed to export projects:", error);
+        return { success: false, error: "Failed to export projects" };
+    }
+}
