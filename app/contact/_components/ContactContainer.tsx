@@ -27,19 +27,20 @@ export default function ContactContainer({
                     CONTACT
                 </p>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
-                    Let&apos;s build something great together
+                    Let&apos;s architect your next product
                 </h1>
                 <p className="text-lg md:text-xl text-accent max-w-2xl">
-                    I help startups, businesses, and teams develop modern web
-                    applications, SaaS products, and automation tools.
+                    I help startups and growing businesses design and build
+                    scalable SaaS platforms, automation systems, and AI-powered
+                    applications.
                 </p>
                 <p className="text-base md:text-lg text-accent/80 max-w-2xl">
-                    I speak Spanish — Feel free to contact me in Spanish if you
-                    prefer.
+                    I speak English and Spanish — feel free to reach out in
+                    either language.
                 </p>
                 <p className="text-sm md:text-base text-accent/80 max-w-2xl -mt-3">
-                    (Hablo español — Puedes contactarme en español si lo
-                    prefieres.)
+                    (Hablo inglés y español — puedes escribirme en el idioma que
+                    prefieras.)
                 </p>
             </motion.div>
 
@@ -87,10 +88,8 @@ export default function ContactContainer({
 
                     {/* Testimonial Card */}
                     <blockquote className="text-lg mb-6 italic">
-                        &quot;The best code is the one that solves the problem
-                        with elegance and clarity. Good engineering is not just
-                        about making things work; it&apos;s about making them
-                        work beautifully, efficiently, and with intention.&quot;
+                        &quot;Build systems that scale, not just code that
+                        works..&quot;
                     </blockquote>
                 </motion.div>
             </div>

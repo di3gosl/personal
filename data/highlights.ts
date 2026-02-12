@@ -5,15 +5,15 @@ export const HIGHLIGHTS = [
     },
     {
         label: "Specialization",
-        value: "Full-Stack Developer",
+        value: "Full-Stack Architect",
     },
     {
         label: "Focus Areas",
-        value: "SaaS · Web Apps · Automation · AI",
+        value: "SaaS · Enterprise Systems · Automation · AI",
     },
     {
         label: "Tech Stack",
-        value: "Next.js · Node.js · AWS · WordPress",
+        value: "Next.js · React · AWS · AI Systems · WordPress",
     },
     {
         label: "Location",

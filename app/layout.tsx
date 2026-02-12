@@ -18,7 +18,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-    title: "Diego Salazar - Full-Stack Developer",
+    title: "Diego Salazar - Full-Stack Architect | SaaS & AI Systems",
     description:
         "Over the past 10+ years, I've built scalable web applications, SaaS platforms, and AI-driven automation systems using Next.js, React, Node.js, PHP, AWS, and modern API-based architectures.",
     robots: "index, follow",
