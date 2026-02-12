@@ -13,7 +13,7 @@ export async function getProjects() {
             where: {
                 isDeleted: false,
             },
-            orderBy: [{ order: "asc" }, { createdAt: "desc" }],
+            orderBy: [{ order: "desc" }, { createdAt: "desc" }],
             include: {
                 _count: {
                     select: {
