@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { Briefcase, Calendar, Monitor, Users, FolderGit2 } from "lucide-react";
+import { Briefcase, Calendar, Monitor, Users } from "lucide-react";
 import type { ProjectWithRelations } from "../../../../types/projects-with-relations";
 import { containerVariants, naturalEase } from "@/lib/animations";
 
@@ -47,11 +47,6 @@ export default function ProjectFacts({ project }: ProjectFactsProps) {
             label: "Team",
             value: project.team,
         },
-        {
-            icon: FolderGit2,
-            label: "Repository",
-            value: project.repository,
-        },
     ];
 
     return (
@@ -61,7 +56,7 @@ export default function ProjectFacts({ project }: ProjectFactsProps) {
         >
             <div className="container mx-auto max-w-6xl">
                 <motion.div
-                    className="grid grid-cols-2 md:grid-cols-5 gap-8"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-8"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}

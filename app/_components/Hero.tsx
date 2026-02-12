@@ -48,7 +48,7 @@ export default function Hero() {
                             Diego Salazar
                         </p>
                         <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-primary">
-                            Full-Stack Developer
+                            Full-Stack Architect
                         </h1>
                     </motion.div>
 
@@ -56,10 +56,10 @@ export default function Hero() {
                         className="text-lg md:text-xl leading-relaxed text-accent"
                         variants={itemVariants}
                     >
-                        Over the past 10+ years, I&apos;ve built scalable web
-                        applications, SaaS platforms, and AI-driven automation
-                        systems using Next.js, React, Node.js, PHP, AWS, and
-                        modern API-based architectures.
+                        Over the past 10+ years, I&apos;ve designed and
+                        architected scalable SaaS platforms, enterprise web
+                        applications, and AI-driven automation systems that help
+                        businesses operate smarter and more efficiently.
                     </motion.p>
 
                     <motion.div
@@ -86,7 +86,7 @@ export default function Hero() {
                     <div className="relative w-full h-full">
                         <Image
                             src="/images/hero-image.png"
-                            alt="Diego Salazar - Full-Stack Developer"
+                            alt="Diego Salazar - Full-Stack Architect | SaaS & AI Systems"
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-cover"

@@ -115,7 +115,7 @@ export default function Header() {
                                     Diego Salazar
                                 </span>
                                 <span className="text-xs tracking-wider uppercase leading-tight text-secondary">
-                                    Full-Stack Developer
+                                    Full-Stack Architect
                                 </span>
                             </div>
                         </Link>

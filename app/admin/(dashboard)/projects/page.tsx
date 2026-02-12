@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Plus, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectsTable from "./_components/ProjectsTable";
+import ExportProjectsButton from "./_components/ExportProjectsButton";
 import { getProjects } from "./actions";
 
 export default async function ProjectsPage() {
@@ -19,6 +20,7 @@ export default async function ProjectsPage() {
                     </p>
                 </div>
                 <div className="flex gap-3">
+                    <ExportProjectsButton />
                     <Button variant="outline" asChild>
                         <Link href="/admin/projects/import">
                             <Upload />
