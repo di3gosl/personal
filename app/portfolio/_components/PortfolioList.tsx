@@ -166,33 +166,38 @@ export default function PortfolioList({ projects, tags }: PortfolioListProps) {
                     </div>
                 )}
 
-                {selectedTags.length > 0 && (
-                    <p className="text-sm text-accent">
-                        Showing {filteredAndSortedProjects.length} of{" "}
-                        {projects.length} projects
-                    </p>
-                )}
-
                 {/* Sorting */}
-                <div className="flex flex-wrap items-center gap-3 justify-end mt-5">
-                    <span className="text-sm font-medium text-accent flex items-center gap-1.5">
-                        <ArrowUpDown className="w-4 h-4 inline-block" /> Sort
-                        by:
-                    </span>
-                    <Select
-                        value={sortBy}
-                        onValueChange={(value: "relevance" | "year") =>
-                            setSortBy(value)
-                        }
-                    >
-                        <SelectTrigger className="w-[180px]">
-                            <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="relevance">Relevance</SelectItem>
-                            <SelectItem value="year">Year</SelectItem>
-                        </SelectContent>
-                    </Select>
+                <div className="flex flex-wrap items-center gap-3 justify-between mt-5">
+                    <div>
+                        {selectedTags.length > 0 && (
+                            <p className="text-sm text-accent">
+                                Showing {filteredAndSortedProjects.length} of{" "}
+                                {projects.length} projects
+                            </p>
+                        )}
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                        <span className="text-sm font-medium text-accent flex items-center gap-1.5">
+                            <ArrowUpDown className="w-4 h-4 inline-block" />{" "}
+                            Sort by:
+                        </span>
+                        <Select
+                            value={sortBy}
+                            onValueChange={(value: "relevance" | "year") =>
+                                setSortBy(value)
+                            }
+                        >
+                            <SelectTrigger className="w-[180px]">
+                                <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="relevance">
+                                    Relevance
+                                </SelectItem>
+                                <SelectItem value="year">Year</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
                 </div>
             </motion.div>
 
