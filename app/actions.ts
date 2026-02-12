@@ -14,6 +14,7 @@ export async function getProjects() {
                 description: true,
                 image: true,
                 year: true,
+                order: true,
                 label: true,
                 tags: {
                     where: { isPreview: true },
