@@ -39,12 +39,7 @@ export async function generateMetadata({
             url: `/portfolio/${project.slug}`,
             type: "article",
             images: project.image
-                ? [
-                      {
-                          url: project.image,
-                          alt: project.title,
-                      },
-                  ]
+                ? [{ url: project.image, alt: project.title }]
                 : undefined,
         },
         twitter: {

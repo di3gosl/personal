@@ -51,8 +51,10 @@ export const metadata: Metadata = {
             "Over the past 10+ years, I've built scalable web applications, SaaS platforms, and AI-driven automation systems using Next.js, React, Node.js, PHP, AWS, and modern API-based architectures.",
         images: [
             {
-                url: "/images/hero-image.png",
+                url: "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/og-image.png",
                 alt: "Diego Salazar - Full-Stack Architect",
+                width: 1200,
+                height: 630,
             },
         ],
     },
@@ -61,7 +63,7 @@ export const metadata: Metadata = {
         title: "Diego Salazar - Full-Stack Architect | SaaS & AI Systems",
         description:
             "Over the past 10+ years, I've built scalable web applications, SaaS platforms, and AI-driven automation systems using Next.js, React, Node.js, PHP, AWS, and modern API-based architectures.",
-        images: ["/images/hero-image.png"],
+        images: ["https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/og-image.png"],
     },
     robots: {
         index: true,
