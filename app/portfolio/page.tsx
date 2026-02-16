@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
 import { getProjects, getFilterableTags } from "./actions";
 import PortfolioList from "./_components/PortfolioList";
+
+export const metadata: Metadata = {
+    title: "Portfolio",
+    description:
+        "Explore Diego Salazar's portfolio of web applications, SaaS platforms, and AI-driven systems built with modern technologies.",
+    alternates: {
+        canonical: "/portfolio",
+    },
+    openGraph: {
+        title: "Portfolio — Diego Salazar",
+        description:
+            "Explore Diego Salazar's portfolio of web applications, SaaS platforms, and AI-driven systems built with modern technologies.",
+        url: "/portfolio",
+    },
+};
 
 export default async function PortfolioPage() {
     const { data: projects } = await getProjects();

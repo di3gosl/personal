@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
 import ContactContainer from "./_components/ContactContainer";
 import { submitContactAction } from "./actions";
+
+export const metadata: Metadata = {
+    title: "Contact",
+    description:
+        "Get in touch with Diego Salazar for freelance projects, SaaS consulting, or collaboration opportunities.",
+    alternates: {
+        canonical: "/contact",
+    },
+    openGraph: {
+        title: "Contact Diego Salazar",
+        description:
+            "Get in touch with Diego Salazar for freelance projects, SaaS consulting, or collaboration opportunities.",
+        url: "/contact",
+    },
+};
 
 export default function ContactPage() {
     return (
