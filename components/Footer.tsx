@@ -112,7 +112,7 @@ export default function Footer() {
                     >
                         <motion.div variants={linkVariants}>
                             <a
-                                href="https://www.linkedin.com/in/di3gosl/"
+                                href="https://www.linkedin.com/in/diego-salazar-loria/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-primary hover:underline underline-offset-4"
