@@ -118,6 +118,12 @@ export default function Experience() {
                                         </div>
                                     </div>
 
+                                    {job.shortDescription && (
+                                        <p className="text-sm md:text-base text-accent/90 mb-4">
+                                            {job.shortDescription}
+                                        </p>
+                                    )}
+
                                     {/* Description as bullets */}
                                     <ul className="space-y-2.5 text-sm md:text-base text-accent/90 leading-relaxed ml-6">
                                         {job.description.map((point, idx) => (

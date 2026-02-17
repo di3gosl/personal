@@ -2,19 +2,22 @@ import type { Experience } from "@/types/experience";
 
 export const EXPRERIENCE: Experience[] = [
     {
-        role: "Co-Founder & Full-Stack / AI Developer",
+        role: "Co-Founder & Full-Stack Architect / AI Developer",
         company: "Salozar Software",
         startDate: "March 2020",
         endDate: "Present",
         duration: "6+ years",
+        shortDescription:
+            "Architect and lead the development of scalable SaaS platforms, AI-enabled systems, and enterprise web applications for clients in the United States and Mexico.",
         description: [
-            "Lead the development of custom digital solutions for clients in Mexico and the United States.",
-            "Build modern web and SaaS platforms using Next.js, React, Node.js, PHP, and API-driven architectures.",
-            "Integrate AI capabilities with OpenAI, Claude, and Gemini into production applications.",
-            "Develop e-commerce systems with WordPress and WooCommerce.",
-            "Manage multi-service integrations like Stripe, Printify, and QuickBooks.",
-            "Oversee deployments across AWS, Vercel and other hosting environments.",
-            "Collaborate closely with remote teams and manage the full development lifecycle from architecture to launch.",
+            "Design and implement full-stack architectures using Next.js, React, Node.js, and PHP, following API-first and modular design principles.",
+            "Architect scalable backend systems, data models, and REST APIs supporting complex business workflows.",
+            "Integrate Large Language Model APIs (OpenAI, Claude, Gemini) into production applications to enable intelligent automation, AI-powered assistants, and dynamic content generation.",
+            "Design AI-assisted automation flows that reduce manual processes and enhance operational efficiency.",
+            "Engineer multi-service integrations, including Stripe, QuickBooks, Printify, and third-party logistics/payment systems.",
+            "Deploy and manage cloud infrastructure on AWS (EC2, RDS, S3, Lambda, Route 53) and modern platforms such as Vercel and Supabase.",
+            "Lead full development lifecycle from requirements analysis and architecture design to deployment and production optimization.",
+            "Collaborate with distributed teams and stakeholders, translating business requirements into scalable technical solutions.",
         ],
     },
     {
@@ -23,25 +26,28 @@ export const EXPRERIENCE: Experience[] = [
         startDate: "July 2015",
         endDate: "September 2020",
         duration: "5 years 3 months",
+        shortDescription:
+            "Co-founded a technology-driven company focused on enterprise systems, R&D initiatives, and digital product development.",
         description: [
-            "Co-founded BioFractal and led R&D and product development across multiple internal brands.",
-            "Built enterprise web platforms and automation systems using Node.js, React, Redux, GraphQL, PHP, and Python.",
-            "Led IoT & embedded initiatives under the B-Circuits brand (microcontrollers, sensors, connectivity, and device integrations).",
-            "Led interactive surfaces and electronics-driven initiatives under the INKCU brand.",
-            "Architected modular systems for data processing, analytics, and integrations; managed AWS infrastructure for production environments.",
+            "Designed and architected enterprise-grade web platforms and modular systems using Node.js, React, Redux, GraphQL, PHP, and Python.",
+            "Designed scalable systems for data processing, analytics, and third-party integrations.",
+            "Managed AWS infrastructure and production deployments.",
+            "Led embedded and IoT-related initiatives under affiliated brands, integrating firmware, hardware, and web-based control systems.",
+            "Participated in technical strategy, scalability planning, and long-term system evolution.",
         ],
     },
     {
-        role: "Freelance / Independent Developer",
+        role: "Freelance | Independent Developer",
         startDate: "January 2015",
         endDate: "March 2020",
         duration: "5 years 2 months",
+        shortDescription:
+            "Delivered custom web applications, REST APIs, and digital platforms for local and international clients.",
         description: [
-            "Delivered custom web applications, websites, and REST APIs for local and international clients.",
-            "Worked across PHP, MySQL, JavaScript, React, Node.js, and WordPress.",
-            "Created administrative systems, dashboards, e-commerce platforms, and automation solutions.",
-            "Collaborated directly with entrepreneurs, agencies, and small businesses.",
-            "Delivered end-to-end tailored digital products.",
+            "Designed and implemented backend systems using PHP, Node.js, and MySQL.",
+            "Built administrative dashboards, automation workflows, and e-commerce platforms.",
+            "Developed modern frontend interfaces with JavaScript and React.",
+            "Worked directly with founders and agencies, owning projects end-to-end from concept to deployment.",
         ],
     },
     {
@@ -52,8 +58,8 @@ export const EXPRERIENCE: Experience[] = [
         duration: "7 months",
         description: [
             "Developed business applications using PHP (Yii Framework), MySQL, and REST integrations.",
-            "Contributed to mobile development with Android.",
-            "Built internal tools that supported operational workflows.",
+            "Contributed to Android mobile development connected to backend services.",
+            "Built internal tools supporting operational workflows.",
         ],
     },
     {
@@ -63,10 +69,10 @@ export const EXPRERIENCE: Experience[] = [
         endDate: "January 2015",
         duration: "3 years 4 months",
         description: [
-            "Built custom websites and e-commerce platforms for clients in the United States.",
-            "Integrated payment gateways, logistics APIs, and backend systems.",
-            "Responsible for server configuration and performance optimization.",
-            "Led small development projects from planning to deployment.",
+            "Developed custom websites and e-commerce platforms for US clients.",
+            "Integrated payment gateways and logistics APIs.",
+            "Configured and optimized server environments.",
+            "Led small development initiatives from planning to production deployment.",
         ],
     },
     {
@@ -77,7 +83,7 @@ export const EXPRERIENCE: Experience[] = [
         duration: "7 months",
         description: [
             "Worked on web applications using PHP, Java Servlets, .NET, and Google Maps API.",
-            "Developed and maintained systems that integrated with BlackBerry-based mobile apps.",
+            "Maintained systems integrated with BlackBerry-based mobile applications.",
         ],
     },
 ];
