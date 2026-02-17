@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -63,7 +64,9 @@ export const metadata: Metadata = {
         title: "Diego Salazar - Full-Stack Architect | SaaS & AI Systems",
         description:
             "Over the past 10+ years, I've built scalable web applications, SaaS platforms, and AI-driven automation systems using Next.js, React, Node.js, PHP, AWS, and modern API-based architectures.",
-        images: ["https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/og-image.png"],
+        images: [
+            "https://xkvcnbjhkbzrtzdrkbjn.supabase.co/storage/v1/object/public/portfolio/og-image.png",
+        ],
     },
     robots: {
         index: true,
@@ -95,6 +98,7 @@ export default function RootLayout({
                 <main>{children}</main>
                 <Footer />
                 <Toaster position="top-center" richColors />
+                <Analytics />
             </body>
         </html>
     );
