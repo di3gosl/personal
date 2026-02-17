@@ -4,5 +4,6 @@ export type Experience = {
     startDate: string;
     endDate: string;
     duration: string;
+    shortDescription?: string;
     description: string[];
 };
