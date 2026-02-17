@@ -24,7 +24,7 @@ const baseUrl = "https://diegosalazar.dev";
 export const metadata: Metadata = {
     metadataBase: new URL(baseUrl),
     title: {
-        default: "Diego Salazar - Full-Stack Architect | SaaS & AI Systems",
+        default: "Diego Salazar - Full-Stack Architect | SaaS & AI Systems | Cloud Architecture",
         template: "%s | Diego Salazar",
     },
     description:

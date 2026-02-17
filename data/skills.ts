@@ -38,7 +38,6 @@ export const SKILL_CATEGORIES = [
             { name: "Prisma" },
             { name: "REST APIs" },
             { name: "Yii Framework" },
-            { name: "GraphQL" },
             { name: "Python" },
         ],
     },
