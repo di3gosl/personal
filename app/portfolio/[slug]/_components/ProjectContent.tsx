@@ -108,7 +108,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
                     <motion.div className="space-y-6" variants={itemVariants}>
                         <div className="flex items-center gap-3">
                             <Palette className="w-6 h-6 text-primary" />
-                            <h2 className="text-3xl font-bold text-primary max-w-80">
+                            <h2 className="text-3xl font-bold text-primary">
                                 Architecture Design Decisions
                             </h2>
                         </div>
