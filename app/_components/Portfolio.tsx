@@ -17,6 +17,17 @@ const headerVariants = {
     },
 };
 
+const viewAllVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.3,
+        },
+    },
+};
+
 export const gridVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,9 +89,30 @@ export default function Portfolio({ projects }: PortfolioProps) {
                     <p className="text-sm tracking-[0.4em] uppercase text-accent">
                         Featured Work
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
-                        Portfolio
-                    </h2>
+                    <div className="flex items-end justify-between gap-4 flex-wrap">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+                            Portfolio
+                        </h2>
+                        <motion.span
+                            className="group"
+                            variants={viewAllVariants}
+                            whileHover={{
+                                scale: 1.05,
+                                transition: {
+                                    duration: 0.2,
+                                    ease: naturalEase,
+                                },
+                            }}
+                        >
+                            <Link
+                                href="/portfolio"
+                                className="flex items-center gap-1.5 text-sm font-semibold border border-current rounded-full px-4 py-2 transition-colors mb-2 group-hover:bg-primary group-hover:text-white"
+                            >
+                                View All Projects
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </motion.span>
+                    </div>
                     <p className="text-lg md:text-xl text-accent max-w-2xl">
                         A selection of projects showcasing full-stack
                         development, AI integration, and scalable system
