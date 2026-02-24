@@ -89,7 +89,7 @@ export default function ContactContainer({
                     {/* Testimonial Card */}
                     <blockquote className="text-lg mb-6 italic">
                         &quot;Build systems that scale, not just code that
-                        works..&quot;
+                        works&quot;
                     </blockquote>
                 </motion.div>
             </div>
