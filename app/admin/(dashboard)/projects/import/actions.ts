@@ -53,7 +53,6 @@ export async function importProjectFromJson(
 
         // Parse the JSON
         let projectData: ImportProject;
-        console.log(jsonData);
         try {
             projectData = JSON.parse(jsonData);
         } catch {

@@ -4,11 +4,16 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 import prisma from "@/lib/prisma";
 import { UserRole } from "@prisma/client";
+import { rateLimit } from "@/lib/rate-limit";
+import { headers } from "next/headers";
 
 const loginSchema = z.object({
     email: z.string().email(),
     password: z.string().min(6),
 });
+
+const LOGIN_RATE_LIMIT = 10; // 10 attempts
+const LOGIN_RATE_WINDOW = 15 * 60 * 1000; // per 15 minutes
 
 export const authOptions: AuthOptions = {
     pages: {
@@ -16,6 +21,7 @@ export const authOptions: AuthOptions = {
     },
     session: {
         strategy: "jwt",
+        maxAge: 60 * 60 * 24, // 24 hours
     },
     callbacks: {
         async jwt({ token, user }) {
@@ -41,6 +47,21 @@ export const authOptions: AuthOptions = {
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials) {
+                // Rate limiting by IP
+                const headersList = await headers();
+                const ip =
+                    headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+                    "unknown";
+
+                const { success: rateLimitOk } = rateLimit(
+                    `login:${ip}`,
+                    LOGIN_RATE_LIMIT,
+                    LOGIN_RATE_WINDOW,
+                );
+
+                if (!rateLimitOk) {
+                    throw new Error("TooManyRequests");
+                }
                 const parsed = loginSchema.safeParse(credentials);
 
                 if (!parsed.success) {
