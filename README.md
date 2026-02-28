@@ -14,7 +14,7 @@ This project serves as both a professional portfolio and a content management sy
 
 - **Server-side rendered** pages with dynamic metadata and SEO optimization
 - **Admin CMS** with authentication, project management, and tag/category system
-- **Contact form** with server-side validation, honeypot spam protection, email notifications via Resend, and database persistence
+- **Contact form** with server-side validation, honeypot spam protection, rate limiting, server-side time-based bot detection, email notifications via Resend, and database persistence
 - **Dynamic portfolio** with filterable tags, individual project case study pages, and screenshot galleries
 - **Framer Motion animations** throughout the UI for a polished experience
 - **Responsive design** optimized for all screen sizes
@@ -61,10 +61,12 @@ app/
 ├── robots.ts                   # Dynamic robots.txt
 └── sitemap.ts                  # Dynamic sitemap from DB
 
+proxy.ts                        # Next.js 16 proxy — admin route protection
 components/                     # Shared UI components (Header, Footer, Cards)
 ├── ui/                         # shadcn/ui primitives
 emails/                         # React Email templates
 lib/                            # Utilities, auth config, Prisma client, validators
+├── rate-limit.ts               # In-memory sliding window rate limiter
 prisma/                         # Schema & migrations
 scripts/                        # CLI utilities (admin user creation)
 data/                           # Static data (skills, experience, highlights)
@@ -86,11 +88,13 @@ types/                          # Shared TypeScript types
   - Role description and team details
   - Screenshot gallery with lightbox
   - Navigation between projects
-- **Contact** — Form with validation, honeypot anti-spam, Resend email delivery, and PostgreSQL message storage
+- **Contact** — Form with validation, honeypot anti-spam, rate limiting (5 submissions / 15 min per IP), server-side time-based bot detection, Resend email delivery, and PostgreSQL message storage
 
 ### Admin Dashboard
 
 - JWT-based authentication with role-based access control
+- **Proxy route protection** — Edge-level auth guard via Next.js 16 `proxy.ts` that verifies JWT tokens and admin role on all `/admin/*` routes
+- **Login rate limiting** — 10 attempts per 15 minutes per IP, enforced in the auth layer with clear user-facing feedback
 - **Project Management** — Full CRUD with rich fields: title, slug, description, tech stack (JSON), screenshots, design decisions, links, status, and ordering
 - **Tag Management** — Create and manage tags with kind classification (`tech`, `service`, `tool`, `platform`, `meta`) and filterable/preview flags
 - **Project Import** — Bulk import capability for projects
@@ -104,6 +108,17 @@ types/                          # Shared TypeScript types
 - Canonical URLs on all pages
 - Next.js Image optimization with remote pattern support
 - Google-friendly structured data
+
+### Security
+
+- **Proxy route protection** — Next.js 16 `proxy.ts` enforces JWT + admin role verification at the edge for all admin routes
+- **Login rate limiting** — 10 attempts per 15 minutes per IP via in-memory sliding window rate limiter
+- **Contact form rate limiting** — 5 submissions per 15 minutes per IP
+- **Server-side time-based bot detection** — Rejects contact form submissions completed in under 5 seconds
+- **Honeypot field** — Hidden form field to trap automated spam bots
+- **bcrypt password hashing** — Secure credential storage with salt rounds
+- **Zod validation** — Server-side input validation on all form submissions and admin actions
+- **Admin role guards** — `requireAdmin()` check on every admin server action
 
 ---
 

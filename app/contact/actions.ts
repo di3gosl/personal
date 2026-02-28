@@ -1,15 +1,56 @@
 "use server";
 
+import { headers } from "next/headers";
 import { Resend } from "resend";
 import { z } from "zod";
 import { generateContactEmailTemplate } from "@/emails/ContactEmail";
 import { contactSchema, type ContactFormData } from "@/lib/validators/contact";
 import prisma from "@/lib/prisma";
+import { rateLimit } from "@/lib/rate-limit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function submitContactAction(data: ContactFormData) {
+const CONTACT_RATE_LIMIT = 5; // 5 submissions
+const CONTACT_RATE_WINDOW = 15 * 60 * 1000; // per 15 minutes
+const MIN_SUBMISSION_TIME = 5000; // 5 seconds minimum
+
+export async function submitContactAction(
+    data: ContactFormData,
+    formLoadTime: number,
+) {
     try {
+        // Rate limiting by IP
+        const headersList = await headers();
+        const ip =
+            headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+            "unknown";
+        const { success: rateLimitOk } = rateLimit(
+            `contact:${ip}`,
+            CONTACT_RATE_LIMIT,
+            CONTACT_RATE_WINDOW,
+        );
+
+        if (!rateLimitOk) {
+            return {
+                success: false,
+                error: "Too many submissions. Please try again later.",
+            };
+        }
+
+        // Server-side time-based bot check
+        const now = Date.now();
+        if (
+            typeof formLoadTime !== "number" ||
+            formLoadTime > now ||
+            now - formLoadTime < MIN_SUBMISSION_TIME
+        ) {
+            console.warn("Time-based check failed - potential bot detected");
+            return {
+                success: false,
+                error: "Please take your time filling out the form.",
+            };
+        }
+
         // Server-side validation
         const validatedData = contactSchema.parse(data);
 

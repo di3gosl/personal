@@ -27,7 +27,10 @@ import { toast } from "sonner";
 import { contactSchema, type ContactFormData } from "@/lib/validators/contact";
 
 interface ContactFormProps {
-    onSubmit: (data: ContactFormData) => Promise<{
+    onSubmit: (
+        data: ContactFormData,
+        formLoadTime: number,
+    ) => Promise<{
         success: boolean;
         message?: string;
         error?: string;
@@ -54,20 +57,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     const handleSubmit = useCallback(
         async (values: ContactFormData) => {
             try {
-                // Time-based validation
-                const submissionTime = Date.now();
-                const timeDifference = submissionTime - formLoadTime;
-                const minimumTime = 5000; // Minimum time in milliseconds before form can be submitted
-
-                if (timeDifference < minimumTime) {
-                    toast.warning("Submission too fast", {
-                        description:
-                            "Please take your time filling out the form.",
-                    });
-                    return;
-                }
-
-                const result = await onSubmit(values);
+                const result = await onSubmit(values, formLoadTime);
                 if (result.success) {
                     toast.success("Message sent successfully!", {
                         description:
@@ -77,7 +67,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
                     setFormLoadTime(Date.now());
                 } else {
                     toast.error("Failed to send message", {
-                        description: "Please try again later.",
+                        description: result.error || "Please try again later.",
                     });
                 }
             } catch {

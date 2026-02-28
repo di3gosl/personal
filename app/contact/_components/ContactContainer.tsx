@@ -5,7 +5,10 @@ import ContactForm from "./ContactForm";
 import { type ContactFormData } from "@/lib/validators/contact";
 
 interface ContactContainerProps {
-    submitContactForm: (data: ContactFormData) => Promise<{
+    submitContactForm: (
+        data: ContactFormData,
+        formLoadTime: number,
+    ) => Promise<{
         success: boolean;
         message?: string;
         error?: string;
