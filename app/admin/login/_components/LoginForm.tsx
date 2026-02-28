@@ -55,7 +55,11 @@ export default function LoginForm() {
                 redirect: false,
             });
 
-            if (result?.error) {
+            if (result?.error === "TooManyRequests") {
+                toast.error("Too many login attempts", {
+                    description: "Please try again later.",
+                });
+            } else if (result?.error) {
                 toast.error("Login failed", {
                     description: "Invalid email or password",
                 });
