@@ -1,6 +1,7 @@
 import Hero from "./_components/Hero";
 import Skills from "./_components/Skills";
 import Portfolio from "./_components/Portfolio";
+import CallToAction from "./_components/CallToAction";
 import { getProjects } from "./actions";
 
 export default async function Home() {
@@ -11,6 +12,7 @@ export default async function Home() {
             <Hero />
             <Portfolio projects={projects} />
             <Skills />
+            <CallToAction />
         </>
     );
 }
