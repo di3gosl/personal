@@ -11,6 +11,7 @@ export const SKILLS = [
     "REST APIs",
     "AI Integration",
     "OpenAI",
+    "Claude",
     "Prompt Engineering",
     "WordPress",
     "WooCommerce",
@@ -101,9 +102,9 @@ export const SKILL_CATEGORIES = [
         skills: [
             { name: "Git" },
             { name: "GitHub" },
-            { name: "GitLab" },
             { name: "Bitbucket" },
             { name: "GitHub Copilot" },
+            { name: "Claude Code" },
             { name: "VS Code" },
             { name: "Jira / ClickUp" },
             { name: "Postman" },
