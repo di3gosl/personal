@@ -18,6 +18,7 @@ export const EXPRERIENCE: Experience[] = [
             "Deploy and manage cloud infrastructure on AWS (EC2, RDS, S3, Lambda, Route 53) and modern platforms such as Vercel and Supabase.",
             "Lead full development lifecycle from requirements analysis and architecture design to deployment and production optimization.",
             "Collaborate with distributed teams and stakeholders, translating business requirements into scalable technical solutions.",
+            "Leverage AI tools (GitHub Copilot, Claude Code) to accelerate code generation and scaffolding, while maintaining full ownership of architecture decisions, code review, and production quality standards.",
         ],
     },
     {
